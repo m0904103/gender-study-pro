@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>性別健康多元文化 | 113年最新趨勢絕殺版</title>
+    <title>性別健康多元文化 | 114年下學期期中絕殺版</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;700;900&family=Outfit:wght@600;800&display=swap" rel="stylesheet">
@@ -37,41 +37,34 @@
         .slide-container { flex: 1; display: flex; justify-content: center; align-items: center; position: relative; }
         #current-slide { max-width: 90%; max-height: 90%; object-fit: contain; border-radius: 12px; transition: 0.5s; }
         .control-panel { background: rgba(15, 23, 42, 0.9); backdrop-filter: blur(30px); border-top: 1px solid rgba(255,255,255,0.1); padding: 25px; display: flex; flex-direction: column; gap: 15px; }
-        .lecture-text { font-size: 1.3rem; line-height: 1.6; color: #fff; max-height: 120px; overflow-y: auto; }
-        .overlay-tags { position: absolute; inset: 0; pointer-events: none; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 10px; }
-        .data-tag { background: linear-gradient(135deg, #ef4444, #b91c1c); color: #fff; padding: 8px 18px; border-radius: 12px; font-weight: 950; font-size: 1.5rem; border: 3px solid #fff; transform: scale(0); transition: 0.4s; }
-        .data-tag.show { transform: scale(1); }
-        @media (orientation: landscape) { .sidebar { position: relative; left: 0; width: 220px; } .control-panel { position: absolute; bottom: 10px; right: 10px; width: 320px; padding: 10px; border-radius: 15px; } .lecture-text { font-size: 0.9rem; max-height: 50px; } }
+        .lecture-text { font-size: 1.35rem; line-height: 1.6; color: #fff; max-height: 120px; overflow-y: auto; }
+        @media (orientation: landscape) { .sidebar { position: relative; left: 0; width: 220px; } .control-panel { position: absolute; bottom: 10px; right: 10px; width: 320px; padding: 10px; border-radius: 15px; } .lecture-text { font-size: 1rem; max-height: 50px; } }
     </style>
 </head>
 <body>
     <div class="bg-glow"></div>
-    <header class="header"><span class="logo-text">113 TREND MASTER</span><button class="menu-btn" onclick="toggleSidebar()">☰ 絕殺大綱</button></header>
+    <header class="header"><span class="logo-text">114-2 FINAL MASTER</span><button class="menu-btn" onclick="toggleSidebar()">☰ 絕殺大綱</button></header>
     <div class="app-container">
         <aside id="sidebar" class="sidebar"><div id="nav-list" class="nav-content"></div></aside>
         <main class="main-view">
             <div class="slide-container"><img id="current-slide" src=""><div id="overlay" class="overlay-tags"></div></div>
             <div class="control-panel">
-                <div id="lecture-body" class="lecture-text">系統拼圖中... 113 年滿分榜單見！</div>
+                <div id="lecture-body" class="lecture-text">114 年下學期期中絕殺系統開啟...</div>
                 <div style="display:flex; justify-content:center; gap:20px;">
-                    <button id="p-btn" style="background:var(--surface); color:white; border:1px solid rgba(255,255,255,0.1); width:50px; height:50px; border-radius:50%;" onclick="goPrev()">⏮</button>
                     <button id="play-btn" style="background:var(--primary); color:#000; border:none; width:65px; height:65px; border-radius:50%; font-size:1.5rem;" onclick="toggleAuto()">▶</button>
-                    <button id="n-btn" style="background:var(--surface); color:white; border:1px solid rgba(255,255,255,0.1); width:50px; height:50px; border-radius:50%;" onclick="goNext()">⏭</button>
-                    <input type="range" id="speech-rate" min="0.8" max="2" step="0.1" value="1.3" style="width:50px; accent-color:var(--primary);">
+                    <input type="range" id="speech-rate" min="0.8" max="2" step="0.1" value="1.3" style="width:60px; accent-color:var(--primary);">
                 </div>
             </div>
         </main>
     </div>
     <script>
         const studyPlan = [
-            { cat: "第一章", title: "🏺 米德三部族性格解析", img: "ch1_theory_chart_tw_1775878090737.png", labels: ["阿:皆溫", "蒙:皆鬥", "德:反轉"], text: "113年關鍵：米德研究證明性格是『文化編排』！阿拉佩什(兩性溫)、蒙杜古馬(兩性鬥)、德昌布利(女強男弱反轉)。打臉天生論的最強證據！" },
-            { cat: "第二章", title: "🥗 全球在地化：113年爆量點", img: "salad_bowl_multiculturalism_1775873580685.png", labels: ["品牌+在地文化", "113年命中8次"], text: "113年趨勢：看到跨國品牌加上在地文化即為答案！實例：麥當勞米漢堡、泰國合掌麥當勞叔叔、勞動部多國語言職安手冊。認準實務標籤！" },
-            { cat: "第三章", title: "⚖️ 主流化六大金剛", img: "cedaw_justice_symbol_1775875313437.png", labels: ["統析預評培機"], text: "絕殺清單：統、析、預、評、培、機！注意地雷：選項出現『配額制』或『保障名額』通通不是核心工具，那是暫行特別措施。" },
-            { cat: "第四章", title: "🧩 交織性：113年靈議題型", img: "intersectionality_health_map_1775875386888.png", labels: ["性別x階級x族群"], text: "113年進化：健康弱勢是『乘積效應』！如偏鄉低收原民婦女多重受阻。不再考定義，考的是多元交叉的邏輯識別。" },
-            { cat: "第五章", title: "🧬 113年醫學趨勢：女腺男小", img: "ch5_gendered_innovation_belt_1775910164894.png", labels: ["女肺腺癌", "男小細胞"], text: "113年絕殺：113-Q11肺癌型態？認準「女腺男小」！女性主得肺腺癌(與菸無關)；男性主得小細胞/鱗狀癌(與菸有關)。成因絕不相同！" },
-            { cat: "第五章", title: "🏥 尿道炎：生理 Sex 問題", img: "female_heart_symptoms_1775875369499.png", labels: ["硬體問題"], text: "113-Q13：尿道炎高發是因『生理構造(Sex)短、直、近』的硬體問題，絕非後天衛生習慣(Gender)問題。認清 Sex 性質！" },
-            { cat: "數據戰略", title: "🦴 骨鬆確診數據", img: "male_fragility_fracture_trap_1775875425752.png", labels: ["T-score < -2.5"], text: "保分題：看到這個負數別猶豫！T-score 小於 -2.5 確診為骨鬆。這是醫學數據題的必選靶心。" },
-            { cat: "最終戰略", title: "🏆 本課核心：社會建構論", img: "final_blessing_gold_1775901221619.png", labels: ["全班100分"], text: "總口訣：除了醫學數據(男骨折死22%等)，其餘一律選『社會建構論』。看到天生/必然直接排除。4月25日奪冠出發！" }
+            { cat: "第一章", title: "🏺 米德三部族性格解析", img: "ch1_theory_chart_tw_1775878090737.png", labels: ["阿:皆溫", "蒙:皆鬥", "德:反轉"], text: "114年下學期特訓：米德研究證明性格是『文化編排』！阿拉佩什(兩性皆溫)、蒙杜古馬(兩性皆鬥)、德昌布利(女強男弱反轉)。這是114年打臉天生論最強武器！" },
+            { cat: "第二章", title: "🥗 全球在地化：爆量熱點", img: "salad_bowl_multiculturalism_1775873580685.png", labels: ["品牌+在地文化", "113年命中8次"], text: "114年下獲勝關鍵：看到跨國品牌加上在地文化即為答案！例如：麥當勞米漢堡、多國語言手冊。這是114年最香的奪分點，認準實例識別！" },
+            { cat: "第三章", title: "⚖️ 主流化六大金剛", img: "cedaw_justice_symbol_1775875313437.png", labels: ["統析預評培機"], text: "絕殺清單：統、析、預、評、培、機！認準行政院六大工具。地雷提示：看到『配額制』請果斷排除，那是暫行特別措施，不是核心工具。" },
+            { cat: "第四章", title: "🧩 交織性：靈議題型", img: "intersectionality_health_map_1775875386888.png", labels: ["性別x階級x族群"], text: "114年奪冠邏輯：健康弱勢是『乘積效應』！如偏鄉低收原民婦女多重受阻。不再考死板定義，考的是多元交叉的現實邏輯識別！" },
+            { cat: "第五章", title: "🧬 醫學權威數據靶心", img: "ch5_gendered_innovation_belt_1775910164894.png", labels: ["女腺男小", "男死22%"], text: "醫學絕殺：肺癌認準「女腺男小」！尿道炎是『生理 Sex』硬體問題。男髖部骨折死亡率 22%，骨鬆確診 T-score 小於 -2.5。數字認準，分數必拿！" },
+            { cat: "最終戰略", title: "🏆 本課核心：社會建構論", img: "final_blessing_gold_1775901221619.png", labels: ["114下學期滿分"], text: "總口訣：除了生理確鑿數據(Sex)，其餘一律選『社會建構論』(Gender)。4月25日，讓我們114年全班勇奪100分冠軍。英雄們，出發！" }
         ];
         let cIndex = -1, isAuto = false, speech = window.speechSynthesis, voices = [];
         function init() { renderSidebar(); loadVoices(); if (speech.onvoiceschanged !== undefined) speech.onvoiceschanged = loadVoices; }
@@ -106,9 +99,6 @@
             speech.speak(utter);
         }
         function toggleAuto() { isAuto = !isAuto; document.getElementById('play-btn').textContent = isAuto ? '⏸' : '▶'; if (isAuto) playSpeech(studyPlan[cIndex].text); else speech.cancel(); }
-        function goNext() { if (cIndex < studyPlan.length - 1) jumpToSlide(cIndex + 1); }
-        function goPrev() { if (cIndex > 0) jumpToSlide(cIndex - 1); }
-        function toggleSidebar() { document.getElementById('sidebar').classList.toggle('active'); }
         init();
     </script>
 </body>
