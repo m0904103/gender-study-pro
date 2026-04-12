@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>性別健康與多元文化 | 全班100分拼圖版</title>
+    <title>性別健康多元文化 | 4/25 奪冠最終版</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;700;900&family=Outfit:wght@600;800&display=swap" rel="stylesheet">
@@ -27,54 +27,57 @@
         .bg-glow { position: fixed; inset: 0; z-index: -1; background: radial-gradient(circle at 20% 20%, rgba(99, 102, 241, 0.15) 0%, transparent 40%), radial-gradient(circle at 80% 80%, rgba(244, 114, 182, 0.1) 0%, transparent 40%); }
         .header { position: fixed; top: 0; left: 0; right: 0; height: calc(70px + var(--safe-top)); padding-top: var(--safe-top); display: flex; align-items: center; justify-content: space-between; padding-left: 20px; padding-right: 20px; background: rgba(5, 7, 10, 0.82); backdrop-filter: blur(25px); border-bottom: 1px solid var(--glass-border); z-index: 1000; }
         .logo-text { font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 1.4rem; background: linear-gradient(135deg, var(--primary), #fff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .menu-btn { background: var(--surface); border: 1px solid var(--glass-border); color: white; padding: 8px 15px; border-radius: 12px; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 8px; }
+        .menu-btn { background: var(--surface); border: 1px solid var(--glass-border); color: white; padding: 10px 18px; border-radius: 12px; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 8px; }
         .app-container { display: flex; height: 100vh; padding-top: calc(70px + var(--safe-top)); }
         .sidebar { width: 320px; background: rgba(10, 15, 25, 0.8); border-right: 1px solid var(--glass-border); overflow-y: auto; transition: 0.4s; position: absolute; left: -320px; top: 0; bottom: 0; z-index: 2000; backdrop-filter: blur(35px); }
         .sidebar.active { left: 0; }
         .nav-content { padding: 20px; padding-top: 100px; }
-        .nav-card { background: var(--surface); margin-bottom: 8px; padding: 14px; border-radius: 16px; cursor: pointer; transition: 0.2s; }
-        .nav-card.active { background: linear-gradient(135deg, var(--primary), #d97706); color: #000; }
+        .nav-card { background: var(--surface); margin-bottom: 8px; padding: 14px; border-radius: 16px; cursor: pointer; transition: 0.2s; border: 1px solid transparent; }
+        .nav-card.active { background: linear-gradient(135deg, var(--primary), #d97706); color: #000; border: none; }
         .main-view { flex: 1; position: relative; display: flex; flex-direction: column; background: #000; }
         .slide-container { flex: 1; display: flex; justify-content: center; align-items: center; position: relative; }
         #current-slide { max-width: 90%; max-height: 90%; object-fit: contain; border-radius: 12px; }
         .control-panel { background: rgba(15, 23, 42, 0.9); backdrop-filter: blur(30px); border-top: 1px solid var(--glass-border); padding: 25px; display: flex; flex-direction: column; gap: 15px; }
-        .lecture-text { font-size: 1.25rem; line-height: 1.6; color: #fff; max-height: 120px; overflow-y: auto; }
-        .circle-btn { width: 55px; height: 55px; border-radius: 50%; border: 1px solid var(--glass-border); background: var(--surface); color: white; display: flex; align-items: center; justify-content: center; cursor: pointer; }
+        .lecture-text { font-size: 1.3rem; line-height: 1.6; color: #fff; max-height: 120px; overflow-y: auto; }
+        .circle-btn { width: 55px; height: 55px; border-radius: 50%; border: 1px solid var(--glass-border); background: var(--surface); color: white; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: 0.3s; }
         .circle-btn.play { width: 65px; height: 65px; background: var(--primary); color: #000; font-size: 1.5rem; border: none; }
         .overlay-tags { position: absolute; inset: 0; pointer-events: none; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 10px; }
-        .data-tag { background: linear-gradient(135deg, #ef4444, #b91c1c); color: #fff; padding: 10px 20px; border-radius: 12px; font-weight: 900; font-size: 1.4rem; border: 3px solid #fff; transform: scale(0); transition: 0.4s; }
+        .data-tag { background: linear-gradient(135deg, #ef4444, #b91c1c); color: #fff; padding: 10px 24px; border-radius: 12px; font-weight: 900; font-size: 1.6rem; border: 3px solid #fff; transform: scale(0); transition: 0.4s; }
         .data-tag.show { transform: scale(1); }
-        @media (orientation: landscape) { .sidebar { position: relative; left: 0; width: 220px; } .control-panel { position: absolute; bottom: 10px; right: 10px; width: 320px; padding: 10px; border-radius: 15px; } .lecture-text { font-size: 0.95rem; max-height: 50px; } }
+        @media (orientation: landscape) { .sidebar { position: relative; left: 0; width: 220px; } .control-panel { position: absolute; bottom: 10px; right: 10px; width: 320px; padding: 10px; border-radius: 15px; } .lecture-text { font-size: 0.95rem; max-height: 50px; } .circle-btn { width: 40px; height: 40px; font-size: 1rem; } .circle-btn.play { width: 50px; height: 50px; font-size: 1.4rem; } }
     </style>
 </head>
 <body>
     <div class="bg-glow"></div>
     <header class="header">
-        <span class="logo-text">GENDER MASTER 2.1</span>
-        <button class="menu-btn" onclick="toggleSidebar()">☰ 內容目錄</button>
+        <span class="logo-text">100% DEFENSE 3.0</span>
+        <button class="menu-btn" onclick="toggleSidebar()">☰ 絕殺大綱</button>
     </header>
     <div class="app-container">
         <aside id="sidebar" class="sidebar"><div id="nav-list" class="nav-content"></div></aside>
         <main class="main-view">
             <div class="slide-container"><img id="current-slide" src=""><div id="overlay" class="overlay-tags"></div></div>
             <div class="control-panel">
-                <div id="lecture-body" class="lecture-text">系統初始化拼圖... 4/25 全班 100 分！</div>
+                <div id="lecture-body" class="lecture-text">英雄出征，全班100分！</div>
                 <div class="controls-row" style="display:flex; align-items:center; justify-content:center; gap:20px;">
                     <button class="circle-btn" onclick="goPrev()">⏮</button>
                     <button id="play-btn" class="circle-btn play" onclick="toggleAuto()">▶</button>
                     <button class="circle-btn" onclick="goNext()">⏭</button>
-                    <input type="range" id="speech-rate" min="0.8" max="2" step="0.1" value="1.3" style="width:50px; accent-color:var(--primary);">
+                    <input type="range" id="speech-rate" min="0.8" max="2" step="0.1" value="1.3" style="width:60px; accent-color:var(--primary);">
                 </div>
             </div>
         </main>
     </div>
     <script>
         const studyPlan = [
-            { cat: "第一章", title: "🏺 米德三部族性格對比", img: "ch1_theory_chart_tw_1775878090737.png", labels: ["阿拉佩什:溫順", "蒙杜古馬:好鬥", "德昌布利:反轉"], text: "100分拼圖：記住米德研究證明性格是『文化編排』！阿拉佩什(兩性溫順)、蒙杜古馬(兩性好鬥)、德昌布利(女強男弱的角色反轉)。選項說天生？秒殺它！" },
-            { cat: "第三章", title: "🛠️ 主流化六大金剛", img: "cedaw_justice_symbol_1775875313437.png", labels: ["統、析、預、評、培、機"], text: "口訣：統析預評培機 (統計/分析/預算/影響評估/培力/機制)。注意地雷：選項若出現『配額制』或『保障名額』，通通不是核心工具！那叫暫行特別措施。" },
-            { cat: "第四章", title: "📉 社會梯度與健康", img: "intersectionality_health_map_1775875386888.png", labels: ["高地位=高健康"], text: "WHO 核心拼圖：社會梯度指『社會地位越高，健康狀況越好』。這證明健康不只是性別問題，還交織了階級、財富與權力！" },
-            { cat: "第五章", title: "🦴 骨鬆確診分水嶺", img: "male_fragility_fracture_trap_1775875425752.png", labels: ["T-score < -2.5"], text: "數據地雷：看準醫學數值！T-score 小於 -2.5 確診為骨質疏鬆。看到負二點五別懷疑，直接得分！" },
-            { cat: "綜合命中", title: "🎯 數據總複習", img: "final_blessing_gold_1775901221619.png", labels: ["4-5歲恆定", "16歲同意權", "85%薪資差距"], text: "最後總合：GAD理論、22%男骨折死亡率、1/3委員會門檻、85%薪資差距。帶上這4塊新拼圖，全班100分出發奪冠！" }
+            { cat: "第一章", title: "🏺 米德研究：打臉基因論", img: "ch1_theory_chart_tw_1775878090737.png", labels: ["阿拉佩什:皆溫", "蒙杜古馬:皆鬥", "德昌布利:反轉"], text: "100分拼圖：記住米德研究！阿拉佩什(兩性溫順)、蒙杜古馬(兩性好鬥)、德昌布利(女強男弱反轉)。認準德昌布利！這是打臉『女性天生溫柔』的最強證據。性格是文化編排！" },
+            { cat: "第一章", title: "🧒 性別恆定：4-5 歲", img: "ch1_master_theory_tw_1775901143741.png", labels: ["4-5歲恆定期"], text: "數據戰略：幼兒在 4 到 5 歲達成性別恆定。這是選擇題的常客，數字不能錯。" },
+            { cat: "第三章", title: "🛠️ 主流化六大金剛", img: "cedaw_justice_symbol_1775875313437.png", labels: ["統、析、預、評、培、機"], text: "命中關鍵：六字訣統析預評培機！(統計/分析/預算/影響評估/培力/機制)。注意雷區：選項若出現『配額制』或『保障名額』，通通不是核心工具！那叫暫時特別措施。" },
+            { cat: "第三章", title: "⚖️ 法定比例：1/3 下限", img: "ch3_gender_quota_table_1775910362721.png", labels: ["委員會 1/3 下限"], text: "行政院所屬委員會，任一性別比例不得低於 1/3。背好分母是 3，不是 4 位英雄學員！" },
+            { cat: "第四章", title: "🔞 16 歲：法律界線", img: "ch3_age_16_consent_1775910116195.png", labels: ["16歲性同意權"], text: "法律門檻：16 歲是性同意權界線，不是 18 歲！未滿 16 即便自願也具法律責任。認準 16 歲數據陷阱。" },
+            { cat: "第五章", title: "🦴 骨鬆紅線：T-score -2.5", img: "male_fragility_fracture_trap_1775875425752.png", labels: ["T-score < -2.5"], text: "醫學靶心：看到這個負數別猶豫！T-score 小於 -2.5 確診為骨鬆。這是醫學數據題的保分題，直接拿走。" },
+            { cat: "第五章", title: "💀 男骨折死亡率：22%", img: "ch5_gendered_innovation_belt_1775910164894.png", labels: ["男骨折死 22%"], text: "奇襲數據：男髖部骨折死亡率 22% 遠高於女性。這證明了醫療介入中性別 Sex 的生理實質差異！" },
+            { cat: "綜合", title: "🎯 GAD 與主流目標", img: "final_blessing_gold_1775901221619.png", labels: ["GAD 翻轉權力"], text: "最終校閱：GAD 才是權力結構翻轉理論！帶上所有神經元連結，4月25日我們全班滿分榜單見！英雄們，出發奪冠！" }
         ];
         let currentIndex = -1, isAutoPlaying = false, speech = window.speechSynthesis, voices = [];
         function init() { renderSidebar(); loadVoices(); if (speech.onvoiceschanged !== undefined) speech.onvoiceschanged = loadVoices; }
@@ -82,9 +85,11 @@
         function renderSidebar() {
             const list = document.getElementById('nav-list'); let currentCat = "";
             studyPlan.forEach((item, i) => {
+                if (item.cat !== currentCat) {
+                    const t = document.createElement('div'); t.className = 'nav-group-title'; t.textContent = item.cat; list.appendChild(t); currentCat = item.cat;
+                }
                 const card = document.createElement('div'); card.className = 'nav-card'; card.id = `nav-${i}`;
-                card.innerHTML = `<div style="font-weight:800; font-size:0.85rem;">${item.title}</div>`;
-                card.onclick = () => jumpToSlide(i); list.appendChild(card);
+                card.innerHTML = `<div style="font-weight:800; font-size:0.85rem;">${item.title}</div>`; card.onclick = () => jumpToSlide(i); list.appendChild(card);
             });
         }
         function jumpToSlide(i) {
@@ -92,8 +97,7 @@
             document.querySelectorAll('.nav-card').forEach(c => c.classList.remove('active'));
             document.getElementById(`nav-${i}`).classList.add('active');
             const img = document.getElementById('current-slide'); img.style.opacity='0'; img.src = studyPlan[i].img; img.onload=()=>img.style.opacity='1';
-            document.getElementById('lecture-body').textContent = studyPlan[i].text;
-            renderOverlay(studyPlan[i]);
+            document.getElementById('lecture-body').textContent = studyPlan[i].text; renderOverlay(studyPlan[i]);
             if (isAutoPlaying) playSpeech(studyPlan[i].text);
         }
         function renderOverlay(item) {
