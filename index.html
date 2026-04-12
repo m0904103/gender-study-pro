@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>性別健康多元文化 | 114年下學期絕殺Final</title>
+    <title>性別健康多元文化 | 114下學期期中絕殺・封神版</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;700;900&family=Outfit:wght@600;800&display=swap" rel="stylesheet">
@@ -41,37 +41,39 @@
         .overlay-tags { position: absolute; inset: 0; pointer-events: none; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 10px; }
         .data-tag { background: linear-gradient(135deg, #ef4444, #b91c1c); color: #fff; padding: 8px 18px; border-radius: 12px; font-weight: 950; font-size: 1.5rem; border: 3px solid #fff; transform: scale(0); transition: 0.4s; }
         .data-tag.show { transform: scale(1); }
-        @media (orientation: landscape) { .sidebar { position: relative; left: 0; width: 220px; } .control-panel { position: absolute; bottom: 10px; right: 10px; width: 320px; padding: 10px; border-radius: 15px; } .lecture-text { font-size: 1rem; max-height: 50px; } }
+        @media (orientation: landscape) { .sidebar { position: relative; left: 0; width: 220px; } .control-panel { position: absolute; bottom: 10px; right: 10px; width: 320px; padding: 10px; border-radius: 15px; } .lecture-text { font-size: 0.95rem; max-height: 50px; } }
     </style>
 </head>
 <body>
     <div class="bg-glow"></div>
-    <header class="header"><span class="logo-text">114-2 FINAL MASTER</span><button class="menu-btn" onclick="toggleSidebar()">☰ 絕殺大綱</button></header>
+    <header class="header"><span class="logo-text">114-2 GOD DEFENSE</span><button class="menu-btn" onclick="toggleSidebar()">☰ 內容目錄</button></header>
     <div class="app-container">
         <aside id="sidebar" class="sidebar"><div id="nav-list" class="nav-content"></div></aside>
         <main class="main-view">
             <div class="slide-container"><img id="current-slide" src=""><div id="overlay" class="overlay-tags"></div></div>
             <div class="control-panel">
-                <div id="lecture-body" class="lecture-text">英雄校閱完畢，114年下學期必勝！</div>
+                <div id="lecture-body" class="lecture-text">封神戰場開啟，全班 100 分！</div>
                 <div style="display:flex; justify-content:center; gap:20px;">
+                    <button id="p-btn" style="background:var(--surface); color:white; border:1px solid rgba(255,255,255,0.1); width:50px; height:50px; border-radius:50%; cursor:pointer;" onclick="goPrev()">⏮</button>
                     <button id="play-btn" style="background:var(--primary); color:#000; border:none; width:65px; height:65px; border-radius:50%; font-size:1.5rem; cursor:pointer;" onclick="toggleAuto()">▶</button>
-                    <input type="range" id="speech-rate" min="0.8" max="2" step="0.1" value="1.3" style="width:60px; accent-color:var(--primary);">
+                    <button id="n-btn" style="background:var(--surface); color:white; border:1px solid rgba(255,255,255,0.1); width:50px; height:50px; border-radius:50%; cursor:pointer;" onclick="goNext()">⏭</button>
+                    <input type="range" id="speech-rate" min="0.8" max="2" step="0.1" value="1.3" style="width:50px; accent-color:var(--primary);">
                 </div>
             </div>
         </main>
     </div>
     <script>
         const studyPlan = [
-            { cat: "第一章", title: "🏺 米德性格對照補丁", img: "ch1_theory_chart_tw_1775878090737.png", labels: ["阿:皆溫", "蒙:皆鬥", "德:反轉"], text: "114年下學期校閱：米德研究證明性格是『文化編排』！阿拉佩什(兩性皆溫)、蒙杜古馬(兩性皆鬥)、德昌布利(女強男弱的角色反轉)。認準德昌布利！這是打臉天生論的最強論據。" },
-            { cat: "第二章", title: "🥗 全球在地化實例", img: "salad_bowl_multiculturalism_1775873580685.png", labels: ["麥當勞米漢堡", "113趨勢命中"], text: "114年下必考：看到跨國品牌加上在地化特徵(如米漢堡、多國手冊)選它就對了！" },
-            { cat: "第三章", title: "⚖️ 主流化六大金剛", img: "cedaw_justice_symbol_1775875313437.png", labels: ["統析預評培機"], text: "清單精確化：統、析、預、評、培、機！⚠️ 地雷：選項出現『配額制』或『保障名額』通通排除。那叫暫行特別措施，不是主流化核心工具。" },
-            { cat: "第三章", title: "㊙️ NGO 影子報告", img: "ch3_cedaw_articles_scroll_1775910131854.png", labels: ["NGO 監督工具"], text: "影子報告：民間 NGO 撰寫！用來監督官方報告，平衡權力。這是 CEDAW 實作中的民間武器。" },
-            { cat: "第四章", title: "🔞 16 歲：法律界線", img: "ch3_age_16_consent_1775910116195.png", labels: ["16歲性同意權"], text: "數據地雷：性同意權界線是 16 歲，不是 18 歲！認準 16，法律題必殺。" },
-            { cat: "第四章", title: "🧩 交織性邏輯門", img: "intersectionality_health_map_1775875386888.png", labels: ["性別x階級x族群"], text: "114年靈活考法：健康不平等是乘積效應！偏鄉、低收、原民婦女多重受阻，這就是交織性(Intersectionality)。" },
-            { cat: "第五章", title: "🦴 骨鬆紅線：T-score -2.5", img: "male_fragility_fracture_trap_1775875425752.png", labels: ["T-score < -2.5"], text: "醫學數據：T-score 小於 -2.5 確診為骨鬆。看到這個負數別猶豫，直接得分！" },
-            { cat: "數據戰略", title: "🏆 高頻命中彙整", img: "final_blessing_gold_1775901221619.png", labels: ["22%男死率", "1/3比例下限"], text: "戰略校閱：男髖部骨折死亡率 22%、性別預算、4-5歲性別恆定期。帶上所有數據反射，114年下學期全班100分！" }
+            { cat: "CH1 絕殺", title: "🏺 米德三部族性格對比", img: "ch1_theory_chart_tw_1775878090737.png", labels: ["阿:皆溫", "蒙:皆鬥", "徳:反轉"], text: "老師提醒：考古最愛考性格特徵。阿拉佩什(兩性皆溫)、蒙杜古馬(兩性皆鬥)、德昌布利(角色反轉/女強男弱)。認準德昌布利，它是打臉天生論最強論據！" },
+            { cat: "CH1 絕殺", title: "🧥 四大理論排序：心社認女", img: "ch1_master_theory_tw_1775901143741.png", labels: ["心➔社➔認➔女"], text: "100分穩定度：順序絕對不能錯！心理動力、社會學習、認知發展、女性主義。口訣：心社認女。認知發展強調 4-5 歲性別恆定期。" },
+            { cat: "CH2/CH3", title: "🥗 沙拉盤、泰勒與 GAD", img: "salad_bowl_multiculturalism_1775873580685.png", labels: ["沙拉盤拒同化", "GAD翻轉權力"], text: "核心掌握：沙拉盤是並存且拒絕同化。泰勒主張承認的政治與正名。主流理論是 GAD，強調從制度與權力結構進行翻轉！" },
+            { cat: "CH3 數據", title: "⚖️ 主流化六大金剛 (統析預評培機)", img: "cedaw_justice_symbol_1775875313437.png", labels: ["統、析、預、評、培、機"], text: "魔王補丁：六大工具是統析預評培機！⚠️ 注意：選項若出現『配額制』或『保障名額』通通不屬於核心工具！那是暫行特別措施。" },
+            { cat: "CH4 罠", title: "🏥 AAAQ 與經濟面向", img: "ch4_aaa_standard_icons_1775909974764.png", labels: ["付不起錢=可及性"], text: "高頻陷阱：『付不起錢/經濟負擔』屬於 Accessibility 可及性。不要選成品質不好。這是 113 年考古題的高頻殺人陷阱！" },
+            { cat: "CH4 罠", title: " GIA 事前工具與間接歧視", img: "intersectionality_health_map_1775875386888.png", labels: ["GIA 是事前!", "身高=間接歧視"], text: "114下攻略：GIA 必須在計畫研擬『事前』啟動。間接歧視是表面中立(如身高限制)但造成實質不平等。" },
+            { cat: "CH5 數據", title: "🦴 骨鬆 -2.5 與肺腺癌", img: "male_fragility_fracture_trap_1775875425752.png", labels: ["T-score < -2.5"], text: "靶心數據：T-score 小於 -2.5 即為確診。絕非 -1.5 或 -2.0。女性 90% 不菸卻得肺腺癌。男髖部骨折死亡率 22% 遠高於女性。" },
+            { cat: "最終戰略", title: "🚩 ALPHA：否定陷阱與神經元", img: "final_blessing_gold_1775901221619.png", labels: ["114下封神"], text: "總結清單：4-5歲恆定、16歲同意、1/3比例、影子報告(NGO撰寫)。除了生理 Sex 數據，其餘一律選社會建構論。出發登頂封神榜！" }
         ];
-        let cIndex = -1, isAuto = false, speech = window.speechSynthesis, voices = [];
+        let cIdx = -1, isAuto = false, speech = window.speechSynthesis, voices = [];
         function init() { renderSidebar(); loadVoices(); if (speech.onvoiceschanged !== undefined) speech.onvoiceschanged = loadVoices; }
         function loadVoices() { voices = speech.getVoices(); }
         function renderSidebar() {
@@ -82,7 +84,7 @@
             });
         }
         function jumpToSlide(i) {
-            cIndex = i; speech.cancel();
+            cIdx = i; speech.cancel();
             document.querySelectorAll('.nav-card').forEach(c => c.classList.remove('active'));
             document.getElementById(`nav-${i}`).classList.add('active');
             const img = document.getElementById('current-slide'); img.style.opacity='0'; img.src = studyPlan[i].img; img.onload=()=>img.style.opacity='1';
@@ -100,12 +102,12 @@
             speech.cancel(); const utter = new SpeechSynthesisUtterance(text);
             const v = voices.find(v => v.lang.includes('zh-TW') && (v.name.includes('Natural') || v.name.includes('Yating')));
             if (v) utter.voice = v; utter.lang = 'zh-TW'; utter.rate = document.getElementById('speech-rate').value;
-            utter.onend = () => { if (isAuto && cIndex < studyPlan.length - 1) setTimeout(()=>jumpToSlide(cIndex+1), 1000); };
+            utter.onend = () => { if (isAuto && cIdx < studyPlan.length - 1) setTimeout(()=>jumpToSlide(cIdx+1), 1000); };
             speech.speak(utter);
         }
-        function toggleAuto() { isAuto = !isAuto; document.getElementById('play-btn').textContent = isAuto ? '⏸' : '▶'; if (isAuto) playSpeech(studyPlan[cIndex].text); else speech.cancel(); }
-        function goNext() { if (cIndex < studyPlan.length - 1) jumpToSlide(cIndex + 1); }
-        function goPrev() { if (cIndex > 0) jumpToSlide(cIndex - 1); }
+        function toggleAuto() { isAuto = !isAuto; document.getElementById('play-btn').textContent = isAuto ? '⏸' : '▶'; if (isAuto) playSpeech(studyPlan[cIdx].text); else speech.cancel(); }
+        function goNext() { if (cIdx < studyPlan.length - 1) jumpToSlide(cIdx + 1); }
+        function goPrev() { if (cIdx > 0) jumpToSlide(cIdx - 1); }
         function toggleSidebar() { document.getElementById('sidebar').classList.toggle('active'); }
         init();
     </script>
