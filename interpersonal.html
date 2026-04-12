@@ -6,7 +6,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="theme-color" content="#020617">
-    <title>人際關係與協商 | 期中考考場特訓 V1.0</title>
+    <title>人際關係與協商 | 期中考大題攻堅 V2.0</title>
     <style>
         :root { 
             --primary: #fbbf24; --danger: #ef4444; --bg: #020617; --text: #f8fafc; 
@@ -58,14 +58,14 @@
     <div id="splash" onclick="goStudy()">
         <div style="width: 85%">
             <p style="color:var(--primary); font-weight:1000; letter-spacing:8px; margin-bottom:15px; font-size:0.9rem;">114-2 INTERPERSONAL RELATIONSHIP</p>
-            <h1 style="font-size:2.8rem; line-height:1.2; margin:15px 0; background:linear-gradient(135deg, #fff, var(--primary)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; font-weight:1000;">人際關係與協商<br><span style="font-size:2.2rem; color:var(--primary); text-shadow:0 0 20px rgba(251,191,36,0.3);">期中考考場特訓</span></h1>
-            <div style="background:var(--danger); color:white; padding:10px 35px; border-radius:12px; font-size:1.3rem; font-weight:900; display:inline-block; margin-top:10px;">36 頁精英特訓版 | V1.0</div>
+            <h1 style="font-size:2.8rem; line-height:1.2; margin:15px 0; background:linear-gradient(135deg, #fff, var(--primary)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; font-weight:1000;">人際關係與協商<br><span style="font-size:2.2rem; color:var(--primary); text-shadow:0 0 20px rgba(251,191,36,0.3);">期中考大題攻堅特訓</span></h1>
+            <div style="background:var(--danger); color:white; padding:10px 35px; border-radius:12px; font-size:1.3rem; font-weight:900; display:inline-block; margin-top:10px;">名詞 25% + 問答 75% | V2.0</div>
             <br><button class="btn-gold" style="margin-top:50px;">🏆 就緒</button>
         </div>
     </div>
     <header class="header">
         <button onclick="toggleSidebar()" style="background:var(--primary); border:none; padding:12px 25px; border-radius:15px; font-weight:1000; font-size:0.9rem;">☰ 目錄</button>
-        <div class="header-info" style="color:var(--primary); font-weight:1000; font-size:1rem; text-align:center; flex:1; padding:0 10px;">人際關係與協商</div>
+        <div class="header-info" style="color:var(--primary); font-weight:1000; font-size:1rem; text-align:center; flex:1; padding:0 10px;">題型：名詞解釋 + 問答題</div>
         <div style="background:rgba(0,0,0,0.6); padding:8px 15px; border-radius:50px; border:2px solid var(--primary); display:flex; align-items:center; gap:8px;"><input type="range" id="rate" min="0.5" max="2.0" value="1.3" step="0.1" style="width:50px; accent-color:var(--primary)"></div>
     </header>
     <div class="wrapper">
@@ -73,7 +73,7 @@
         <main class="viewport">
             <div class="screen"><div id="slide-view"></div><div id="overlay-layer" style="position:absolute; inset:0; pointer-events:none; display:flex; justify-content:center; align-items:center;"></div></div>
             <div class="console">
-                <div style="display:flex; justify-content:space-between; align-items:center"><span style="color:var(--primary); font-weight:1000; font-size:1rem;">核心考點特訓</span><span id="page-num" style="background:#1e40af; padding:6px 16px; border-radius:12px; font-size:0.9rem; font-weight:1000;">1 / 36</span></div>
+                <div style="display:flex; justify-content:space-between; align-items:center"><span style="color:var(--primary); font-weight:1000; font-size:1rem;" id="cat-title">名詞解釋 25%</span><span id="page-num" style="background:#1e40af; padding:6px 16px; border-radius:12px; font-size:0.9rem; font-weight:1000;">1 / 36</span></div>
                 <div id="lecture-content" class="text-body">。</div>
                 <div class="nav-btns">
                     <button class="control-btn" onclick="prev()">⬅ 上一頁</button>
@@ -84,42 +84,38 @@
     </div>
     <script>
         const studyPlan = [
-            { cat: "CH1 自我", title: "🏺 艾里斯的十個不合理信念", img: "ch1_ellis_10_myths_summary.png", labels: ["選艾里斯"], text: "同學請注意第一章絕對高頻考點：艾里斯提出的十個『不合理信念』。如果看到選項說『每個人都必須贏得所有人讚許』或『問題必須有一個最完美解答』，這就是迷思，會歪曲事實。" },
-            { cat: "CH1 自我", title: "🏺 自我意識來源：喬治赫伯米德", img: "ch1_gh_mead_self_origin.png", labels: ["米德"], text: "同學請記住，最早提出人類並非出生就有自我意識，而是透過社會溝通內化的社會心理學家是『喬治赫伯米德』。這在選擇題中是重點人名連線。" },
-            { cat: "CH1 自我", title: "🏺 周哈里窗：四大自我區域", img: "johari_window.png", labels: ["開盲隱未"], text: "周哈里窗說明了自我袒露與回饋的關係。開放自我代表雙方皆知，盲目自我代表自己不知但別人知。同學要記住，『口頭禪』通常屬於盲目自我區。" },
-            { cat: "CH1 自我", title: "🏺 爆炸性衝突：盲目自我的危機", img: "johari_window.png", labels: ["盲目區最險"], text: "同學請注意：在周哈里窗中，最容易因為缺乏自覺而引起『爆炸性衝突』的區域是『盲目自我』。而最不容易產生人際衝突的則是『開放自我』區。" },
-            { cat: "CH1 自我", title: "🏺 未知自我的開啟方法", img: "johari_window.png", labels: ["催眠/解析"], text: "如何將『未知自我』轉變為自己知道？考卷常見答案包含：催眠、投射測驗、夢的解析、以及心理治療。如果考題問以上皆是，請果斷勾選。" },
-            { cat: "CH2 激勵", title: "🪜 馬斯洛：五層需要理論", img: "maslow_pyramid.png", labels: ["生理➔自實"], text: "同學請按順序背好：生理、安全、社會、自尊、自我實現。馬斯洛認為充分發揮才能是『自我實現』需求。只要滿足低層次，就會追求高層次。" },
-            { cat: "CH2 激勵", title: "🪜 需求位階辨析：社會需求", img: "maslow_pyramid.png", labels: ["社會=中高"], text: "馬斯洛陷阱題：社會需求（愛的世界）屬於『中高階層次』，而非低階。最高層次單選一定是自我實現。馬斯洛理論最大的貢獻是『管理人性化』。" },
-            { cat: "CH2 激勵", title: "🪜 三個心靈系統之：本我系統", img: "ch2_3_heart_systems_logic.png", labels: ["利益心"], text: "心靈三系統辨析：價值系統是『是非心』，感情系統是『慈悲/憎恨心』。而遵循快樂法則、追求原始慾望快速滿足的『本我系統』就是『利益心』。" },
-            { cat: "CH2 激勵", title: "🪜 圓融人際關係：六大要訣", img: "ch2_interpersonal_6_secrets.png", labels: ["頭軟口圓心正"], text: "同學請背好六要訣口訣：頭要軟、面帶法喜、口要圓、心要正、肚要大、以及腳要蹲姿勢低。這是圓融處世、尊重別人的指導方針。" },
-            { cat: "CH2 激勵", title: "🪜 不受歡迎族群：上帝族", img: "ch2_unpopular_groups_types.png", labels: ["自大與霸道"], text: "人際負面清單：上帝族代表自大以自我為真理，皇帝族代表獨裁霸道。同學看到這些形容詞，要能正確連結到對應的族群標籤。" },
-            { cat: "CH3 健康", title: "🏥 WHO 健康定義：三位一體", img: "who_health_trinity_definition_1775988220233_1775973073187.png", labels: ["生心理社會"], text: "WHO 完美健康定義：生理、心理、與社會完好 Social Well-being。同學請記住，絕不僅僅是指沒有病痛，社會適應（社會完好）是考題常設點。" },
-            { cat: "CH3 健康", title: "🏥 社會再適應量表：SRRS", img: "ch3_srrs_holmes_rahe_table.png", labels: ["Holmes & Rahe"], text: "1967 年編製 SRRS 量表的人是 Holmes 與 Rahe。同學請背數據：得分在 200 到 299 分之間，屬於『中度』生活危機組。" },
-            { cat: "CH3 健康", title: "🏥 最優睡姿：右側臥", img: "ch3_best_sleeping_posture.png", labels: ["選右側"], text: "健康實務考點：下列哪一種睡姿最好？請選『右側臥』。這對減輕臟器負擔最有利。同時，人感覺最舒服的溫度區間是『22 到 26 度』。" },
-            { cat: "CH3 健康", title: "🏥 營養比例：醣類佔六成", img: "ch3_nutrition_balance_pie_chart.png", labels: ["醣類 58-68%"], text: "同學請點選數據：醣類應佔總熱量 58% 到 68%。蛋白質佔 10% 到 14%，脂肪佔 20% 到 30%。這在選擇題中常用數字替換來設誘餌。" },
-            { cat: "CH3 健康", title: "🏥 性格與壓力：A型性格", img: "ch3_type_a_b_personality.png", labels: ["侵略與急迫"], text: "A型性格特徵：富有侵略性、競爭性、強烈急迫感。同學要記住：這類人易產生心血管疾病與高血壓。內控者則相信『成功操之在我』。" },
-            { cat: "CH3 健康", title: "🏥 習得的無助感：Learned Helplessness", img: "ch3_learned_helplessness_dog.png", labels: ["外控性格"], text: "長期認為命運受外力控制的人，會產生『習得的無助感』。這在心理學上是指因習慣聽天由命而產生的無力感。對應的是外控性格。" },
-            { cat: "CH3 健康", title: "🏥 幽默功能：不含降低膽固醇", img: "ch3_humor_benefits_list.png", labels: ["排除膽固醇"], text: "醫學研究陷阱：幽默可以放鬆肌肉、釋放腦啡、降低血壓。但同學要小心，選項若說幽默能『降低膽固醇』，則是錯誤選項。" },
-            { cat: "CH4 知覺", title: "🧅 印象形成：洋蔥模型", img: "ch4_impression_onion_model.png", labels: ["洋蔥"], text: "Wrightsman 主張印象形成就像剝『洋蔥』一樣，由外到裡。另外請背好三階段流程：感覺 ➔ 組織 ➔ 評價。口訣：感覺組評。" },
-            { cat: "CH4 知覺", title: "🧅 人知哲學：孔子與名言", img: "ch4_confucius_wisdom_quotes.png", labels: ["不知言無以知人"], text: "中國哲學連結：孔子曾說『不知言，無以知人也』。另外同學請記住 Flesch 說過：『思考是無聲語言，文字是紙上語言』。這都是名言配對題。" },
-            { cat: "CH4 知覺", title: "🧅 月暈效應：Halo Effect", img: "ch4_halo_effect_visual.png", labels: ["一好百好"], text: "月暈效應是指僅憑某一方面特質推論其他特質。例如長得好看就覺得他聰明又善良。認準關鍵字：『一好百好』或『僅憑一端』。" },
-            { cat: "CH4 知覺", title: "🧅 印象形成的核心特質", img: "ch4_central_trait_asch_exp.png", labels: ["核心權數"], text: "在印象形成中，權數比重最大、起決定作用的訊息稱為『核心特質』。經典實驗是『熱忱』與『冷淡』對個人印象的巨大差異。" },
-            { cat: "CH4 知覺", title: "🧅 歸因原則：加大與折扣", img: "ch4_attribution_principles.png", labels: ["加大 Vs 折扣"], text: "行為受限制越多，歸因於個人因素可能性越高，這叫『加大原則』。反之，如果多重因素並存，單一因素重要性降低，則叫『折扣原則』。" },
-            { cat: "CH4 知覺", title: "🎭 戲劇理論：高夫曼", img: "ch4_goffman_dramaturgy_stage.png", labels: ["互動如演戲"], text: "高夫曼 Goffman 提出的『戲劇理論』。他主張社會互動就像演戲，每個人都在進行身份的舞台表演。同學請記住關鍵字：『戲目』與『自我表現』。" },
-            { cat: "CH4 知覺", title: "🎭 效應：得寸進尺與軟土深掘", img: "ch4_foot_in_the_door_effect.png", labels: ["軟土深掘"], text: "俗語『軟土深掘』在心理學上對應的是『得寸進尺效應』。這是建立穩定一致公眾形象後產生的行為偏誤。" },
-            { cat: "CH4 知覺", title: "🎭 防衛機制：十二種機制", img: "ch4_defense_mechanisms_12.png", labels: ["投射/合理化/退化"], text: "重點辨析：將自身慾念轉嫁他人是『投射』；為挫折找貌似合理藉口是『合理化』。而以『幼稚行為』博取同情則是『退化作用』。共十二種。" },
-            { cat: "CH5 吸引", title: "💘 強化理論：酬賞與處罰", img: "ch5_reinforcement_theory_happy.png", labels: ["快樂吸引"], text: "同學請注意：如果你偏好親切的醫師或是鼓勵型的父母，這可用『強化理論』解釋。因為人類天生會被帶給我們酬賞與快樂的人所吸引。" },
-            { cat: "CH5 吸引", title: "💘 亞里斯多德：美麗是推薦函", img: "ch5_aristotle_beauty_quote.png", labels: ["美麗=推薦函"], text: "古希臘名言連線：亞里斯多德 Aristotle 說過：『美麗是最好的推薦函』。這證明了外表吸引力在人際吸引初期具備極大權數。" },
-            { cat: "CH5 吸引", title: "💘 得失理論：嚴格到寬鬆效應", img: "ch5_gain_loss_theory_pattern.png", labels: ["負➔正 最喜"], text: "同學請背好這個模式：先負評後正評的老師，比一直都正評的老師更受歡迎。因為獲得自我尊嚴的『增加』會大幅提升吸引力。" },
-            { cat: "CH5 吸引", title: "💘 仰巴腳效應：JFK 實例", img: "ch5_pratfall_effect_jfk.png", labels: ["小錯加分"], text: "能力極強的人若不小心出錯，聲望反而上升，這叫『仰巴腳效應』。經典案例是甘迺迪總統在豬玀灣事件後，民調支持率反升。" },
-            { cat: "CH5 吸引", title: "💘 吸引力過濾理論：四階段", img: "ch5_duck_filtering_model.png", labels: ["社會➔認知"], text: "Duck 在 1973 年提出的模型。順序為：(1)社會偶發 (2)互動前線索 (3)互動線索 (4)認知線索。同學請背好這個由外而內的過濾順序。" },
-            { cat: "CH5 吸引", title: "💘 人際距離：親密區 1.5 英呎", img: "ch5_edward_hall_distance_zones.png", labels: ["1.5 英呎"], text: "哈爾劃分的人際距離：親密區（身體接觸）是 0 到 1.5 英呎。同學要注意，1.5 英呎如果是大約數據，請選 0.46 公尺。社交區則是 4 到 12 英呎。" },
-            { cat: "CH5 吸引", title: "💘 愛情三因論：三位一體", img: "ch5_sternberg_love_triangle.png", labels: ["激情親密奉獻"], text: "史登堡 Sternberg 的三角形：激情、親密、責任奉獻。三者兼備是『完美之愛』。同學請記住，讓愛情天長地久的最主要因素是『責任奉獻』。" },
-            { cat: "CH6 溝通", title: "🗣️ TA 溝通分析：Berne", img: "ch6_ta_pac_model_berne.png", labels: ["P-A-C"], text: "TA 理論三自我：父母、成人、幼兒。刺激與反應線平行叫『互補式』；交叉導致停頓叫『交錯式』。隱藏式則最複雜，內外訊息不一。" },
-            { cat: "CH6 溝通", title: "🗣️ 非語言功能：管制與象徵", img: "ch6_nonverbal_types_emblem.png", labels: ["象徵 = 代替單字"], text: "肢體語法：可代替單字或句子的符號稱為『象徵 Emblem』。用來控制交談流程（如點頭）則稱『管制者 Regulator』。" },
-            { cat: "CH6 溝通", title: "🗣️ 電話技巧：前三十秒", img: "ch6_phone_etiquette_30s.png", labels: ["30 秒最重要"], text: "電話溝通聖經：前三十秒最重要，決定主導談話的品質。同學要記住：因為看不見肢體，聲音與語氣變成了傳達情感的唯一主要工具。" },
-            { cat: "大終局", title: "🏆 特訓完成：成績滿分凱旋", img: "final_blessing_gold_interpersonal.png", labels: ["100% 命中"], text: "36 頁特訓全量完成。從 SRRS 中度數據到 TA 互補溝通。所有核心與陷阱皆已封裝。助教祝各位在『人際關係與協商』考場凱旋滿分！" }
+            { cat: "名詞解釋 25%", title: "📝 艾里斯的迷思 (Irrational Beliefs)", img: "ch1_ellis_10_myths_summary.png", labels: ["Albert Ellis"], text: "同學請注意解釋名詞第一題：艾里斯的迷思。定義為：個體對生活所抱持的不合理信念或態度，會歪曲事實並導致不愉快的情感。例如：認為每個人都必須贏得所有人的讚許。" },
+            { cat: "名詞解釋 25%", title: "📝 周哈里窗 (Johari Window)", img: "johari_window.png", labels: ["Luft & Ingham"], text: "定義：由 Luft 與 Ingham 提出的模型，用來描述自我袒露與他人回饋在人際互動中的關係。分為開放、盲目、隱藏、與未知四個區域。" },
+            { cat: "名詞解釋 25%", title: "📝 自我袒露 (Self-disclosure)", img: "ch1_gh_mead_self_origin.png", labels: ["分享內心"], text: "定義：一種特殊的雙向溝通過程，個體主動向他人分享內心的感受、資訊、以及個人背景，目的在於增進彼此的了解與親密關係。" },
+            { cat: "名詞解釋 25%", title: "📝 社會再適應量表 (SRRS)", img: "ch3_srrs_holmes_rahe_table.png", labels: ["生活危機評估"], text: "定義：1967 年由 Holmes 與 Rahe 編製，用來量化評估個體在特定時間內，因生活事件改變而承受的心理壓力程度。" },
+            { cat: "名詞解釋 25%", title: "📝 月暈效應 (Halo Effect)", img: "ch4_halo_effect_visual.png", labels: ["以偏概全"], text: "定義：知覺者在評價他人時，傾向根據對方的單一特質（如外貌佳）而盲目推論其餘特質（如性格也佳）的認知偏誤。" },
+            { cat: "名詞解釋 25%", title: "📝 歸因 (Attribution)", img: "ch4_attribution_principles.png", labels: ["因果推論"], text: "定義：個體推論他人行為背後原因的認知過程。可分為內控歸因（歸因於個人性格、努力）與外控歸因（歸因於環境、運氣）。" },
+            { cat: "名詞解釋 25%", title: "📝 核心特質 (Central Trait)", img: "ch4_central_trait_asch_exp.png", labels: ["關鍵權數"], text: "定義：在形成他人印象時，起決定性作用、權數比重最大的訊息特質。如 Asch 實驗中的『熱忱』對比『冷淡』。" },
+            { cat: "名詞解釋 25%", title: "📝 戲劇理論 (Dramaturgy)", img: "ch4_goffman_dramaturgy_stage.png", labels: ["高夫曼"], text: "定義：由 Goffman 提出，將社會互動比喻為舞台表演，個體透過『自我表現』來管理他人對自己的印象。包含戲目前台與隱私後台。" },
+            { cat: "名詞解釋 25%", title: "📝 仰巴腳效應 (Pratfall Effect)", img: "ch5_pratfall_effect_jfk.png", labels: ["出醜加分"], text: "定義：又稱出醜效應。指表現優異、能力強的人，若發生微小的錯誤或失誤，反而會因為展現人性化的一面而增加其人際吸引力。" },
+            { cat: "名詞解釋 25%", title: "📝 溝通分析 (TA)", img: "ch6_ta_pac_model_berne.png", labels: ["Eric Berne"], text: "定義：由 Eric Berne 創立。透過分析人際互動中的自我狀態（父母、成人、兒童）來理解並改善溝通效率的心理學工具。" },
+            { cat: "名詞解釋 25%", title: "📝 象徵 (Emblem)", img: "ch6_nonverbal_types_emblem.png", labels: ["肢體語法"], text: "定義：非語言溝通的一種。指具備特定文化意義、可直接代替單字或句子的肢體動作。如：豎起大拇指代表稱讚。" },
+            { cat: "名詞解釋 25%", title: "📝 防衛機制 (Defense Mechanism)", img: "ch4_defense_mechanisms_12.png", labels: ["自我保護"], text: "定義：個體為了減輕焦慮、保護自我免受挫折，而在潛意識中採取的適應性反應。如：合理化、投射、退化作用。" },
+            { cat: "問答題 75%", title: "📝 問題 1：如何改善自我概念？", img: "ch1_improve_self_concept.png", labels: ["答題要點"], text: "回答本題需列出四點：一、致力改變，接受自我是一個持續成長的過程。二、獲取知識，認清受哪些社會觀點影響。三、設定具體且實際的目標。四、建立支持性的環境（多與肯低者互動）。" },
+            { cat: "問答題 75%", title: "📝 問題 2：自我袒露的六大功能為何？", img: "ch1_self_disclosure_functions.png", labels: ["答題要點"], text: "功能包含：(1)發洩悶氣。(2)增進因應能力。(3)自我澄清：獲得不同觀點。(4)社會認可：確認觀點正確。(5)社會控制：管理他人印象。(6)關係發展：建立深度連結。" },
+            { cat: "問答題 75%", title: "📝 問題 3：馬斯洛需求理論的內容與意義？", img: "maslow_pyramid.png", labels: ["生理➔自實"], text: "內容：生理、安全、社會（中高階）、自尊、自我實現。意義：強調低層次滿足後才會追求高層次。實務價值在於『管理人性化』，激勵個人發揮潛能。" },
+            { cat: "問答題 75%", title: "📝 問題 4：壓力管理的五大策略有哪些？", img: "ch3_stress_mgmt_5_strategies.png", labels: ["答題要點"], text: "一、消除或緩和壓力源（最有效）。二、發現幽默（降低血壓、釋放腦啡）。三、社會支持。四、調整認知（積極思考）。五、培養放鬆技巧（如呼吸法、肌肉鬆弛法）。" },
+            { cat: "問答題 75%", title: "📝 問題 5：解釋 A 型與 B 型性格對壓力的反應？", img: "ch3_type_a_b_personality.png", labels: ["A 型與高血壓"], text: "A 型性格：富有侵略性、競爭強、急迫感，易因壓力導致高血壓或心血管疾病。B 型性格：較隨性、不急躁。內控者通常比外控者更能積極應對壓力。" },
+            { cat: "問答題 75%", title: "📝 問題 6：影響人際知覺的要素為何？", img: "ch4_factors_interpersonal_perception.png", labels: ["被/知/情"], text: "包含三要素。一、被知覺者：外貌與行為。二、知覺者：受認知型態與人性哲學觀影響。三、交往情境：環境的人事時地物會改變對行為的解讀。" },
+            { cat: "問答題 75%", title: "📝 問題 7：歸因理論中的共變原則？", img: "ch4_attribution_principles.png", labels: ["區一同"], text: "凱利 Kelley 指出判斷行為歸因有三指標：1. 區別性：行為是否只在特定情境發生。2. 一致性：行為是否在不同時間重複出現。3. 同意性：別人是否也在此情境做相同反應。" },
+            { cat: "問答題 75%", title: "📝 問題 8：為什麼要從事印象整飾？", img: "ch4_impression_management_why.png", labels: ["答題要點"], text: "理由包含：(1)維持自尊 (Save Face)。(2)界定互動關係程度。(3)發揮個人影響力。(4)符合社會與角色期望。(5)建立穩定一致的公眾形象。" },
+            { cat: "問答題 75%", title: "📝 問題 9：華人文化中的人情與面子？", img: "ch4_chinese_face_favor.png", labels: ["臉與面"], text: "人情包含情緒、交易與規範。面子區分為：『臉』代表道德人格；『面』代表社會成就認可。華人互動常重情勝於理，導致表裡不一。" },
+            { cat: "問答題 75%", title: "📝 問題 10：人際吸引的三大影響因素？", img: "ch5_attraction_factors.png", labels: ["情/個/適"], text: "一、情境因素：地理接近性，增加熟悉度。二、個人因素：外表吸引力、個性與能力（含仰巴腳效應）。三、適配性：態度價值觀的相似性，或特質互補性。" },
+            { cat: "問答題 75%", title: "📝 問題 11：解釋愛情三因論與完美之愛？", img: "ch5_sternberg_love_triangle.png", labels: ["激情親密奉獻"], text: "史登堡提出愛由『激情、親密、責任奉獻』構成。三者兼具稱為完美之愛。責任奉獻是維持長久關係的關鍵能量。愛會隨時間動態變化要素比重。" },
+            { cat: "問答題 75%", title: "📝 問題 12：溝通分析 (TA) 的自我狀態與型態？", img: "ch6_ta_pac_model_berne.png", labels: ["答題要點"], text: "狀態：父母 (P)、成人 (A)、兒童 (C)。型態：(1)互補式：平行溝通有效。(2)交錯式：交叉溝通停頓。(3)隱藏式：內外不一最複雜。目標是從『成人』狀態出發溝通。" },
+            { cat: "問答題 75%", title: "📝 問題 13：非語言溝通的五大特性？", img: "ch6_nonverbal_5_features.png", labels: ["模糊/持續"], text: "一、模糊性：微笑有多種解釋。二、持續性：共處即存在。三、多重管道：看、聽、觸覺同步。四、情感性：呈現真實感受，比語言更可信。五、文化差異性。" },
+            { cat: "問答題 75%", title: "📝 問題 14：如何克服電話溝通障礙？", img: "ch6_phone_etiquette_30s.png", labels: ["平心靜氣"], text: "關鍵技巧：前三十秒掌握主導權、向對方禮貌問好。核心在於：聚精會神、推敲聲音含義、建立自信、並保持平心靜氣。因無肢體動作，聲音品質是成敗關鍵。" },
+            { cat: "問答題 75%", title: "📝 問題 15：解釋社會交換理論與公平理論？", img: "ch5_social_exchange_equity.png", labels: ["酬賞與代價"], text: "社會交換論：以最小代價換取最大酬賞。公平理論：交換論的分支，強調關係維持取決於雙方是否覺得互蒙其利。包含實質與心理公平。" },
+            { cat: "魔鬼數據彙整", title: "📊 數據死穴 1：SRRS 評分區間", img: "ch3_srrs_holmes_rahe_table.png", labels: ["200-299 = 中度"], text: "解釋名詞必考數據：SRRS 得分在 200 到 299 分之間代表『中度』生活危機組。300 分以上則屬於重度危險。" },
+            { cat: "魔鬼數據彙整", title: "📊 數據死穴 2：溫濕度與距離", img: "ch5_edward_hall_distance_zones.png", labels: ["22-26度 / 1.5呎"], text: "環境數據：最適溫度 22 到 26 度。人際親密距離：1.5 英尺（0.46 公尺）。社交區距離：4 到 12 英尺。睡眠姿勢建議：右側臥。" },
+            { cat: "魔鬼數據彙整", title: "📊 數據死穴 3：營養黃金比例", img: "ch3_nutrition_balance_pie_chart.png", labels: ["醣類佔 6 成"], text: "健康飲食數據：醣類 58-68%（最高），脂肪 20-30%，蛋白質 10-14%。數據若在問答題中使用能大幅增加論述深度。" },
+            { cat: "魔鬼數據彙整", title: "📊 數據死穴 4：非語言與眼光接觸", img: "ch6_nonverbal_types_emblem.png", labels: ["50-70% 眼光"], text: "溝通數據補丁：眼光接觸應佔對話時間 50% 到 70%。電話溝通的前 30 秒最具決定性。TA 狀態共三層。不合理信念共十個。" },
+            { cat: "大終局", title: "🏆 特訓完成：25+75 全拿", img: "final_blessing_gold_interpersonal.png", labels: ["100 分凱旋"], text: "36 頁大題攻堅特訓完成。從解釋名詞的精確定義到問答題的三段式架構，您已擁有獲取高分的完整邏輯。祝同學這場考試旗開得勝！" }
         ];
         let cuI = -1; let timer = null; const synth = window.speechSynthesis;
         function toggleSidebar() { document.getElementById('sidebar').classList.toggle('open'); }
@@ -130,6 +126,7 @@
             document.querySelectorAll('.nav-item').forEach(x=>x.classList.remove('active'));
             const tg=document.getElementById(`ni-${i}`); if(tg) tg.classList.add('active');
             document.getElementById('page-num').innerText=`${i+1} / ${studyPlan.length}`;
+            document.getElementById('cat-title').innerText=studyPlan[i].cat;
             document.getElementById('slide-view').style.backgroundImage=`url('${studyPlan[i].img}')`;
             renderOverlay(studyPlan[i].special, studyPlan[i].labels);
             document.getElementById('lecture-content').innerText=studyPlan[i].text;
@@ -139,7 +136,7 @@
         }
         function prev() { if(cuI>0) next(cuI-1); }
         function clearTimer() { if(timer) { clearTimeout(timer); timer=null; } }
-        function renderOverlay(sp, ls) { const l=document.getElementById('overlay-layer'); l.innerHTML=''; let its=''; if(sp==='theory') its+='<div class="label-unit" style="transform:translateY(-80px)">心➔社➔認➔女</div>'; if(ls) { ls.forEach(t=>{its+=`<div class="label-unit">${t}</div>`}); } l.innerHTML=its; }
+        function renderOverlay(sp, ls) { const l=document.getElementById('overlay-layer'); l.innerHTML=''; let its=''; if(ls) { ls.forEach(t=>{its+=`<div class="label-unit">${t}</div>`}); } l.innerHTML=its; }
     </script>
 </body>
 </html>
