@@ -6,7 +6,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="theme-color" content="#020617">
-    <title>性別、健康與多元文化 | 考前特訓系統 V9.1</title>
+    <title>期中考考前特訓 | 性別、健康與多元文化</title>
     <style>
         :root { 
             --primary: #fbbf24; --danger: #ef4444; --bg: #020617; --text: #f8fafc; 
@@ -51,20 +51,21 @@
         .control-btn:active { transform: scale(0.92); background: var(--primary); color: #000; }
         .btn-gold { background: var(--primary); color: #000; border: none; padding: 25px 90px; font-size: 2rem; font-weight: 1000; border-radius: 100px; cursor: pointer; box-shadow: 0 15px 40px rgba(251, 191, 36, 0.6); }
         #splash { position: fixed; inset: 0; background: #020617; z-index: 5000; display: flex; justify-content: center; align-items: center; text-align: center; }
+        @media (max-width: 400px) { .header-info { font-size: 0.85rem !important; } .label-unit { font-size: 1.8rem; } }
     </style>
 </head>
 <body>
     <div id="splash" onclick="goStudy()">
         <div style="width: 85%">
-            <p style="color:var(--primary); font-weight:1000; letter-spacing:10px; margin-bottom:15px; font-size:1rem;">GENDER HEALTH V9.1</p>
-            <h1 style="font-size:2.8rem; line-height:1.2; margin:15px 0; background:linear-gradient(135deg, #fff, var(--primary)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; font-weight:1000;">性別、健康與多元文化<br><span style="font-size:2rem; opacity:0.8;">考前特訓系統</span></h1>
-            <div style="background:var(--danger); color:white; padding:10px 35px; border-radius:12px; font-size:1.3rem; font-weight:900; display:inline-block; margin-top:10px;">36 頁全量覆蓋版</div>
+            <p style="color:var(--primary); font-weight:1000; letter-spacing:8px; margin-bottom:15px; font-size:0.9rem;">114-2 MIDTERM PREP</p>
+            <h1 style="font-size:2.8rem; line-height:1.2; margin:15px 0; background:linear-gradient(135deg, #fff, var(--primary)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; font-weight:1000;">性別、健康與多元文化<br><span style="font-size:2.2rem; color:var(--primary); text-shadow:0 0 20px rgba(251,191,36,0.3);">期中考考前特訓</span></h1>
+            <div style="background:var(--danger); color:white; padding:10px 35px; border-radius:12px; font-size:1.3rem; font-weight:900; display:inline-block; margin-top:10px;">36 頁旗艦大滿貫 | V9.2</div>
             <br><button class="btn-gold" style="margin-top:50px;">🏆 開始</button>
         </div>
     </div>
     <header class="header">
         <button onclick="toggleSidebar()" style="background:var(--primary); border:none; padding:12px 25px; border-radius:15px; font-weight:1000; font-size:0.9rem;">☰ 目錄</button>
-        <div class="header-info" style="color:var(--primary); font-weight:1000; font-size:1rem; text-align:center; flex:1; padding:0 10px;">性別、健康與多元文化</div>
+        <div class="header-info" style="color:var(--primary); font-weight:1000; font-size:1rem; text-align:center; flex:1; padding:0 10px;">期中考考前特訓</div>
         <div style="background:rgba(0,0,0,0.6); padding:8px 15px; border-radius:50px; border:2px solid var(--primary); display:flex; align-items:center; gap:8px;"><input type="range" id="rate" min="0.5" max="2.0" value="1.3" step="0.1" style="width:50px; accent-color:var(--primary)"></div>
     </header>
     <div class="wrapper">
@@ -72,7 +73,7 @@
         <main class="viewport">
             <div class="screen"><div id="slide-view"></div><div id="overlay-layer" style="position:absolute; inset:0; pointer-events:none; display:flex; justify-content:center; align-items:center;"></div></div>
             <div class="console">
-                <div style="display:flex; justify-content:space-between; align-items:center"><span style="color:var(--primary); font-weight:1000; font-size:1.1rem;">考場識別指南</span><span id="page-num" style="background:#1e40af; padding:6px 16px; border-radius:12px; font-size:0.9rem; font-weight:1000;">1 / 36</span></div>
+                <div style="display:flex; justify-content:space-between; align-items:center"><span style="color:var(--primary); font-weight:1000; font-size:1rem;">考場識別指南</span><span id="page-num" style="background:#1e40af; padding:6px 16px; border-radius:12px; font-size:0.9rem; font-weight:1000;">1 / 36</span></div>
                 <div id="lecture-content" class="text-body">。</div>
                 <div class="nav-btns">
                     <button class="control-btn" onclick="prev()">⬅ 上一頁</button>
@@ -90,7 +91,7 @@
             { cat: "第二部分", title: "🧬 發展理論絕對時序", img: "ch1_master_theory_tw_1775901143741.png", special: "theory", text: "主要的性別發展理論排序為：一、心理動力 ➔ 二、社會學習 ➔ 三、認知發展 ➔ 四、女性主義。目前的學術共識是，女性主義旨在打破父權結構與二元框架。口訣：心、社、認、女。" },
             { cat: "第二部分", title: "🧒 柯爾伯格：性別恆定期", img: "ch1_master_theory_tw_1775901143741.png", special: "kohlberg", text: "孩童在 4 到 5 歲達成性別恆定。在此階段，孩子明白性別不隨外表改變：男孩即使穿上裙子，也不會因此變成女孩。認準 4 到 5 歲這個關鍵期。" },
             { cat: "第三部分", title: "🍱 全球在地化：品牌在地實例", img: "ch2_rice_burger_glocal_1775909945923.png", labels: ["麥當勞米漢堡"], text: "全球在地化 (Glocalization) 代表全球品牌融入當地細節。例如麥當勞為迎合台灣環境推出米漢堡或沙茶雞排堡。如果題目出現知名品牌與當地口味的融合，請選此項。" },
-            { cat: "第三部分", title: "🏺 沙拉盤模式：尊重差異", img: "salad_bowl_multiculturalism_1775873580685.png", labels: ["沙拉盤 Salad Bowl"], text: "台灣已從強迫同化的『大熔爐』，轉向尊重差異並存的『沙拉盤』模式。記住，沙拉盤代表每種文化都能保持其原來的顏色，在社會中和諧共處，而不是攪碎在一起。" },
+            { cat: "第三部分", title: "🏺 沙拉盤模式：尊重差異", img: "salad_bowl_multiculturalism_1775873580685.png", labels: ["沙拉盤 Salad Bowl"], text: "台灣已從強迫同化的『大熔爐』，轉向尊重差異並存的『沙拉盤』模式。記住，沙拉盤代表每種文化能保持其原來的顏色，在社會中和諧共處，而不是攪碎在一起。" },
             { cat: "第三部分", title: "🧥 新住民正名：去商品化", img: "ch2_political_concept_tw_1775901180201.png", labels: ["去商品化"], text: "將『外籍新娘』正名為『新住民』的關鍵意義在於去商品化與去歧視。這反映了社會對族群尊嚴的承認與制度性的尊重。" },
             { cat: "第四部分", title: "⚖️ CEDAW 公約：婦女權利專屬", img: "cedaw_justice_symbol_1775875313437.png", labels: ["專屬婦女"], text: "CEDAW 是《消除對婦女一切形式歧視公約》，其核心目標是達成婦女的實質平等。請注意，其對象條文專指『婦女』，而非泛指所有弱勢群體。這在選擇題中非常考細節。" },
             { cat: "第四部分", title: "📜 CEDAW 第 4 條：暫行特別措施", img: "ch3_cedaw_articles_scroll_1775910131854.png", labels: ["第 4 條保障名額"], text: "重要補充：根據 CEDAW 第 4 條第 1 項，為了加速達成實質平等，國家暫時給予婦女優惠措施，例如保障名額，這不應被視為對男性的歧視。" },
@@ -108,10 +109,10 @@
             { cat: "第六部分", title: "🛒 健康的社會梯度階層", img: "intersectionality_health_map_1775875386888.png", labels: ["地位越高越健康"], text: "社會梯度 (Social Gradient) 代表社會地位越高的人群通常越健康。這說明健康不平等與階級高度交織，而非單純的個人運氣。" },
             { cat: "第六部分", title: "❤️ 女性心臟病與反直覺陷阱", img: "female_heart_symptoms_1775875369499.png", special: "diabetes", text: "女性心臟病平均比男性晚 10 年發病。大家直覺會覺得病發後的風險差不多，但統計顯示女性發作後的死亡率與預後往往比男性更差。糖尿病會抵銷自然保護力。" },
             { cat: "第六部分", title: "💀 骨折病死數據：男性反轉點", img: "male_fragility_fracture_trap_1775875425752.png", labels: ["男死亡率 22%"], text: "大家直覺會覺得女生骨頭比較細更危險，但在髖部骨折一年內死亡率上，男性是 22%，明顯高於女性的 15%。此外，骨鬆確診數據為 T-score 小於負二點五。" },
-            { cat: "第六部分", title: "🚬 肺肺癌病理與組織型態", img: "ch5_lung_cancer_types_1775910383105.png", labels: ["女腺男小"], text: "病理辨析：女性肺癌患者 90% 不抽菸，多為肺腺癌；男性患者則多為與菸害高度相關的小細胞癌。兩者在致病機制與組織型態上完全不同。" },
-            { cat: "第六部分", title: "🧪 性別化創新與科學修正", img: "gender_medicine_innovation_1775873597537.png", labels: ["修正性別盲點"], text: "科學並非絕對客觀。過去忽略女性生理週期的研究即為性別盲。目前強調透過性別化創新來修正偏差。醫療科技與科學並非絕對刻觀中立。" },
+            { cat: "第六部分", title: "🚬 肺癌病理與組織型態", img: "ch5_lung_cancer_types_1775910383105.png", labels: ["女腺男小"], text: "病理辨析：女性肺癌患者 90% 不抽菸，多為肺腺癌；男性患者則多為與菸害高度相關的小細胞癌。兩者在致病機制與組織型態上完全不同。" },
+            { cat: "第六部分", title: "🧪 性別化創新與科學修正", img: "gender_medicine_innovation_1775873597537.png", labels: ["修正性別盲點"], text: "科學並非絕對客觀。忽略女性生理週期的醫學研究（例如過去的阿斯匹靈實驗）即為性別盲。目前強調透過性別化創新來修正偏差。醫療科技與科學並非絕對客觀中立。" },
             { cat: "第六部分", title: "📏 代謝症候群：腰圍魔術數字", img: "ch4_aaa_standard_icons_1775909974764.png", labels: ["男 90 女 80"], text: "補充數據：代謝症候群的腰圍判定標準為，男性大於等於 90 公分，女性大於等於 80 公分。大家如果看到考卷出 85 或 75 之類的數字，請一眼識破。" },
-            { cat: "第六部分", title: "泌尿系統與泌尿道感染 (UTI)", img: "gender_health_balance_1775873567230.png", labels: ["女性易染"}, text: "解剖學差異：由於女性尿道較短且與肛門距離較近，其泌尿道感染 (UTI) 的機率遠高於男性。這是純粹生理構造導致的健康差異。" },
+            { cat: "第六部分", title: "泌尿系統與泌尿道感染 (UTI)", img: "gender_health_balance_1775873567230.png", labels: ["女性易染"], text: "解剖學差異：由於女性尿道較短且與肛門距離較近，其泌尿道感染 (UTI) 的機率遠高於男性。這是純粹生理構造導致的健康差異。" },
             { cat: "第六部分", title: "孕婦安全帶：設計偏誤實例", img: "female_heart_symptoms_1775875369499.png", labels: ["男性假人標準"], text: "科技偏差實例：汽車安全帶與座墊設計多以『男性假人』為標準測試，導致孕婦在車禍中缺乏專屬的安全保護。這是典型的科學數據偏差例證。" },
             { cat: "第六部分", title: "🌈 酷兒理論 (Queer Theory)", img: "salad_bowl_multiculturalism_1775873580685.png", labels: ["挑戰二元框架"], text: "酷兒理論 (Queer) 旨在挑戰傳統的二元區分（男/女）與標準化。它主張性別與慾望是流動且多元的，試圖打破僵化的分類與權力壓迫。" },
             { cat: "大數據", title: "🍼 育嬰假與無酬家務時間", img: "ch1_male_pressure_atlas_1775910150346.png", labels: ["男性 25-30%"], text: "數據同步：男性申請留職停薪的百分比已達 25% 到 30%。但在無酬家務時間上，全球女性平均仍承擔男性的 2.5 到 3 倍之多。" },
