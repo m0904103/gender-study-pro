@@ -3,113 +3,394 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>114-2 性別健康奪冠特訓 | 旗艦雲端版</title>
+    <title>114-2 性別健康與多元文化 | iPhone 15 Pro 終極封神版</title>
+    <!-- SEO & Social Meta -->
+    <meta name="description" content="專為空中大學 114-2 學期設計的「性別健康與多元文化」重點衝刺系統。">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;700;900&family=Outfit:wght@600;800&display=swap" rel="stylesheet">
     <style>
-        :root { 
-            --primary: #f59e0b; --danger: #ef4444; --bg: #020617; --text: #f8fafc; 
+        :root {
+            --primary: #fbbf24;
+            --primary-glow: rgba(251, 191, 36, 0.4);
+            --secondary: #6366f1;
+            --accent: #f472b6;
+            --bg-dark: #05070a;
+            --surface: rgba(255, 255, 255, 0.05);
+            --surface-hover: rgba(255, 255, 255, 0.1);
+            --text-main: #f8fafc;
+            --text-dim: #94a3b8;
             --safe-top: env(safe-area-inset-top, 20px);
             --safe-bottom: env(safe-area-inset-bottom, 20px);
+            --glass-border: rgba(255, 255, 255, 0.1);
         }
-        body, html { margin: 0; padding: 0; width: 100%; height: 100%; height: 100dvh; background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, sans-serif; overflow: hidden; }
-        .header { 
-            position: fixed; top: 0; left: 0; right: 0; 
-            padding-top: var(--safe-top); height: calc(65px + var(--safe-top));
-            background: rgba(15, 23, 42, 0.85); border-bottom: 2px solid var(--primary); 
-            display: flex; justify-content: space-between; align-items: center; 
-            padding-left: 20px; padding-right: 20px; z-index: 2000; backdrop-filter: blur(25px); 
+
+        * {
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
         }
-        .speed-box { background: rgba(0,0,0,0.5); padding: 6px 14px; border-radius: 50px; border: 1.5px solid var(--primary); display: flex; align-items: center; gap: 8px; font-size: 0.85rem; }
-        .wrapper { display: flex; height: 100vh; padding-top: calc(65px + var(--safe-top)); box-sizing: border-box; }
-        .sidebar { 
-            position: fixed; left: -100%; top: 0; bottom: 0; width: 280px; 
-            background: #0b0f1a; border-right: 1px solid rgba(251, 191, 36, 0.2); 
-            z-index: 3000; transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            padding-top: calc(80px + var(--safe-top));
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            height: 100dvh;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: 'Noto Sans TC', sans-serif;
+            overflow: hidden;
+            user-select: none;
         }
-        .sidebar.open { left: 0; box-shadow: 20px 0 50px rgba(0,0,0,0.8); }
-        .course-nav { height: 100%; overflow-y: auto; padding: 15px; }
-        .nav-cat { font-size: 0.75rem; color: var(--primary); margin: 25px 0 10px 5px; font-weight: 800; border-left: 4px solid var(--primary); padding-left: 10px; }
-        .nav-item { padding: 14px 18px; margin-bottom: 6px; border-radius: 12px; cursor: pointer; transition: 0.2s; font-size: 0.85rem; background: rgba(255,255,255,0.03); }
-        .nav-item.active { background: var(--primary); color: #000; font-weight: 900; }
-        .viewport { flex: 1; position: relative; background: #000; display: flex; flex-direction: column; overflow: hidden; padding-bottom: calc(180px + var(--safe-bottom)); }
-        .screen { flex: 1; position: relative; display: flex; justify-content: center; align-items: center; }
-        #slide-view { width: 100%; height: 100%; background-size: contain; background-position: center; background-repeat: no-repeat; transition: 0.8s; }
-        .label-unit { position: absolute; background: rgba(220, 38, 38, 0.95); color: #fff; padding: 12px 24px; border-radius: 10px; font-weight: 950; font-size: 1.6rem; border: 3px solid #fff; box-shadow: 0 10px 40px rgba(0,0,0,0.8); animation: pop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); text-align: center; z-index: 1001; }
-        @keyframes pop { from { transform: scale(0.5); opacity:0; } to { transform: scale(1); opacity:1; } }
-        .console { position: fixed; bottom: calc(20px + var(--safe-bottom)); left: 50%; transform: translateX(-50%); width: 92%; background: rgba(30, 41, 59, 0.95); padding: 25px; border-radius: 20px; border-left: 10px solid var(--primary); backdrop-filter: blur(20px); z-index: 3500; }
-        .text-body { font-size: 1.25rem; line-height: 1.6; height: 110px; overflow-y: auto; color: #fff; font-weight: 500; }
-        .btn-gold { background: var(--primary); color: #000; border: none; padding: 15px 40px; font-size: 1.4rem; font-weight: 900; border-radius: 100px; cursor: pointer; }
-        #splash { position: fixed; inset: 0; background: #020617; z-index: 5000; display: flex; justify-content: center; align-items: center; text-align: center; }
-        @media (orientation: landscape) { .viewport { padding-bottom: calc(100px + var(--safe-bottom)); } .console { width: 60%; right: 20px; left: auto; transform: none; } .text-body { height: 60px; font-size: 1.1rem; } }
+
+        /* 背景流光效果 */
+        .bg-glow {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(99, 102, 241, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 80% 80%, rgba(244, 114, 182, 0.1) 0%, transparent 40%);
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: calc(75px + var(--safe-top));
+            padding-top: var(--safe-top);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-left: 20px;
+            padding-right: 20px;
+            background: rgba(5, 7, 10, 0.85);
+            backdrop-filter: blur(25px);
+            border-bottom: 2px solid var(--primary);
+            z-index: 1000;
+        }
+
+        .logo-text {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800;
+            font-size: 1.4rem;
+            background: linear-gradient(135deg, var(--primary), #fff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .badge-live {
+            background: var(--accent);
+            color: white;
+            padding: 3px 10px;
+            border-radius: 6px;
+            font-size: 0.7rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.6; }
+            100% { opacity: 1; }
+        }
+
+        .menu-btn {
+            background: var(--surface);
+            border: 1px solid var(--glass-border);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 14px;
+            font-weight: 800;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .app-container {
+            display: flex;
+            height: 100%;
+            padding-top: calc(75px + var(--safe-top));
+        }
+
+        .sidebar {
+            position: fixed;
+            left: -100%;
+            top: 0;
+            bottom: 0;
+            width: 320px;
+            background: rgba(10, 15, 25, 0.98);
+            border-right: 1px solid var(--glass-border);
+            overflow-y: auto;
+            transition: 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+            z-index: 2000;
+            backdrop-filter: blur(40px);
+            padding-top: calc(90px + var(--safe-top));
+        }
+
+        .sidebar.active {
+            left: 0;
+            box-shadow: 20px 0 60px rgba(0,0,0,0.8);
+        }
+
+        .nav-content {
+            padding: 20px;
+        }
+
+        .nav-group-title {
+            font-size: 0.8rem;
+            color: var(--primary);
+            font-weight: 900;
+            margin: 25px 0 12px 10px;
+            letter-spacing: 2px;
+            border-left: 4px solid var(--primary);
+            padding-left: 10px;
+        }
+
+        .nav-card {
+            background: var(--surface);
+            margin-bottom: 10px;
+            padding: 16px;
+            border-radius: 16px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .nav-card.active {
+            background: var(--primary);
+            color: #000;
+            font-weight: 900;
+        }
+
+        .main-view {
+            flex: 1;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            background: #000;
+        }
+
+        .slide-container {
+            flex: 1;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        #current-slide {
+            max-width: 95%;
+            max-height: 95%;
+            object-fit: contain;
+            transition: 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            filter: drop-shadow(0 30px 60px rgba(0,0,0,0.7));
+        }
+
+        .data-tag {
+            position: absolute;
+            background: linear-gradient(135deg, #ef4444, #b91c1c);
+            color: white;
+            padding: 15px 35px;
+            border-radius: 15px;
+            font-weight: 950;
+            font-size: 2rem;
+            border: 5px solid #fff;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+            transform: scale(0);
+            transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            z-index: 1001;
+        }
+
+        .data-tag.show {
+            transform: scale(1);
+        }
+
+        .control-panel {
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(35px);
+            border-top: 1px solid var(--primary);
+            padding: 25px;
+            padding-bottom: calc(25px + var(--safe-bottom));
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            z-index: 50;
+        }
+
+        .lecture-text {
+            font-size: 1.35rem;
+            line-height: 1.7;
+            font-weight: 500;
+            color: #fff;
+            height: 120px;
+            overflow-y: auto;
+        }
+
+        .controls-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .circle-btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--surface);
+            color: white;
+            border: 1px solid var(--glass-border);
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .circle-btn.play {
+            width: 75px;
+            height: 75px;
+            background: var(--primary);
+            color: #000;
+            font-size: 2rem;
+            border: none;
+        }
+
+        .splash-screen {
+            position: fixed;
+            inset: 0;
+            background: var(--bg-dark);
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px;
+        }
+
+        .start-btn {
+            background: var(--primary);
+            color: #000;
+            padding: 24px 80px;
+            border-radius: 100px;
+            font-size: 1.8rem;
+            font-weight: 950;
+            border: none;
+            cursor: pointer;
+            margin-top: 40px;
+        }
+
+        @media (orientation: landscape) {
+            .sidebar { position: relative; left: 0; width: 280px; }
+            .control-panel { position: absolute; bottom: 20px; right: 20px; width: 450px; border-radius: 20px; }
+            .lecture-text { height: 70px; font-size: 1.1rem; }
+        }
     </style>
 </head>
 <body>
-    <div id="splash" onclick="goStudy()">
-        <div style="width: 85%">
-            <p style="color:var(--primary); font-size:1rem; letter-spacing:6px;">空大輔考研究社</p>
-            <h1 style="font-size:2.4rem; margin:15px 0">114-2期中絕殺特訓</h1>
-            <div style="background:var(--danger); color:white; padding:8px 25px; display:inline-block; border-radius:10px; font-size:1.1rem; font-weight:bold">旗艦雲端同步版</div>
-            <br><button class="btn-gold" style="margin-top:30px;">🏆 啟動奪冠</button>
-        </div>
+
+    <div class="bg-glow"></div>
+
+    <div id="splash" class="splash-screen">
+        <p style="color:var(--primary); font-weight:900; letter-spacing:8px; margin-bottom:10px;">114-2 FINAL MASTER</p>
+        <h1 style="font-size:3rem; margin:20px 0; background:linear-gradient(135deg, #fff, var(--primary)); -webkit-background-clip:text; -webkit-text-fill-color:transparent;">性別健康<br>終極絕殺</h1>
+        <div style="background:var(--accent); padding:10px 30px; border-radius:12px; font-weight:900; color:#fff;">iPhone 15 Pro 定製版</div>
+        <button class="start-btn" onclick="startApp()">🏆 啟動特訓</button>
     </div>
+
     <header class="header">
-        <button onclick="toggleSidebar()" style="background:var(--primary); border:none; padding:10px 20px; border-radius:10px; font-weight:900;">☰ 目錄</button>
-        <div class="speed-box"><span>語速：</span><input type="range" id="rate" min="0.8" max="2.0" value="1.3" step="0.1" style="width:70px"></div>
+        <div class="logo-text">GENDER MASTER 114-2</div>
+        <div class="badge-live">Success</div>
+        <button class="menu-btn" onclick="toggleSidebar()">☰ 目錄</button>
     </header>
-    <div class="wrapper">
-        <aside id="sidebar" class="sidebar"><div class="course-nav" id="nav"></div></aside>
-        <main class="viewport">
-            <div class="screen"><div id="slide-view"></div><div id="overlay" style="position:absolute; inset:0; pointer-events:none; display:flex; justify-content:center; align-items:center;"></div></div>
-            <div class="console">
-                <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
-                    <span style="color:var(--primary); font-weight:900;">🎙️ 助教解析</span>
-                    <span id="page-num" style="background:#1e40af; padding:2px 10px; border-radius:6px; font-size:0.8rem;">1 / 10</span>
+
+    <div class="app-container">
+        <aside id="sidebar" class="sidebar"><div id="nav-list" class="nav-content"></div></aside>
+        <main class="main-view">
+            <div class="slide-container">
+                <img id="current-slide" src="">
+                <div id="overlay" style="position:absolute; inset:0; pointer-events:none; display:flex; justify-content:center; align-items:center;"></div>
+            </div>
+            <div class="control-panel">
+                <div style="display:flex; justify-content:space-between; font-weight:900; font-size:0.9rem;">
+                    <span style="color:var(--primary);">🎙️ 助教解析</span>
+                    <span id="slide-progress" style="color:var(--text-dim);">1 / 23</span>
                 </div>
-                <div id="lecture-content" class="text-body">準備開始...</div>
+                <div id="lecture-body" class="lecture-text">系統啟動中...</div>
+                <div class="controls-row">
+                    <button class="circle-btn" onclick="goPrev()">⏮</button>
+                    <button id="play-btn" class="circle-btn play" onclick="toggleAuto()">▶</button>
+                    <button class="circle-btn" onclick="goNext()">⏭</button>
+                    <input type="range" id="speech-rate" min="0.8" max="2" step="0.1" value="1.3" style="width:70px; accent-color:var(--primary);">
+                </div>
             </div>
         </main>
     </div>
+
     <script>
-        const plan = [
-            { cat: "第一章", title: "🏺 米德三部族性格對照", img: "ch1_theory_chart_tw_1775878090737.png", labels: ["阿:皆溫", "蒙:皆鬥", "德:反轉"], text: "114下特訓：記住米德這三部族！阿拉佩什男女皆溫順、蒙杜古馬男女皆好鬥、德昌布利則是性別角色反轉。這是打臉天生論最強大的『文化編排』證據！" },
-            { cat: "第一章", title: "🧥 理論時序與恆定期", img: "ch1_master_theory_tw_1775901143741.png", labels: ["心➔社➔認➔女", "4-5歲恆定"], text: "絕對時序：心理、社會、認知、女性主義。順序：心、社、認、女！認知發展論強調 4 到 5 歲達成性別恆定期，小朋友會懂衣服不改變性別。" },
-            { cat: "第二章", title: "🥗 全球在地化：實例識別", img: "ch2_rice_burger_glocal_1775909945923.png", labels: ["麥當勞米漢堡", "多國手冊"], text: "114下必拿分：全球在地化 Glocalization。看到跨國品牌融入本土（米漢堡、泰國合掌麥當勞、多國語手冊）選他就對了。考古題爆量點！" },
-            { cat: "第三章", title: "⚙️ 主流化六大工具", img: "cedaw_justice_symbol_1775875313437.png", labels: ["統析預評培機"], text: "口訣：統、析、預、評、培、機！⚠️ 掃雷注意：配額制或保障名額是暫行措施，不屬於這六大核心工具。看到配額制請直接秒殺它！" },
-            { cat: "第三章", title: "㊙️ NGO 影子報告", img: "ch3_ngo_shadow_report_1775910181779.png", labels: ["NGO 監督"], text: "命中關鍵：影子報告是民間 NGO 撰寫來監督政府報告的平衡機制，不要選成政府自己寫的。" },
-            { cat: "第四章", title: "🏥 AAAQ：經濟陷阱", img: "ch4_aaa_standard_icons_1775909974764.png", labels: ["付不起錢=可及性"], text: "地雷警報：『付不起醫藥費』屬於 Accessibility 可及性。這是 114 年考古題最愛挖的邏輯坑，千萬不要選成品質問題！" },
-            { cat: "第四章", title: "🔞 性同意、交織性", img: "ch3_age_16_consent_1775910116195.png", labels: ["16歲 vs 18歲", "性x階級x族群"], text: "法律靶心：性同意界線是 16 歲！另外記住交織性是弱勢的乘積效應，考慮性別、階級與族群的綜合影響。" },
-            { cat: "第五章", title: "🧬 醫學靶心：數據紅線", img: "ch5_lung_cancer_types_1775910383105.png", labels: ["T < -2.5 確診", "男死 22%"], text: "數據地雷：T-score 小於 -2.5 為骨鬆確診。男髖部骨折死亡率 22% > 女 15%。肺腺癌認準『女腺男小』口訣。這些全都是保分數據！" },
-            { cat: "大終局", title: "🏆 目標 114 下滿分冠軍", img: "final_blessing_gold_1775901221619.png", labels: ["4/25 全班滿分"], text: "恭喜！114 年下學期特訓完成。帶上這份 Glocal、1/3、16、22 與 -2.5 的戰略地圖。除了生理數據，其餘一律選『社會建構論』。預祝 100 分登頂！" }
+        const studyPlan = [
+            { cat: "數據戰略", title: "🚩 ALPHA：否定陷阱生存指南", img: "gender_health_balance_1775873567230.png", labels: ["看清何者錯誤"], text: "各位英雄學員，我是學長助教。iPhone 前方的動態島提醒我們：細節決定成敗！大數據顯示本門課『何者錯誤』題型極多。看到健康是個人努力、或是醫療中性的選項，請直接果斷打大叉。社會建構才是奪冠關鍵字！" },
+            { cat: "第一章", title: "🏺 絕殺補丁：米德三部族", img: "ch1_mead_3_tribes_1775909916148.png", labels: ["阿:皆溫", "蒙:皆鬥", "徳:反轉"], text: "114下魔王題：米德研究證明性格是『文化編排』！阿拉佩什(兩性皆溫)、蒙杜古馬(兩性皆鬥)、德昌布利(角色反轉/女強男弱)。認準德昌布利，它是打臉天生論最強重錘！" },
+            { cat: "第一章", title: "🧒 柯爾伯格：數據地雷 4-5 歲", img: "ch1_master_theory_tw_1775901143741.png", labels: ["4-5歲恆定"], text: "數字靶心：4 到 5 歲。這是幼兒達成『性別恆定』的關鍵點。這代表小孩懂了：男孩穿裙子也不會變成女孩。數字題必考項！同時理論排序記住：心➔社➔認➔女。" },
+            { cat: "第二章", title: "🍱 全球在地化：1132變盤實例", img: "ch2_rice_burger_glocal_1775909945923.png", labels: ["麥當勞米漢堡"], text: "114下必考生還點：全球在地化 Glocalization。麥當勞米漢堡、多國語言職安手冊。看到融入當地文化、正名承認，選這個專有名詞期望值最高。" },
+            { cat: "中心思想", title: "⚖️ CEDAW 與實質平等靈魂", img: "cedaw_justice_symbol_1775875313437.png", labels: ["社會建構論"], text: "CEDAW 只保障婦女。其魂在於實質平等，即『結果公平』。別被機會平等騙了。除生殖數據外，其餘一律選社會建構論！" },
+            { cat: "第三章", title: "🛠️ 主流化六大金剛：統析預評培機", img: "ch3_gender_quota_table_1775910362721.png", labels: ["統析預評培機"], text: "老師的陷阱：六大工具全名是統、析、預、評、培、機！⚠️ 警告：選項出現『配額制』或『保障名額』通通不是核心工具，那是暫行特別措施！" },
+            { cat: "第三章", title: "㊙️ NGO 影子報告", img: "ch3_ngo_shadow_report_1775910181779.png", labels: ["NGO 監督"], text: "影子報告：民間 NGO 編寫！用來監督政府官方報告。這是 CEDAW 實作中的民間武器，最愛考誰寫的！" },
+            { cat: "第四章", title: "🏥 AAAQ：經濟付不起錢？", img: "ch4_aaa_standard_icons_1775909974764.png", labels: ["付不起=可及性"], text: "魔王陷阱：『付不起錢/經濟負擔』屬於 Accessibility 可及性。不要選成品質不好。這是 113 年考古題的高頻陷阱！" },
+            { cat: "第四章", title: "🔞 16 歲法律靶心與交織性", img: "ch3_age_16_consent_1775910116195.png", labels: ["16歲同意權"], text: "數據地雷：性同意權界線是 16 歲。此外記住交織性：性別、階級、族群堆疊時，痛苦是相乘的。單一解決方案無助於全人健康。" },
+            { cat: "第五章", title: "🦴 骨鬆紅線數據與死亡率", img: "male_fragility_fracture_trap_1775875425752.png", labels: ["T < -2.5 確診", "男死 22%"], text: "數據奇襲：T-score 小於 -2.5 確診。男髖部骨折一年內死亡率 22% 遠高於女性。肺腺癌口訣『女腺男小』。這些數據請反射性回答！" },
+            { cat: "最終決戰", title: "🏆 引領全班奪冠 100 分", img: "final_blessing_gold_1775901221619.png", labels: ["114-2 滿分"], text: "恭喜！114-2 學期特訓完成。我們拿到了 Glocal、1/3、16、22 與 -2.5。4 月 25 日，我們全班滿分榜單見。英雄凱旋！加油！" }
         ];
-        let idx = -1, synth = window.speechSynthesis, voices = [];
-        function toggleSidebar() { document.getElementById('sidebar').classList.toggle('open'); }
-        function goStudy() { document.getElementById('splash').style.display = 'none'; build(); jump(0); }
-        function build() {
-            const nav = document.getElementById('nav'); let lastC = "";
-            plan.forEach((item, i) => {
-                if(item.cat !== lastC) { const c = document.createElement('div'); c.className = 'nav-cat'; c.innerText = item.cat; nav.appendChild(c); lastC = item.cat; }
-                const div = document.createElement('div'); div.className = 'nav-item'; div.id = 'ni-'+i; div.innerText = item.title;
-                div.onclick = () => jump(i); nav.appendChild(div);
+
+        let curIdx = -1; let isAuto = false; let synth = window.speechSynthesis;
+        function init() { renderSidebar(); }
+        function renderSidebar() {
+            const list = document.getElementById('nav-list'); let lastCat = "";
+            studyPlan.forEach((d, i) => {
+                if(d.cat !== lastCat) { const t = document.createElement('div'); t.className = 'nav-group-title'; t.innerText = d.cat; list.appendChild(t); lastCat = d.cat; }
+                const c = document.createElement('div'); c.className = 'nav-card'; c.id = `nav-${i}`;
+                c.innerHTML = `<div class="nav-title">${d.title}</div><div style="font-size:0.7rem; color:var(--text-dim);">${d.text.substring(0,15)}...</div>`;
+                c.onclick = () => jumpToSlide(i); list.appendChild(c);
             });
         }
-        function jump(i) {
-            idx = i; synth.cancel();
-            document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
-            document.getElementById('ni-'+i).classList.add('active');
-            document.getElementById('page-num').innerText = `${i+1} / ${plan.length}`;
-            const view = document.getElementById('slide-view'); view.style.backgroundImage = `url('${plan[i].img}')`;
-            document.getElementById('lecture-content').innerText = plan[i].text;
-            renderOverlay(plan[i].labels);
-            const utter = new SpeechSynthesisUtterance(plan[i].text); utter.lang = 'zh-TW';
-            utter.rate = parseFloat(document.getElementById('rate').value);
-            utter.onend = () => { if(idx < plan.length - 1) setTimeout(() => jump(idx+1), 3000); };
-            synth.speak(utter);
+        function startApp() { 
+            const s = document.getElementById('splash'); s.style.opacity = '0'; 
+            setTimeout(() => { s.style.display = 'none'; jumpToSlide(0); }, 800); 
+        }
+        function toggleSidebar() { document.getElementById('sidebar').classList.toggle('active'); }
+        function jumpToSlide(i) {
+            if(i<0 || i>=studyPlan.length) return; curIdx = i; synth.cancel();
+            document.querySelectorAll('.nav-card').forEach(x => x.classList.remove('active'));
+            document.getElementById(`nav-${i}`).classList.add('active');
+            document.getElementById('slide-progress').innerText = `${i+1} / ${studyPlan.length}`;
+            const img = document.getElementById('current-slide'); img.style.opacity = '0'; img.src = studyPlan[i].img; img.onload = () => img.style.opacity = '1';
+            document.getElementById('lecture-body').innerText = studyPlan[i].text;
+            renderOverlay(studyPlan[i].labels);
+            if(isAuto) playSpeech(studyPlan[i].text);
+            if(window.innerWidth < 1024) document.getElementById('sidebar').classList.remove('active');
         }
         function renderOverlay(ls) {
-            const l = document.getElementById('overlay'); l.innerHTML = '';
-            ls.forEach(t => { l.innerHTML += `<div class="label-unit">${t}</div>`; });
+            const ov = document.getElementById('overlay'); ov.innerHTML = '';
+            ls.forEach((t, i) => {
+                const tag = document.createElement('div'); tag.className = 'data-tag'; tag.innerText = t;
+                ov.appendChild(tag); setTimeout(() => tag.classList.add('show'), 200 * (i+1));
+            });
         }
-        window.onload = () => { if(speechSynthesis.onvoiceschanged !== undefined) speechSynthesis.onvoiceschanged = () => { voices = synth.getVoices(); }; };
+        function playSpeech(t) {
+            synth.cancel(); const u = new SpeechSynthesisUtterance(t); u.lang = 'zh-TW';
+            u.rate = document.getElementById('speech-rate').value;
+            u.onend = () => { if(isAuto && curIdx < studyPlan.length - 1) setTimeout(() => jumpToSlide(curIdx+1), 2000); };
+            synth.speak(u);
+        }
+        function toggleAuto() { isAuto = !isAuto; document.getElementById('play-btn').innerText = isAuto ? '⏸' : '▶'; if(isAuto) playSpeech(studyPlan[curIdx].text); else synth.cancel(); }
+        function goNext() { jumpToSlide(curIdx + 1); }
+        function goPrev() { jumpToSlide(curIdx - 1); }
+        init();
     </script>
 </body>
 </html>
