@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>性別健康與多元文化 | 金牌助教絕殺版</title>
-    <meta name="description" content="空大輔考研究社特供：4月25日期中考 100% 選擇題命中系統。">
+    <title>性別健康與多元文化 | 100分絕對防禦版</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;700;900&family=Outfit:wght@600;800&display=swap" rel="stylesheet">
@@ -23,87 +22,67 @@
             --safe-bottom: env(safe-area-inset-bottom, 20px);
             --glass-border: rgba(255, 255, 255, 0.1);
         }
-
         * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
-        body, html { margin: 0; padding: 0; width: 100%; height: 100%; background-color: var(--bg-dark); color: var(--text-main); font-family: 'Noto Sans TC', sans-serif; overflow: hidden; user-select: none; }
+        body, html { margin: 0; padding: 0; width: 100%; height: 100%; background: var(--bg-dark); color: var(--text-main); font-family: 'Noto Sans TC', sans-serif; overflow: hidden; user-select: none; }
         .bg-glow { position: fixed; inset: 0; z-index: -1; background: radial-gradient(circle at 20% 20%, rgba(99, 102, 241, 0.15) 0%, transparent 40%), radial-gradient(circle at 80% 80%, rgba(244, 114, 182, 0.1) 0%, transparent 40%); }
         .header { position: fixed; top: 0; left: 0; right: 0; height: calc(70px + var(--safe-top)); padding-top: var(--safe-top); display: flex; align-items: center; justify-content: space-between; padding-left: 20px; padding-right: 20px; background: rgba(5, 7, 10, 0.82); backdrop-filter: blur(25px); border-bottom: 1px solid var(--glass-border); z-index: 1000; }
         .logo-text { font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 1.4rem; background: linear-gradient(135deg, var(--primary), #fff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .menu-btn { background: var(--surface); border: 1px solid var(--glass-border); color: white; padding: 10px 18px; border-radius: 12px; font-weight: 700; cursor: pointer; transition: 0.3s; display: flex; align-items: center; gap: 8px; }
+        .menu-btn { background: var(--surface); border: 1px solid var(--glass-border); color: white; padding: 10px 18px; border-radius: 12px; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 8px; }
         .app-container { display: flex; height: 100vh; padding-top: calc(70px + var(--safe-top)); }
         .sidebar { width: 320px; background: rgba(10, 15, 25, 0.8); border-right: 1px solid var(--glass-border); overflow-y: auto; transition: 0.4s; position: absolute; left: -320px; top: 0; bottom: 0; z-index: 2000; backdrop-filter: blur(35px); }
         .sidebar.active { left: 0; }
-        .nav-content { padding: 20px; padding-top: calc(100px + var(--safe-top)); }
-        .nav-group-title { font-size: 0.75rem; color: var(--primary); font-weight: 900; margin: 24px 0 12px 10px; text-transform: uppercase; letter-spacing: 2px; }
-        .nav-card { background: var(--surface); margin-bottom: 8px; padding: 14px 18px; border-radius: 16px; border: 1px solid transparent; cursor: pointer; transition: 0.2s; }
+        .nav-content { padding: 20px; padding-top: 100px; }
+        .nav-group-title { font-size: 0.75rem; color: var(--primary); font-weight: 900; margin: 20px 0 10px 10px; letter-spacing: 2px; }
+        .nav-card { background: var(--surface); margin-bottom: 8px; padding: 14px; border-radius: 16px; cursor: pointer; transition: 0.2s; }
         .nav-card.active { background: linear-gradient(135deg, var(--primary), #d97706); color: #000; }
         .main-view { flex: 1; position: relative; display: flex; flex-direction: column; background: #000; }
-        .slide-container { flex: 1; position: relative; display: flex; justify-content: center; align-items: center; background: radial-gradient(circle at center, #111, #000); }
+        .slide-container { flex: 1; display: flex; justify-content: center; align-items: center; position: relative; }
         #current-slide { max-width: 90%; max-height: 90%; object-fit: contain; border-radius: 12px; }
-        .overlay-tags { position: absolute; inset: 0; pointer-events: none; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 12px; z-index: 10; }
-        .data-tag { background: linear-gradient(135deg, #ef4444, #b91c1c); color: white; padding: 10px 20px; border-radius: 12px; font-weight: 950; font-size: 1.5rem; border: 3px solid #fff; transform: scale(0); transition: 0.4s; }
-        .data-tag.show { transform: scale(1); }
         .control-panel { background: rgba(15, 23, 42, 0.9); backdrop-filter: blur(30px); border-top: 1px solid var(--glass-border); padding: 25px; display: flex; flex-direction: column; gap: 15px; }
         .lecture-text { font-size: 1.2rem; line-height: 1.6; color: #fff; max-height: 120px; overflow-y: auto; }
         .controls-row { display: flex; align-items: center; justify-content: center; gap: 20px; }
-        .circle-btn { width: 55px; height: 55px; border-radius: 50%; border: 1px solid var(--glass-border); background: var(--surface); color: white; font-size: 1.2rem; cursor: pointer; display: flex; align-items: center; justify-content: center; }
-        .circle-btn.play { width: 65px; height: 65px; background: var(--primary); color: #000; font-size: 1.8rem; border: none; }
-        .splash-screen { position: fixed; inset: 0; background: var(--bg-dark); z-index: 9999; display: flex; flex-direction: column; justify-content: center; align-items: center; transition: 0.6s; }
-        .start-btn { background: var(--primary); color: #000; padding: 20px 80px; border-radius: 100px; font-size: 1.8rem; font-weight: 950; border: none; cursor: pointer; margin-top: 40px; }
-        
-        @media (orientation: landscape) {
-            .sidebar { position: relative; left: 0; width: 240px; }
-            .control-panel { position: absolute; bottom: 10px; right: 10px; width: 350px; border-radius: 15px; padding: 12px; }
-            .lecture-text { font-size: 0.9rem; max-height: 60px; }
-            .circle-btn { width: 40px; height: 40px; font-size: 1rem; }
-            .circle-btn.play { width: 50px; height: 50px; font-size: 1.4rem; }
-        }
+        .circle-btn { width: 55px; height: 55px; border-radius: 50%; border: 1px solid var(--glass-border); background: var(--surface); color: white; display: flex; align-items: center; justify-content: center; cursor: pointer; }
+        .circle-btn.play { width: 65px; height: 65px; background: var(--primary); color: #000; font-size: 1.5rem; border: none; }
+        .overlay-tags { position: absolute; inset: 0; pointer-events: none; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 10px; }
+        .data-tag { background: linear-gradient(135deg, #ef4444, #b91c1c); color: #fff; padding: 10px 20px; border-radius: 12px; font-weight: 900; font-size: 1.4rem; border: 3px solid #fff; transform: scale(0); transition: 0.4s; }
+        .data-tag.show { transform: scale(1); }
+        @media (orientation: landscape) { .sidebar { position: relative; left: 0; width: 220px; } .control-panel { position: absolute; bottom: 10px; right: 10px; width: 320px; padding: 10px; border-radius: 15px; } .lecture-text { font-size: 0.9rem; max-height: 50px; } }
     </style>
 </head>
 <body>
     <div class="bg-glow"></div>
-    <div id="splash" class="splash-screen">
-        <h1 style="font-size:3rem; font-weight:900; background:linear-gradient(135deg, #fff, var(--primary)); -webkit-background-clip:text; -webkit-text-fill-color:transparent;">空大特訓：全班100分</h1>
-        <button class="start-btn" onclick="startApp()">🏆 進入絕殺戰場</button>
-    </div>
-
     <header class="header">
-        <span class="logo-text">GENDER KILLER 1.0</span>
-        <button class="menu-btn" onclick="toggleSidebar()">☰ 內容目錄</button>
+        <span class="logo-text">GENDER MASTER 2.0</span>
+        <button class="menu-btn" onclick="toggleSidebar()">☰ 目錄</button>
     </header>
-
     <div class="app-container">
         <aside id="sidebar" class="sidebar"><div id="nav-list" class="nav-content"></div></aside>
         <main class="main-view">
-            <div class="slide-container">
-                <img id="current-slide" src="" alt="slide">
-                <div id="overlay" class="overlay-tags"></div>
-            </div>
+            <div class="slide-container"><img id="current-slide" src=""><div id="overlay" class="overlay-tags"></div></div>
             <div class="control-panel">
-                <div id="lecture-body" class="lecture-text">系統加載完畢，準備開戰...</div>
+                <div id="lecture-body" class="lecture-text">準備開戰，全班100分！</div>
                 <div class="controls-row">
                     <button class="circle-btn" onclick="goPrev()">⏮</button>
                     <button id="play-btn" class="circle-btn play" onclick="toggleAuto()">▶</button>
                     <button class="circle-btn" onclick="goNext()">⏭</button>
-                    <div style="margin-left:15px; background:var(--surface); padding:5px 10px; border-radius:8px;">
-                        <input type="range" id="speech-rate" min="0.8" max="2" step="0.1" value="1.3" style="width:60px; accent-color:var(--primary);">
-                    </div>
+                    <input type="range" id="speech-rate" min="0.8" max="2" step="0.1" value="1.3" style="width:50px; accent-color:var(--primary); margin-left:10px;">
                 </div>
             </div>
         </main>
     </div>
-
     <script>
         const studyPlan = [
-            { cat: "第一章", title: "🥩 硬體 vs 💻 軟體", img: "gender_health_balance_1775873567230.png", labels: ["生理Sex=硬體", "社會Gender=軟體"], text: "各位英雄！記住：生理 Sex 是先天硬體，社會 Gender 是後天軟體。出題老師若考『氣質是基因決定』？打大叉就對了！" },
-            { cat: "第一章", title: "🏺 米德三部族：證據補丁", img: "ch1_theory_chart_tw_1775878090737.png", labels: ["文化編排"], text: "必考神經反射：米德研究紐幾內亞三族。1. 溫順阿拉佩什(兩性皆母性)。2. 好鬥蒙杜古馬(兩性皆兇)。3. 反轉德昌布利(女剛男柔)。這100%證明性別是『文化編排』！" },
-            { cat: "第二章", title: "🥗 沙拉盤 vs 漢堡", img: "salad_bowl_multiculturalism_1775873580685.png", labels: ["沙拉盤=尊重", "Glocalization"], text: "模式對比：大熔爐是強迫同化，沙拉盤才是多元並存。全球在地化 Glocalization 則是品牌與在地口味結合。這是 1132 年度最強熱點！" },
-            { cat: "第三章", title: "⚖️ 主流化六大金剛", img: "cedaw_justice_symbol_1775875313437.png", labels: ["統析預評培機"], text: "助教畫紅線：主流化六大工具是『統析預評培機』。注意！配額制只是暫行措施，不屬於這六大工具！選錯就沒啦。" },
-            { cat: "第四章", title: "🏥 AAAQ：錢是關鍵字", img: "ch4_aaa_standard_icons_1775909974764.png", labels: ["經濟付得起=可及性"], text: "AAAQ 絕殺題：看到『經濟上付得起』？直接選 Accessibility 可及性。這是區分 80 分與 100 分的關鍵鑑別題。" },
-            { cat: "第五章", title: "💀 數據絕殺：-2.5 與 3-7", img: "female_heart_symptoms_1775875369499.png", labels: ["-2.5 確診", "糖女 3~7 倍風險"], text: "數據靶心：骨鬆紅線是 T-score < -2.5。糖尿病女性患心臟病風險是一般人的 3 到 7 倍！男骨折死亡率 22% 遠超女性。認準數字，直接得分！" },
-            { cat: "大終局", title: "💯 目標：全班 100 分", img: "final_blessing_gold_1775901221619.png", labels: ["4/25 奪冠"], text: "特訓補丁縫合完畢！米德、六大工具、AAAQ、死亡數據全在手。4 月 25 日，我們全班滿分榜單見。英雄們，出發！" }
+            { cat: "戰略", title: "🚩 ALPHA：否定陷阱口訣", img: "gender_health_balance_1775873567230.png", labels: ["選社會建構", "打臉天生論"], text: "各位英雄學員，本課的核心是觀念解構。當你看到選項提到『女性天生...』、『男性必然...』，那就是出題老師的誘餌！除了骨折率、尿道構造等醫學數據，其餘一律選『社會建構論』！" },
+            { cat: "第一章", title: "🏺 米德三部族：打臉解析", img: "ch1_theory_chart_tw_1775878090737.png", labels: ["阿拉佩什:皆溫", "蒙杜古馬:皆鬥", "德昌布利:反轉"], text: "100分補丁：米德研究三部落。阿拉佩什男女皆溫順；蒙杜古馬男女皆好鬥；德昌布利則是『性別反轉』。這直接打臉天生論，證明特質是社會編排！" },
+            { cat: "第一章", title: "🧒 性別恆定：4-5 歲", img: "ch1_master_theory_tw_1775901143741.png", labels: ["4-5歲恆定"], text: "數據地雷：幼兒在 4 到 5 歲達成性別恆定。這是認知發展論的關鍵數字，必背！" },
+            { cat: "第三章", title: "⚖️ 主流化六大金剛", img: "cedaw_justice_symbol_1775875313437.png", labels: ["統析預評培機"], text: "絕殺清單：六大工具是『統、析、預、評、培、機』。選項若出現『配額制』？那是干擾項！配額制是暫時措施，不是核心工具。" },
+            { cat: "第三章", title: "🕵️ 影子報告：NGO撰寫", img: "ch3_cedaw_articles_scroll_1775910131854.png", labels: ["NGO 撰寫"], text: "關鍵補丁：影子報告是 NGO 民間組織寫的！用來監督政府報告，不要選成政府自己寫的。" },
+            { cat: "第四章", title: "🏥 AAAQ：可及性=經濟", img: "ch4_aaa_standard_icons_1775909974764.png", labels: ["經濟負擔=可及性"], text: "高鑑別題：看到『經濟上付得起』？直接選 Accessibility 可及性。這是 100 分同學的專屬鑑別題。" },
+            { cat: "第四章", title: "🔞 16 歲：性同意權", img: "ch3_age_16_consent_1775910116195.png", labels: ["16歲界線"], text: "法律靶心：未滿 16 歲即便自願也具法律責任。認準 16 歲，不是 18 歲！" },
+            { cat: "第五章", title: "🦴 骨鬆紅線：-2.5 確診", img: "male_fragility_fracture_trap_1775875425752.png", labels: ["T-score < -2.5"], text: "醫學數據：T-score 小於 -2.5 即為骨質疏鬆確診。這是必拿分的醫學數值題！" },
+            { cat: "🫀 心臟警報", title: "糖女風險 3~7 倍", img: "female_heart_symptoms_1775875369499.png", labels: ["3~7 倍風險"], text: "絕殺數據：糖尿病女性患心臟病風險比一般女性高出 『3 到 7 倍』。113年考過，認準這組數字！" },
+            { cat: "大終局", title: "🏆 全班滿分出擊！", img: "final_blessing_gold_1775901221619.png", labels: ["GAD翻轉制度", "22%男死率"], text: "4/25 當天，拿著這份 GAD 理論、22% 數據、三部族與六大工具清單，我們全班滿分榜單見！英雄們，出發奪冠！" }
         ];
-
         let currentIndex = -1, isAutoPlaying = false, speech = window.speechSynthesis, voices = [];
         function init() { renderSidebar(); loadVoices(); if (speech.onvoiceschanged !== undefined) speech.onvoiceschanged = loadVoices; }
         function loadVoices() { voices = speech.getVoices(); }
@@ -114,11 +93,10 @@
                     const t = document.createElement('div'); t.className = 'nav-group-title'; t.textContent = item.cat; list.appendChild(t); currentCat = item.cat;
                 }
                 const card = document.createElement('div'); card.className = 'nav-card'; card.id = `nav-${i}`;
-                card.innerHTML = `<div style="font-weight:800; font-size:0.9rem;">${item.title}</div>`;
+                card.innerHTML = `<div style="font-weight:800; font-size:0.85rem;">${item.title}</div>`;
                 card.onclick = () => jumpToSlide(i); list.appendChild(card);
             });
         }
-        function startApp() { document.getElementById('splash').style.opacity = '0'; setTimeout(() => { document.getElementById('splash').style.display='none'; jumpToSlide(0); }, 600); }
         function jumpToSlide(i) {
             currentIndex = i; speech.cancel();
             document.querySelectorAll('.nav-card').forEach(c => c.classList.remove('active'));
@@ -145,6 +123,7 @@
         function toggleAuto() { isAutoPlaying = !isAutoPlaying; document.getElementById('play-btn').textContent = isAutoPlaying ? '⏸' : '▶'; if (isAutoPlaying) playSpeech(studyPlan[currentIndex].text); else speech.cancel(); }
         function goNext() { if (currentIndex < studyPlan.length - 1) jumpToSlide(currentIndex + 1); }
         function goPrev() { if (currentIndex > 0) jumpToSlide(currentIndex - 1); }
+        function toggleSidebar() { document.getElementById('sidebar').classList.toggle('active'); }
         init();
     </script>
 </body>
