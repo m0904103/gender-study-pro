@@ -410,22 +410,45 @@
             .sidebar {
                 position: relative;
                 left: 0;
-                width: 300px;
+                width: 260px;
                 background: rgba(10, 15, 25, 0.5);
             }
             .control-panel {
                 position: absolute;
-                bottom: 20px;
-                right: 20px;
-                width: 450px;
+                bottom: 15px;
+                right: 15px;
+                width: 380px;
                 border: 1px solid var(--glass-border);
-                border-radius: 20px;
-                box-shadow: 0 40px 100px rgba(0,0,0,0.9);
-                padding: 20px;
+                border-radius: 15px;
+                box-shadow: 0 30px 80px rgba(0,0,0,0.9);
+                padding: 15px;
+                gap: 8px;
             }
             .lecture-text {
-                max-height: 80px;
-                font-size: 1rem;
+                max-height: 70px;
+                font-size: 0.95rem;
+                line-height: 1.5;
+            }
+            .circle-btn {
+                width: 38px;
+                height: 38px;
+                font-size: 0.9rem;
+            }
+            .circle-btn.play {
+                width: 50px;
+                height: 50px;
+                font-size: 1.3rem;
+            }
+            .lecture-header {
+                font-size: 0.8rem;
+            }
+            .role-badge {
+                padding: 4px 10px;
+                font-size: 0.8rem;
+            }
+            /* 橫屏時隱藏語速條以騰出空間 */
+            #speech-rate-container {
+                display: none !important;
             }
         }
 
@@ -553,7 +576,7 @@
                     <button class="circle-btn" onclick="goPrev()" title="上一步">⏮</button>
                     <button id="play-btn" class="circle-btn play" onclick="toggleAuto()" title="播放/暫停">▶</button>
                     <button class="circle-btn" onclick="goNext()" title="下一步">⏭</button>
-                    <div style="margin-left: 20px; display: flex; align-items: center; gap: 12px; background: var(--surface); padding: 8px 15px; border-radius: 12px;">
+                    <div id="speech-rate-container" style="margin-left: 20px; display: flex; align-items: center; gap: 12px; background: var(--surface); padding: 8px 15px; border-radius: 12px;">
                         <span style="font-size: 0.75rem; color: var(--text-dim); font-weight: 800;">語速</span>
                         <input type="range" id="speech-rate" min="0.8" max="2" step="0.1" value="1.2" style="width: 80px; accent-color: var(--primary);">
                     </div>
