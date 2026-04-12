@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>性別健康與多元文化 | 期中考速成神作</title>
+    <!-- SEO & Social Meta -->
+    <meta name="description" content="專為空中大學期中考試設計的「性別健康與多元文化」重點衝刺包，包含 AI 助教語音解析、必考數據與考古題命中指南。">
+    <meta property="og:title" content="性別健康與多元文化 - 期中考絕殺特訓">
+    <meta property="og:description" content="100% 考古命中，助教語音導覽，iPhone 15 Pro 全面優化。">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;700;900&family=Outfit:wght@600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #fbbf24;
+            --primary-glow: rgba(251, 191, 36, 0.4);
+            --secondary: #6366f1;
+            --accent: #f472b6;
+            --bg-dark: #05070a;
+            --surface: rgba(255, 255, 255, 0.05);
+            --surface-hover: rgba(255, 255, 255, 0.1);
+            --text-main: #f8fafc;
+            --text-dim: #94a3b8;
+            --safe-top: env(safe-area-inset-top, 20px);
+            --safe-bottom: env(safe-area-inset-bottom, 20px);
+            --glass-border: rgba(255, 255, 255, 0.1);
+        }
+
+        * {
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: 'Noto Sans TC', sans-serif;
+            overflow: hidden;
+            user-select: none;
+        }
+
+        /* 背景流光效果 */
+        .bg-glow {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(99, 102, 241, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 80% 80%, rgba(244, 114, 182, 0.1) 0%, transparent 40%);
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: calc(70px + var(--safe-top));
+            padding-top: var(--safe-top);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-left: 20px;
+            padding-right: 20px;
+            background: rgba(5, 7, 10, 0.82);
+            backdrop-filter: blur(25px);
+            border-bottom: 1px solid var(--glass-border);
+            z-index: 1000;
+        }
+
+        .header-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-text {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800;
+            font-size: 1.4rem;
+            background: linear-gradient(135deg, var(--primary), #fff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .badge-live {
+            background: var(--accent);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.65rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.6; }
+            100% { opacity: 1; }
+        }
+
+        .menu-btn {
+            background: var(--surface);
+            border: 1px solid var(--glass-border);
+            color: white;
+            padding: 10px 18px;
+            border-radius: 12px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .menu-btn:hover {
+            background: var(--primary);
+            color: #000;
+            transform: translateY(-2px);
+        }
+
+        .app-container {
+            display: flex;
+            height: 100vh;
+            padding-top: calc(70px + var(--safe-top));
+        }
+
+        .sidebar {
+            width: 320px;
+            background: rgba(10, 15, 25, 0.8);
+            border-right: 1px solid var(--glass-border);
+            overflow-y: auto;
+            transition: 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+            position: absolute;
+            left: -320px;
+            top: 0;
+            bottom: 0;
+            z-index: 2000;
+            backdrop-filter: blur(35px);
+        }
+
+        .sidebar.active {
+            left: 0;
+        }
+
+        .nav-content {
+            padding: 20px;
+            padding-top: calc(100px + var(--safe-top));
+        }
+
+        .nav-group-title {
+            font-size: 0.75rem;
+            color: var(--primary);
+            font-weight: 900;
+            margin: 24px 0 12px 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .nav-card {
+            background: var(--surface);
+            margin-bottom: 8px;
+            padding: 14px 18px;
+            border-radius: 16px;
+            border: 1px solid transparent;
+            cursor: pointer;
+            transition: 0.2s;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .nav-card:hover {
+            background: var(--surface-hover);
+            border-color: var(--primary-glow);
+            transform: translateX(5px);
+        }
+
+        .nav-card.active {
+            background: linear-gradient(135deg, var(--primary), #d97706);
+            color: #000;
+            box-shadow: 0 10px 30px rgba(245, 158, 11, 0.3);
+            border: none;
+        }
+
+        .nav-card.active .nav-subtitle {
+            color: rgba(0,0,0,0.6);
+        }
+
+        .nav-title {
+            font-weight: 800;
+            font-size: 0.95rem;
+        }
+
+        .nav-subtitle {
+            font-size: 0.75rem;
+            color: var(--text-dim);
+        }
+
+        .main-view {
+            flex: 1;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            background: #000;
+        }
+
+        .slide-container {
+            flex: 1;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            background: radial-gradient(circle at center, #111, #000);
+        }
+
+        #current-slide {
+            max-width: 95%;
+            max-height: 95%;
+            object-fit: contain;
+            transition: 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            filter: drop-shadow(0 30px 60px rgba(0,0,0,0.7));
+            border-radius: 12px;
+        }
+
+        .overlay-tags {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            z-index: 10;
+        }
+
+        .data-tag {
+            background: linear-gradient(135deg, #ef4444, #b91c1c);
+            color: white;
+            padding: 15px 35px;
+            border-radius: 15px;
+            font-weight: 950;
+            font-size: 2.2rem;
+            border: 5px solid #fff;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+            transform: scale(0) rotate(-2deg);
+            transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            text-align: center;
+        }
+
+        .data-tag.show {
+            transform: scale(1) rotate(0deg);
+        }
+
+        .control-panel {
+            background: rgba(15, 23, 42, 0.9);
+            backdrop-filter: blur(30px);
+            border-top: 1px solid var(--glass-border);
+            padding: 30px;
+            padding-bottom: calc(30px + var(--safe-bottom));
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            z-index: 50;
+        }
+
+        .lecture-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .role-badge {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary);
+            font-weight: 900;
+            font-size: 0.95rem;
+            background: rgba(251, 191, 36, 0.1);
+            padding: 6px 15px;
+            border-radius: 50px;
+        }
+
+        .progress-text {
+            background: rgba(99, 102, 241, 0.15);
+            color: var(--secondary);
+            padding: 6px 15px;
+            border-radius: 50px;
+            font-weight: 800;
+            font-size: 0.85rem;
+        }
+
+        .lecture-text {
+            font-size: 1.3rem;
+            line-height: 1.8;
+            font-weight: 500;
+            color: #fff;
+            max-height: 140px;
+            overflow-y: auto;
+            scrollbar-width: thin;
+            padding-right: 10px;
+        }
+
+        .controls-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 10px;
+        }
+
+        .circle-btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            border: 1px solid var(--glass-border);
+            background: var(--surface);
+            color: white;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            transition: 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+
+        .circle-btn:hover {
+            background: var(--surface-hover);
+            transform: scale(1.15) translateY(-3px);
+            border-color: var(--primary);
+        }
+
+        .circle-btn.play {
+            width: 75px;
+            height: 75px;
+            background: var(--primary);
+            color: #000;
+            font-size: 2rem;
+            border: none;
+            box-shadow: 0 0 30px var(--primary-glow);
+        }
+
+        .splash-screen {
+            position: fixed;
+            inset: 0;
+            background: var(--bg-dark);
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px;
+            transition: 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+
+        .splash-content {
+            max-width: 600px;
+        }
+
+        .splash-title {
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin: 25px 0;
+            line-height: 1.1;
+            background: linear-gradient(135deg, #fff 40%, var(--primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .start-btn {
+            background: var(--primary);
+            color: #000;
+            padding: 24px 90px;
+            border-radius: 100px;
+            font-size: 2rem;
+            font-weight: 950;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 15px 50px var(--primary-glow);
+            transition: 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+            margin-top: 50px;
+        }
+
+        .start-btn:hover {
+            transform: scale(1.08) translateY(-8px);
+            box-shadow: 0 25px 70px var(--primary-glow);
+        }
+
+        /* 橫向模式適配 */
+        @media (orientation: landscape) {
+            .app-container {
+                flex-direction: row;
+            }
+            .sidebar {
+                position: relative;
+                left: 0;
+                width: 320px;
+                background: rgba(10, 15, 25, 0.5);
+            }
+            .control-panel {
+                position: absolute;
+                bottom: 30px;
+                right: 30px;
+                width: 500px;
+                border: 1px solid var(--glass-border);
+                border-radius: 25px;
+                box-shadow: 0 40px 100px rgba(0,0,0,0.9);
+            }
+            .lecture-text {
+                max-height: 100px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .splash-title { font-size: 2.5rem; }
+            .data-tag { font-size: 1.5rem; }
+            .lecture-text { font-size: 1.1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-glow"></div>
+
+    <div id="splash" class="splash-screen">
+        <div class="splash-content">
+            <p style="color:var(--primary); font-weight:900; letter-spacing:10px; margin-bottom:10px; font-size:0.9rem;">AIR RESEARCH CENTER</p>
+            <h1 class="splash-title">性別健康<br>多元文化</h1>
+            <p style="color:var(--text-dim); font-size:1.2rem; font-weight:300;">期中考絕殺：AI 特訓導覽系統</p>
+            <div style="margin-top:25px; display:flex; justify-content:center; gap:15px;">
+                <span style="background:rgba(251, 191, 36, 0.1); color:var(--primary); padding:8px 18px; border-radius:10px; font-size:0.85rem; font-weight:700;">語音助教</span>
+                <span style="background:rgba(99, 102, 241, 0.1); color:var(--secondary); padding:8px 18px; border-radius:10px; font-size:0.85rem; font-weight:700;">考古 100% 命中</span>
+            </div>
+            <button class="start-btn" onclick="startApp()">🏆 啟動特訓</button>
+            <p style="color:rgba(255,255,255,0.2); font-size:0.8rem; margin-top:40px;">推薦觀看環境：iPhone 15 Pro / Safari / Chrome</p>
+        </div>
+    </div>
+
+    <header class="header">
+        <div class="header-logo">
+            <span class="logo-text">GENDER MASTER</span>
+            <span class="badge-live">Live</span>
+        </div>
+        <button class="menu-btn" onclick="toggleSidebar()">
+            <span id="menu-icon">☰</span> <span>內容目錄</span>
+        </button>
+    </header>
+
+    <div class="app-container">
+        <aside id="sidebar" class="sidebar">
+            <div id="nav-list" class="nav-content"></div>
+        </aside>
+
+        <main class="main-view">
+            <div class="slide-container">
+                <img id="current-slide" src="" alt="教學投影片">
+                <div id="overlay" class="overlay-tags"></div>
+            </div>
+
+            <div class="control-panel">
+                <div class="lecture-header">
+                    <div class="role-badge">
+                        <span>🎙️</span> <span>學長助教深度解析</span>
+                    </div>
+                    <div id="slide-progress" class="progress-text">1 / 23</div>
+                </div>
+                
+                <div id="lecture-body" class="lecture-text">
+                    系統啟動中，請點擊播放開始特訓...
+                </div>
+
+                <div class="controls-row">
+                    <button class="circle-btn" onclick="goPrev()" title="上一步">⏮</button>
+                    <button id="play-btn" class="circle-btn play" onclick="toggleAuto()" title="播放/暫停">▶</button>
+                    <button class="circle-btn" onclick="goNext()" title="下一步">⏭</button>
+                    <div style="margin-left: 20px; display: flex; align-items: center; gap: 12px; background: var(--surface); padding: 8px 15px; border-radius: 12px;">
+                        <span style="font-size: 0.75rem; color: var(--text-dim); font-weight: 800;">語速</span>
+                        <input type="range" id="speech-rate" min="0.8" max="2" step="0.1" value="1.2" style="width: 80px; accent-color: var(--primary);">
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        const studyPlan = [
+            { cat: "數據戰略", title: "🚩 ALPHA：否定陷阱生存指南", img: "gender_health_balance_1775873567230.png", labels: ["看清何者錯誤"], text: "各位英雄學員，我是學長助教。細節決定成敗！大數據顯示本門課『何者錯誤』題型極多。看到健康是個人努力、或是醫療中性的選項，請直接果斷打大叉。社會建構才是奪冠關鍵字！" },
+            { cat: "第一章：辨析", title: "💡 補丁：Sex 硬體 vs Gender 軟體", img: "gender_health_balance_1775873567230.png", labels: ["Gender = 後天"], text: "必考！Sex 是先天硬體，Gender 是後天教育編寫的軟體。若考卷暗示性別氣質是基因使然，那是誘餌。記住：社會性別是可被挑戰與重新編寫的建構物。" },
+            { cat: "第一章：辨析", title: "🧬 四大理論：絕對時序排序", img: "ch1_master_theory_tw_1775901143741.png", special: "theory", text: "排序題帝王：心理動力、社會學習、認知發展、女性主義。順序：心、社、認、女！出題老師最愛考這組時序，只要記住女性主義在最末端，您就贏了一半。" },
+            { cat: "第一章：辨析", title: "🧒 柯爾伯格：數據地雷 4-5 歲", img: "ch1_master_theory_tw_1775901143741.png", special: "kohlberg", text: "數字靶心：4 到 5 歲。這是幼兒達成『性別恆定』的關鍵點。這代表小孩懂了：男孩穿裙子也不會變成女孩。113 年考古實測，數字題必考項！" },
+            { cat: "第二章：權重最高", title: "🍱 1132 爆量點：全球在地化", img: "ch2_rice_burger_glocal_1775909945923.png", labels: ["權重 29% 優先區"], text: "4/25 當天請優先攻略此區！全球在地化 Glocalization。麥當勞米漢堡就是品牌融入本土的最佳證明。看到融入當地文化、正名承認，選這個專有名詞期望值最高。" },
+            { cat: "第二章：權重最高", title: "🏺 泰勒：承認的政治與正名", img: "ch2_political_concept_tw_1775901180201.png", labels: ["正名=尊嚴"], text: "泰勒強調：弱勢要在法律名份上獲得正式承認。正名新住民不只是改名，是為了去商品化、去歧視，建立公共領域的群體尊嚴。" },
+            { cat: "第三章：法制紅線", title: "⚖️ CEDAW 與實質平等靈魂", img: "cedaw_justice_symbol_1775875313437.png", labels: ["追求結果公平"], text: "CEDAW 只保障婦女。其魂在於實質平等，即『結果公平』。別被機會平等騙了。2011 年台灣施行法通過，具國內法律地位。" },
+            { cat: "第三章：法制紅線", title: "💡 發展範式：唯一正確 GAD 理論", img: "ch3_cedaw_articles_scroll_1775910131854.png", labels: ["GAD=翻轉權力"], text: "WID 增加負擔，GAD 翻轉權力結構。看到『賦權』或『制度改革』，選 GAD 就對了。它是目前醫學與多元文化學界的王道答案。" },
+            { cat: "第三章：法制紅線", title: "🪑 門檻數據：1/3 法定比例", img: "ch3_gender_quota_table_1775910362721.png", labels: ["委員會 1/3 下限"], text: "行政院所屬委員會任一性別比例不得低於三分之一。這是為了實質平等的暫行矯正式措施。數字認準 1/3，錯選 1/4 的都是考官的下一個受害者。" },
+            { cat: "第四章：評估基準", title: "🔃 GIA 九字訣：事前預防屬性", img: "gia_process_flow_1775875345608.png", special: "gia", text: "口訣：需目溝行執檢。重要：GIA 必須是『事前』工具！計畫研擬初期的預防行為。看到事後才評估？直接判定為錯誤。溝通必須包含專家與婦女團體。" },
+            { cat: "第四章：評估基準", title: "🏥 醫療標準：AAAQ 全要素組合", img: "ch4_aaa_standard_icons_1775909974764.png", special: "aaaq", text: "113 年度必考！可用、可及 (含付費)、可接受、品質。付錢能力屬於 Accessibility。如果題目缺少任何一個 A，那選項就是殘缺的錯誤項。" },
+            { cat: "第四章：評估基準", title: "⚠️ 間接歧視識別：高鑑別命中紅心", img: "ch4_aaa_standard_icons_1775909974764.png", labels: ["表面中立,結果不公"], text: "高鑑別題！表面對男女一樣（如身高規定），但實質卻排擠某個性別。這叫間接歧視。看到看似公平實則偏頗的例題，冷靜選答：間接歧視。5 分入袋！" },
+            { cat: "第四章：評估基準", title: "🔞 性同意界線：16 歲法律靶心", img: "ch3_age_16_consent_1775910116195.png", labels: ["16歲 vs 18歲"], text: "18 歲成年不用看，16 歲性意願界線才是法律題的肉！未滿 16 即使自願也具法律責任。認準 16 歲，這是考古題最經典的數字陷阱。" },
+            { cat: "第四章：評估基準", title: "🛒 交織性：弱勢的乘積效應", img: "intersectionality_health_map_1775875386888.png", labels: ["性別 × 階級 × 族群"], text: "健康弱勢是乘積。性別、階級、族群堆疊時，痛苦是相乘的。單解決性別問題無助於全人健康。這題選考慮社會梯度與交織影響的綜合選項。" },
+            { cat: "第五章：醫學靶心", title: "❤️ 女性心臟病：糖尿病風險變數", img: "female_heart_symptoms_1775875369499.png", special: "diabetes", text: "醫學最新補丁：糖尿病女性患心臟病風險是一般女性的 3 到 7 倍！預測指標看 HDL 好膽固醇。92% 女性發作呈現下顎痛、背痛非典型症狀。" },
+            { cat: "第五章：醫學靶心", title: "💀 男骨折死 22%：反直覺最高頻命中", img: "male_fragility_fracture_trap_1775875425752.png", labels: ["男死 22% > 女死 15%"], text: "數據奇襲：雖然女骨鬆多，但男髖部骨折死亡率 22% 超出女性。診斷 T-score 低於負 2.5 確診。認準負二點五與百分之二十二！" },
+            { cat: "第五章：醫學靶心", title: "🚬 肺癌型態：113-Q11 女腺男小", img: "ch5_lung_cancer_types_1775910383105.png", labels: ["女腺 90%不菸"], text: "Q11 解析：女性主得肺腺癌（與菸無關）；男性主得小細胞癌（與菸有關）。女性對菸毒更敏感。成因絕不相同！看到相同請直接排除。" },
+            { cat: "第五章：醫學學報", title: "🧪 性別化創新：目的在修正科學盲", img: "gender_medicine_innovation_1775873597537.png", labels: ["修正科學盲"], text: "它不是研發美容產品！它是要在科學設計初期就納入性別分析，修正阿斯匹靈、安全帶等忽略女性數據造成的科學偏差。糾正盲點才是真正的創新。" },
+            { cat: "第六章：社會構建", title: "🌸 破殼：拒絕更年期病理化", img: "gender_health_balance_1775873567230.png", labels: ["更年期醫療化", "社會增能"], text: "各位學員請注意，第六章核心：更年期並非疾病而是生命轉變。社會常將女性轉機病理化（Medicalization），這是一種隱形壓迫。申論題若問如何改善，請必答：從醫療控制轉向『社會增能』，打破家務勞動僵化框架，增強社會參與權能！" },
+            { cat: "考古命中", title: "🎯 命中 27：女性健康指標？", img: "female_heart_symptoms_1775875369499.png", labels: ["選 HDL 膽固醇"], text: "直接命中：預測女性風險選 HDL。如果有 LDL 項，那是老師給的致命干擾誘餌，請保持冷靜排除。" },
+            { cat: "考古命中", title: "🎯 命中 28：影子報告功能？", img: "ch3_ngo_shadow_report_1775910181779.png", labels: ["影子報告 Shadow"], text: "直接命中：監督政府 CEDAW 報告的人？就是 NGO 的影子報告。這是在數據庫中連續 5 年出現的考點。" },
+            { cat: "考古命中", title: "🎯 命中 29：AAAQ 經濟面向？", img: "ch4_aaa_standard_icons_1775909974764.png", labels: ["選可及性"], text: "直接命中：付錢能利屬於？答：可及性 Accessibility。選品質或可用性的都是對數據理解不足。認準可及性。" },
+            { cat: "考古命中", title: "🎯 命中 30：WHO 健康三位一體", img: "gender_health_balance_1775873567230.png", labels: ["生理+心理+社會適應"], text: "直接命中：不可缺少『社會適應』。三合一完整定義才是 100 分。少了社會適應就是殘缺選項。" },
+            { cat: "考古命中", title: "🎯 命中 31：更年期應對策略？", img: "final_blessing_gold_1775901221619.png", labels: ["由醫療轉社會增能"], text: "直接命中：面對更年期，與其只給荷爾蒙（醫療化），更應提供社會參與機會與賦權。看到『社會增能』即為標準正解。" },
+            { cat: "大終局", title: "🏆 引領全班勇奪 100 分傳奇！", img: "final_blessing_gold_1775901221619.png", labels: ["4/25 全班滿分"], text: "恭喜！特訓完成。我們拿到了 Glocalization、1/3、16、22、3-7倍以及社會增能核心。4 月 25 日，我們全班滿分榜單見。英雄們，出發奪冠！" }
+        ];
+
+        let currentIndex = -1;
+        let isAutoPlaying = false;
+        let speech = window.speechSynthesis;
+        let voices = [];
+
+        function init() {
+            renderSidebar();
+            loadVoices();
+            if (speech.onvoiceschanged !== undefined) speech.onvoiceschanged = loadVoices;
+            
+            // 監聽螢幕旋轉
+            window.addEventListener('resize', () => {
+                if(window.innerWidth > 1024) document.getElementById('sidebar').classList.add('active');
+            });
+        }
+
+        function loadVoices() {
+            voices = speech.getVoices();
+        }
+
+        function renderSidebar() {
+            const navList = document.getElementById('nav-list');
+            let currentCat = "";
+            
+            studyPlan.forEach((item, index) => {
+                if (item.cat !== currentCat) {
+                    const groupTitle = document.createElement('div');
+                    groupTitle.className = 'nav-group-title';
+                    groupTitle.textContent = item.cat;
+                    navList.appendChild(groupTitle);
+                    currentCat = item.cat;
+                }
+
+                const card = document.createElement('div');
+                card.className = 'nav-card';
+                card.id = `nav-${index}`;
+                card.innerHTML = `
+                    <div class="nav-title">${item.title}</div>
+                    <div class="nav-subtitle">${item.text.substring(0, 20)}...</div>
+                `;
+                card.onclick = () => jumpToSlide(index);
+                navList.appendChild(card);
+            });
+        }
+
+        function startApp() {
+            const splash = document.getElementById('splash');
+            splash.style.opacity = '0';
+            splash.style.transform = 'scale(1.1)';
+            setTimeout(() => {
+                splash.style.display = 'none';
+                jumpToSlide(0);
+                if(window.innerWidth > 1024) document.getElementById('sidebar').classList.add('active');
+            }, 800);
+        }
+
+        function toggleSidebar() {
+            document.getElementById('sidebar').classList.toggle('active');
+            document.getElementById('menu-icon').textContent = document.getElementById('sidebar').classList.contains('active') ? '✕' : '☰';
+        }
+
+        function jumpToSlide(index) {
+            if (index < 0 || index >= studyPlan.length) return;
+            
+            currentIndex = index;
+            speech.cancel();
+            
+            document.querySelectorAll('.nav-card').forEach(c => c.classList.remove('active'));
+            const activeCard = document.getElementById(`nav-${index}`);
+            if (activeCard) {
+                activeCard.classList.add('active');
+                if(!document.getElementById('sidebar').classList.contains('active') && window.innerWidth < 1024) {
+                    // 點擊後自動收起目錄（手機版）
+                }
+            }
+
+            document.getElementById('slide-progress').textContent = `${index + 1} / ${studyPlan.length}`;
+            
+            // 預載入圖片動畫
+            const img = document.getElementById('current-slide');
+            img.style.opacity = '0';
+            img.src = studyPlan[index].img;
+            img.onload = () => img.style.opacity = '1';
+
+            document.getElementById('lecture-body').textContent = studyPlan[index].text;
+            renderOverlay(studyPlan[index]);
+            
+            if (isAutoPlaying) playSpeech(studyPlan[index].text);
+        }
+
+        function renderOverlay(item) {
+            const overlay = document.getElementById('overlay');
+            overlay.innerHTML = '';
+            
+            let tags = [];
+            if (item.special === 'theory') tags = ["心 ➔ 社 ➔ 認 ➔ 女"];
+            if (item.special === 'kohlberg') tags = ["4-5 歲：恆定成熟點"];
+            if (item.special === 'gia') tags = ["事前！需目溝行執檢"];
+            if (item.special === 'diabetes') tags = ["糖尿病女：3 ~ 7 倍風險"];
+            if (item.special === 'aaaq') tags = ["可用、可及、可接、品質"];
+            if (item.labels) tags = [...tags, ...item.labels];
+
+            tags.forEach((text, i) => {
+                const tag = document.createElement('div');
+                tag.className = 'data-tag';
+                tag.textContent = text;
+                overlay.appendChild(tag);
+                setTimeout(() => tag.classList.add('show'), 200 * (i + 1));
+            });
+        }
+
+        function playSpeech(text) {
+            speech.cancel();
+            const utter = new SpeechSynthesisUtterance(text);
+            const preferredVoice = voices.find(v => v.lang.includes('zh-TW') && (v.name.includes('Natural') || v.name.includes('Lekha') || v.name.includes('Yating')));
+            if (preferredVoice) utter.voice = preferredVoice;
+            
+            utter.lang = 'zh-TW';
+            utter.rate = document.getElementById('speech-rate').value;
+            
+            utter.onend = () => {
+                if (isAutoPlaying && currentIndex < studyPlan.length - 1) {
+                    setTimeout(() => jumpToSlide(currentIndex + 1), 1500);
+                } else if (currentIndex === studyPlan.length - 1) {
+                    isAutoPlaying = false;
+                    updatePlayBtn();
+                }
+            };
+            speech.speak(utter);
+        }
+
+        function toggleAuto() {
+            isAutoPlaying = !isAutoPlaying;
+            updatePlayBtn();
+            if (isAutoPlaying) playSpeech(studyPlan[currentIndex].text);
+            else speech.cancel();
+        }
+
+        function updatePlayBtn() {
+            document.getElementById('play-btn').textContent = isAutoPlaying ? '⏸' : '▶';
+        }
+
+        function goNext() { if (currentIndex < studyPlan.length - 1) jumpToSlide(currentIndex + 1); }
+        function goPrev() { if (currentIndex > 0) jumpToSlide(currentIndex - 1); }
+
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === 'Enter') goNext();
+            if (e.key === 'ArrowLeft') goPrev();
+            if (e.key === ' ') { e.preventDefault(); toggleAuto(); }
+        });
+
+        init();
+    </script>
+</body>
+</html>
