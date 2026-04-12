@@ -6,7 +6,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="theme-color" content="#020617">
-    <title>【114-2】性別健康考前特訓 | 同學版 V8.7</title>
+    <title>性別、健康與多元文化 | 考前特訓系統</title>
     <style>
         :root { 
             --primary: #fbbf24; --danger: #ef4444; --bg: #020617; --text: #f8fafc; 
@@ -32,34 +32,33 @@
         .sidebar.open { left: 0; box-shadow: 40px 0 100px rgba(0,0,0,1); }
         .course-nav { height: 100%; overflow-y: auto; padding: 25px; }
         .nav-cat { font-size: 0.75rem; color: var(--primary); margin: 30px 0 15px 5px; font-weight: 950; border-left: 5px solid var(--primary); padding-left: 12px; }
-        .nav-item { padding: 18px 24px; margin-bottom: 12px; border-radius: 20px; cursor: pointer; transition: 0.3s; font-size: 0.95rem; background: rgba(255,255,255,0.06); }
+        .nav-item { padding: 18px 24px; margin-bottom: 8px; border-radius: 20px; cursor: pointer; transition: 0.3s; font-size: 0.95rem; background: rgba(255,255,255,0.06); }
         .nav-item.active { background: var(--primary); color: #000; font-weight: 1000; box-shadow: 0 10px 30px rgba(251, 191, 36, 0.4); }
         .viewport { flex: 1; position: relative; background: #000; display: flex; flex-direction: column; overflow: hidden; padding-bottom: calc(210px + var(--safe-bottom)); }
         .screen { flex: 1; position: relative; display: flex; justify-content: center; align-items: center; }
         #slide-view { width: 100%; height: 100%; background-size: contain; background-position: center; background-repeat: no-repeat; transition: 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
-        .label-unit { position: absolute; background: linear-gradient(135deg, #ef4444, #991b1b); color: #fff; padding: 20px 45px; border-radius: 20px; font-weight: 1000; font-size: 2.3rem; border: 5px solid #fff; box-shadow: 0 30px 80px rgba(0,0,0,1); animation: pop 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); z-index: 1001; }
-        @keyframes pop { from { transform: scale(0.4); opacity:0; } to { transform: scale(1); opacity:1; } }
+        .label-unit { position: absolute; background: linear-gradient(135deg, #ef4444, #991b1b); color: #fff; padding: 20px 45px; border-radius: 20px; font-weight: 1000; font-size: 2.3rem; border: 5px solid #fff; box-shadow: 0 30px 80px rgba(0,0,0,1); z-index: 1001; }
         .console { 
             position: fixed; bottom: calc(20px + var(--safe-bottom)); left: 50%; transform: translateX(-50%); width: 92%; background: rgba(15, 23, 42, 0.98); padding: 28px; 
             border-radius: 36px; border-left: 14px solid var(--primary); backdrop-filter: blur(40px); -webkit-backdrop-filter: blur(40px); z-index: 3500; 
         }
         .text-body { font-size: 1.4rem; line-height: 1.7; height: 110px; overflow-y: auto; color: #fff; font-weight: 500; }
-        .btn-gold { background: var(--primary); color: #000; border: none; padding: 25px 90px; font-size: 2.1rem; font-weight: 1000; border-radius: 100px; cursor: pointer; box-shadow: 0 15px 40px rgba(251, 191, 36, 0.6); }
+        .btn-gold { background: var(--primary); color: #000; border: none; padding: 25px 90px; font-size: 2.1rem; font-weight: 1000; border-radius: 100px; cursor: pointer; }
         #splash { position: fixed; inset: 0; background: #020617; z-index: 5000; display: flex; justify-content: center; align-items: center; text-align: center; }
     </style>
 </head>
 <body>
     <div id="splash" onclick="goStudy()">
         <div style="width: 85%">
-            <p style="color:var(--primary); font-weight:1000; letter-spacing:12px; margin-bottom:15px; font-size:1.1rem;">GENDER STUDY V8.7</p>
-            <h1 style="font-size:3.5rem; margin:15px 0; background:linear-gradient(135deg, #fff, var(--primary)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; font-weight:1000;">考前特訓模式<br>32 頁絕殺完全體</h1>
-            <div style="background:var(--danger); color:white; padding:12px 40px; border-radius:15px; font-size:1.4rem; font-weight:950; display:inline-block;">iPhone 15 Pro 精英旗艦適配</div>
-            <br><button class="btn-gold" style="margin-top:50px;">🏆 同學，啟動特訓</button>
+            <p style="color:var(--primary); font-weight:1000; letter-spacing:12px; margin-bottom:15px; font-size:1.1rem;">GENDER STUDIES</p>
+            <h1 style="font-size:3.5rem; margin:15px 0; background:linear-gradient(135deg, #fff, var(--primary)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; font-weight:1000;">性別、健康與多元文化<br>考前特訓系統</h1>
+            <div style="background:var(--danger); color:white; padding:12px 40px; border-radius:15px; font-size:1.4rem; font-weight:950; display:inline-block;">32 頁全考點覆蓋版</div>
+            <br><button class="btn-gold" style="margin-top:50px;">🏆 進入模式</button>
         </div>
     </div>
     <header class="header">
-        <button onclick="toggleSidebar()" style="background:var(--primary); border:none; padding:15px 28px; border-radius:18px; font-weight:1000; font-size:0.95rem;">☰ 目錄</button>
-        <div style="color:var(--primary); font-weight:1000; font-size:1.1rem; letter-spacing:2px">Ver 8.7 FINAL</div>
+        <button onclick="toggleSidebar()" style="background:var(--primary); border:none; padding:15px 28px; border-radius:18px; font-weight:1000; font-size:0.95rem;">☰ 重點目錄</button>
+        <div style="color:var(--primary); font-weight:1000; font-size:1.1rem; letter-spacing:1.5px">SESSION V8.8</div>
         <div style="background:rgba(0,0,0,0.6); padding:10px 18px; border-radius:50px; border:2.5px solid var(--primary); display:flex; align-items:center; gap:10px;"><input type="range" id="rate" min="0.5" max="2.0" value="1.3" step="0.1" style="width:60px; accent-color:var(--primary)"></div>
     </header>
     <div class="wrapper">
@@ -67,45 +66,45 @@
         <main class="viewport">
             <div class="screen"><div id="slide-view"></div><div id="overlay-layer" style="position:absolute; inset:0; pointer-events:none; display:flex; justify-content:center; align-items:center;"></div></div>
             <div class="console">
-                <div style="display:flex; justify-content:space-between; margin-bottom:15px; align-items:center"><span style="color:var(--primary); font-weight:1000; font-size:1.15rem;">🎙️ 學長助教：考前特訓已啟動</span><span id="page-num" style="background:#1e40af; padding:6px 16px; border-radius:12px; font-size:0.9rem; font-weight:1000;">1 / 32</span></div>
-                <div id="lecture-content" class="text-body">數據裝載中...</div>
+                <div style="display:flex; justify-content:space-between; margin-bottom:15px; align-items:center"><span style="color:var(--primary); font-weight:1000; font-size:1.1rem;">考場識別指南</span><span id="page-num" style="background:#1e40af; padding:6px 16px; border-radius:12px; font-size:0.9rem; font-weight:1000;">1 / 32</span></div>
+                <div id="lecture-content" class="text-body">。</div>
             </div>
         </main>
     </div>
     <script>
         const studyPlan = [
-            { cat: "第一部分", title: "🚩 戰略思維：全景識別碼", img: "gender_health_balance_1775873567230.png", labels: ["排除中立論"], text: "各位同學，啟動 3.0 考前特訓模式！在考場上，如果你看到選項寫『健康純粹是個人努力』或是『醫療是絕對中性的』，請果斷打叉選錯！記住，『社會建構』與『社會梯度分析』才是滿分的標準答案。" },
-            { cat: "第一部分", title: "🏺 特訓基礎：米德性格對比", img: "ch1_mead_3_tribes_1775909916148.png", labels: ["阿:皆溫", "蒙:皆鬥", "徳:反轉"], text: "各位同學請注意，第一章必考米德研究：性格是文化編排的結果。阿拉佩什族：兩性皆溫順。蒙杜古馬族：兩性皆剽悍好鬥。德昌布利族：角色反轉，女強男弱。認準『德昌布利』，這是打臉性別天生論的最強證據！" },
-            { cat: "第二部分", title: "💡 理論與發展：軟硬體辨析", img: "gender_health_balance_1775873567230.png", labels: ["Gender = 社會軟體"], text: "接著辨析：Sex 是天生硬體構造，Gender 是社會後天建構的軟體。如果考卷暗示氣質是基因使然，那是錯的！性別是被社會編寫出來的規範。" },
-            { cat: "第二部分", title: "🧬 四大理論時序：絕對序列", img: "ch1_master_theory_tw_1775901143741.png", special: "theory", text: "請背好理論排序：一、心理動力 ➔ 二、社會學習 ➔ 三、認知發展 ➔ 四、女性主義。女性主義旨在打破父權結構與二元框架。順序：心、社、認、女！" },
-            { cat: "第二部分", title: "🧒 柯爾伯格：性別恆定標識", img: "ch1_master_theory_tw_1775901143741.png", special: "kohlberg", text: "數字靶心：4 到 5 歲達成性別恆定。孩子明白了：男孩即使穿上裙子，也不會因此變成女孩。認準 4 到 5 歲，這是考古必考頂點。" },
-            { cat: "第三部分", title: "🍱 多元文化：全球在地化實例", img: "ch2_rice_burger_glocal_1775909945923.png", labels: ["麥當勞米漢堡"], text: "實例識別：全球在地化 (Glocalization)。例如麥當勞為了迎合台灣人推出『米漢堡』，這就是全球品牌融入當地的代表。看到跨國融入在地，選它就對了。" },
-            { cat: "第三部分", title: "🏺 沙拉盤模式：尊重並存", img: "salad_bowl_multiculturalism_1775873580685.png", labels: ["沙拉盤 Salad Bowl"], text: "特訓提醒：台灣已從強迫同化的『大熔爐』，走向尊重並存的『沙拉盤』模式。沙拉盤代表我們尊重各文化差異，讓每種特質保持獨立並和諧共處。" },
-            { cat: "第三部分", title: "🧥 特訓正名：新住民去商品化", img: "ch2_political_concept_tw_1775901180201.png", labels: ["正名=去商品化"], text: "記住正名運動：『外籍新娘』一詞帶有貶義，應正名為『新住民』，這是為了去商品化、換取群體尊嚴。正名是為了獲得尊重。" },
-            { cat: "第四部分", title: "⚖️ CEDAW 特訓：婦女專屬權利", img: "cedaw_justice_symbol_1775875313437.png", labels: ["對象是婦女"], text: "CEDAW 特訓：全名是《消除對婦女一切形式歧視公約》，追求實質平等。注意！對象是『婦女』，不是泛指所有弱勢群體。核心在於追求平等的結果。" },
-            { cat: "第四部分", title: "💡 發展範式：GAD 王道理論", img: "ch3_cedaw_articles_scroll_1775910131854.png", labels: ["制度改革翻轉權力"], text: "發展範式：GAD (社會性別與發展) 才是王道！它的核心在於翻轉社會運作的權力結構、進行制度改革。不要選成只是拉女性進職場的 WID。" },
-            { cat: "第四部分", title: "📜 CEDAW 第 24 號指導補丁", img: "ch3_cedaw_articles_scroll_1775910131854.png", labels: ["GR 24 = 健康"], text: "特訓補丁：CEDAW 第 24 號一般性建議專門針對『健康』。要求國家必須確保女性在『整個生命週期』中都能獲得保健服務，特別是生殖健康。看到 24 直接聯想健康權！" },
-            { cat: "第四部分", title: "🛠️ 六大工具：全稱與辨析陷阱", img: "ch3_gender_quota_table_1775910362721.png", labels: ["統析預評培機"], text: "主流化六大工具：統、析、預、評、培、機（統計、分析、預算、評估、培力、機制）。⚠️ 警告：『配額制』與『保障名額』是『暫行特別措施』，不屬於主流化核心工具包！" },
-            { cat: "第四部分", title: "📊 統計 vs 分析：特訓辨析", img: "ch3_gender_quota_table_1775910362721.png", labels: ["統計數字, 分析成因"], text: "特訓辨析：『性別統計』是將資料分類呈現數字；『性別分析』是探究背後的社會文化與權力成因。統計看見差異，分析解釋差異。" },
-            { cat: "第四部分", title: "🪑 門檻數據：1/3 性別紅線", img: "ch3_gender_quota_table_1775901180201.png", labels: ["佔比 1/3 下限"], text: "中央委員會紅線：單一性別比例不得低於三分之一。認準 1/3，它是矯正式、暫行性的實質平等措施。" },
-            { cat: "第五部分", title: "🔃 GIA 評估時機：事前屬性", img: "gia_process_flow_1775875345608.png", labels: ["制定前的工具"], text: "GIA (性別影響評估)：必須在政策制定『前』進行，目的是預防性地消除性別盲。看到實施後的評估檢討，一律判定為錯誤！" },
-            { cat: "第五部分", title: "⚙️ GIA 流程：需目溝行執檢", img: "gia_process_flow_1775875345608.png", special: "gia", text: "流程特訓：需、目、溝、行、執、檢。重要：其中溝通環節必須諮詢性別平等專家與婦女團體，這是確保公正的基本盤。" },
-            { cat: "第五部分", title: "⚖️ [特訓] 不平等 vs 不公平", img: "intersectionality_health_map_1775875386888.png", labels: ["Equity = 公平"], text: "概念特辨：不平等 (Inequality) 指單純數據差異；不公平 (Inequity) 指『可避免、不合理、不正義』的差異（如貧窮看不起病）。我們追求的是 Equity 公平。" },
-            { cat: "第五部分", title: "🏥 AAAQ：付不起錢的可及性邏輯", img: "ch4_aaa_standard_icons_1775909974764.png", special: "aaaq", text: "看到『沒錢看病』或『經濟負擔』，請選 Accessibility (可及性)。付錢能力屬於四個 A 中的經濟可及性指標！" },
-            { cat: "第五部分", title: "⚠️ 間接歧視：特訓識別例", img: "ch4_aaa_standard_icons_1775909974764.png", labels: ["表面中立, 結果不公"], text: "識別技法：表面對男女一樣（如身高規定），但實質效果卻排擠單一性別。這叫間接歧視。識別看似公平後的偏頗就是拿分關鍵。" },
-            { cat: "第六部分", title: "🔞 特訓數據：16 歲與 18 歲", img: "ch3_age_16_consent_1775910116195.png", labels: ["性意願 16 歲"], text: "法律特訓數據：性同意是 16 歲，成年是 18 歲，不可混淆！未滿 16 歲即使自願也具法律責任。認準 16 歲這個紅線。" },
-            { cat: "第六部分", title: "🛒 WHO 社會梯度：地位之階", img: "intersectionality_health_map_1775875386888.png", labels: ["地位越高越健康"], text: "社會梯度 (Social Gradient)：代表社會地位越高的人越健康，健康不平等跟階級高度相關。健康不是個人運氣，而是一個社會階面。" },
-            { cat: "第六部分", title: "❤️ 女性心臟病：延遲發病陷阱", img: "female_heart_symptoms_1775875369499.png", special: "diabetes", text: "特報數據：女性心臟病平均晚 10 年發病，但發作後的死亡率與預後通常比男性差。糖尿病會抵銷雌激素的保護力，使風險暴增！" },
-            { cat: "第六部分", title: "💀 數據奇襲：男死 22% 反直點", img: "male_fragility_fracture_trap_1775875425752.png", labels: ["男死亡率 22%"], text: "特訓命中：雖然女性案例多，但男性髖部骨折一年內死亡率 22%，明顯高於女性的 15%。骨鬆確診數據：T-score 小於 -2.5。負二點五！" },
-            { cat: "第六部分", title: "🚬 肺癌成因：女腺男小辨析", img: "ch5_lung_cancer_types_1775910383105.png", labels: ["女腺男小"], text: "精確辨析：女性 90% 不抽菸，多為肺腺癌；男性多為與抽菸相關的小細胞癌。兩性成因完全不同，認準女腺男小！" },
-            { cat: "第六部分", title: "🧪 醫療非中性：科學偏差認知", img: "gender_medicine_innovation_1775873597537.png", labels: ["科學非中立"], text: "特訓認知：科學並非絕對客觀。忽略女性生理週期的研究（如過去的阿斯匹靈實驗）就是性別盲。需要『性別化創新』來修正偏差。" },
-            { cat: "大數據", title: "🍼 育嬰假比例：男性申請佔比 30%", img: "ch1_male_pressure_atlas_1775910150346.png", labels: ["男育嬰假 ~30%"], text: "特訓字：男性申請留職停薪佔比已達 25% 到 30%。全球女性無酬家務時間則是男性的 2.5 到 3 倍。這題考數字匹配。" },
-            { cat: "第六部分", title: "🎯 影子報告：NGO 監督模式", img: "ch3_ngo_shadow_report_1775910181779.png", labels: ["由民間 NGO 撰寫"], text: "定名解釋：影子報告是由民間 NGO 撰寫，用來監督政府是否落實。這是一個自下而上的民主監督機制。" },
-            { cat: "第六部分", title: "🎯 WHO 三位一體：健康標準", img: "gender_health_balance_1775873567230.png", labels: ["生理心理社會適應"], text: "WHO 完美定義：生理、心理、社會適應三合一。缺少其中任何一環或認為只是沒病，通通判定為錯誤選項！" },
-            { cat: "第六部分", title: "🎯 預測指標：HDL 好膽固醇靶心", img: "female_heart_symptoms_1775875369499.png", labels: ["選 HDL"], text: "特訓指標：預測女性心搏健康風險看 HDL (好膽固醇)。不要選 LDL。認準 HDL 這個三字母答案！" },
-            { cat: "特訓考古", title: "🎯 AAAQ 經濟邏輯連環", img: "ch4_aaa_standard_icons_1775909974764.png", labels: ["經濟負擔=可及性"], text: "鎖定邏輯：只要題目出現付錢能力、經濟負擔，一律選『可及性』。認準經濟即是 Accessibility 的連鎖邏輯！" },
-            { cat: "特訓衝刺", title: "🚨 否定題陷阱特訓總結", img: "gender_health_balance_1775873567230.png", labels: ["排除中立論"], text: "最後提醒：看到科學中立、性別天生、女性死亡率較低、醫療完全客觀等項，一律打大叉！冷靜識別否定題項。" },
-            { cat: "大終局", title: "🏆 特訓凱旋！目標滿分成績", img: "final_blessing_gold_1775901221619.png", labels: ["4/25 全班滿分"], text: "特訓完成！32 頁絕殺完全體已就位。帶上這份考前特訓地圖。4 月 25 日，滿分凱旋。我們凱旋門見！加油！" }
+            { cat: "第一部分", title: "🚩 戰略思維：全景識別指南", img: "gender_health_balance_1775873567230.png", labels: ["排除中立論"], text: "如果您在考場中看到選項寫『健康純粹是個人努力』或是『醫療是絕對中性的』，請判定為錯誤。記住，『社會建構』與『社會梯度分析』才是學術正確的答案。" },
+            { cat: "第一部分", title: "🏺 性格對比：米德族群研究", img: "ch1_mead_3_tribes_1775909916148.png", labels: ["阿:皆溫", "蒙:皆鬥", "徳:反轉"], text: "第一章重點米德研究：性格是文化編排的結果。阿拉佩什族：兩性皆溫順。蒙杜古馬族：兩性皆剽悍好鬥。德昌布利族：性別角色反轉，由女性掌握權力。這證明了性別氣質並非生理決定。" },
+            { cat: "第二部分", title: "💡 生物性別與社會性別辨析", img: "gender_health_balance_1775873567230.png", labels: ["Gender = 社會建構"], text: "Sex 是天生的生理硬體構造，Gender 是社會後天建構的規範軟體。如果考卷暗示氣質是基因或生理使然，那是錯誤選項。性別是社會規範編寫出來的。" },
+            { cat: "第二部分", title: "🧬 發展理論時序：絕對序列", img: "ch1_master_theory_tw_1775901143741.png", special: "theory", text: "主要的性別發展理論排序為：一、心理動力 ➔ 二、社會學習 ➔ 三、認知發展 ➔ 四、女性主義。女性主義目前旨在打破父權結構與二元框架。口訣：心、社、認、女。" },
+            { cat: "第二部分", title: "🧒 柯爾伯格：性別恆定發展", img: "ch1_master_theory_tw_1775901143741.png", special: "kohlberg", text: "孩童在 4 到 5 歲達成性別恆定。此階段兒童明白性別不隨外表改變：男孩即使穿上裙子，也不會因此變成女孩。" },
+            { cat: "第三部分", title: "🍱 全球在地化：品牌調整實例", img: "ch2_rice_burger_glocal_1775909945923.png", labels: ["麥當勞米漢堡"], text: "全球在地化 (Glocalization) 代表全球品牌融入當地。例如麥當勞為迎合台灣飲食習慣推出『米漢堡』。考卷中若出現品牌與當地的融合，即選此項。" },
+            { cat: "第三部分", title: "🏺 沙拉盤模式：多元並存", img: "salad_bowl_multiculturalism_1775873580685.png", labels: ["沙拉盤 Salad Bowl"], text: "台灣已從強迫同化的『大熔爐』，轉向尊重差異並存的『沙拉盤』模式。沙拉盤代表每種文化能保持其原色，並在社會共和諧共處。" },
+            { cat: "第三部分", title: "🧥 正名運動：去商品化意義", img: "ch2_political_concept_tw_1775901180201.png", labels: ["去商品化"], text: "將『外籍新娘』正名為『新住民』的關鍵意義在於去商品化、去歧視。這反映了社會對群體尊嚴的承認，而非單純的名稱更換。" },
+            { cat: "第四部分", title: "⚖️ CEDAW 公約：婦女權利保障", img: "cedaw_justice_symbol_1775875313437.png", labels: ["專屬婦女"], text: "CEDAW 是《消除對婦女一切形式歧視公約》，其核心目標是達成婦女的實質平等。注意其對象條文專指『婦女』，而非泛指所有弱勢群體。" },
+            { cat: "第四部分", title: "💡 發展範式：GAD 理論模型", img: "ch3_cedaw_articles_scroll_1775910131854.png", labels: ["制度改革"], text: "在發展範式中，GAD (社會性別與發展) 現為公認模型。它強調翻轉不平等的權力結構與制度改革，這與僅強調增加女性負擔的 WID 大不相同。" },
+            { cat: "第四部分", title: "📜 CEDAW 第 24 號一般性建議", img: "ch3_cedaw_articles_scroll_1775910131854.png", labels: ["GR 24 = 健康"], text: "CEDAW 第 24 號一般性建議專門針對健康權。它要求國家確保女性在『整個生命週期』中都能獲得保健服務，特別是生殖健康保障。" },
+            { cat: "第四部分", title: "🛠️ 性別主流化六大工具清單", img: "ch3_gender_quota_table_1775910362721.png", labels: ["統析預評培機"], text: "主流化核心工具為：性別統計、分析、預算、影響評估(GIA)、意識培力、平等機制。注意：『配額制』與『保障名額』屬於『暫行特別措施』，不屬於此六大工具。" },
+            { cat: "第四部分", title: "📊 性別統計與性別分析之辨", img: "ch3_gender_quota_table_1775910362721.png", labels: ["統計數字, 分析成因"], text: "『性別統計』負責呈現各類資料的量化差異；『性別分析』則負責探究數據背後的權力架構與成因。兩者為看見差異到解釋差異的接續過程。" },
+            { cat: "第四部分", title: "🪑 性別比例：1/3 法定門檻", img: "ch3_gender_quota_table_1775901180201.png", labels: ["1/3 比例下限"], text: "政府委員會規定：任一性別比例不得低於三分之一。這是為了確保性別平衡的矯正式、暫時性的平等措施。" },
+            { cat: "第五部分", title: "🔃 GIA 性別影響評估時機", img: "gia_process_flow_1775875345608.png", labels: ["制定前進行"], text: "性別影響評估 (GIA) 必須在政策制定『前』進行。其核心功能是預防性地消除政策中隱藏的性別盲點。若選項說政策實施後才評估，請判定為錯誤。" },
+            { cat: "第五部分", title: "⚙️ GIA 六步驟標準流程", img: "gia_process_flow_1775875345608.png", special: "gia", text: "標準流程為：需求、目標、溝通、行動、執行、檢討。注意：第三步『決策溝通』必須諮詢性別平等專家與婦女團體。" },
+            { cat: "第五部分", title: "⚖️ 不平等與不公平之學術分野", img: "intersectionality_health_map_1775875386888.png", labels: ["Equity 公平"], text: "『不平等 (Inequality)』僅指單純的數據差異；『不公平 (Inequity)』則指可避免、不正義的差異。我們追求的是 Equity 公平，意即解決具備正義性質的資源落差。" },
+            { cat: "第五部分", title: "🏥 AAAQ 標準：經濟負擔歸類", img: "ch4_aaa_standard_icons_1775909974764.png", special: "aaaq", text: "在 AAAQ 標準中，『沒錢看病』或『經濟能力不足』被歸類為 Accessibility (可及性)。這是評估經濟面健康保障的核心指標。" },
+            { cat: "第五部分", title: "⚠️ 間接歧視識別指南", img: "ch4_aaa_standard_icons_1775909974764.png", labels: ["表面中立, 結果不公"], text: "間接歧視特徵：規定在表面上對男女一致（如身高限制、學歷限制），但實質運行的結果卻排擠了單一性別。識別看似公平後的制度性偏頗為關鍵。" },
+            { cat: "第六部分", title: "🔞 法律紅線數據：16 歲與 18 歲", img: "ch3_age_16_consent_1775910116195.png", labels: ["16 歲性意願線"], text: "法律關鍵數據：性同意年齡為 16 歲，成年年齡為 18 歲。未滿 16 歲即使為當事人自願，另一方仍具備法律刑責。" },
+            { cat: "第六部分", title: "🛒 健康的社會梯度分析", img: "intersectionality_health_map_1775875386888.png", labels: ["地位越高越健康"], text: "社會梯度 (Social Gradient) 代表社會地位越高的人群通常越健康。健康不平等與社會階級高度相關，這是交織性理論的核心社會分析基礎。" },
+            { cat: "第六部分", title: "❤️ 女性心臟病：病理細節補充", img: "female_heart_symptoms_1775875369499.png", special: "diabetes", text: "女性心臟病平均比男性晚 10 年發病。但需注意：女性發作後的死亡率與預後往往比男性差。糖尿病會抵銷雌激素的天然保護力。" },
+            { cat: "第六部分", title: "💀 骨折病死數據：男性反直覺陷阱", img: "male_fragility_fracture_trap_1775875425752.png", labels: ["男死亡率 22%"], text: "特殊數據：雖然女性骨鬆案例多，但男性髖部骨折一年內死亡率為 22%，明顯高於女性的 15%。骨質疏鬆確診數值為 T-score 小於 -2.5。" },
+            { cat: "第六部分", title: "🚬 肺癌成因與組織型態辨析", img: "ch5_lung_cancer_types_1775910383105.png", labels: ["女腺男小"], text: "病理辨析：女性肺癌患者 90% 不抽菸，多為肺腺癌；男性患者則多為與菸害高度相關的小細胞癌。兩者在致病機制上完全不同。" },
+            { cat: "第六部分", title: "🧪 科學知識的性別偏差修正", img: "gender_medicine_innovation_1775873597537.png", labels: ["修正性別盲點"], text: "科學並非絕對客觀。忽略女性生理週期的醫學研究（例如過去的阿斯匹靈實驗）即為性別盲。目前強調透過性別化創新來修正各層次的偏差。" },
+            { cat: "大數據", title: "🍼 育嬰假申請比例：男性最新佔比", img: "ch1_male_pressure_atlas_1775910150346.png", labels: ["男性 25-30%"], text: "數據顯示：目前男性申請留職停薪的佔比約在 25% 到 30% 之間。而全球女性平均承擔的無酬家務時間約為男性的 2.5 到 3 倍。" },
+            { cat: "第六部分", title: "🎯 影子報告：民間監督功能", img: "ch3_ngo_shadow_report_1775910181779.png", labels: ["由民間 NGO 撰寫"], text: "影子報告是指由民間 NGO 組織針對公約落實情況撰寫的監督報告。它提供了一種有別於官方文件的民間監督與事實對比功能。" },
+            { cat: "第六部分", title: "🎯 WHO 健康定義：三位一體標準", img: "gender_health_balance_1775873567230.png", labels: ["生理心理社會適應"], text: "WHO 定義健康必須同時具備：生理良好、心理良好以及社會適應良好。缺少任何一項要素的定義，在學術上皆視為殘缺選項。" },
+            { cat: "第六部分", title: "🎯 診斷預測：HDL 膽固醇指標", img: "female_heart_symptoms_1775875369499.png", labels: ["HDL"], text: "醫學指標辨析：預測女性心搏健康風險時，主要參考 HDL (高密度脂蛋白/好膽固醇)。若選項中出現 LDL 誘餌，請正確排除。" },
+            { cat: "考點鏈結", title: "🎯 經濟可及性邏輯鎖定", img: "ch4_aaa_standard_icons_1775909974764.png", labels: ["付錢能力=可及性"], text: "考點複習：只要題目描述涉及支付錢款、經濟門檻或個人財政負擔，皆應歸類為 AAAQ 中的『可及性』。不要選成品質或可用性。" },
+            { cat: "考前提醒", title: "🚨 否定陷阱項清單", img: "gender_health_balance_1775873567230.png", labels: ["排除中立論"], text: "考場提醒：若看到描述宣稱科學完全中立、性別為生理決定、女性死亡率必然較低、或醫療體系絕對客觀，請果斷判定為錯誤。" },
+            { cat: "大終局", title: "🏆 特訓完成：目標滿分凱旋", img: "final_blessing_gold_1775901221619.png", labels: ["目標 100 分"], text: "特訓內容已全量覆蓋。所有關鍵數據、理論序列與辨析指標皆已就位。祝您在 4 月 25 日的考試中取得滿分佳績。祝福各位。" }
         ];
         let cuI = -1; const synth = window.speechSynthesis;
         function toggleSidebar() { document.getElementById('sidebar').classList.toggle('open'); }
@@ -123,7 +122,7 @@
             u.onend=()=>{ if(cuI<studyPlan.length-1) setTimeout(()=>next(cuI+1), 4500); }; synth.speak(u);
             if(window.innerWidth < 1024) document.getElementById('sidebar').classList.remove('open');
         }
-        function renderOverlay(sp, ls) { const l=document.getElementById('overlay-layer'); l.innerHTML=''; let its=''; if(sp==='theory') its+='<div class="label-unit">心➔社➔認➔女</div>'; if(sp==='kohlberg') its+='<div class="label-unit">4-5 歲標靶</div>'; if(sp==='gia') its+='<div class="label-unit">需目溝行執檢</div>'; if(ls) ls.forEach(t=>{its+=`<div class="label-unit">${t}</div>`}); l.innerHTML=its; }
+        function renderOverlay(sp, ls) { const l=document.getElementById('overlay-layer'); l.innerHTML=''; let its=''; if(sp==='theory') its+='<div class="label-unit" style="transform:translateY(-80px)">心➔社➔認➔女</div>'; if(sp==='kohlberg') its+='<div class="label-unit">4-5 歲恆定期</div>'; if(sp==='gia') its+='<div class="label-unit">需目溝行執檢</div>'; if(ls) ls.forEach(t=>{its+=`<div class="label-unit">${t}</div>`}); l.innerHTML=its; }
     </script>
 </body>
 </html>
