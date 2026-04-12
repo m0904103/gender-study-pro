@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>GENDER MASTER V8.1 | 影印機模式大滿貫</title>
+    <title>GENDER MASTER V8.2 | 影印機模式最終封神版</title>
     <style>
         :root { 
             --primary: #f59e0b; --danger: #ef4444; --bg: #020617; --text: #f8fafc; 
@@ -13,16 +13,10 @@
             --safe-right: env(safe-area-inset-right, 0px);
         }
         * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
-        body, html { 
-            margin: 0; padding: 0; width: 100%; height: 100dvh; 
-            background: var(--bg); color: var(--text); 
-            font-family: -apple-system, sans-serif; 
-            overflow: hidden; overscroll-behavior: none; 
-            touch-action: manipulation;
-        }
-        .header { position: fixed; top: 0; left: 0; right: 0; padding-top: var(--safe-top); height: calc(85px + var(--safe-top)); background: rgba(15, 23, 42, 0.95); border-bottom: 3px solid var(--primary); display: flex; justify-content: space-between; align-items: center; padding-left: calc(20px + var(--safe-left)); padding-right: calc(20px + var(--safe-right)); z-index: 2000; backdrop-filter: blur(30px); }
+        body, html { margin: 0; padding: 0; width: 100%; height: 100dvh; background: var(--bg); color: var(--text); font-family: -apple-system, sans-serif; overflow: hidden; overscroll-behavior: none; touch-action: manipulation; }
+        .header { position: fixed; top: 0; left: 0; right: 0; padding-top: var(--safe-top); height: calc(85px + var(--safe-top)); background: rgba(15, 23, 42, 0.98); border-bottom: 3px solid var(--primary); display: flex; justify-content: space-between; align-items: center; padding-left: calc(20px + var(--safe-left)); padding-right: calc(20px + var(--safe-right)); z-index: 2000; backdrop-filter: blur(35px); }
         .wrapper { display: flex; height: 100%; padding-top: calc(85px + var(--safe-top)); box-sizing: border-box; }
-        .sidebar { position: fixed; left: -100%; top: 0; bottom: 0; width: 300px; background: rgba(11, 15, 26, 0.99); border-right: 1px solid rgba(251, 191, 36, 0.2); z-index: 3000; transition: 0.5s cubic-bezier(0.16, 1, 0.3, 1); padding-top: calc(100px + var(--safe-top)); backdrop-filter: blur(40px); }
+        .sidebar { position: fixed; left: -100%; top: 0; bottom: 0; width: 300px; background: rgba(11, 15, 26, 0.99); border-right: 1px solid rgba(251, 191, 36, 0.2); z-index: 3000; transition: 0.5s; padding-top: calc(100px + var(--safe-top)); backdrop-filter: blur(40px); }
         .sidebar.open { left: 0; box-shadow: 30px 0 80px rgba(0,0,0,0.9); }
         .course-nav { height: 100%; overflow-y: auto; padding: 20px; }
         .nav-cat { font-size: 0.75rem; color: var(--primary); margin: 25px 0 10px 5px; font-weight: 900; border-left: 5px solid var(--primary); padding-left: 12px; letter-spacing: 2px; }
@@ -30,84 +24,85 @@
         .nav-item.active { background: var(--primary); color: #000; font-weight: 900; }
         .viewport { flex: 1; position: relative; background: #000; display: flex; flex-direction: column; overflow: hidden; padding-bottom: calc(200px + var(--safe-bottom)); }
         .screen { flex: 1; position: relative; display: flex; justify-content: center; align-items: center; }
-        #slide-view { width: 100%; height: 100%; background-size: contain; background-position: center; background-repeat: no-repeat; transition: 0.8s; }
+        #slide-view { width: 100%; height: 100%; background-size: contain; background-position: center; background-repeat: no-repeat; transition: 0.9s cubic-bezier(0.16, 1, 0.3, 1); }
         .label-unit { position: absolute; background: linear-gradient(135deg, #ef4444, #b91c1c); color: #fff; padding: 15px 35px; border-radius: 12px; font-weight: 950; font-size: 2rem; border: 4px solid #fff; box-shadow: 0 20px 50px rgba(0,0,0,0.8); animation: pop 0.4s; text-align: center; z-index: 1001; }
         @keyframes pop { from { transform: scale(0.5); opacity:0; } to { transform: scale(1); opacity:1; } }
-        .console { position: fixed; bottom: calc(25px + var(--safe-bottom)); left: 50%; transform: translateX(-50%); width: 94%; background: rgba(15, 23, 42, 0.98); padding: 25px; border-radius: 32px; border-left: 12px solid var(--primary); backdrop-filter: blur(35px); z-index: 3500; }
-        .text-body { font-size: 1.25rem; line-height: 1.6; height: 110px; overflow-y: auto; color: #fff; font-weight: 500; }
-        .btn-gold { background: var(--primary); color: #000; border: none; padding: 22px 80px; font-size: 1.8rem; font-weight: 950; border-radius: 100px; cursor: pointer; }
+        .console { position: fixed; bottom: calc(25px + var(--safe-bottom)); left: 50%; transform: translateX(-50%); width: 94%; background: rgba(15, 23, 42, 0.99); padding: 25px; border-radius: 32px; border-left: 14px solid var(--primary); backdrop-filter: blur(40px); z-index: 3500; }
+        .text-body { font-size: 1.3rem; line-height: 1.6; height: 110px; overflow-y: auto; color: #fff; font-weight: 500; border-right: 1px solid rgba(251,191,36,0.3); padding-right: 15px; }
         #splash { position: fixed; inset: 0; background: #020617; z-index: 5000; display: flex; justify-content: center; align-items: center; text-align: center; }
-        @media (orientation: landscape) { .console { width: 50%; right: 20px; left: auto; transform: none; padding: 20px; } .text-body { height: 75px; font-size: 1.1rem; } }
+        .btn-gold { background: var(--primary); color: #000; border: none; padding: 22px 80px; font-size: 1.8rem; font-weight: 950; border-radius: 100px; cursor: pointer; box-shadow: 0 15px 40px rgba(245,158,11,0.5); }
     </style>
 </head>
 <body>
     <div id="splash" onclick="goStudy()">
         <div style="width: 85%">
             <p style="color:var(--primary); font-weight:950; letter-spacing:10px; margin-bottom:15px; font-size:1rem;">114-2 FINAL MASTER</p>
-            <h1 style="font-size:3rem; margin:15px 0; background:linear-gradient(135deg, #fff, var(--primary)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; font-weight:900;">絕殺大滿貫<br>影印機模式啟動</h1>
-            <div style="background:var(--danger); color:white; padding:12px 35px; display:inline-block; border-radius:15px; font-size:1.3rem; font-weight:900;">28 頁滴水不漏版</div>
-            <br><button class="btn-gold" style="margin-top:40px;">🏆 啟動特訓</button>
+            <h1 style="font-size:3.2rem; margin:15px 0; background:linear-gradient(135deg, #fff, var(--primary)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; font-weight:900;">絕殺大滿貫<br>影印機封神裝</h1>
+            <div style="background:var(--danger); color:white; padding:12px 35px; display:inline-block; border-radius:15px; font-size:1.3rem; font-weight:900;">29 頁全覆蓋版 (FINAL)</div>
+            <br><button class="btn-gold" style="margin-top:40px;">🏆 啟動奪冠</button>
         </div>
     </div>
     <header class="header">
         <button onclick="toggleSidebar()" style="background:var(--primary); border:none; padding:12px 25px; border-radius:15px; font-weight:950; font-size:0.9rem;">☰ 目錄</button>
-        <div style="color:var(--primary); font-weight:900; font-size:1.1rem">V8.1 FLAGSHIP</div>
+        <div style="color:var(--primary); font-weight:900; font-size:1.1rem; letter-spacing:1px">V8.2 FINAL</div>
         <div style="background:rgba(0,0,0,0.5); padding:8px 15px; border-radius:50px; border:2px solid var(--primary); display:flex; align-items:center; gap:8px;"><span style="font-size:0.8rem; font-weight:900;">速：</span><input type="range" id="rate" min="0.5" max="2.0" value="1.3" step="0.1" style="width:50px"></div>
     </header>
     <div class="wrapper">
         <aside id="sidebar" class="sidebar"><div class="course-nav" id="nav"></div></aside>
         <main class="viewport">
             <div class="screen"><div id="slide-view"></div><div id="overlay-layer" style="position:absolute; inset:0; pointer-events:none; display:flex; justify-content:center; align-items:center;"></div></div>
-            <div class="console"><div style="display:flex; justify-content:space-between; margin-bottom:10px;"><span style="color:var(--primary); font-weight:950;">🎙️ 學長助教深度解析</span><span id="page-num" style="background:#1e40af; padding:5px 15px; border-radius:10px; font-size:0.9rem; font-weight:900">1 / 28</span></div><div id="lecture-content" class="text-body">輔考數據加載中...</div></div>
+            <div class="console"><div style="display:flex; justify-content:space-between; margin-bottom:8px;"><span style="color:var(--primary); font-weight:950;">🎙️ 學長助教影印機解析</span><span id="page-num" style="background:#1e40af; padding:5px 15px; border-radius:10px; font-size:0.9rem; font-weight:900">1 / 29</span></div><div id="lecture-content" class="text-body">輔考數據加載中...</div></div>
         </main>
     </div>
     <script>
         const studyPlan = [
-            { cat: "數據戰略", title: "🚩 ALPHA：否定陷阱生存指南", img: "gender_health_balance_1775873567230.png", labels: ["看到個人努力選打叉"], text: "各位英雄學員，啟動影印機模式！看到健康是個人努力、或是醫療中性的選項，請直接果斷打大叉。社會建構、社會梯度才是 100 分的標準答案。" },
-            { cat: "第一章", title: "🏺 米德三部族性格：文化編排", img: "ch1_mead_3_tribes_1775909916148.png", labels: ["阿:皆溫", "蒙:皆鬥", "徳:反轉"], text: "米德研究證明性格是『文化編排』！阿拉佩什(兩性皆溫)、蒙杜古馬(兩性皆鬥)、德昌布利(性別角色反轉/女強男弱)。認準德昌布利，它是打臉性別天生論的最強科學證據！" },
-            { cat: "第一章", title: "💡 Sex 天生硬體 vs Gender 社會軟體", img: "gender_health_balance_1775873567230.png", labels: ["Gender = 後天建構"], text: "判斷題紅線：Sex 是天生生理構造；Gender 是社會文化後天建構的規範。記住：性別不是天生的，它是被社會期待餵養出來的軟體。" },
-            { cat: "第一章", title: "🧬 四大理論排序與女性主義版本", img: "ch1_master_theory_tw_1775901143741.png", special: "theory", text: "排序影印：一、心理動力學，二、社會學習論，三、認知發展論，四、女性主義。女性主義是最新的詮釋，旨在打破父權結構與二元框架。" },
-            { cat: "第一章", title: "🧒 柯爾伯格：4-5 歲性別恆定期", img: "ch1_master_theory_tw_1775901143741.png", special: "kohlberg", text: "數字地雷：4 到 5 歲達成『性別恆定』。孩子懂了：男孩穿裙子也不會變成女孩。4 到 5 歲，刻在腦子裡！" },
-            { cat: "第二章", title: "🍱 全球在地化：品牌在地調整", img: "ch2_rice_burger_glocal_1775909945923.png", labels: ["麥當勞米漢堡"], text: "萬用實例：Glocalization 等於全球品牌加在地調整。唯一指定舉例：麥當勞為了迎合台灣人推出『米漢堡』或『沙茶雞排堡』。" },
-            { cat: "第二章", title: "🏺 沙拉盤 vs 大熔爐：多元文化", img: "salad_bowl_multiculturalism_1775873580685.png", labels: ["沙拉盤 Salad Bowl"], text: "政策轉向：台灣已從強迫同化的『大熔爐』走向尊重並存的『沙拉盤』。沙拉盤代表每種文化都保有特色，卻又和諧共存。" },
-            { cat: "第二章", title: "🧥 正名運動：去商品化尊重", img: "ch2_political_concept_tw_1775901180201.png", labels: ["正名=去商品化"], text: "文化正義：外籍新娘帶有商品化貶抑，應正名為『新住民』或『新移民』。正名不只是改名，是為了換取群體尊嚴。" },
-            { cat: "第三章", title: "⚖️ CEDAW 消除婦女歧視公約", img: "cedaw_justice_symbol_1775875313437.png", labels: ["消除婦女歧視"], text: "CEDAW 特訓：全名是《消除對婦女一切形式歧視公約》。⚠️ 陷阱：它是保障『婦女』，不是『所有弱勢』！追求的是條件與結果具備的實質平等。" },
-            { cat: "第三章", title: "💡 GAD vs WID 發展範式", img: "ch3_cedaw_articles_scroll_1775910131854.png", labels: ["GAD=翻轉權力結構"], text: "影印範式：WID 只增加負擔，GAD 才能翻轉權力結構。看到『賦權』或『制度改革』選 GAD 就對了。它是目前學界的正解。" },
-            { cat: "第三章", title: "🛠️ 主流化六大工具：統、析、預、評、培、機", img: "ch3_gender_quota_table_1775910362721.png", labels: ["統、析、預、評、培、機"], text: "工具全名背誦：性別統計、分析、預算、影響評估(GIA)、意識培力、平等機制。⚠️ 再次警告：配額制或保障名額是暫行措施，不屬於這六大核心工具！" },
-            { cat: "第三章", title: "📊 性別統計 vs 性別分析", img: "ch3_gender_quota_table_1775910362721.png", labels: ["統計:看見, 分析:解釋"], text: "辨析陷阱：統計是看見差異、呈現數字；分析是解釋差異、探究成因。統計給數字，分析給靈魂！" },
-            { cat: "第三章", title: "🪑 門檻數據：1/3 性別比例", img: "ch3_gender_quota_table_1775901180201.png", labels: ["單一性別不低於 1/3"], text: "數字靶心：行政院所屬委員會，單一性別比例下限為 1/3。認準 1/3，它是矯正式的平等措施。" },
-            { cat: "第四章", title: "🔃 GIA 評估時機：事前預防", img: "gia_process_flow_1775875345608.png", labels: ["初期的事前工具"], text: "時機絕殺：GIA 必須在政策制定『前』進行！目的是預防性地消除性別盲。看到事後才評估，直接選錯誤。" },
-            { cat: "第四章", title: "⚙️ GIA 六步驟：需目溝行執檢", img: "gia_process_flow_1775875345608.png", special: "gia", text: "口訣默寫：需、目、溝、行、執、檢！第三步『決策溝通』必須諮詢性別平等專家與婦女團體，這常常被單獨拿出來考。" },
-            { cat: "第四章", title: "🏥 AAAQ 標準：付不起錢屬於可及性", img: "ch4_aaa_standard_icons_1775909974764.png", special: "aaaq", text: "影印 AAAQ：可用、可及 (含經濟能力)、可接受、品質。⚠️ 地雷：付錢能力屬於 Accessibility 可及性。這是 1132 年度最強陷阱！" },
-            { cat: "第四章", title: "⚠️ 間接歧視：表面中立,結果不公", img: "ch4_wage_gap_unbalance_1775910196240.png", labels: ["表面公平實則偏頗"], text: "實例辨識：看似男女公平（如身高或工時限制），但結果卻讓單一性別難以進入。這叫間接歧視。5 分入袋！" },
-            { cat: "第四章", title: "🔞 性同意 16 歲 vs 成年 18 歲", img: "ch3_age_16_consent_1775910116195.png", labels: ["16 歲性意願界線"], text: "數字紅線：性同意 16 歲，成年 18 歲。兩份數字不同，不要混淆。未滿 16 即使自願也具法律責任。" },
-            { cat: "第四章", title: "🛒 交織性：弱勢的乘積效應", img: "intersectionality_health_map_1775875386888.png", labels: ["性別x階級x族群"], text: "交織靈魂：健康弱勢是乘積。當性別疊加階級與族群時，痛苦是相乘的。必須用整體的梯度分析才能解決健康不平等。" },
-            { cat: "第五章", title: "❤️ 女性心臟病：非典型與 10 年延遲", img: "female_heart_symptoms_1775875369499.png", special: "diabetes", text: "醫學數據：女性心臟病平均晚男 10 年。症狀常為『非典型』(噁心、下顎痛)。吸菸與糖尿病對女性危害遠大於男性。風險是 3 到 7 倍！" },
-            { cat: "第五章", title: "💀 骨鬆數據：男死 22% 反直覺冠軍", img: "male_fragility_fracture_trap_1775875425752.png", labels: ["男死 22% > 女死 15%"], text: "數據奇襲：雖然女骨鬆多，但男髖部骨折一年內死亡率 22% 遠高於女性的 15%。T-score 低於負 2.5 即確診。" },
-            { cat: "第五章", title: "🚬 肺癌型態：女腺 90% 不吸菸", img: "ch5_lung_cancer_types_1775910383105.png", labels: ["女腺男小"], text: "肺癌靶心：女性 90% 不菸，多為與基因油煙相關的『肺腺癌』；男性則是與菸相關的『小細胞癌』。看到男女成因相同一律選錯。" },
-            { cat: "第五章", title: "🧪 醫療非中性：科學性別盲", img: "gender_medicine_innovation_1775873597537.png", labels: ["修正科學盲"], text: "哲學高度：科學、科技與工程並非中立客觀。過去阿斯匹靈實驗忽略女性數據就是『性別盲』。需要性別化創新來糾正偏差。" },
-            { cat: "新領域", title: "🍼 家務數據：男性申請育嬰假 25-30%", img: "ch1_male_pressure_atlas_1775910150346.png", labels: ["男育嬰假約 1/4"], text: "數據更新：男性申請留職停薪佔比約 25% 到 30%。全球女性家務時間則是男性的 2.5 到 3 倍。數字認準 2.5 到 3！" },
-            { cat: "考古", title: "🎯 影子報告：NGO 監督力量", img: "ch3_ngo_shadow_report_1775910181779.png", labels: ["由民間 NGO 編寫"], text: "直接命中：影子報告是民間 NGO 撰寫來監督政府的機制。千萬不要選成政府自己準備的資料！" },
-            { cat: "考古", title: "🎯 WHO 定義：生理+心理+社會適應", img: "gender_health_balance_1775873567230.png", labels: ["社會適應不可缺"], text: "滿分定義：健康包含生理、心理與社會適應良好。少了社會適應或認為只是沒病一律判定為錯誤選項。" },
-            { cat: "大終局", title: "🏆 影印機模式完成：4/25 全對", img: "final_blessing_gold_1775901221619.png", labels: ["4/25 滿分不漏"], text: "特訓結束！我們掌握了 22%、10年、1/3、16、25% 與 需目溝行執檢。4 月 25 日，我們全班 100 分。英雄凱旋！加油！" }
+            { cat: "數據戰略", title: "🚩 ALPHA：否定陷阱指南", img: "gender_health_balance_1775873567230.png", labels: ["看到個人努力選打叉"], text: "各位英雄學員，影印機模式啟動！考場上看到健康是個人努力、或是醫療中性的選項，請直接果斷選錯。社會建構與社會梯度才是 100 分的正解。" },
+            { cat: "第一章", title: "🏺 絕殺補丁：米德性格對照", img: "ch1_mead_3_tribes_1775909916148.png", labels: ["阿:皆溫", "蒙:皆鬥", "徳:反轉"], text: "第一章必補！阿拉佩什(男女皆溫順)、蒙杜古馬(男女皆好鬥)、德昌布利(性別角色反轉/女強男弱)。認準德昌布利，它是打臉『女性天生溫柔』的最強科學論據，也是老師最愛出的陷阱題！" },
+            { cat: "第一章", title: "💡 Sex 硬體 vs Gender 軟體", img: "gender_health_balance_1775873567230.png", labels: ["Gender = 後天建構"], text: "辨析：Sex 是天生生理構造；Gender 是社會文化後天建構。考題若暗示氣質是基因使然，一律打叉。性別是社會規範編寫出來的軟體。" },
+            { cat: "第一章", title: "🧬 四大理論排序與女性主義版本", img: "ch1_master_theory_tw_1775901143741.png", special: "theory", text: "絕對時序排序：一、心理動力學，二、社會學習論，三、認知發展論，四、女性主義。女性主義是最新的詮釋，旨在打破父權結構與二元框架。" },
+            { cat: "第一章", title: "🧒 柯爾伯格：4-5 歲性別恆定期", img: "ch1_master_theory_tw_1775901143741.png", special: "kohlberg", text: "地雷數字：4 到 5 歲達成『性別恆定』。孩子懂了：男孩穿裙子也不會變成女孩。刻在腦子裡！" },
+            { cat: "第二章", title: "🍱 全球在地化：品牌在地調整", img: "ch2_rice_burger_glocal_1775909945923.png", labels: ["麥當勞米漢堡"], text: "萬用實例：Glocalization 等於全球品牌加在地調整。唯一舉例：麥當勞為了迎合台灣人推出米漢堡。這是考題中識別全球化的唯一座標。" },
+            { cat: "第二章", title: "🏺 沙拉盤 vs 大熔爐：多元文化", img: "salad_bowl_multiculturalism_1775873580685.png", labels: ["沙拉盤 Salad Bowl"], text: "政策轉向：台灣已從強迫同化的『大熔爐』走向尊重並存的『沙拉盤』。沙拉盤代表文化並存與多元尊重。" },
+            { cat: "第二章", title: "🧥 正名運動：新住民去商品化", img: "ch2_political_concept_tw_1775901180201.png", labels: ["正名=尊嚴"], text: "正名不只是改名：『外籍新娘』帶有商品化貶抑，應正名為『新住民』。這是去商品化、去歧視，換取群體尊嚴的關鍵行動。" },
+            { cat: "第三章", title: "⚖️ CEDAW 消除婦女一切歧視公約", img: "cedaw_justice_symbol_1775875313437.png", labels: ["消除婦女歧視"], text: "全名影印：消除對『婦女』一切形式歧視公約。⚠️ 注意：是保障婦女，不是所有弱勢！追求的是包含條件與結果的『實質平等』。" },
+            { cat: "第三章", title: "💡 發展範式：GAD 制度改革", img: "ch3_cedaw_articles_scroll_1775910131854.png", labels: ["GAD=翻轉權力結構"], text: "範式：WID 增加負擔，GAD 翻轉權力。看到『賦權』或『制度改革』選 GAD。它是目前醫學與多元文化學術界的王道正解。" },
+            { cat: "第三章", title: "🛠️ 補丁：主流化六大工具全名", img: "ch3_gender_quota_table_1775910362721.png", labels: ["統、析、預、評、培、機"], text: "影印六大工具：性別統計、分析、預算、影響評估(GIA)、意識培力、平等機制。⚠️ 助教解析：配額制與保障名額是暫行特別措施，不屬於這六大核心工具！看到配額制請排除！" },
+            { cat: "第三章", title: "📊 性別統計 vs 性別分析", img: "ch3_gender_quota_table_1775910362721.png", labels: ["統計:數字, 分析:探究"], text: "辨析：統計是將資料分類呈現數字；分析是探究成因與權力架構。統計看見差異，分析解釋差異。" },
+            { cat: "第三章", title: "🪑 門檻數據：1/3 法定比例", img: "ch3_gender_quota_table_1775901180201.png", labels: ["單一性別不低於 1/3"], text: "數據靶心：中央委員會任一性別不得低於 1/3。認準 1/3，它是矯正式的平等措施。" },
+            { cat: "第四章", title: "🔃 GIA 評估時機：事前預防", img: "gia_process_flow_1775875345608.png", labels: ["制度初期/事前"], text: "時機絕殺：GIA 必須在政策制定『前』進行！目的是預防消除性別盲。看到『實施後』才評估，直接選錯誤。" },
+            { cat: "第四章", title: "⚙️ GIA 六步驟：需目溝行執檢", img: "gia_process_flow_1775875345608.png", special: "gia", text: "口訣默寫：需、目、溝、行、執、檢！第三步『決策溝通』必須諮詢性別平等專家與婦女團體，這是 1132 年度的高鑑別細節考題。" },
+            { cat: "第四章", title: "🏥 AAAQ 標準：付不起錢的邏輯", img: "ch4_aaa_standard_icons_1775909974764.png", special: "aaaq", text: "標準辨析：付不起錢或經濟員擔屬於 Accessibility 可及性。不要選成品質不好。認準 AAAQ 經濟能力指標。" },
+            { cat: "第四章", title: "⚠️ 間接歧視識別：表面中立", img: "ch4_wage_gap_unbalance_1775910196240.png", labels: ["隱藏在公平後的歧視"], text: "識別實例：看似男女公平（如身高或工時限制），但結果排除單一性別。這叫間接歧視。" },
+            { cat: "第四章", title: "🔞 性同意界線與成年數據", img: "ch3_age_16_consent_1775910116195.png", labels: ["16 歲法律線"], text: "數字：性同意 16 歲，成年 18 歲。兩份數據完全不同。未滿 16 即使自願也具法律責任。" },
+            { cat: "第四章", title: "🛒 補丁：WHO 梯度與交織性", img: "intersectionality_health_map_1775875386888.png", labels: ["社會梯度 Social Gradient"], text: "數據補強：社會梯度代表地位越高的人越健康，健康與階級高度相關。健康不只是運氣，更是一個社會階梯。這是交織性理論的基礎。" },
+            { cat: "第五章", title: "❤️ 女性心臟病：非典型症狀", img: "female_heart_symptoms_1775875369499.png", special: "diabetes", text: "醫學特報：女性心臟病平均晚男 10 年，發作常呈現『非典型』症狀(下顎痛、疲倦)。吸菸與糖尿病風險對女性危害遠大於男性。" },
+            { cat: "第五章", title: "💀 骨鬆數據：男死 22% 奇襲", img: "male_fragility_fracture_trap_1775875425752.png", labels: ["男死 22% > 女死 15%"], text: "數據必背：雖然女性病例多，但男性髖部骨折一年內死亡率 22% 遠高於女性的 15%。T-score 低於負 2.5 即確診。" },
+            { cat: "第五章", title: "🚬 肺癌型態：油煙基因 vs 吸菸", img: "ch5_lung_cancer_types_1775910383105.png", labels: ["女腺男小"], text: "命中補丁：女性 90% 不菸，多為肺腺癌；男性多為與菸相關的小細胞癌。兩性肺癌成因絕不相同。" },
+            { cat: "第五章", title: "🧪 醫療非中性：科學性別盲", img: "gender_medicine_innovation_1775873597537.png", labels: ["修正科學盲"], text: "高度概念：過去研究如阿斯匹靈實驗忽略女性數據，這是醫療性別盲。科學與工程並非中性，需要納入性別分析來修正偏差。" },
+            { cat: "數據戰役", title: "🍼 家務與假數據：25-30%", img: "ch1_male_pressure_atlas_1775910150346.png", labels: ["男假約 3 成"], text: "數據更新：男性申请留職停薪佔比約 25% 到 30%。全球女性無酬家務時間是男性的 2.5 到 3 倍。" },
+            { cat: "考古特選", title: "🎯 影子報告：民間監督力量", img: "ch3_ngo_shadow_report_1775910181779.png", labels: ["由民間 NGO 編寫"], text: "直接命中：影子報告是用來監督政府 CEDAW 實行的機制，必須由民間 NGO 撰寫。不要選成政府公文。" },
+            { cat: "考古特選", title: "🎯 WHO 定義：社會適應良好", img: "gender_health_balance_1775873567230.png", labels: ["生理+心理+社會適應"], text: "WHO 定義：生理心理與『社會適應』良好。少了社會適應就是殘缺選項。記住健康不是由個人運氣決定。" },
+            { cat: "命中系列", title: "🎯 命中 27：女性指標 HDL", img: "female_heart_symptoms_1775875369499.png", labels: ["選 HDL 膽固醇"], text: "解析：預測女性心臟風險看 HDL 好膽固醇。如果有 LDL 的誘導項，請冷靜排除。" },
+            { cat: "命中系列", title: "🎯 命中 29：付錢可及性", img: "ch4_aaa_standard_icons_1775909974764.png", labels: ["付錢=可及性"], text: "直接重複：付錢能力屬於 AAAQ 中的可及性。這是 114 年最新的數據坑，千萬不能踩！" },
+            { cat: "大終局", title: "🏆 29 頁全覆蓋滿分冠軍版", img: "final_blessing_gold_1775901221619.png", labels: ["114-2 滿分凱旋"], text: "恭喜！29 頁影印機神裝備齊。帶上這些 22%、1/3、德昌布利與社會梯度。4 月 25 日我們全班 100 分。英雄凱旋！加油！" }
         ];
-        let curIdx = -1; const synth = window.speechSynthesis;
+        let cuIdx = -1; const synth = window.speechSynthesis;
         function toggleSidebar() { document.getElementById('sidebar').classList.toggle('open'); }
         function goStudy() { document.getElementById('splash').style.display='none'; build(); next(0); }
-        function build() { const nav=document.getElementById('nav'); let nl=''; let lc=''; studyPlan.forEach((d,i)=>{ if(d.cat!==lc){ nl+=`<div class="nav-cat">${d.cat}</div>`; lc=d.cat; } nl+=`<div class="nav-item" id="ni-${i}" onclick="next(${i})">${d.title}</div>`; }); nav.innerHTML=nl; }
+        function build() { const nav=document.getElementById('nav'); nl=''; lc=''; studyPlan.forEach((d,i)=>{ if(d.cat!==lc){ nl+=`<div class="nav-cat">${d.cat}</div>`; lc=d.cat; } nl+=`<div class="nav-item" id="ni-${i}" onclick="next(${i})">${d.title}</div>`; }); nav.innerHTML=nl; }
         function next(i) {
-            if(i<0 || i>=studyPlan.length) return; curIdx=i; synth.cancel();
+            if(i<0 || i>=studyPlan.length) return; cuIdx=i; synth.cancel();
             document.querySelectorAll('.nav-item').forEach(x=>x.classList.remove('active'));
-            const target=document.getElementById(`ni-${i}`); if(target) target.classList.add('active');
+            const tg=document.getElementById(`ni-${i}`); if(tg) tg.classList.add('active');
             document.getElementById('page-num').innerText=`${i+1} / ${studyPlan.length}`;
             document.getElementById('slide-view').style.backgroundImage=`url('${studyPlan[i].img}')`;
             renderOverlay(studyPlan[i].special, studyPlan[i].labels);
             document.getElementById('lecture-content').innerText=studyPlan[i].text;
             const u=new SpeechSynthesisUtterance(studyPlan[i].text); u.lang='zh-TW'; u.rate=parseFloat(document.getElementById('rate').value);
-            u.onend=()=>{ if(curIdx<studyPlan.length-1) setTimeout(()=>next(curIdx+1), 4000); }; synth.speak(u);
-            if(window.innerWidth < 1024) document.getElementById('sidebar').classList.remove('open');
+            u.onend=()=>{ if(cuIdx<studyPlan.length-1) setTimeout(()=>next(cuIdx+1), 4000); }; synth.speak(u);
+            const side=document.getElementById('sidebar'); if(window.innerWidth < 1024) side.classList.remove('open');
         }
-        function renderOverlay(sp, ls) { const l=document.getElementById('overlay-layer'); l.innerHTML=''; let items=''; if(sp==='theory') items+='<div class="label-unit">心 ➔ 社 ➔ 認 ➔ 女</div>'; if(sp==='kohlberg') items+='<div class="label-unit">4-5 歲：恆定成熟</div>'; if(sp==='gia') items+='<div class="label-unit">需目溝行執檢</div>'; if(it='diabetes') items+=''; if(ls) ls.forEach(t=>{items+=`<div class="label-unit">${t}</div>`}); l.innerHTML=items; }
+        function renderOverlay(sp, ls) { const l=document.getElementById('overlay-layer'); l.innerHTML=''; items=''; if(sp==='theory') items+='<div class="label-unit">心➔社➔認➔女</div>'; if(sp==='kohlberg') items+='<div class="label-unit">4-5 歲恆定</div>'; if(sp==='gia') items+='<div class="label-unit">需目溝行執檢</div>'; if(ls) ls.forEach(t=>{items+=`<div class="label-unit">${t}</div>`}); l.innerHTML=items; }
     </script>
 </body>
 </html>
