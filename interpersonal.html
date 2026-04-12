@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#020617">
+    <title>人際關係與協商 | 期中考考場特訓 V1.0</title>
+    <style>
+        :root { 
+            --primary: #fbbf24; --danger: #ef4444; --bg: #020617; --text: #f8fafc; 
+            --safe-top: env(safe-area-inset-top, 50px);
+            --safe-bottom: env(safe-area-inset-bottom, 34px);
+        }
+        * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; outline: none; }
+        body, html { 
+            margin: 0; padding: 0; width: 100%; height: 100dvh; background: var(--bg); color: var(--text); 
+            font-family: -apple-system, system-ui, sans-serif; overflow: hidden; overscroll-behavior: none; 
+            user-select: none; -webkit-user-select: none; touch-action: manipulation;
+        }
+        .header { 
+            position: fixed; top: 0; left: 0; right: 0; padding-top: var(--safe-top); height: calc(88px + var(--safe-top));
+            background: rgba(15, 23, 42, 0.85); border-bottom: 2px solid var(--primary); display: flex; justify-content: space-between; align-items: center; 
+            padding-left: calc(15px + env(safe-area-inset-left)); padding-right: calc(15px + env(safe-area-inset-right)); z-index: 2000; backdrop-filter: blur(50px); -webkit-backdrop-filter: blur(50px);
+        }
+        .wrapper { display: flex; height: 100%; padding-top: calc(88px + var(--safe-top)); box-sizing: border-box; }
+        .sidebar { 
+            position: fixed; left: -110%; top: 0; bottom: 0; width: 320px; background: rgba(11, 15, 26, 0.99); border-right: 1px solid rgba(251, 191, 36, 0.3); 
+            z-index: 3000; transition: 0.5s cubic-bezier(0.16, 1, 0.3, 1); padding-top: calc(100px + var(--safe-top)); backdrop-filter: blur(60px); -webkit-backdrop-filter: blur(60px);
+        }
+        .sidebar.open { left: 0; box-shadow: 40px 0 100px rgba(0,0,0,1); }
+        .course-nav { height: 100%; overflow-y: auto; padding: 25px; }
+        .nav-cat { font-size: 0.75rem; color: var(--primary); margin: 30px 0 15px 5px; font-weight: 950; border-left: 5px solid var(--primary); padding-left: 12px; }
+        .nav-item { padding: 18px 24px; margin-bottom: 8px; border-radius: 20px; cursor: pointer; transition: 0.2s; font-size: 0.95rem; background: rgba(255,255,255,0.06); }
+        .nav-item.active { background: var(--primary); color: #000; font-weight: 1000; }
+        .viewport { flex: 1; position: relative; background: #000; display: flex; flex-direction: column; overflow: hidden; padding-bottom: calc(230px + var(--safe-bottom)); }
+        .screen { flex: 1; position: relative; display: flex; justify-content: center; align-items: center; }
+        #slide-view { width: 100%; height: 100%; background-size: contain; background-position: center; background-repeat: no-repeat; transition: 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+        .label-unit { position: absolute; background: linear-gradient(135deg, #ef4444, #991b1b); color: #fff; padding: 18px 40px; border-radius: 20px; font-weight: 1000; font-size: 2.2rem; border: 4.5px solid #fff; box-shadow: 0 30px 80px rgba(0,0,0,1); z-index: 1001; text-align: center; }
+        .console { 
+            position: fixed; bottom: calc(20px + var(--safe-bottom)); left: 50%; transform: translateX(-50%); width: 92%; background: rgba(15, 23, 42, 0.98); padding: 28px; 
+            border-radius: 36px; border-left: 14px solid var(--primary); backdrop-filter: blur(40px); -webkit-backdrop-filter: blur(40px); z-index: 3500; 
+        }
+        .text-body { font-size: 1.35rem; line-height: 1.65; height: 110px; overflow-y: auto; color: #fff; font-weight: 500; margin: 15px 0; }
+        .nav-btns { display: flex; justify-content: space-between; align-items: center; gap: 15px; }
+        .control-btn { 
+            background: rgba(255,255,255,0.08); color: var(--text); border: 1.5px solid rgba(255,255,255,0.1); 
+            padding: 12px 25px; border-radius: 12px; font-size: 0.95rem; font-weight: 950; cursor: pointer; transition: 0.2s; 
+        }
+        .control-btn:active { transform: scale(0.92); background: var(--primary); color: #000; }
+        .btn-gold { background: var(--primary); color: #000; border: none; padding: 25px 90px; font-size: 2rem; font-weight: 1000; border-radius: 100px; cursor: pointer; box-shadow: 0 15px 40px rgba(251, 191, 36, 0.6); }
+        #splash { position: fixed; inset: 0; background: #020617; z-index: 5000; display: flex; justify-content: center; align-items: center; text-align: center; }
+        @media (max-width: 400px) { .header-info { font-size: 0.85rem !important; } .label-unit { font-size: 1.8rem; } }
+    </style>
+</head>
+<body>
+    <div id="splash" onclick="goStudy()">
+        <div style="width: 85%">
+            <p style="color:var(--primary); font-weight:1000; letter-spacing:8px; margin-bottom:15px; font-size:0.9rem;">114-2 INTERPERSONAL RELATIONSHIP</p>
+            <h1 style="font-size:2.8rem; line-height:1.2; margin:15px 0; background:linear-gradient(135deg, #fff, var(--primary)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; font-weight:1000;">人際關係與協商<br><span style="font-size:2.2rem; color:var(--primary); text-shadow:0 0 20px rgba(251,191,36,0.3);">期中考考場特訓</span></h1>
+            <div style="background:var(--danger); color:white; padding:10px 35px; border-radius:12px; font-size:1.3rem; font-weight:900; display:inline-block; margin-top:10px;">36 頁精英特訓版 | V1.0</div>
+            <br><button class="btn-gold" style="margin-top:50px;">🏆 就緒</button>
+        </div>
+    </div>
+    <header class="header">
+        <button onclick="toggleSidebar()" style="background:var(--primary); border:none; padding:12px 25px; border-radius:15px; font-weight:1000; font-size:0.9rem;">☰ 目錄</button>
+        <div class="header-info" style="color:var(--primary); font-weight:1000; font-size:1rem; text-align:center; flex:1; padding:0 10px;">人際關係與協商</div>
+        <div style="background:rgba(0,0,0,0.6); padding:8px 15px; border-radius:50px; border:2px solid var(--primary); display:flex; align-items:center; gap:8px;"><input type="range" id="rate" min="0.5" max="2.0" value="1.3" step="0.1" style="width:50px; accent-color:var(--primary)"></div>
+    </header>
+    <div class="wrapper">
+        <aside id="sidebar" class="sidebar"><div class="course-nav" id="nav"></div></aside>
+        <main class="viewport">
+            <div class="screen"><div id="slide-view"></div><div id="overlay-layer" style="position:absolute; inset:0; pointer-events:none; display:flex; justify-content:center; align-items:center;"></div></div>
+            <div class="console">
+                <div style="display:flex; justify-content:space-between; align-items:center"><span style="color:var(--primary); font-weight:1000; font-size:1rem;">核心考點特訓</span><span id="page-num" style="background:#1e40af; padding:6px 16px; border-radius:12px; font-size:0.9rem; font-weight:1000;">1 / 36</span></div>
+                <div id="lecture-content" class="text-body">。</div>
+                <div class="nav-btns">
+                    <button class="control-btn" onclick="prev()">⬅ 上一頁</button>
+                    <button class="control-btn" onclick="next(cuI+1)">下一頁 ➡</button>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script>
+        const studyPlan = [
+            { cat: "CH1 自我", title: "🏺 艾里斯的十個不合理信念", img: "ch1_ellis_10_myths_summary.png", labels: ["選艾里斯"], text: "同學請注意第一章絕對高頻考點：艾里斯提出的十個『不合理信念』。如果看到選項說『每個人都必須贏得所有人讚許』或『問題必須有一個最完美解答』，這就是迷思，會歪曲事實。" },
+            { cat: "CH1 自我", title: "🏺 自我意識來源：喬治赫伯米德", img: "ch1_gh_mead_self_origin.png", labels: ["米德"], text: "同學請記住，最早提出人類並非出生就有自我意識，而是透過社會溝通內化的社會心理學家是『喬治赫伯米德』。這在選擇題中是重點人名連線。" },
+            { cat: "CH1 自我", title: "🏺 周哈里窗：四大自我區域", img: "johari_window.png", labels: ["開盲隱未"], text: "周哈里窗說明了自我袒露與回饋的關係。開放自我代表雙方皆知，盲目自我代表自己不知但別人知。同學要記住，『口頭禪』通常屬於盲目自我區。" },
+            { cat: "CH1 自我", title: "🏺 爆炸性衝突：盲目自我的危機", img: "johari_window.png", labels: ["盲目區最險"], text: "同學請注意：在周哈里窗中，最容易因為缺乏自覺而引起『爆炸性衝突』的區域是『盲目自我』。而最不容易產生人際衝突的則是『開放自我』區。" },
+            { cat: "CH1 自我", title: "🏺 未知自我的開啟方法", img: "johari_window.png", labels: ["催眠/解析"], text: "如何將『未知自我』轉變為自己知道？考卷常見答案包含：催眠、投射測驗、夢的解析、以及心理治療。如果考題問以上皆是，請果斷勾選。" },
+            { cat: "CH2 激勵", title: "🪜 馬斯洛：五層需要理論", img: "maslow_pyramid.png", labels: ["生理➔自實"], text: "同學請按順序背好：生理、安全、社會、自尊、自我實現。馬斯洛認為充分發揮才能是『自我實現』需求。只要滿足低層次，就會追求高層次。" },
+            { cat: "CH2 激勵", title: "🪜 需求位階辨析：社會需求", img: "maslow_pyramid.png", labels: ["社會=中高"], text: "馬斯洛陷阱題：社會需求（愛的世界）屬於『中高階層次』，而非低階。最高層次單選一定是自我實現。馬斯洛理論最大的貢獻是『管理人性化』。" },
+            { cat: "CH2 激勵", title: "🪜 三個心靈系統之：本我系統", img: "ch2_3_heart_systems_logic.png", labels: ["利益心"], text: "心靈三系統辨析：價值系統是『是非心』，感情系統是『慈悲/憎恨心』。而遵循快樂法則、追求原始慾望快速滿足的『本我系統』就是『利益心』。" },
+            { cat: "CH2 激勵", title: "🪜 圓融人際關係：六大要訣", img: "ch2_interpersonal_6_secrets.png", labels: ["頭軟口圓心正"], text: "同學請背好六要訣口訣：頭要軟、面帶法喜、口要圓、心要正、肚要大、以及腳要蹲姿勢低。這是圓融處世、尊重別人的指導方針。" },
+            { cat: "CH2 激勵", title: "🪜 不受歡迎族群：上帝族", img: "ch2_unpopular_groups_types.png", labels: ["自大與霸道"], text: "人際負面清單：上帝族代表自大以自我為真理，皇帝族代表獨裁霸道。同學看到這些形容詞，要能正確連結到對應的族群標籤。" },
+            { cat: "CH3 健康", title: "🏥 WHO 健康定義：三位一體", img: "who_health_trinity_definition_1775988220233_1775973073187.png", labels: ["生心理社會"], text: "WHO 完美健康定義：生理、心理、與社會完好 Social Well-being。同學請記住，絕不僅僅是指沒有病痛，社會適應（社會完好）是考題常設點。" },
+            { cat: "CH3 健康", title: "🏥 社會再適應量表：SRRS", img: "ch3_srrs_holmes_rahe_table.png", labels: ["Holmes & Rahe"], text: "1967 年編製 SRRS 量表的人是 Holmes 與 Rahe。同學請背數據：得分在 200 到 299 分之間，屬於『中度』生活危機組。" },
+            { cat: "CH3 健康", title: "🏥 最優睡姿：右側臥", img: "ch3_best_sleeping_posture.png", labels: ["選右側"], text: "健康實務考點：下列哪一種睡姿最好？請選『右側臥』。這對減輕臟器負擔最有利。同時，人感覺最舒服的溫度區間是『22 到 26 度』。" },
+            { cat: "CH3 健康", title: "🏥 營養比例：醣類佔六成", img: "ch3_nutrition_balance_pie_chart.png", labels: ["醣類 58-68%"], text: "同學請點選數據：醣類應佔總熱量 58% 到 68%。蛋白質佔 10% 到 14%，脂肪佔 20% 到 30%。這在選擇題中常用數字替換來設誘餌。" },
+            { cat: "CH3 健康", title: "🏥 性格與壓力：A型性格", img: "ch3_type_a_b_personality.png", labels: ["侵略與急迫"], text: "A型性格特徵：富有侵略性、競爭性、強烈急迫感。同學要記住：這類人易產生心血管疾病與高血壓。內控者則相信『成功操之在我』。" },
+            { cat: "CH3 健康", title: "🏥 習得的無助感：Learned Helplessness", img: "ch3_learned_helplessness_dog.png", labels: ["外控性格"], text: "長期認為命運受外力控制的人，會產生『習得的無助感』。這在心理學上是指因習慣聽天由命而產生的無力感。對應的是外控性格。" },
+            { cat: "CH3 健康", title: "🏥 幽默功能：不含降低膽固醇", img: "ch3_humor_benefits_list.png", labels: ["排除膽固醇"], text: "醫學研究陷阱：幽默可以放鬆肌肉、釋放腦啡、降低血壓。但同學要小心，選項若說幽默能『降低膽固醇』，則是錯誤選項。" },
+            { cat: "CH4 知覺", title: "🧅 印象形成：洋蔥模型", img: "ch4_impression_onion_model.png", labels: ["洋蔥"], text: "Wrightsman 主張印象形成就像剝『洋蔥』一樣，由外到裡。另外請背好三階段流程：感覺 ➔ 組織 ➔ 評價。口訣：感覺組評。" },
+            { cat: "CH4 知覺", title: "🧅 人知哲學：孔子與名言", img: "ch4_confucius_wisdom_quotes.png", labels: ["不知言無以知人"], text: "中國哲學連結：孔子曾說『不知言，無以知人也』。另外同學請記住 Flesch 說過：『思考是無聲語言，文字是紙上語言』。這都是名言配對題。" },
+            { cat: "CH4 知覺", title: "🧅 月暈效應：Halo Effect", img: "ch4_halo_effect_visual.png", labels: ["一好百好"], text: "月暈效應是指僅憑某一方面特質推論其他特質。例如長得好看就覺得他聰明又善良。認準關鍵字：『一好百好』或『僅憑一端』。" },
+            { cat: "CH4 知覺", title: "🧅 印象形成的核心特質", img: "ch4_central_trait_asch_exp.png", labels: ["核心權數"], text: "在印象形成中，權數比重最大、起決定作用的訊息稱為『核心特質』。經典實驗是『熱忱』與『冷淡』對個人印象的巨大差異。" },
+            { cat: "CH4 知覺", title: "🧅 歸因原則：加大與折扣", img: "ch4_attribution_principles.png", labels: ["加大 Vs 折扣"], text: "行為受限制越多，歸因於個人因素可能性越高，這叫『加大原則』。反之，如果多重因素並存，單一因素重要性降低，則叫『折扣原則』。" },
+            { cat: "CH4 知覺", title: "🎭 戲劇理論：高夫曼", img: "ch4_goffman_dramaturgy_stage.png", labels: ["互動如演戲"], text: "高夫曼 Goffman 提出的『戲劇理論』。他主張社會互動就像演戲，每個人都在進行身份的舞台表演。同學請記住關鍵字：『戲目』與『自我表現』。" },
+            { cat: "CH4 知覺", title: "🎭 效應：得寸進尺與軟土深掘", img: "ch4_foot_in_the_door_effect.png", labels: ["軟土深掘"], text: "俗語『軟土深掘』在心理學上對應的是『得寸進尺效應』。這是建立穩定一致公眾形象後產生的行為偏誤。" },
+            { cat: "CH4 知覺", title: "🎭 防衛機制：十二種機制", img: "ch4_defense_mechanisms_12.png", labels: ["投射/合理化/退化"], text: "重點辨析：將自身慾念轉嫁他人是『投射』；為挫折找貌似合理藉口是『合理化』。而以『幼稚行為』博取同情則是『退化作用』。共十二種。" },
+            { cat: "CH5 吸引", title: "💘 強化理論：酬賞與處罰", img: "ch5_reinforcement_theory_happy.png", labels: ["快樂吸引"], text: "同學請注意：如果你偏好親切的醫師或是鼓勵型的父母，這可用『強化理論』解釋。因為人類天生會被帶給我們酬賞與快樂的人所吸引。" },
+            { cat: "CH5 吸引", title: "💘 亞里斯多德：美麗是推薦函", img: "ch5_aristotle_beauty_quote.png", labels: ["美麗=推薦函"], text: "古希臘名言連線：亞里斯多德 Aristotle 說過：『美麗是最好的推薦函』。這證明了外表吸引力在人際吸引初期具備極大權數。" },
+            { cat: "CH5 吸引", title: "💘 得失理論：嚴格到寬鬆效應", img: "ch5_gain_loss_theory_pattern.png", labels: ["負➔正 最喜"], text: "同學請背好這個模式：先負評後正評的老師，比一直都正評的老師更受歡迎。因為獲得自我尊嚴的『增加』會大幅提升吸引力。" },
+            { cat: "CH5 吸引", title: "💘 仰巴腳效應：JFK 實例", img: "ch5_pratfall_effect_jfk.png", labels: ["小錯加分"], text: "能力極強的人若不小心出錯，聲望反而上升，這叫『仰巴腳效應』。經典案例是甘迺迪總統在豬玀灣事件後，民調支持率反升。" },
+            { cat: "CH5 吸引", title: "💘 吸引力過濾理論：四階段", img: "ch5_duck_filtering_model.png", labels: ["社會➔認知"], text: "Duck 在 1973 年提出的模型。順序為：(1)社會偶發 (2)互動前線索 (3)互動線索 (4)認知線索。同學請背好這個由外而內的過濾順序。" },
+            { cat: "CH5 吸引", title: "💘 人際距離：親密區 1.5 英呎", img: "ch5_edward_hall_distance_zones.png", labels: ["1.5 英呎"], text: "哈爾劃分的人際距離：親密區（身體接觸）是 0 到 1.5 英呎。同學要注意，1.5 英呎如果是大約數據，請選 0.46 公尺。社交區則是 4 到 12 英呎。" },
+            { cat: "CH5 吸引", title: "💘 愛情三因論：三位一體", img: "ch5_sternberg_love_triangle.png", labels: ["激情親密奉獻"], text: "史登堡 Sternberg 的三角形：激情、親密、責任奉獻。三者兼備是『完美之愛』。同學請記住，讓愛情天長地久的最主要因素是『責任奉獻』。" },
+            { cat: "CH6 溝通", title: "🗣️ TA 溝通分析：Berne", img: "ch6_ta_pac_model_berne.png", labels: ["P-A-C"], text: "TA 理論三自我：父母、成人、幼兒。刺激與反應線平行叫『互補式』；交叉導致停頓叫『交錯式』。隱藏式則最複雜，內外訊息不一。" },
+            { cat: "CH6 溝通", title: "🗣️ 非語言功能：管制與象徵", img: "ch6_nonverbal_types_emblem.png", labels: ["象徵 = 代替單字"], text: "肢體語法：可代替單字或句子的符號稱為『象徵 Emblem』。用來控制交談流程（如點頭）則稱『管制者 Regulator』。" },
+            { cat: "CH6 溝通", title: "🗣️ 電話技巧：前三十秒", img: "ch6_phone_etiquette_30s.png", labels: ["30 秒最重要"], text: "電話溝通聖經：前三十秒最重要，決定主導談話的品質。同學要記住：因為看不見肢體，聲音與語氣變成了傳達情感的唯一主要工具。" },
+            { cat: "大終局", title: "🏆 特訓完成：成績滿分凱旋", img: "final_blessing_gold_interpersonal.png", labels: ["100% 命中"], text: "36 頁特訓全量完成。從 SRRS 中度數據到 TA 互補溝通。所有核心與陷阱皆已封裝。助教祝各位在『人際關係與協商』考場凱旋滿分！" }
+        ];
+        let cuI = -1; let timer = null; const synth = window.speechSynthesis;
+        function toggleSidebar() { document.getElementById('sidebar').classList.toggle('open'); }
+        function goStudy() { document.getElementById('splash').style.display='none'; build(); next(0); }
+        function build() { const nav=document.getElementById('nav'); let nl=''; let lc=''; studyPlan.forEach((d,i)=>{ if(d.cat!==lc){ nl+=`<div class="nav-cat">${d.cat}</div>`; lc=d.cat; } nl+=`<div class="nav-item" id="ni-${i}" onclick="next(${i})">${d.title}</div>`; }); nav.innerHTML=nl; }
+        function next(i) {
+            if(i<0 || i>=studyPlan.length) return; cuI=i; clearTimer(); synth.cancel();
+            document.querySelectorAll('.nav-item').forEach(x=>x.classList.remove('active'));
+            const tg=document.getElementById(`ni-${i}`); if(tg) tg.classList.add('active');
+            document.getElementById('page-num').innerText=`${i+1} / ${studyPlan.length}`;
+            document.getElementById('slide-view').style.backgroundImage=`url('${studyPlan[i].img}')`;
+            renderOverlay(studyPlan[i].special, studyPlan[i].labels);
+            document.getElementById('lecture-content').innerText=studyPlan[i].text;
+            const u=new SpeechSynthesisUtterance(studyPlan[i].text); u.lang='zh-TW'; u.rate=parseFloat(document.getElementById('rate').value);
+            u.onend=()=>{ if(cuI<studyPlan.length-1) timer=setTimeout(()=>next(cuI+1), 4500); }; synth.speak(u);
+            const side=document.getElementById('sidebar'); if(window.innerWidth < 1024) side.classList.remove('open');
+        }
+        function prev() { if(cuI>0) next(cuI-1); }
+        function clearTimer() { if(timer) { clearTimeout(timer); timer=null; } }
+        function renderOverlay(sp, ls) { const l=document.getElementById('overlay-layer'); l.innerHTML=''; let its=''; if(sp==='theory') its+='<div class="label-unit" style="transform:translateY(-80px)">心➔社➔認➔女</div>'; if(ls) { ls.forEach(t=>{its+=`<div class="label-unit">${t}</div>`}); } l.innerHTML=its; }
+    </script>
+</body>
+</html>
