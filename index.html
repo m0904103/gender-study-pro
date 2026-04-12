@@ -241,26 +241,29 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            gap: 20px;
+            gap: 12px;
             z-index: 10;
+            padding: 20px;
         }
 
         .data-tag {
             background: linear-gradient(135deg, #ef4444, #b91c1c);
             color: white;
-            padding: 15px 35px;
-            border-radius: 15px;
+            padding: 12px 28px;
+            border-radius: 12px;
             font-weight: 950;
-            font-size: 2.2rem;
-            border: 5px solid #fff;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.6);
-            transform: scale(0) rotate(-2deg);
+            font-size: 1.8rem;
+            border: 4px solid #fff;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+            transform: scale(0);
             transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             text-align: center;
+            max-width: 90%;
+            word-break: break-all;
         }
 
         .data-tag.show {
-            transform: scale(1) rotate(0deg);
+            transform: scale(1);
         }
 
         .control-panel {
@@ -399,7 +402,7 @@
             box-shadow: 0 25px 70px var(--primary-glow);
         }
 
-        /* 橫向模式適配 */
+        /* 橫向模式與移動端最適化 */
         @media (orientation: landscape) {
             .app-container {
                 flex-direction: row;
@@ -407,27 +410,91 @@
             .sidebar {
                 position: relative;
                 left: 0;
-                width: 320px;
+                width: 300px;
                 background: rgba(10, 15, 25, 0.5);
             }
             .control-panel {
                 position: absolute;
-                bottom: 30px;
-                right: 30px;
-                width: 500px;
+                bottom: 20px;
+                right: 20px;
+                width: 450px;
                 border: 1px solid var(--glass-border);
-                border-radius: 25px;
+                border-radius: 20px;
                 box-shadow: 0 40px 100px rgba(0,0,0,0.9);
+                padding: 20px;
             }
             .lecture-text {
-                max-height: 100px;
+                max-height: 80px;
+                font-size: 1rem;
             }
         }
 
         @media (max-width: 768px) {
-            .splash-title { font-size: 2.5rem; }
-            .data-tag { font-size: 1.5rem; }
-            .lecture-text { font-size: 1.1rem; }
+            .header {
+                height: calc(60px + var(--safe-top));
+            }
+            .app-container {
+                padding-top: calc(60px + var(--safe-top));
+            }
+            .splash-title { font-size: 2.2rem; }
+            .start-btn { padding: 18px 60px; font-size: 1.5rem; }
+            
+            .data-tag { 
+                font-size: 1.4rem; 
+                padding: 10px 20px; 
+                border-width: 3px;
+                border-radius: 12px;
+            }
+            
+            .control-panel {
+                padding: 20px;
+                padding-bottom: calc(15px + var(--safe-bottom));
+                gap: 12px;
+            }
+            
+            .lecture-text { 
+                font-size: 1.05rem; 
+                max-height: 100px;
+                line-height: 1.6;
+            }
+            
+            .controls-row {
+                gap: 15px;
+            }
+            
+            .circle-btn {
+                width: 50px;
+                height: 50px;
+                font-size: 1.1rem;
+            }
+            
+            .circle-btn.play {
+                width: 65px;
+                height: 65px;
+                font-size: 1.6rem;
+            }
+
+            .logo-text {
+                font-size: 1.1rem;
+            }
+            
+            /* 防止 Dynamic Island 遮擋目錄按鈕 */
+            .menu-btn {
+                padding: 8px 12px;
+                font-size: 0.85rem;
+            }
+        }
+
+        /* 針對 iPhone 15 Pro 等具有特定瀏海/靈動島的手機進行極致適配 */
+        @supports (padding: env(safe-area-inset-top)) {
+            .header {
+                padding-left: max(20px, env(safe-area-inset-left));
+                padding-right: max(20px, env(safe-area-inset-right));
+            }
+            .control-panel {
+                padding-left: max(20px, env(safe-area-inset-left));
+                padding-right: max(20px, env(safe-area-inset-right));
+            }
         }
     </style>
 </head>
