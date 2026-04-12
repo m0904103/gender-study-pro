@@ -3,169 +3,113 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>114下學期 | 性別健康絕殺系統</title>
-    <!-- 引入 Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700;900&family=Outfit:wght@600;800&display=swap" rel="stylesheet">
+    <title>114-2 性別健康奪冠特訓 | 旗艦雲端版</title>
     <style>
-        :root {
-            --primary: #fbbf24;
-            --secondary: #6366f1;
-            --bg: #05070a;
-            --card: rgba(255, 255, 255, 0.05);
+        :root { 
+            --primary: #f59e0b; --danger: #ef4444; --bg: #020617; --text: #f8fafc; 
             --safe-top: env(safe-area-inset-top, 20px);
             --safe-bottom: env(safe-area-inset-bottom, 20px);
         }
-        * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; margin: 0; padding: 0; }
-        body, html { 
-            width: 100%; 
-            height: 100%; 
-            height: 100dvh;
-            background: var(--bg); 
-            color: #fff; 
-            font-family: 'Noto Sans TC', sans-serif; 
-            overflow: hidden; 
+        body, html { margin: 0; padding: 0; width: 100%; height: 100%; height: 100dvh; background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, sans-serif; overflow: hidden; }
+        .header { 
+            position: fixed; top: 0; left: 0; right: 0; 
+            padding-top: var(--safe-top); height: calc(65px + var(--safe-top));
+            background: rgba(15, 23, 42, 0.85); border-bottom: 2px solid var(--primary); 
+            display: flex; justify-content: space-between; align-items: center; 
+            padding-left: 20px; padding-right: 20px; z-index: 2000; backdrop-filter: blur(25px); 
         }
-        .header {
-            position: fixed; top: 0; left: 0; right: 0;
-            height: calc(60px + var(--safe-top));
-            padding-top: var(--safe-top);
-            background: rgba(10, 15, 25, 0.85);
-            backdrop-filter: blur(20px);
-            display: flex; align-items: center; justify-content: space-between;
-            padding-left: 15px; padding-right: 15px;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-            z-index: 1000;
+        .speed-box { background: rgba(0,0,0,0.5); padding: 6px 14px; border-radius: 50px; border: 1.5px solid var(--primary); display: flex; align-items: center; gap: 8px; font-size: 0.85rem; }
+        .wrapper { display: flex; height: 100vh; padding-top: calc(65px + var(--safe-top)); box-sizing: border-box; }
+        .sidebar { 
+            position: fixed; left: -100%; top: 0; bottom: 0; width: 280px; 
+            background: #0b0f1a; border-right: 1px solid rgba(251, 191, 36, 0.2); 
+            z-index: 3000; transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            padding-top: calc(80px + var(--safe-top));
         }
-        .logo { font-family: 'Outfit', sans-serif; font-weight: 800; color: var(--primary); font-size: 1.2rem; }
-        .menu-btn { 
-            background: var(--primary); color: #000; border: none; 
-            padding: 8px 15px; border-radius: 10px; font-weight: 900; font-size: 0.9rem;
-        }
-        .container {
-            display: flex; height: 100%; padding-top: calc(60px + var(--safe-top));
-        }
-        .sidebar {
-            position: fixed; left: -100%; top: 0; bottom: 0; width: 80%; max-width: 300px;
-            background: rgba(10, 15, 25, 0.95); backdrop-filter: blur(30px);
-            z-index: 2000; transition: 0.3s; padding: 80px 20px 20px;
-            border-right: 1px solid rgba(255,255,255,0.1);
-        }
-        .sidebar.active { left: 0; }
-        .nav-item {
-            background: var(--card); padding: 15px; border-radius: 12px; margin-bottom: 10px;
-            font-weight: 700; border: 1px solid rgba(255,255,255,0.05);
-        }
-        .nav-item.active { background: var(--primary); color: #000; }
-        .main { flex: 1; position: relative; display: flex; flex-direction: column; }
-        .view-area { 
-            flex: 1; display: flex; justify-content: center; align-items: center; 
-            position: relative; padding: 20px;
-        }
-        #slide-img { max-width: 100%; max-height: 100%; border-radius: 15px; transition: 0.3s; opacity: 0; }
-        .control-panel {
-            background: rgba(15, 23, 42, 0.9); padding: 20px; padding-bottom: calc(20px + var(--safe-bottom));
-            border-top: 1px solid rgba(255,255,255,0.1);
-        }
-        #text-box { font-size: 1.1rem; line-height: 1.5; margin-bottom: 15px; height: 3.2em; overflow-y: auto; }
-        .btns { display: flex; align-items: center; justify-content: center; gap: 20px; }
-        .btn-circle {
-            width: 50px; height: 50px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.2);
-            background: var(--card); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 1.2rem;
-        }
-        .btn-play { width: 60px; height: 60px; background: var(--primary); color: #000; border: none; font-size: 1.5rem; }
-        .tags {
-            position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-            display: flex; flex-direction: column; gap: 10px; pointer-events: none;
-        }
-        .tag {
-            background: #ef4444; color: #fff; padding: 5px 15px; border-radius: 8px;
-            font-weight: 900; font-size: 1.2rem; border: 2px solid #fff;
-            transform: scale(0); transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-        .tag.show { transform: scale(1); }
-        @media (orientation: landscape) {
-            .sidebar { width: 200px; left: 0; position: relative; padding-top: 20px; }
-            .header { display: none; }
-            .container { padding-top: 0; }
-        }
+        .sidebar.open { left: 0; box-shadow: 20px 0 50px rgba(0,0,0,0.8); }
+        .course-nav { height: 100%; overflow-y: auto; padding: 15px; }
+        .nav-cat { font-size: 0.75rem; color: var(--primary); margin: 25px 0 10px 5px; font-weight: 800; border-left: 4px solid var(--primary); padding-left: 10px; }
+        .nav-item { padding: 14px 18px; margin-bottom: 6px; border-radius: 12px; cursor: pointer; transition: 0.2s; font-size: 0.85rem; background: rgba(255,255,255,0.03); }
+        .nav-item.active { background: var(--primary); color: #000; font-weight: 900; }
+        .viewport { flex: 1; position: relative; background: #000; display: flex; flex-direction: column; overflow: hidden; padding-bottom: calc(180px + var(--safe-bottom)); }
+        .screen { flex: 1; position: relative; display: flex; justify-content: center; align-items: center; }
+        #slide-view { width: 100%; height: 100%; background-size: contain; background-position: center; background-repeat: no-repeat; transition: 0.8s; }
+        .label-unit { position: absolute; background: rgba(220, 38, 38, 0.95); color: #fff; padding: 12px 24px; border-radius: 10px; font-weight: 950; font-size: 1.6rem; border: 3px solid #fff; box-shadow: 0 10px 40px rgba(0,0,0,0.8); animation: pop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); text-align: center; z-index: 1001; }
+        @keyframes pop { from { transform: scale(0.5); opacity:0; } to { transform: scale(1); opacity:1; } }
+        .console { position: fixed; bottom: calc(20px + var(--safe-bottom)); left: 50%; transform: translateX(-50%); width: 92%; background: rgba(30, 41, 59, 0.95); padding: 25px; border-radius: 20px; border-left: 10px solid var(--primary); backdrop-filter: blur(20px); z-index: 3500; }
+        .text-body { font-size: 1.25rem; line-height: 1.6; height: 110px; overflow-y: auto; color: #fff; font-weight: 500; }
+        .btn-gold { background: var(--primary); color: #000; border: none; padding: 15px 40px; font-size: 1.4rem; font-weight: 900; border-radius: 100px; cursor: pointer; }
+        #splash { position: fixed; inset: 0; background: #020617; z-index: 5000; display: flex; justify-content: center; align-items: center; text-align: center; }
+        @media (orientation: landscape) { .viewport { padding-bottom: calc(100px + var(--safe-bottom)); } .console { width: 60%; right: 20px; left: auto; transform: none; } .text-body { height: 60px; font-size: 1.1rem; } }
     </style>
 </head>
 <body>
+    <div id="splash" onclick="goStudy()">
+        <div style="width: 85%">
+            <p style="color:var(--primary); font-size:1rem; letter-spacing:6px;">空大輔考研究社</p>
+            <h1 style="font-size:2.4rem; margin:15px 0">114-2期中絕殺特訓</h1>
+            <div style="background:var(--danger); color:white; padding:8px 25px; display:inline-block; border-radius:10px; font-size:1.1rem; font-weight:bold">旗艦雲端同步版</div>
+            <br><button class="btn-gold" style="margin-top:30px;">🏆 啟動奪冠</button>
+        </div>
+    </div>
     <header class="header">
-        <div class="logo">114-2 MASTER</div>
-        <button class="menu-btn" onclick="toggleMenu()">☰ 目錄</button>
+        <button onclick="toggleSidebar()" style="background:var(--primary); border:none; padding:10px 20px; border-radius:10px; font-weight:900;">☰ 目錄</button>
+        <div class="speed-box"><span>語速：</span><input type="range" id="rate" min="0.8" max="2.0" value="1.3" step="0.1" style="width:70px"></div>
     </header>
-    <div class="container">
-        <aside id="sidebar" class="sidebar"></aside>
-        <main class="main">
-            <div class="view-area">
-                <img id="slide-img" src="">
-                <div id="tag-area" class="tags"></div>
-            </div>
-            <div class="control-panel">
-                <div id="text-box">點擊目錄開始特訓，目標 114 年下學期滿分！</div>
-                <div class="btns">
-                    <button class="btn-circle" onclick="prev()">⏮</button>
-                    <button id="play-btn" class="btn-circle btn-play" onclick="togglePlay()">▶</button>
-                    <button class="btn-circle" onclick="next()">⏭</button>
-                    <input type="range" id="rate" min="0.8" max="2" step="0.1" value="1.3" style="width:50px; accent-color:var(--primary);">
+    <div class="wrapper">
+        <aside id="sidebar" class="sidebar"><div class="course-nav" id="nav"></div></aside>
+        <main class="viewport">
+            <div class="screen"><div id="slide-view"></div><div id="overlay" style="position:absolute; inset:0; pointer-events:none; display:flex; justify-content:center; align-items:center;"></div></div>
+            <div class="console">
+                <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
+                    <span style="color:var(--primary); font-weight:900;">🎙️ 助教解析</span>
+                    <span id="page-num" style="background:#1e40af; padding:2px 10px; border-radius:6px; font-size:0.8rem;">1 / 10</span>
                 </div>
+                <div id="lecture-content" class="text-body">準備開始...</div>
             </div>
         </main>
     </div>
     <script>
         const plan = [
-            { title: "🏺 米德三部族性格解析", img: "ch1_theory_chart_tw_1775878090737.png", tags: ["阿:皆溫", "蒙:皆鬥", "德:反轉"], text: "114下特訓：米德研究證明性格是『文化編排』！阿拉佩什(兩性溫順)、蒙杜古馬(兩性好鬥)、德昌布利(女強男弱反轉)。打臉天生論最強武器！" },
-            { title: "🛠️ 性別主流化六大工具", img: "cedaw_justice_symbol_1775875313437.png", tags: ["統析預評培機"], text: "滿分補強：統、析、預、評、培、機！⚠️ 掃雷注意：『配額制』或『保障名額』是暫行措施，不屬於核心工具箱，看到請直接秒殺它！" },
-            { title: "🏥 AAAQ：可及性陷阱", img: "ch4_aaa_standard_icons_1775909974764.png", tags: ["付不起錢=可及性"], text: "老師提醒：『付不起錢/經濟負擔』屬於 Accessibility 可及性。這是 114 年考古題最愛挖的邏輯陷阱，千萬別選成品質問題！" },
-            { title: "🦴 骨鬆紅線數據 T < -2.5", img: "male_fragility_fracture_trap_1775875425752.png", tags: ["T-score < -2.5"], text: "數據靶記：骨鬆確診分水嶺是 T-score 小於 -2.5。看到這道紅線別猶豫，數字題必拿分！" },
-            { title: "🎯 絕殺觀念總結", img: "final_blessing_gold_1775901221619.png", tags: ["16歲同意", "男死22%", "GAD翻轉"], text: "最終校閱：16歲性同意、男髖部骨折死亡率22%、影子報告由 NGO 編寫。除了生理 Sex 數據，其餘選社會建構論。出發登頂封神榜！" }
+            { cat: "第一章", title: "🏺 米德三部族性格對照", img: "ch1_theory_chart_tw_1775878090737.png", labels: ["阿:皆溫", "蒙:皆鬥", "德:反轉"], text: "114下特訓：記住米德這三部族！阿拉佩什男女皆溫順、蒙杜古馬男女皆好鬥、德昌布利則是性別角色反轉。這是打臉天生論最強大的『文化編排』證據！" },
+            { cat: "第一章", title: "🧥 理論時序與恆定期", img: "ch1_master_theory_tw_1775901143741.png", labels: ["心➔社➔認➔女", "4-5歲恆定"], text: "絕對時序：心理、社會、認知、女性主義。順序：心、社、認、女！認知發展論強調 4 到 5 歲達成性別恆定期，小朋友會懂衣服不改變性別。" },
+            { cat: "第二章", title: "🥗 全球在地化：實例識別", img: "ch2_rice_burger_glocal_1775909945923.png", labels: ["麥當勞米漢堡", "多國手冊"], text: "114下必拿分：全球在地化 Glocalization。看到跨國品牌融入本土（米漢堡、泰國合掌麥當勞、多國語手冊）選他就對了。考古題爆量點！" },
+            { cat: "第三章", title: "⚙️ 主流化六大工具", img: "cedaw_justice_symbol_1775875313437.png", labels: ["統析預評培機"], text: "口訣：統、析、預、評、培、機！⚠️ 掃雷注意：配額制或保障名額是暫行措施，不屬於這六大核心工具。看到配額制請直接秒殺它！" },
+            { cat: "第三章", title: "㊙️ NGO 影子報告", img: "ch3_ngo_shadow_report_1775910181779.png", labels: ["NGO 監督"], text: "命中關鍵：影子報告是民間 NGO 撰寫來監督政府報告的平衡機制，不要選成政府自己寫的。" },
+            { cat: "第四章", title: "🏥 AAAQ：經濟陷阱", img: "ch4_aaa_standard_icons_1775909974764.png", labels: ["付不起錢=可及性"], text: "地雷警報：『付不起醫藥費』屬於 Accessibility 可及性。這是 114 年考古題最愛挖的邏輯坑，千萬不要選成品質問題！" },
+            { cat: "第四章", title: "🔞 性同意、交織性", img: "ch3_age_16_consent_1775910116195.png", labels: ["16歲 vs 18歲", "性x階級x族群"], text: "法律靶心：性同意界線是 16 歲！另外記住交織性是弱勢的乘積效應，考慮性別、階級與族群的綜合影響。" },
+            { cat: "第五章", title: "🧬 醫學靶心：數據紅線", img: "ch5_lung_cancer_types_1775910383105.png", labels: ["T < -2.5 確診", "男死 22%"], text: "數據地雷：T-score 小於 -2.5 為骨鬆確診。男髖部骨折死亡率 22% > 女 15%。肺腺癌認準『女腺男小』口訣。這些全都是保分數據！" },
+            { cat: "大終局", title: "🏆 目標 114 下滿分冠軍", img: "final_blessing_gold_1775901221619.png", labels: ["4/25 全班滿分"], text: "恭喜！114 年下學期特訓完成。帶上這份 Glocal、1/3、16、22 與 -2.5 的戰略地圖。除了生理數據，其餘一律選『社會建構論』。預祝 100 分登頂！" }
         ];
-        let idx = -1, isPlaying = false, synth = window.speechSynthesis;
-        function renderNav() {
-            const side = document.getElementById('sidebar');
-            plan.forEach((p, i) => {
-                const div = document.createElement('div'); div.className = 'nav-item'; div.id = 'nav-'+i;
-                div.textContent = p.title; div.onclick = () => jump(i); side.appendChild(div);
+        let idx = -1, synth = window.speechSynthesis, voices = [];
+        function toggleSidebar() { document.getElementById('sidebar').classList.toggle('open'); }
+        function goStudy() { document.getElementById('splash').style.display = 'none'; build(); jump(0); }
+        function build() {
+            const nav = document.getElementById('nav'); let lastC = "";
+            plan.forEach((item, i) => {
+                if(item.cat !== lastC) { const c = document.createElement('div'); c.className = 'nav-cat'; c.innerText = item.cat; nav.appendChild(c); lastC = item.cat; }
+                const div = document.createElement('div'); div.className = 'nav-item'; div.id = 'ni-'+i; div.innerText = item.title;
+                div.onclick = () => jump(i); nav.appendChild(div);
             });
         }
         function jump(i) {
             idx = i; synth.cancel();
             document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
-            document.getElementById('nav-'+i).classList.add('active');
-            const img = document.getElementById('slide-img'); img.style.opacity = '0';
-            img.src = plan[i].img; img.onload = () => img.style.opacity = '1';
-            document.getElementById('text-box').textContent = plan[i].text;
-            renderTags(plan[i].tags);
-            if (isPlaying) speak(plan[i].text);
-            if (window.innerWidth < 768) toggleMenu();
+            document.getElementById('ni-'+i).classList.add('active');
+            document.getElementById('page-num').innerText = `${i+1} / ${plan.length}`;
+            const view = document.getElementById('slide-view'); view.style.backgroundImage = `url('${plan[i].img}')`;
+            document.getElementById('lecture-content').innerText = plan[i].text;
+            renderOverlay(plan[i].labels);
+            const utter = new SpeechSynthesisUtterance(plan[i].text); utter.lang = 'zh-TW';
+            utter.rate = parseFloat(document.getElementById('rate').value);
+            utter.onend = () => { if(idx < plan.length - 1) setTimeout(() => jump(idx+1), 3000); };
+            synth.speak(utter);
         }
-        function renderTags(ts) {
-            const area = document.getElementById('tag-area'); area.innerHTML = '';
-            ts.forEach((t, i) => {
-                const tag = document.createElement('div'); tag.className = 'tag'; tag.textContent = t;
-                area.appendChild(tag); setTimeout(() => tag.classList.add('show'), 200 * (i+1));
-            });
+        function renderOverlay(ls) {
+            const l = document.getElementById('overlay'); l.innerHTML = '';
+            ls.forEach(t => { l.innerHTML += `<div class="label-unit">${t}</div>`; });
         }
-        function speak(t) {
-            synth.cancel(); const u = new SpeechSynthesisUtterance(t); u.lang = 'zh-TW';
-            u.rate = document.getElementById('rate').value;
-            u.onend = () => { if (isPlaying && idx < plan.length - 1) setTimeout(() => jump(idx+1), 800); };
-            synth.speak(u);
-        }
-        function togglePlay() { 
-            isPlaying = !isPlaying; 
-            document.getElementById('play-btn').textContent = isPlaying ? '⏸' : '▶';
-            if (isPlaying && idx !== -1) speak(plan[idx].text); 
-            else synth.cancel();
-        }
-        function next() { if (idx < plan.length - 1) jump(idx + 1); }
-        function prev() { if (idx > 0) jump(idx - 1); }
-        function toggleMenu() { document.getElementById('sidebar').classList.toggle('active'); }
-        // 強效初始化
-        window.onload = () => { renderNav(); if (idx === -1) jump(0); };
+        window.onload = () => { if(speechSynthesis.onvoiceschanged !== undefined) speechSynthesis.onvoiceschanged = () => { voices = synth.getVoices(); }; };
     </script>
 </body>
 </html>
