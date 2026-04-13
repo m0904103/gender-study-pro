@@ -57,15 +57,15 @@
 <body>
     <div id="splash" onclick="goStudy()">
         <div style="width: 85%">
-            <p style="color:var(--primary); font-weight:1000; letter-spacing:4px; margin-bottom:10px; font-size:0.8rem;">空大輔考研究社 | 正考特訓 V20.1</p>
+            <p style="color:var(--primary); font-weight:1000; letter-spacing:4px; margin-bottom:10px; font-size:0.8rem;">空大輔考研究社 | 正考特訓</p>
             <h1 style="font-size:2.4rem; line-height:1.2; margin:10px 0; background:linear-gradient(135deg, #fff, var(--primary)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; font-weight:1000;">人際關係與協商<br><span style="font-size:1.8rem; color:var(--primary);">期中考最終決戰版</span></h1>
-            <div style="background:var(--danger); color:white; padding:8px 25px; border-radius:10px; font-size:1.1rem; font-weight:900; display:inline-block; margin:5px 0;">面授重點全整合 | 杜月笙三碗麵 | 零噪音</div>
+            <div style="background:var(--danger); color:white; padding:8px 25px; border-radius:10px; font-size:1.1rem; font-weight:900; display:inline-block; margin:5px 0;">V20.1 | 杜月笙三碗麵 | 零噪音全整合</div>
             <br><button class="btn-gold" style="margin-top:40px;">🏆 點擊開始</button>
         </div>
     </div>
     <header class="header">
         <button onclick="toggleSidebar()" style="background:var(--primary); border:none; padding:12px 25px; border-radius:15px; font-weight:1000; font-size:0.9rem;">☰ 特訓索引(22)</button>
-        <div class="header-info" style="color:var(--primary); font-weight:1000; font-size:0.95rem; text-align:center; flex:1; padding:0 10px;">空大輔考研究社：標題直接觸發答案，確保全面拿分。</div>
+        <div class="header-info" style="color:var(--primary); font-weight:1000; font-size:0.95rem; text-align:center; flex:1; padding:0 10px;">空大輔考研究社 V20.1：確保全面獲取分數。</div>
         <div style="background:rgba(0,0,0,0.6); padding:8px 15px; border-radius:50px; border:2px solid var(--primary); display:flex; align-items:center; gap:8px;"><input type="range" id="rate" min="0.5" max="2.0" value="1.2" step="0.1" style="width:50px; accent-color:var(--primary)"></div>
     </header>
     <div class="wrapper">
@@ -86,10 +86,10 @@
         const studyPlan = [
             { cat: "【名詞解釋】", title: "1. 周哈里窗 (Johari Window)", img: "johari_window_modern_diagram_1776040990674.png", ls: ["周哈里窗"], txt: "分析自我覺察之模型。分四區：開放區（己知他知）、盲目區（己不知他知）、隱藏區（己知他不知）、未知區（己不知他不知）。操作核心：透過自我袒露縮小隱藏區，透過他人回饋縮小盲目區。" },
             { cat: "【名詞解釋】", title: "2. 內控與外控性格", img: "defense_mechanism_crystal_shield_1776041117465.png", ls: ["內/外控性格"], txt: "個體歸因傾向。內控者相信命運操之在我，可透過努力控制命運。外控者視成敗受強而有力的第三者（命運、天、神）控制。中國人多信天命，屬典型外控歸論。核心在於命運掌握權之所在。" },
-            { cat: "【名詞解釋】", title: "3. 仰巴腳效應 (Pratfall Effect)", img: "pratfall_effect_clumsy_elite_1776041082459.png", ls: ["仰巴腳效應"], txt: "又稱出醜效應。指能力卓越者若偶爾犯下平庸小錯誤，反而能增加人性化親和力與吸引力。此效應僅對能力強者有效，平庸者犯錯則降低吸引力。旨在完善形象與瑕疵產生之對比美感。" },
-            { cat: "【名詞解釋】", title: "4. 月暈效應 (Halo Effect)", img: "halo_effect_glowing_aura_bias_1776041171942.png", ls: ["月暈效應"], txt: "認知偏誤。指知覺者根據對方單一顯著優點（如外貌佳），而盲目推論其餘人格特質亦同樣優秀，產生以點帶面的正面評價。反向評價偏誤則稱為角效應。" },
+            { cat: "【名詞解釋】", title: "3. 仰巴腳效應 (Pratfall Effect)", img: "pratfall_effect_clumsy_elite_1776041082459.png", ls: ["仰巴腳效應"], txt: "又稱出醜效應。指能力卓越者若偶爾犯下平庸小錯誤，反而能增加人性化親和力與吸引力。此效應僅對強者有效，平庸者犯錯則降低吸引力。旨在完善形象與瑕疵產生之對比美感。" },
+            { cat: "【名詞解釋】", title: "4. 月暈效應 (Halo Effect)", img: "halo_effect_glowing_aura_bias_1776041171942.png", ls: ["月暈效應"], txt: "認知偏誤。指因對方單一顯著優點（如外貌佳）而盲目推論其餘人格特質亦同樣優秀，產生以點帶面的正面評價。反向評價偏誤則稱為角效應。" },
             { cat: "【名詞解釋】", title: "5. 印象整飾與戲劇理論", img: "goffman_dramaturgy_theater_stage_1776041066626.png", ls: ["印象整飾"], txt: "個體意圖控制他人對自己知覺之歷程。前台指在他人面前展現符合期待之形象；後台指展現私密真實之自我。旨在維護個人尊嚴與公共形象之穩定一致。" },
-            { cat: "【名詞解釋】", title: "6. 歸因原則 (加大與折扣)", img: "attribution_theory_cause_effect_links_1776041098952.png", ls: ["歸因原則"], txt: "加大法則指行為在阻力下仍發生，會加強對核心因素之歸因（如下課幫老師做事）。折扣法則指行為原因若被其他更具說服力之外部因素取影（如辯論賽被迫立場），則動機歸因會被削弱。" },
+            { cat: "【名詞解釋】", title: "6. 歸因原則 (加大與折扣)", img: "attribution_theory_cause_effect_links_1776041098952.png", ls: ["歸因原則"], txt: "加大法則指行為在阻力下仍發生，會加強對核心因素之歸因（如下課幫老師做事）。折扣法則指行為原因若被其他更具說服力之外部因素影響（如辯論賽被迫立場），則動機歸因會被削弱。" },
             { cat: "【名詞解釋】", title: "7. 社會再適應量表 (SRRS)", img: "stress_measurement_gauge_srrs_1776041191104.png", ls: ["SRRS 量表"], txt: "量化壓力之工具。數據定錨：200至299分屬中度生活危機。功能：透過生活事件變動分數，預測未來兩年內引發重大身心疾病與健康危機之風險機率。" },
             { cat: "【名詞解釋】", title: "8. 艾里斯不合理信念 (ABC)", img: "albert_ellis_rational_emotive_background_1775990617583.png", ls: ["不合理信念"], txt: "理情療法核心。指個體對事件抱持絕對化要求（如我必須、一定要）。修正邏輯：將絕對語句轉化為相對要求的期許（如我希望），能顯著減少焦慮情緒。" },
             { cat: "【名詞解釋】", title: "9. 防衛機制 (Defense Mechanism)", img: "defense_mechanism_crystal_shield_1776041117465.png", ls: ["防衛機制"], txt: "焦慮時潛意識採取之保護手段。包含：合理化（酸葡萄心理）、投射（缺點怪罪他人）、退化（幼稚化行為）、幻想（白日夢補償）。旨在維持暫時的心理平衡。" },
@@ -98,7 +98,7 @@
             { cat: "【問答大題】", title: "12. 獲得健康的兩大策略", img: "stress_measurement_gauge_srrs_1776041191104.png", ls: ["獲得健康策略"], txt: "生理修復：運動(333原則)、睡眠(8小時/建議右側臥有利排毒)、均衡飲食。心理回彈：發展複元力(Resilience)、提升問題解決能力、建立社會支持網絡進行壓力管理。" },
             { cat: "【問答大題】", title: "13. 圓融人際六要訣", img: "roundness_secrets_enso_circle_1776041217719.png", ls: ["圓融六要訣"], txt: "口訣：尊(頭軟)、笑(面笑)、口(口圓)、心(心正)、度(肚大)、腳(腳勤)。此為管理個人利益導向與情緒系統，達成人際圓潤之綜合智慧心法標題。" },
             { cat: "【問答大題】", title: "14. 知覺組織五原則 (格式塔)", img: "gestalt_connectedness_dumbbell_principle_1776043234567_1776051269067.png", ls: ["知覺組織五原則"], txt: "接近性(距離近看為一組)、相似性(外貌像看為一組)、連續性、閉合性(自動補全)。以及連接性，即「啞鈴圖效應」，指獨立物件若被線條連結，會被知覺鎖定為單元。" },
-            { cat: "// [L105] 補強：華人文化的人情與面子", title: "15. 華人的人情與面子 (三碗麵)", img: "roundness_secrets_enso_circle_1776041217719.png", ls: ["人情與面子"], txt: "人情包含情緒、資材與規範。杜月笙名言：人生三碗麵最難吃（人面、場面、情面）。處事原則遵循：情 ➔ 理 ➔ 法 之次序，與西方法治契約文化產生明顯區隔。" },
+            { cat: "【問答大題】", title: "15. 華人的人情與面子 (三碗麵)", img: "roundness_secrets_enso_circle_1776041217719.png", ls: ["人情與面子"], txt: "人情包含情緒、資材與規範。杜月笙名言：人生三碗麵最難吃（人面、場面、情面）。處事原則遵循：情 ➔ 理 ➔ 法 之次序，與西方法治契約文化產生明顯區隔。" },
             { cat: "【問答大題】", title: "16. 凱利三維歸因模型數據指針", img: "attribution_theory_cause_effect_links_1776041098952.png", ls: ["凱利歸因模型"], txt: "區別性（針對不同對象）、一致性（不同時間點）、普遍性（他人反應）。若三者皆高傾向歸因為外部情境；若僅一致性高其餘低，則強烈傾向歸因為當事人內部的人格特質。" },
             { cat: "【問答大題】", title: "17. TA 溝通分析：PAC 三狀態與型態", img: "ta_pac_model_diagram_circles_1776041140078.png", ls: ["TA 溝通分析"], txt: "三狀態為父母態 P、成人態 A、兒童態 C。溝通型態：互補式(順暢)、交錯式(衝突斷裂)、隱藏式(心理遊戲)。目標為建立 A-A 理性對位溝通，達成有效訊息傳遞。" },
             { cat: "【問答大題】", title: "18. 史登堡 (Sternberg) 愛情三因論", img: "sternberg_love_triangle_diagram_1776041022011.png", ls: ["愛情三因論"], txt: "由親密、激情、責任決心三元素組成。隨時間推移，激情通常遞減，但親密與責任感應隨著對關係的承諾增加而提升。是解釋人際吸引與長期關係維持之核心理論。" },
