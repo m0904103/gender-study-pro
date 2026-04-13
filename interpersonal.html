@@ -6,7 +6,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="theme-color" content="#020617">
-    <title>人際關係與協商 | 面授封神最終版 V5.0</title>
+    <title>人際關係與協商 | 面授魔鬼終極版 V5.1</title>
     <style>
         :root { 
             --primary: #fbbf24; --danger: #ef4444; --bg: #020617; --text: #f8fafc; 
@@ -57,15 +57,15 @@
 <body>
     <div id="splash" onclick="goStudy()">
         <div style="width: 85%">
-            <p style="color:var(--primary); font-weight:1000; letter-spacing:8px; margin-bottom:15px; font-size:0.9rem;">1142 | FINAL EXAM LEAK EDITION</p>
-            <h1 style="font-size:2.8rem; line-height:1.2; margin:15px 0; background:linear-gradient(135deg, #fff, var(--primary)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; font-weight:1000;">人際關係與協商<br><span style="font-size:2.2rem; color:var(--primary); text-shadow:0 0 20px rgba(251,191,36,0.3);">面授封神最終版 V5.0</span></h1>
-            <div style="background:var(--danger); color:white; padding:10px 35px; border-radius:12px; font-size:1.3rem; font-weight:900; display:inline-block; margin-top:10px;">老師認證：25% 名詞 / 75% 問答</div>
+            <p style="color:var(--primary); font-weight:1000; letter-spacing:8px; margin-bottom:15px; font-size:0.9rem;">1142 | EXAM LEAK V5.1</p>
+            <h1 style="font-size:2.8rem; line-height:1.2; margin:15px 0; background:linear-gradient(135deg, #fff, var(--primary)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; font-weight:1000;">人際關係與協商<br><span style="font-size:2.2rem; color:var(--primary); text-shadow:0 0 20px rgba(251,191,36,0.3);">面授魔鬼終極版 V5.1</span></h1>
+            <div style="background:var(--danger); color:white; padding:10px 35px; border-radius:12px; font-size:1.3rem; font-weight:900; display:inline-block; margin-top:10px;">補齊錄音所有「啞鈴、核心、三要素」細節</div>
             <br><button class="btn-gold" style="margin-top:50px;">🏆 就緒</button>
         </div>
     </div>
     <header class="header">
         <button onclick="toggleSidebar()" style="background:var(--primary); border:none; padding:12px 25px; border-radius:15px; font-weight:1000; font-size:0.9rem;">☰ 考點導航</button>
-        <div class="header-info" style="color:var(--primary); font-weight:1000; font-size:1rem; text-align:center; flex:1; padding:0 10px;">面授重點：只考大標，內容意思對就給分！</div>
+        <div class="header-info" style="color:var(--primary); font-weight:1000; font-size:1rem; text-align:center; flex:1; padding:0 10px;">面授實錄補完：核心特質實驗與連接性原則已加入</div>
         <div style="background:rgba(0,0,0,0.6); padding:8px 15px; border-radius:50px; border:2px solid var(--primary); display:flex; align-items:center; gap:8px;"><input type="range" id="rate" min="0.5" max="2.0" value="1.3" step="0.1" style="width:50px; accent-color:var(--primary)"></div>
     </header>
     <div class="wrapper">
@@ -73,7 +73,7 @@
         <main class="viewport">
             <div class="screen"><div id="slide-view"></div><div id="overlay-layer" style="position:absolute; inset:0; pointer-events:none; display:flex; justify-content:center; align-items:center;"></div></div>
             <div class="console">
-                <div style="display:flex; justify-content:space-between; align-items:center"><span style="color:var(--primary); font-weight:1000; font-size:1rem;" id="cat-title">解釋名詞 25%</span><span id="page-num" style="background:#1e40af; padding:6px 16px; border-radius:12px; font-size:0.9rem; font-weight:1000;">1 / 32</span></div>
+                <div style="display:flex; justify-content:space-between; align-items:center"><span style="color:var(--primary); font-weight:1000; font-size:1rem;" id="cat-title">解釋名詞 25%</span><span id="page-num" style="background:#1e40af; padding:6px 16px; border-radius:12px; font-size:0.9rem; font-weight:1000;">1 / 35</span></div>
                 <div id="lecture-content" class="text-body">。</div>
                 <div class="nav-btns">
                     <button class="control-btn" onclick="prev()">⬅ 上一頁</button>
@@ -84,30 +84,31 @@
     </div>
     <script>
         const studyPlan = [
-            { cat: "解釋名詞 (25%)", title: "📝 艾里斯 10 大不合理信念", img: "albert_ellis_rational_emotive_background_1775990617583.png", labels: ["不合理信念"], text: "艾里斯 10 大信念關鍵字：每個人都要愛我、樣樣精通才有價值、事情不如意就很糟、不快樂來自外在、提心吊膽、逃避問題、過去決定現在、求完美解答。老師強調這些是主觀偏誤。" },
-            { cat: "解釋名詞 (25%)", title: "📝 自我概念 (Self-Concept)", img: "defense_mechanism_crystal_shield_1776041117465.png", labels: ["概括性看法"], text: "自我概念：是指個人對自己持有的概括性看法，即認為「自己是怎樣的人」。受人際、文化、特定他人與一般他人多重影響。" },
-            { cat: "解釋名詞 (25%)", title: "📝 內控性格 vs. 外控性格", img: "attribution_theory_cause_effect_links_1776041098952.png", labels: ["命運掌控者"], text: "內控性格：相信努力可控制命運，操之在我。外控性格：相信命運受天命、神等第三者控制。錄音提到：外控者面對不可控壓力時更容易焦慮。" },
-            { cat: "解釋名詞 (25%)", title: "📝 特定他人 vs. 一般他人", img: "first_impression_spark_labels_1776042502128.png", labels: ["重要他人"], text: "特定他人：如父母兄弟、阿公阿嬤（隔代教養）。一般他人：代表社會整體觀點與規範的內化。" },
-            { cat: "解釋名詞 (25%)", title: "📝 月暈效應 (Halo Effect)", img: "halo_effect_glowing_aura_bias_1776041171942.png", labels: ["以偏概全"], text: "月暈效應：因單一顯著特質（如外貌）而擴張評價，高估整體。錄音強調：我們會認為俊男美女學歷更高、能力更強。" },
-            { cat: "解釋名詞 (25%)", title: "📝 第一印象 vs. 刻板印象", img: "halo_effect_glowing_aura_bias_1776041171942.png", labels: ["外顯評價"], text: "第一印象：初次接觸之外顯行為綜合評價。刻板印象：將概括特徵標記在團體上。老師提到：以前男主外女主內，現在不同了。" },
-            { cat: "解釋名詞 (25%)", title: "📝 印象整飾 (Impression Management)", img: "goffman_dramaturgy_theater_stage_1776041066626.png", labels: ["控制形象"], text: "印象整飾：意圖去「控制」別人的知覺，進而影響他人對我們形成印象的過程。包含符合角色期望、維持自尊等功能。" },
-            { cat: "解釋名詞 (25%)", title: "📝 A 型性格 (Type A)", img: "stress_measurement_gauge_srrs_1776041191104.png", labels: ["競爭與緊繃"], text: "A 型性格：強烈急迫感、競爭性與緊繃。老師提到：這種性格的面授學生面對面試或上台時壓力特別大。" },
-            { cat: "問答題 (75%)大題專攻", title: "📝 馬斯洛需求層級理論", img: "maslow_pyramid_stomach_to_god_1776041006784.png", labels: ["生理➔自我實現"], text: "馬斯洛五層次：生理、安全、社會、自尊、自我實現。低層「肚子世界」滿足後，才追求高層「神仙世界」。面授強調：生理包含食慾與還原下一代的性。" },
-            { cat: "問答題 (75%)大題專攻", title: "📝 圓融人際六要訣", img: "roundness_secrets_enso_circle_1776041217719.png", labels: ["尊笑口心度腳"], text: "圓融六要訣：一、尊：尊重。二、笑：笑臉。三、口：口圓(讚美)。四、心：心正(誠意)。五、度：大度(寬容)。六、腳：腳勤與腳蹲(謙虛)。" },
-            { cat: "問答題 (75%)大題專攻", title: "📝 知覺組織四大原則", img: "attribution_theory_cause_effect_links_1776041098952.png", labels: ["接/相/連/閉"], text: "組織大標：一、接近性。二、相似性。三、連續性。四、閉合性。錄音解釋：雖然線段有缺口，我們仍看成完整三角形，就是閉合性。" },
-            { cat: "問答題 (75%)大題專攻", title: "📝 知覺評價與對比效應", img: "halo_effect_glowing_aura_bias_1776041171942.png", labels: ["對比/恆常/整體"], text: "評價特徵：一、知覺對比（鶴立雞群）。二、知覺選擇性（花瓶與人臉）。三、知覺恆常性（門半開仍是門）。四、知覺整體性。" },
-            { cat: "問答題 (75%)大題專攻", title: "📝 凱利歸因三維論", img: "attribution_theory_cause_effect_links_1776041098952.png", labels: ["區別/一致/普遍"], text: "歸因推論大標：一、區別性（這件事跟別件不同嗎）。二、一致性（以前也這樣嗎）。三、普遍性/統一性（別人也這樣嗎）。" },
-            { cat: "問答題 (75%)大題專攻", title: "📝 壓力管理的五大策略", img: "stress_measurement_gauge_srrs_1776041191104.png", labels: ["消除/幽默/支持"], text: "壓力策略大標：一、消除壓力源。二、發現幽默。三、社會支持。四、調整認知。五、放鬆技巧（如呼吸法、肌肉鬆弛）。" },
-            { cat: "問答題 (75%)大題專攻", title: "📝 影響人際吸引的因素", img: "heider_pox_balance_triad_1776041022011.png", labels: ["時空/個人/適配"], text: "吸引大標：一、情境因素（時空接近）。二、個人因素（外表、性格、能力）。三、適配因素（相似性與互補性）。" },
-            { cat: "問答題 (75%)大題專攻", title: "📝 得寸進尺 vs. 漫天要價", img: "foot_in_the_door_vs_face_concept_1776042490769.png", labels: ["小要求➔大要求"], text: "得寸進尺：先提小要求再大（小狗上床）。漫天要價：先提大被拒再收小。老師提醒：這兩者是維持公共形象的社會策略。" },
-            { cat: "問答題 (75%)大題專攻", title: "📝 中國人的人情與面子", img: "roundness_secrets_enso_circle_1776041217719.png", labels: ["人情/面子"], text: "中國人性格大標：人情包含人的情緒、社會資源與社會規範。面子是社會聲望與地位指標。杜月笙三碗麵：人面、場面、情面。" },
-            { cat: "問答題 (75%)大題專攻", title: "📝 TA 溝通分析的三型態", img: "ta_pac_model_diagram_circles_1776041140078.png", labels: ["互補/交錯/隱藏"], text: "TA 三型態：一、互補式。二、交錯式（衝突來源）。三、隱藏式（話中有話）。錄音強調成人理性能化解衝突。" },
-            { cat: "錄音補強數據", title: "📊 運動 333 定義", img: "stress_measurement_gauge_srrs_1776041191104.png", labels: ["週3/30分/130次"], text: "運動 333：一週 3 次、每次 30 分鐘(消耗熱量)、心跳 130 下(心肺運動)。老師說這比 3K 跑更能維持健康。" },
-            { cat: "錄音補強數據", title: "📊 SRRS 中度生活危機", img: "stress_measurement_gauge_srrs_1776041191104.png", labels: ["200-299 分"], text: "數據：200-299 分屬中度危機。錄音強調配偶死亡壓力 100 分，是最高且最重要的指標。" },
-            { cat: "錄音補強數據", title: "📊 梅拉賓定律 93%", img: "nonverbal_emblems_hand_gestures_1776041154779.png", labels: ["非語言佔 93%"], text: "非語言數據：在溝通中情感傳遞，非語言訊息佔比 93%。" },
-            { cat: "錄音補強數據", title: "📊 理想睡眠與心親密距離", img: "roundness_secrets_enso_circle_1776041217719.png", labels: ["8 小時 / 1.5 英尺"], text: "數據：理想睡眠 8 小時，右側臥。親密距離 1.5 英尺以內。" },
-            { cat: "最終魔鬼叮嚀", title: "🏆 千萬不可留白", img: "exam_success_golden_trophy_100_1776041250115.png", labels: ["寫大標必拿分"], text: "戰術：不可留白！老師親口承諾：意思對七八成就給分。他會根據關鍵字與大標來抓分數。" },
-            { cat: "最終魔鬼叮嚀", title: "🏆 閉卷考試心法", img: "exam_success_golden_trophy_100_1776041250115.png", labels: ["掃描封神榜"], text: "戰術：閉卷不難，只要記大標。祝志剛社長與陳同學 100 分凱旋！" }
+            { cat: "解釋名詞 (25%)", title: "📝 艾里斯 10 大不合理信念", img: "albert_ellis_rational_emotive_background_1775990617583.png", labels: ["不合理信念"], text: "艾里斯：樣樣精通才有價值、事情不如意就很糟、逃避問題、過去決定現在、求完美解答。錄音提到：這些是主觀情緒困擾的根源。" },
+            { cat: "解釋名詞 (25%)", title: "📝 自我概念 (Self-Concept)", img: "defense_mechanism_crystal_shield_1776041117465.png", labels: ["概括性看法"], text: "自我概念：是指個人對自己持有的概括性看法，即定義「我是怎樣的人」。受特定他人(家長)與一般他人(社會觀點)影響。" },
+            { cat: "解釋名詞 (25%)", title: "📝 內外控與負面情感", img: "attribution_theory_cause_effect_links_1776041098952.png", labels: ["負面情感傾向"], text: "內控：操之在我。外控：操之在天。負面情感：指一個人容易產生厭惡、緊張、憂慮或憤怒情緒的傾向。" },
+            { cat: "解釋名詞 (25%)", title: "📝 特定他人 vs. 一般他人", img: "first_impression_spark_labels_1776042502128.png", labels: ["重要他人"], text: "特定他人：如父母家人。一般他人：社會期待與規範的內化。錄音提到以前男主外女主內的刻板印象已隨時代改變。" },
+            { cat: "解釋名詞 (25%)", title: "📝 月暈效應 (Halo Effect)", img: "halo_effect_glowing_aura_bias_1776041171942.png", labels: ["以偏概全"], text: "月暈效應：因單一顯著優點(如帥)擴張評價導致以偏概全。高估對方的整體學歷或能力。" },
+            { cat: "解釋名詞 (25%)", title: "📝 核心特質實驗 (重要!)", img: "halo_effect_glowing_aura_bias_1776041171942.png", labels: ["冷淡 vs. 熱誠"], text: "實驗關鍵：熱誠/冷淡會改變全盤評價，是核心特質。粗魯/禮貌則對整體印象影響不大。我們看人主要是抓這幾個核心。" },
+            { cat: "解釋名詞 (25%)", title: "📝 印象整飾 (Impression Management)", img: "goffman_dramaturgy_theater_stage_1776041066626.png", labels: ["控制形象"], text: "印象整飾：意圖控制他人對我們形象的知覺。錄音提到：我們常藉此建立一致的公共形象來獲得報酬。" },
+            { cat: "解釋名詞 (25%)", title: "📝 認知的場地獨立與依賴", img: "attribution_theory_cause_effect_links_1776041098952.png", labels: ["場地獨立/依賴"], text: "場地獨立型：不受外界干擾，自我導向。場地依賴型：受環境與他人意見影響較大。" },
+            { cat: "解釋名詞 (25%)", title: "📝 認知環化型 vs. 簡化型", img: "attribution_theory_cause_effect_links_1776041098952.png", labels: ["環化 vs. 簡化"], text: "環化型：把人想得複雜(他講這話有陰謀?)。簡化型：把人想得簡單(他說什麼就是什麼)。" },
+            { cat: "問答題 (75%)大題專攻", title: "📝 馬斯洛需求層級理論", img: "maslow_pyramid_stomach_to_god_1776041006784.png", labels: ["生理➔自我實現"], text: "馬斯洛五層次：生理(肚子世界)、安全、社會(愛與歸屬)、自尊、自我實現(神仙世界)。生理需求包含食與性。" },
+            { cat: "問答題 (75%)大題專攻", title: "📝 圓融人際六要訣", img: "roundness_secrets_enso_circle_1776041217719.png", labels: ["尊笑口心度腳"], text: "圓融六要訣：尊(尊重)、笑(笑容)、口(口齒圓潤/讚美)、心(誠意)、度(寬容)、腳(腳勤/腳蹲謙虛)。" },
+            { cat: "問答題 (75%)大題專攻", title: "📝 知覺組織五大原則", img: "attribution_theory_cause_effect_links_1776041098952.png", labels: ["接/相/連/閉/接"], text: "組織原則：一、接近性。二、相似性。三、連續性。四、閉合性(缺口補齊)。五、連接性(啞鈴效應)。" },
+            { cat: "問答題 (75%)大題專攻", title: "📝 知覺評價與對比效應", img: "halo_effect_glowing_aura_bias_1776041171942.png", labels: ["對比/恆常/整體"], text: "評價特徵：知覺對比(190公分例子)、知覺選擇性(花瓶臉)、知覺恆常性(一扇門)、知覺整體性。" },
+            { cat: "問答題 (75%)大題專攻", title: "📝 凱利歸因三維論", img: "attribution_theory_cause_effect_links_1776041098952.png", labels: ["區別/一致/普遍"], text: "凱利歸因：一、區別性(這事不同嗎)。二、一致性(以前一樣嗎)。三、普遍性(別人都這樣嗎)。這三者決定內/外因。" },
+            { cat: "問答題 (75%)大題專攻", title: "📝 壓力管理的五大策略", img: "stress_measurement_gauge_srrs_1776041191104.png", labels: ["消除/幽默/支持"], text: "壓力策略：一、消除壓力源(治本)。二、發現幽默。三、社會支持。四、調整認知。五、放鬆技巧(肌肉鬆弛法)。" },
+            { cat: "問答題 (75%)大題專攻", title: "📝 影響人際吸引的因素", img: "heider_pox_balance_triad_1776041022011.png", labels: ["時空/個人/適配"], text: "吸引三因素：一、情境因素(近水樓台)。二、個人因素(外表、個性、仰巴腳能力)。三、適配因素(相似與互補)。" },
+            { cat: "問答題 (75%)大題專攻", title: "📝 得寸進尺 vs. 漫天要價", img: "foot_in_the_door_vs_face_concept_1776042490769.png", labels: ["小要求➔大要求"], text: "得寸進尺(小狗爬床)。漫天要價(先提大被拒再收小)。前提：開價不能毀形象，且必須對同一對象。" },
+            { cat: "問答題 (75%)大題專攻", title: "📝 中國人的人情與面子", img: "roundness_secrets_enso_circle_1776041217719.png", labels: ["人情三意涵"], text: "人情：一、情感。二、社會資源(討人情)。三、社會規範(相處之道)。面子是社會聲望指標。杜月笙：人面、場面、情面。" },
+            { cat: "問答題 (75%)大題專攻", title: "📝 TA 溝通分析的三種型態", img: "ta_pac_model_diagram_circles_1776041140078.png", labels: ["互補/交錯/隱藏"], text: "溝通型態：互補式(順暢)、交錯式(如上次對下屬用理性但下屬用情緒，導致衝突)、隱藏式(表面理性暗地操弄)。" },
+            { cat: "問答題 (75%)大題專攻", title: "📝 改進電話溝通三要素", img: "nonverbal_emblems_hand_gestures_1776041154779.png", labels: ["接聽三要素"], text: "電話技巧：前 30 秒最重要。留言三要素：姓名、電話、事由。即便看不到，肢體語言(微笑)也會傳達誠意。" },
+            { cat: "魔鬼錄音數據", title: "📊 運動 333 定義", img: "stress_measurement_gauge_srrs_1776041191104.png", labels: ["週3/30分/130次"], text: "運動 333：一週 3 次、每次 30 分鐘、心跳 130 下。這是維持代謝平衡的錄音數據考點。" },
+            { cat: "魔鬼錄音數據", title: "📊 SRRS 與 93% 定律", img: "stress_measurement_gauge_srrs_1776041191104.png", labels: ["200-299 分"], text: "SRRS：200-299 屬中度危機。梅拉賓定律：非語言訊息傳遞情感佔比高達 93%。" },
+            { cat: "魔鬼錄音數據", title: "📊 愛情六型態 (雷斯 Lee)", img: "sternberg_love_triangle_diagram_1776041022011.png", labels: ["六種愛"], text: "愛情六型態：友誼、激情、佔有、無私、現實、情人。不同文化與人格會展現不同愛情風貌。" },
+            { cat: "考前戰術叮嚀", title: "🏆 千萬不可留白", img: "exam_success_golden_trophy_100_1776041250115.png", labels: ["寫大標必拿分"], text: "戰術：不可留白！老師親口說：只要寫個七八成，意思對了就給 5 分滿分。他在改考卷時會找大標題關鍵字。" },
+            { cat: "考前戰術叮嚀", title: "🏆 閉卷考試心法", img: "exam_success_golden_trophy_100_1776041250115.png", labels: ["大腦地圖"], text: "閉卷攻略：這份名單就是地圖。只要腦中掃描這些封神大標題，週六考試必封神！祝您與陳同學 100 分凱旋！" }
         ];
         let cuI = -1; let timer = null; const synth = window.speechSynthesis;
         function toggleSidebar() { document.getElementById('sidebar').classList.toggle('open'); }
@@ -120,7 +121,7 @@
             document.getElementById('page-num').innerText=`${i+1} / ${studyPlan.length}`;
             document.getElementById('cat-title').innerText=studyPlan[i].cat;
             document.getElementById('slide-view').style.backgroundImage=`url('${studyPlan[i].img}')`;
-            renderOverlay(studyPlan[i].special, studyPlan[i].labels);
+            renderOverlay(null, studyPlan[i].labels);
             document.getElementById('lecture-content').innerText=studyPlan[i].text;
             const u=new SpeechSynthesisUtterance(studyPlan[i].text); u.lang='zh-TW'; u.rate=parseFloat(document.getElementById('rate').value);
             u.onend=()=>{ if(cuI<studyPlan.length-1) timer=setTimeout(()=>next(cuI+1), 4500); }; synth.speak(u);
