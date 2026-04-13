@@ -6,7 +6,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="theme-color" content="#020617">
-    <title>人際關係與協商 | 課本通識強化版 V10.1</title>
+    <title>人際關係與協商 | 終極反射 Elite 版 V10.2</title>
     <style>
         :root { 
             --primary: #fbbf24; --danger: #ef4444; --bg: #020617; --text: #f8fafc; 
@@ -42,7 +42,7 @@
             position: fixed; bottom: calc(20px + var(--safe-bottom)); left: 50%; transform: translateX(-50%); width: 92%; background: rgba(15, 23, 42, 0.98); padding: 28px; 
             border-radius: 36px; border-left: 14px solid var(--primary); backdrop-filter: blur(40px); -webkit-backdrop-filter: blur(40px); z-index: 3500; 
         }
-        .text-body { font-size: 1.2rem; line-height: 1.6; height: 125px; overflow-y: auto; color: #fff; font-weight: 500; margin: 10px 0; }
+        .text-body { font-size: 1.25rem; line-height: 1.6; height: 125px; overflow-y: auto; color: #fff; font-weight: 500; margin: 10px 0; }
         .nav-btns { display: flex; justify-content: space-between; align-items: center; gap: 15px; }
         .control-btn { 
             background: rgba(255,255,255,0.08); color: var(--text); border: 1.5px solid rgba(255,255,255,0.1); 
@@ -57,15 +57,15 @@
 <body>
     <div id="splash" onclick="goStudy()">
         <div style="width: 85%">
-            <p style="color:var(--primary); font-weight:1000; letter-spacing:8px; margin-bottom:15px; font-size:0.9rem;">1142 | V10.1 TEXTBOOK GENERALIZATION EDITION</p>
-            <h1 style="font-size:2.8rem; line-height:1.2; margin:15px 0; background:linear-gradient(135deg, #fff, var(--primary)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; font-weight:1000;">人際關係與協商<br><span style="font-size:2.2rem; color:var(--primary); text-shadow:0 0 20px rgba(251,191,36,0.3);">課本通識強化版</span></h1>
-            <div style="background:var(--danger); color:white; padding:10px 35px; border-radius:12px; font-size:1.3rem; font-weight:900; display:inline-block; margin-top:10px;">防禦過擬合 | 理論背景全量展開</div>
-            <br><button class="btn-gold" style="margin-top:50px;">🏆 泛化應變</button>
+            <p style="color:var(--primary); font-weight:1000; letter-spacing:8px; margin-bottom:15px; font-size:0.9rem;">1142 | V10.2 FINAL REFLEX EDITION</p>
+            <h1 style="font-size:2.8rem; line-height:1.2; margin:15px 0; background:linear-gradient(135deg, #fff, var(--primary)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; font-weight:1000;">人際關係與協商<br><span style="font-size:2.2rem; color:var(--primary); text-shadow:0 0 20px rgba(251,191,36,0.3);">終極反射特訓版</span></h1>
+            <div style="background:var(--danger); color:white; padding:10px 35px; border-radius:12px; font-size:1.3rem; font-weight:900; display:inline-block; margin-top:10px;">兩年預測時效 | PAC 人格對位</div>
+            <br><button class="btn-gold" style="margin-top:50px;">🏆 封神時刻</button>
         </div>
     </div>
     <header class="header">
-        <button onclick="toggleSidebar()" style="background:var(--primary); border:none; padding:12px 25px; border-radius:15px; font-weight:1000; font-size:0.9rem;">☰ 泛化清單(35)</button>
-        <div class="header-info" style="color:var(--primary); font-weight:1000; font-size:1rem; text-align:center; flex:1; padding:0 10px;">目標：打破死背、理解底層邏輯以應對多變題型</div>
+        <button onclick="toggleSidebar()" style="background:var(--primary); border:none; padding:12px 25px; border-radius:15px; font-weight:1000; font-size:0.9rem;">☰ 反射索引(35)</button>
+        <div class="header-info" style="color:var(--primary); font-weight:1000; font-size:1rem; text-align:center; flex:1; padding:0 10px;">最後注入：馬斯洛階梯、SRRS兩年、PAC原型對位</div>
         <div style="background:rgba(0,0,0,0.6); padding:8px 15px; border-radius:50px; border:2px solid var(--primary); display:flex; align-items:center; gap:8px;"><input type="range" id="rate" min="0.5" max="2.0" value="1.3" step="0.1" style="width:50px; accent-color:var(--primary)"></div>
     </header>
     <div class="wrapper">
@@ -84,41 +84,41 @@
     </div>
     <script>
         const studyPlan = [
-            { cat: "【解釋名詞】", title: "1. 周哈里窗 (Johari Window)", img: "johari_window_modern_diagram_1776040990674.png", ls: ["開放/盲目/隱藏/未知"], txt: "分析自我覺察之模型。開放區為「己知、他知」；盲目區為「己不知、他知」；隱藏區為「己知、他不知」；未知區為「己不知、他不知」。自我袒露縮小隱藏區，他人回饋縮小盲目區。" },
-            { cat: "【解釋名詞】", title: "2. 月暈效應 (Halo Effect)", img: "halo_effect_glowing_aura_bias_1776041171942.png", ls: ["以偏概全的評價迷思"], txt: "認知偏誤。指因對方單一顯著優點而產生的整體正面評價。它是知覺過程中常見的系統性偏差，會導致對他人真實特質的誤判。其反面為「角效應」。" },
-            { cat: "【解釋名詞】", title: "3. 仰巴腳效應 (Pratfall Effect)", img: "pratfall_effect_clumsy_elite_1776041082459.png", ls: ["能力強 + 小誤 = 吸引力"], txt: "又稱出醜效應。指能力卓越者若偶爾犯下無傷大雅的小錯誤，反而能消弭其高不可攀的完美感，進而增加親和力與吸引力。但能力平庸者犯錯則會降低吸引力。" },
-            { cat: "【解釋名詞】", title: "4. 社會再適應量表 (SRRS)", img: "stress_measurement_gauge_srrs_1776041191104.png", ls: ["200-299 = 中度生活危機"], txt: "由 Holmes 提出的壓力工具。將生活事件（如喪偶、轉行）量化。關鍵數據是 200 到 299 分定義為中度生活危機。分數越高，引發身心疾病風險越高。" },
-            { cat: "【解釋名詞】", title: "5. 印象整飾 (Impression Mgt)", img: "goffman_dramaturgy_theater_stage_1776041066626.png", ls: ["前台面具 vs. 後台真實"], txt: "戈夫曼。指個體控制他人對己知覺，進而影響他人對己形成印象。包含：形象整飾與戲劇演出的前台特徵。為維護社會尊嚴與面子而進行的一種人際交流管理。" },
-            { cat: "【解釋名詞】", title: "6. 自我概念 (Self-Concept)", img: "defense_mechanism_crystal_shield_1776041117465.png", ls: ["多維度、動態、持續修正"], txt: "個人對自己的概括性看法。來源有二：特定他人（重要關係者）反映回報、一般他人（社會規則角色）內化。自我包含生理、認知、社會與道德多個面向。" },
-            { cat: "【解釋名詞】", title: "7. 歸因 (Attribution)", img: "attribution_theory_cause_effect_links_1776041098952.png", ls: ["內在配置 vs. 外在情境"], txt: "推論原因的心理歷程。分為內在性格歸因（如能力、努力、情緒）與外在環境歸因（如任務難度、運氣、社會壓力）。正確歸因有助於預測未來行為。" },
-            { cat: "【解釋名詞】", title: "8. 不合理信念 (Irrational Beliefs)", img: "albert_ellis_rational_emotive_background_1775990617583.png", ls: ["艾里斯 ABC | 絕對化迷思"], txt: "艾里斯提出。指對生活持有「絕對化、必須、應該」的災難化觀念。迷思常使人對人際挫折產生過度反應與情緒低潮。合理信念應轉向為「誠懇與自我接納」。" },
-            { cat: "【解釋名詞】", title: "9. 防衛機制 (Defense Mechanism)", img: "defense_mechanism_crystal_shield_1776041117465.png", ls: ["合理/投射/退化/補償"], txt: "面臨焦慮時採取的潛意識保護行為。合理化（找藉口）、投射（責怪他人）、退化（幼稚化）、認同（模倣英雄）。機制能暫時保護自我尊嚴但不能根本解決問題。" },
-            { cat: "【解釋名詞】", title: "10. 自我袒露 (Self-Disclosure)", img: "johari_window_modern_diagram_1776040990674.png", ls: ["描述事實 vs. 評估感受"], txt: "分享內心真實感受與訊息。類型分為事實類的描述性與意見感受類的評估性。受相互性（Reciprocity）原則支配。功能包含發洩、澄清與增進關係深度。" },
-            { cat: "【問答大題】", title: "11. 影響人際知覺的要素架構", img: "heider_pox_balance_triad_1776041038324.png", ls: ["被知覺/知覺者/互動情境"], txt: "一、被知覺者：其外貌、談吐、非語言表情。二、知覺者：其動機、情緒狀態、既有偏見與情緒狀態。三、情境：交往場合與社會規範。三者交互形成最终的主觀知覺。" },
-            { cat: "【問答大題】", title: "12. 影響人際吸引的底層因素", img: "heider_pox_balance_triad_1776041038324.png", ls: ["接近/個人特質/適配對位"], txt: "情境：空間接近與高熟悉度。個人：外表魅力與能力（含仰巴腳效應）。適配：相似性（價值觀一致）與互補性。核心邏輯是追求獎賞價值平衡與社會交換滿足。" },
-            { cat: "【問答大題】", title: "13. 馬斯洛需求層次理論與管理", img: "maslow_pyramid_stomach_to_god_1776041006784.png", ls: ["動力發動機邏輯"], txt: "五層：生理、安全、社會、自尊、自我實現。低層未滿足前，高層不具動力吸引。管理：生理需節制、安全需感恩、社會需真情、自尊需平常心、自我實現需韌性奮戰。" },
-            { cat: "【問答大題】", title: "14. 個體的三個心靈運作系統", img: "ta_pac_model_diagram_circles_1776041140078.png", ls: ["是非心/慈悲心/利益心"], txt: "一、價值系統：是非心，價值觀與道德標準。二、感情系統：慈悲或憎恨心，基於認同感而生的感性。三、本我系統：利益心，遵循快樂原則，追求即時生理與功利滿足。" },
-            { cat: "【問答大題】", title: "15. 健康維持策略：生理與心理雙軌", img: "stress_measurement_gauge_srrs_1776041191104.png", ls: ["修復機轉與心理回彈"], txt: "一生理修復：運動、8小時睡眠(右側臥)、均衡飲食、生理檢查。二心理回彈：發展複元力、提高挫折容忍度、建立社會支持系統。健康是三方面發完善舒適。 " },
-            { cat: "【問答大題】", title: "16. 圓融人際六要訣詳解", img: "roundness_secrets_enso_circle_1776041217719.png", ls: ["尊/笑/口/心/度/腳"], txt: "頭軟：尊重傾聽。面笑：喜悅感恩。口圓：讚美激勵、語帶溫潤。心正：真心無假、善意待人。肚大：寬容接納、不隨意評判他人。腳勤：主動積極、做個好觀眾與關懷者。" },
-            { cat: "【問答大題】", title: "17. 自我袒露的六大心理功能", img: "johari_window_modern_diagram_1776040990674.png", ls: ["通氣/澄清/認可/社會控制"], txt: "一、發洩負面動力。二、增加因應與應對能力。三、自我澄清以獲知識（自省）。四、獲得社會認可。五、社會控制（自我守衛）。六、發展與他人關係。關係越親密，廣度深度越大。" },
-            { cat: "【問答大題】", title: "18. 知覺組織原則：格式塔心理學", img: "gestalt_connectedness_dumbbell_principle_1776043234567_1776051269067.png", ls: ["背景與前景 | 五大組織規律"], txt: "大腦組織規律：接近性（空間近）、相似性（屬性像）、連續性、閉合性（自動補全缺口）、以及連接性（線條連結，即啞鈴圖案概念）。人類傾向將片段整合成意義圖樣。" },
-            { cat: "【問答大題】", title: "19. 凱利三維歸因：一致/分歧判斷", img: "attribution_theory_cause_effect_links_1776041098952.png", ls: ["區別/一致/普遍"], txt: "一、區別性（針對不同對象反應）。二、一致性（不同時間反應）。三、普遍性（他人反應）。若三高則歸因於外部；若一致高而其餘低則歸因於內在特質、情緒或能力。" },
-            { cat: "【問答大題】", title: "20. 壓力管理戰術：治本與治標", img: "stress_measurement_gauge_srrs_1776041191104.png", ls: ["消除源 vs. 認知評價"], txt: "一、消除壓力源（治本法）。二、發現幽默感。三、社會支持。四、調整認知評價（改變對事件看法）。五、練習放鬆技巧（調節生理張力）。管理目標是維持建設性功能、避免崩解。" },
-            { cat: "【問答大題】", title: "21. 非語言溝通的種類與功能", img: "nonverbal_emblems_hand_gestures_1776041154779.png", ls: ["肢體/空間/附聲/計時"], txt: "種類包含肢體動作 Kinesics、人際距離 Proxemics、附屬語言 Paralanguage（語氣聲調）。特性：情感佔 93%、模糊、持續。功能：補強、取代、調節或否定口語訊息。" },
-            { cat: "【問答大題】", title: "22. TA 交流分析：人際溝通型態", img: "ta_pac_model_diagram_circles_1776041140078.png", ls: ["互補為優 | 交錯為源"], txt: "一互補式（平行互動，順暢高效）。二交錯式（地位或預期不對位，引發衝突）。三隱藏式（含潛在社會或心理層面之心理遊戲）。理想溝通應處於 A-A 的理智成人對待。" },
-            { cat: "【問答大題】", title: "23. 華人溝通邏輯：情理法全視角", img: "roundness_secrets_enso_circle_1776041217719.png", ls: ["人面/場面/情面"], txt: "華人首重「和諧」。人面（社會身分）、場面（正式尊嚴）、情面（雙方交情）。處理原則為情重於理，理重於法。需兼顧情理法三位一體，而非西方之純粹法規契約意識。" },
-            { cat: "【問答大題】", title: "24. 史伯格愛情三因與關係動態", img: "sternberg_love_triangle_diagram_1776041022011.png", ls: ["激情/親密/承諾"], txt: "三元素：激情（動機）、親密（情感）、責任決心（認知）。三者具備為圓滿之愛。隨時間推移，激情通常遞減，而親密與責任決心則應隨承諾深度穩步增加。" },
-            { cat: "【問答大題】", title: "25. 社會影響策略：得寸進尺與漫天要價", img: "foot_in_the_door_vs_face_concept_1776042490769.png", ls: ["自尊維護與對比應驗"], txt: "得寸進尺：先提微小門檻誘導，再提大請求，利用自尊一致性誘發同意。漫天要價：先提極大要求被拒，再退求小要求，利用知覺對比與妥協心理誘發讓步。" },
-            { cat: "【數據與原則】", title: "26. 梅拉賓 7/38/55 定律", img: "nonverbal_emblems_hand_gestures_1776041154779.png", ls: ["非語言情感主宰"], txt: "專業數據：在傳遞情感時，訊息影響力比例：文字 7%、語調語氣 38%、肢體表情 55%。總計非語言佔 93%。所以「怎麼說」比「說什麼」更重要。" },
-            { cat: "【數據與原則】", title: "27. SRRS 數據指標全量", img: "stress_measurement_gauge_srrs_1776041191104.png", ls: ["150-199 輕度 | 200-299 中度"], txt: "數據細化：150 到 199 輕度生活危機；200 到 299 中度生活危機；300 以上高度生活危機。越高分者兩年內爆發重大疾病機率越高。" },
-            { cat: "【數據與原則】", title: "28. 霍爾人際距離四帶", img: "nonverbal_emblems_hand_gestures_1776041154779.png", ls: ["親密/個人/社會/公眾"], txt: "數據細化：親密距離（0-45公分）、個人距離（45-120公分）、社會距離（1.2公尺-3.6公尺）、公眾距離（3.6公尺以上）。侵入距離會導致焦慮與防禦。" },
-            { cat: "【數據與原則】", title: "29. 理想健康的 8 小時法門", img: "stress_measurement_gauge_srrs_1776041191104.png", ls: ["睡眠、運動與排毒數據"], txt: "建議：平均睡眠 8 小時（右側臥利於肝臟排毒與修復）。運動應遵循 333 原則。維持生理恆定是所有心理健康的基礎。" },
-            { cat: "【數據與原則】", title: "30. 艾里斯十迷思的破解", img: "albert_ellis_rational_emotive_background_1775990617583.png", ls: ["Must/Should 的修正"], txt: "核心優化：將「我必須成功」修正為「我希望能成功」。將「別人必須愛我」修正為「希望能他人接納我」。修正絕對化語言能有效降低挫折感。" },
-            { cat: "【泛化戰術】", title: "31. 自我的多重社會來源", img: "defense_mechanism_crystal_shield_1776041117465.png", ls: ["特定他人與一般他人"], txt: "背誦邏輯：自我不是孤島。幼年受父母影子（特定他人）映射，少年受社會群體規則（一般他人）洗禮。理解社會觀點的不斷演化，有助於修正自卑感。" },
-            { cat: "【泛化戰術】", title: "32. 圓融互動的 PAC 型態選配", img: "ta_pac_model_diagram_circles_1776041140078.png", ls: ["成人態 A 為解決方案"], txt: "背誦邏輯：面對指責（父母態 P）時，不要反射性退縮（兒童態 C），應啟動理智對位（成人態 A）。建立互補溝通是減少能量損耗的唯一途徑。" },
-            { cat: "【泛化戰術】", title: "33. 三碗麵與情理法之實務對位", img: "roundness_secrets_enso_circle_1776041217719.png", ls: ["面子管理與社會地位"], txt: "背誦邏輯：給人面子即是維護其社會同一性。掌握人面、場面、情面，輔以情重於法、理重於法的權衡，是達成華人社會關係最高境界的心法。" },
-            { cat: "【泛化戰術】", title: "34. 格式塔原理的「視覺反射」", img: "gestalt_connectedness_dumbbell_principle_1776043234567_1776051269067.png", ls: ["自動補完與連接整合"], txt: "背誦邏輯：大腦不喜歡碎片。透過接近、相似、連續、閉合、連接，我們自動在混亂中尋找意義圖式。這是所有廣告設計與第一印象形成的底層邏輯。" },
-            { cat: "【泛化戰術】", title: "35. 終極叮嚀：大標優先與意譯大於死背", img: "exam_success_golden_trophy_100_1776041250115.png", ls: ["100% 答題率策略"], txt: "應考邏輯：若忘記術語，請用理論底層邏輯（如：低層滿足引發高層）自行描述。確保名詞解釋有定義關鍵字，問答大題有結構層次。絕對不空白。" }
+            { cat: "【解釋名詞】", title: "1. 周哈里窗 (Johari Window)", img: "johari_window_modern_diagram_1776040990674.png", ls: ["自己知/別人都知 = 開放區"], txt: "分析自我覺察之模型。開放區為己知、他知；盲目區為己不知、他知；隱藏區為己知、他不知；未知區為己不知、他不知。關鍵反射：袒露縮小隱藏，回饋縮小盲目。" },
+            { cat: "【解釋名詞】", title: "2. 月暈效應 (Halo Effect)", img: "halo_effect_glowing_aura_bias_1776041171942.png", ls: ["以偏概全的評價偏誤"], txt: "認知偏誤的一種。指因對方單一顯著優點而產生的「以點帶面」整體正面評價。它是知覺過程中常見的系統性偏差，會導致對他人真實特質的誤判。其反向則為角效應。" },
+            { cat: "【解釋名詞】", title: "3. 仰巴腳效應 (Pratfall Effect)", img: "pratfall_effect_clumsy_elite_1776041082459.png", ls: ["優秀 + 瑕疵 = 更吸引人"], txt: "又稱出醜效應。指能力卓越者若偶爾犯下無傷大雅的小錯誤，反而能消弭其完美隔閡感，進而增加親和力與吸引力。但若能力本就平庸，犯錯則會導致負面評價。" },
+            { cat: "【解釋名詞】", title: "4. 社會再適應量表 (SRRS)", img: "stress_measurement_gauge_srrs_1776041191104.png", ls: ["數據：200-299 = 中度"], txt: "Holmes 提出的壓力評估工具。關鍵數據是 200 到 299 分定義為中度生活危機。此分數主要用於預測未來兩年內引發重大身心疾病與健康危機的風險機率。" },
+            { cat: "【解釋名詞】", title: "5. 印象整飾 (Impression Mgt)", img: "goffman_dramaturgy_theater_stage_1776041066626.png", ls: ["戈夫曼 | 前台形象修飾"], txt: "指個體意圖控制他人對自己知覺，進而影響他人對己形成印象。包含：形象整飾與戲劇演出的前台特徵。是為維護社會尊嚴與面子而進行的一種關係溝通技術。" },
+            { cat: "【解釋名詞】", title: "6. 自我概念 (Self-Concept)", img: "defense_mechanism_crystal_shield_1776041117465.png", ls: ["特定他人與一般他人"], txt: "對自己的概括性看法。來源為特定他人（重要關係者）反映回報、以及一般他人（社會規則角色）的內化。自我包含生理、認知、心理、社會與道德多維面向。" },
+            { cat: "【解釋名詞】", title: "7. 歸因 (Attribution)", img: "attribution_theory_cause_effect_links_1776041098952.png", ls: ["內在性格 vs. 外在環境"], txt: "推論行為原因的歷程。分為內在性格歸因（如能力、性格）與外在環境歸因（如任務難度、社會壓力、運氣）。正確歸因有助於進行行為預測與情緒調節。" },
+            { cat: "【解釋名詞】", title: "8. 不合理信念 (Irrational Beliefs)", img: "albert_ellis_rational_emotive_background_1775990617583.png", ls: ["艾里斯 | 絕對化災難化迷思"], txt: "由艾里斯提出。指對生活持有「絕對化、必須、應該」的災難化觀念。迷思常使人在面對挫折時產生過度的情緒失能與挫敗感。核心在於重建合理且具彈性的認知。" },
+            { cat: "【解釋名詞】", title: "9. 防衛機制 (Defense Mechanism)", img: "defense_mechanism_crystal_shield_1776041117465.png", ls: ["合理/投射/退化/反向"], txt: "面臨焦慮時採取的潛意識保護行為。常見有機制：合理化（找藉口）、投射（責怪他人）、退化（幼稚化行為）。其特徵是扭曲現實以減輕個體的焦慮感。" },
+            { cat: "【解釋名詞】", title: "10. 自我袒露 (Self-Disclosure)", img: "johari_window_modern_diagram_1776040990674.png", ls: ["描述事實 vs. 評估感受"], txt: "分享內心感受與訊息的過程。分為描述事實的描述性與意見感受類的評估性。受相互性原則支配。功能包含情緒發洩、自我澄清與增進人際關係的滲透深度。" },
+            { cat: "【問答大題】", title: "11. 影響人際知覺的要素架構", img: "heider_pox_balance_triad_1776041038324.png", ls: ["被知覺/知覺者/互動情境"], txt: "一、被知覺者：含外貌、談吐、非語言。二、知覺者：含動機、情緒狀態、偏見。三、情境：交往場合與社會背景。三者交互形成最终評価，需防備首因效應與月暈效應。" },
+            { cat: "【問答大題】", title: "12. 影響人際吸引的底層因素", img: "heider_pox_balance_triad_1776041038324.png", ls: ["接近/個人/適配邏輯"], txt: "情境因素（空間接近、熟悉感）；個人因素（外表魅力、能力仰巴腳）；適配因素（價值觀相似、互補）。底層邏輯是社會交換理論中，獲勝獎賞平衡的利我趨向。" },
+            { cat: "【問答大題】", title: "13. 馬斯洛需求層次與心理管理", img: "maslow_pyramid_stomach_to_god_1776041006784.png", ls: ["需求階梯 | 未滿足無動力"], txt: "五層：生理、安全、社會、自尊、自我實現。注意：需求具備階梯式屬性，基本生存需求未獲適度滿足前，個體對高層層次需求的追求不具備強大的驅動力（心理力學發動機）。" },
+            { cat: "【問答大題】", title: "14. 個體的三個心靈運作系統", img: "ta_pac_model_diagram_circles_1776041140078.png", ls: ["是非心/慈悲心/利益心"], txt: "一、價值系統：是非心，價值信念標準。二、感情系統：慈悲或憎恨心，基於認同感之感性。三、本我系統：利益心，遵循快樂原則，追求即時利益與欲望滿足。" },
+            { cat: "【問答大題】", title: "15. 健康維持策略：生理與心理雙軌", img: "stress_measurement_gauge_srrs_1776041191104.png", ls: ["修復機轉與心理回彈數據"], txt: "一生理修復：運動(333)、8小時睡眠(右側臥)、均衡飲食。二心理回彈：發展複元力、韌性、支持系統。健康是生理、心理及社會三方面完善舒適的動態平衡狀態。" },
+            { cat: "【問答大題】", title: "16. 圓融人際六要訣詳解", img: "roundness_secrets_enso_circle_1776041217719.png", ls: ["尊/笑/口/心/度/腳"], txt: "頭軟（尊重傾聽）、面笑（感恩喜悅）、口圓（讚美激勵）、心正（真心待人）、肚大（寬容接納）、腳勤（主動關懷好觀眾）。此六項是管理內在需求與外在互動之方針。" },
+            { cat: "【問答大題】", title: "17. 自我袒露的六大心理功能", img: "johari_window_modern_diagram_1776040990674.png", ls: ["發洩/因應/澄清/認可/控制/發展"], txt: "一、情緒發洩。二、增強因應能力。三、自我澄清以獲取自省知識。四、獲得社會認可。五、社會控制（自我守衛）。六、深化關係之發展（社會滲透度）。" },
+            { cat: "【問答大題】", title: "18. 知覺組織原則：格式塔心理背景", img: "gestalt_connectedness_dumbbell_principle_1776043234567_1776051269067.png", ls: ["大腦組全原則 | 啞鈴效應"], txt: "大腦組織規律：接近性（空間近）、相似性（特徵像）、連續性、閉合性（自動補全）、以及連接性（線條連結物件，即啞鈴圖案）。此為格式塔心理學中，人類將片段整合為意義之本能。" },
+            { cat: "【問答大題】", title: "19. 凱利三維歸因：三項判定指標", img: "attribution_theory_cause_effect_links_1776041098952.png", ls: ["區別/一致/普遍指標"], txt: "判定行為原因的三指標：一、區別性（針對不同刺激）。二、一致性（不同時間）。三、普遍性（他人反應）。若三高則歸於外部情境；若一致高而其餘低則歸於內在人格。 " },
+            { cat: "【問答大題】", title: "20. 壓力管理戰術：治本消除與治標認知", img: "stress_measurement_gauge_srrs_1776041191104.png", ls: ["消除源 vs. 認知評價調整"], txt: "一、消除壓力源。二、發現幽默感。三、社會支持網絡。四、調整認知評價（核心：改變對事件看法）。五、練習放鬆技巧。管理目標是維持建設性功能並避免身心崩潰。" },
+            { cat: "【問答大題】", title: "21. 非語言溝通的種類與功能", img: "nonverbal_emblems_hand_gestures_1776041154779.png", ls: ["肢體/空間/附聲/計時管道"], txt: "種類含：肢體動作(Kinesics)、空間距離(Proxemics)、附聲語調(Paralanguage)。特性：佔情感訊息 93%、模糊、持續。功能：補強、取代、調節或否定口語訊息內容。" },
+            { cat: "【問答大題】", title: "22. TA 交流分析：PAC 三人格原型", img: "ta_pac_model_diagram_circles_1776041140078.png", ls: ["批判/理性/衝動對位"], txt: "包含：批判或關懷的父母態 P、理性處理事實的成人態 A、以及衝動或依賴的兒童態 C。理想溝通應致力建立互補式之成人反應，而非陷入權力不對位的交錯衝突與心理遊戲。 " },
+            { cat: "【問答大題】", title: "23. 華人溝通邏輯：情理法全視角", img: "roundness_secrets_enso_circle_1776041217719.png", ls: ["人面/場面/情面 | 三位一體"], txt: "人面（社會身分）、場面（正式尊嚴）、情面（情感聯繫）。處理原則重和諧，強調情重於理，理重於法。需兼顧情、理、法三位一體，展現關係圓融度而非機械契約意識。" },
+            { cat: "【問答大題】", title: "24. 史伯格愛情三因與動態演化", img: "sternberg_love_triangle_diagram_1776041022011.png", ls: ["激情/親密/責任三維度"], txt: "三元素：激情（生理衝動）、親密（契合感）、責任決心（認知承諾）。隨時間進程與關係成長，熱情通常遞減，而親密與責任決心則應隨承諾深入而穩步增加。" },
+            { cat: "【問答大題】", title: "25. 社會影響策略對照", img: "foot_in_the_door_vs_face_concept_1776042490769.png", ls: ["得寸進尺 vs. 漫天要價策略"], txt: "得寸進尺法：先提微小門檻誘導，再提大請求，利用自尊一致性。漫天要價法：先提極大要求被拒，再退求小要求，利用知覺對比與互惠妥協。核心在於形象維護之操弄。" },
+            { cat: "【數據定錨】", title: "26. 梅拉賓 7/38/55 定律數據", img: "nonverbal_emblems_hand_gestures_1776041154779.png", ls: ["93% 非語言情感權重"], txt: "專業數據：在傳遞情感時，訊息權重比例：文字 7%、語調語氣 38%、肢體表情 55%。總體非語言影響力高達 93% 。「怎麼說」決定了溝通的情感基調與可信度。" },
+            { cat: "【數據定錨】", title: "27. SRRS 數據指標全量", img: "stress_measurement_gauge_srrs_1776041191104.png", ls: ["兩年內疾病發作預測"], txt: "專業數據：150-199 輕度；200-299 中度；300 以上重度生活危機。此量表分數主要用於預測「未來兩年內」引發重大身心疾病與健康危機的高風險機率與可能性。" },
+            { cat: "【數據定錨】", title: "28. 霍爾人際空間四區域數據", img: "nonverbal_emblems_hand_gestures_1776041154779.png", ls: ["親密區：0-45 公分"], txt: "數據反射：親密距離（0-45公分）、個人距離（45-120公分）、社會距離（1.2-3.6公尺）、公眾距離（3.6公尺以上）。侵入親密帶會引發個體顯著的防禦與不安感受。" },
+            { cat: "【數據定錨】", title: "29. 理想健康與睡眠機轉數據", img: "stress_measurement_gauge_srrs_1776041191104.png", ls: ["8 小時睡眠與 333 運動"], txt: "數據定錨：睡眠均值均值為 8 小時（右側臥利於修復）。運動應遵循 333 原則。維持生理恆定是所有心理修復之基礎。健康定義包含生理、心理、社會三位一體之完善。" },
+            { cat: "【數據定錨】", title: "30. 艾里斯迷思修正技術", img: "albert_ellis_rational_emotive_background_1775990617583.png", ls: ["願望取代必須之修正"], txt: "認知反射修正：將「我必須」修正為「我希望」。將所有絕對化(Absolute)語言轉換為偏好或願望。修正絕對化標籤能降低身心焦慮，是維持情緒穩定之關鍵教科書心法。" },
+            { cat: "【泛化反射】", title: "31. 自我的多重社會來源路徑", img: "defense_mechanism_crystal_shield_1776041117465.png", ls: ["特定他人與一般他人社會化"], txt: "背誦邏輯：自我概念並非天生。受重要他人（父母家人）投影映射成形，進而內化一般他人（社會群體規則、文化）之角色期許。理解社會觀點演化，有助於修正自卑感。" },
+            { cat: "【泛化反射】", title: "32. 圓融互動的 PAC 狀態對位權衡", img: "ta_pac_model_diagram_circles_1776041140078.png", ls: ["P-A-C 動態選配策略"], txt: "應對邏輯：面對指責批判（父母態 P）時，不要反射性退化（兒童態 C），應啟動理智處理事實（成人態 A）。建立平行互補之交流分析溝通鏈是減少能量損耗的唯一途徑。" },
+            { cat: "【泛化反射】", title: "33. 三碗麵與情理法之實務權衡深度", img: "roundness_secrets_enso_circle_1776041217719.png", ls: ["人面/場面/情面管理"], txt: "論述邏輯：面子即是維護個體之社會同一性。掌握三碗麵（人、場、情）並權衡情理法優先序，是處置華人衝突之關鍵。情重於理、理重於法，是達成關係圓融意境之核心條件。" },
+            { cat: "【泛化反射】", title: "34. 格式塔組織原理與第一印象形成的關聯", img: "gestalt_connectedness_dumbbell_principle_1776043234567_1776051269067.png", ls: ["自動補完與連接效應應用"], txt: "解析框架：大腦具備整合碎片之規律本能。透過接近、相似、閉合、連接，我們自動在混沌中尋得模式圖式。這也是為何印象整飾在社會互動初期具備決定性影響力之關鍵因素。" },
+            { cat: "【最終戰術】", title: "35. 終極戰術：大標優先與學術層次", img: "exam_success_golden_trophy_100_1776041250115.png", ls: ["絕對不空白之保命法"], txt: "應考最高頻戰術：若忘記精確定義，請用理論底層邏輯（如：低層滿足引發高層）自行描述。確保名詞解釋有核心關鍵字，問答大題有標題結構層次。絕對不留空白，維持高答題率。" }
         ];
         let cuI = -1; let timer = null; const synth = window.speechSynthesis;
         function toggleSidebar() { document.getElementById('sidebar').classList.toggle('open'); }
