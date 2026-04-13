@@ -6,7 +6,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="theme-color" content="#020617">
-    <title>人際關係與協商 | 期中大題特訓金卷 V3.0</title>
+    <title>人際關係與協商 | 考場實戰金卷 V3.1</title>
     <style>
         :root { 
             --primary: #fbbf24; --danger: #ef4444; --bg: #020617; --text: #f8fafc; 
@@ -57,15 +57,15 @@
 <body>
     <div id="splash" onclick="goStudy()">
         <div style="width: 85%">
-            <p style="color:var(--primary); font-weight:1000; letter-spacing:8px; margin-bottom:15px; font-size:0.9rem;">1142 | GOLD MEDAL EDITION</p>
-            <h1 style="font-size:2.8rem; line-height:1.2; margin:15px 0; background:linear-gradient(135deg, #fff, var(--primary)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; font-weight:1000;">人際關係與協商<br><span style="font-size:2.2rem; color:var(--primary); text-shadow:0 0 20px rgba(251,191,36,0.3);">期中特訓金卷 V3.0</span></h1>
-            <div style="background:var(--danger); color:white; padding:10px 35px; border-radius:12px; font-size:1.3rem; font-weight:900; display:inline-block; margin-top:10px;">理論補完 + 數據死穴 + 圓融心法</div>
-            <br><button class="btn-gold" style="margin-top:50px;">🏆 金卷啟動</button>
+            <p style="color:var(--primary); font-weight:1000; letter-spacing:8px; margin-bottom:15px; font-size:0.9rem;">志剛社長專供 | BATTLE EDITION</p>
+            <h1 style="font-size:2.8rem; line-height:1.2; margin:15px 0; background:linear-gradient(135deg, #fff, var(--primary)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; font-weight:1000;">人際關係與協商<br><span style="font-size:2.2rem; color:var(--primary); text-shadow:0 0 20px rgba(251,191,36,0.3);">考場實戰金卷 V3.1</span></h1>
+            <div style="background:var(--danger); color:white; padding:10px 35px; border-radius:12px; font-size:1.3rem; font-weight:900; display:inline-block; margin-top:10px;">碾壓定義 + 大標題記憶法 | 精簡直送</div>
+            <br><button class="btn-gold" style="margin-top:50px;">🏆 戰場啟動</button>
         </div>
     </div>
     <header class="header">
-        <button onclick="toggleSidebar()" style="background:var(--primary); border:none; padding:12px 25px; border-radius:15px; font-weight:1000; font-size:0.9rem;">☰ 金卷目錄</button>
-        <div class="header-info" style="color:var(--primary); font-weight:1000; font-size:1rem; text-align:center; flex:1; padding:0 10px;">學術背景、定義、數據，一卷全拿！</div>
+        <button onclick="toggleSidebar()" style="background:var(--primary); border:none; padding:12px 25px; border-radius:15px; font-weight:1000; font-size:0.9rem;">☰ 目錄</button>
+        <div class="header-info" style="color:var(--primary); font-weight:1000; font-size:1rem; text-align:center; flex:1; padding:0 10px;">老師提示：標題對、意思對七八成，即給滿分！</div>
         <div style="background:rgba(0,0,0,0.6); padding:8px 15px; border-radius:50px; border:2px solid var(--primary); display:flex; align-items:center; gap:8px;"><input type="range" id="rate" min="0.5" max="2.0" value="1.3" step="0.1" style="width:50px; accent-color:var(--primary)"></div>
     </header>
     <div class="wrapper">
@@ -73,7 +73,7 @@
         <main class="viewport">
             <div class="screen"><div id="slide-view"></div><div id="overlay-layer" style="position:absolute; inset:0; pointer-events:none; display:flex; justify-content:center; align-items:center;"></div></div>
             <div class="console">
-                <div style="display:flex; justify-content:space-between; align-items:center"><span style="color:var(--primary); font-weight:1000; font-size:1rem;" id="cat-title">名詞解釋 25%</span><span id="page-num" style="background:#1e40af; padding:6px 16px; border-radius:12px; font-size:0.9rem; font-weight:1000;">1 / 22</span></div>
+                <div style="display:flex; justify-content:space-between; align-items:center"><span style="color:var(--primary); font-weight:1000; font-size:1rem;" id="cat-title">解釋名詞 25%</span><span id="page-num" style="background:#1e40af; padding:6px 16px; border-radius:12px; font-size:0.9rem; font-weight:1000;">1 / 22</span></div>
                 <div id="lecture-content" class="text-body">。</div>
                 <div class="nav-btns">
                     <button class="control-btn" onclick="prev()">⬅ 上一頁</button>
@@ -84,28 +84,28 @@
     </div>
     <script>
         const studyPlan = [
-            { cat: "解釋名詞專修 (理論補完)", title: "📝 艾里斯的不合理信念", img: "albert_ellis_rational_emotive_background_1775990617583.png", labels: ["REBT 理論"], text: "理論背景：源自艾里斯 (Ellis) 的 理情行為療法 (REBT)。定義：指個體對生活事件持有絕對化、過分概括化或糟糕至極的價值觀，是情緒困擾的主因。考場必殺技：寫出『歪曲事實與絕對化要求』即可拿滿分！" },
-            { cat: "解釋名詞專修 (理論補完)", title: "📝 周哈里窗 (Johari Window)", img: "johari_window.png", labels: ["Luft/Ingham"], text: "理論背景：由 Luft 與 Ingham 提出的自我覺察模型。定義：用以分析自我袒露與他人回饋的互動工具。背誦口訣：開放、盲目、隱藏、未知。老師說這題重點在於『自我了解的深度』。" },
-            { cat: "解釋名詞專修 (理論補完)", title: "📝 社會再適應量表 (SRRS)", img: "ch3_srrs_holmes_rahe_table.png", labels: ["200-299 中度"], text: "理論背景：由 Holmes 提出的壓力評估理論。定義：量化生活事件對個體造成的心理壓力負荷。老師再次強調：200-299 分屬中度生活危機。這個數據一定要背死！" },
-            { cat: "解釋名詞專修 (理論補完)", title: "📝 月暈效應 (Halo Effect)", img: "ch4_halo_effect_visual.png", labels: ["人際知覺偏誤"], text: "理論背景：屬於人際知覺偏誤。定義：知覺者因對方的單一顯著優點（如外貌佳），進而盲目擴張、推論其整體特質的評價偏誤。俗稱『一白遮三醜』的學術版。" },
-            { cat: "解釋名詞專修 (理論補完)", title: "📝 戲劇理論 (Dramaturgy)", img: "ch4_goffman_dramaturgy_stage.png", labels: ["高夫曼/舞台"], text: "理論背景：高夫曼 (Goffman) 的符號互動論。定義：將社會互動比喻為舞台表演。記住：前台是管理形象表演，後台是展現私密的真實自我。重點在於『自我表現』。" },
-            { cat: "解釋名詞專修 (理論補完)", title: "📝 仰巴腳效應 (Pratfall Effect)", img: "ch5_pratfall_effect_jfk.png", labels: ["出醜效應"], text: "理論背景：人際吸引理論。定義：指能力卓越的人若犯點小錯，反而會增加親和力，顯現人性化吸引力。這就是精英級的社交策略！" },
-            { cat: "解釋名詞專修 (理論補完)", title: "📝 溝通分析 (TA)", img: "ch6_ta_pac_model_berne.png", labels: ["Eric Berne"], text: "理論背景：艾瑞克．伯恩 (Eric Berne) 的交互分析理論。定義：分析人格中的父母 (P)、成人 (A)、兒童 (C) 三種狀態。目的是診斷並改善溝通形態的良藥。" },
-            { cat: "解釋名詞專修 (理論補完)", title: "📝 象徵 (Emblem)", img: "ch6_nonverbal_types_emblem.png", labels: ["肢體語法"], text: "理論背景：非語言溝通理論。定義：具備特定文化約定意義，能直接取代文字或口語的肢體動作。例如豎大拇指，全世界都知道你在誇獎他。" },
-            { cat: "解釋名詞專修 (理論補完)", title: "📝 防衛機制 (Defense Mechanism)", img: "ch4_defense_mechanisms_12.png", labels: ["心理分析"], text: "理論背景：心理分析理論。定義：個體面臨焦慮或自尊威脅時，在潛意識中採取的心理調節反應。常見的有：合理化、投射、退化作用。這是自我的『心理保護牆』。" },
-            { cat: "解釋名詞專修 (理論補完)", title: "📝 歸因 (Attribution)", img: "ch4_attribution_principles.png", labels: ["海德/因果"], text: "理論背景：海德 (Heider) 等人提出的歸因理論。定義：個體推論他人或自己行為背後原因的認知歷程。要寫出：區分為『內在因素』性格與『外在環境』運氣。" },
-            { cat: "問答大題攻堅 (金卷版)", title: "📝 圓融人際六要訣 (必考)", img: "final_blessing_gold_interpersonal.png", labels: ["六字金券"], text: "老師面授定調！六字金卷口訣：尊（尊重關懷）、笑（笑臉常開）、口（口語要圓）、心（心態要正）、度（器度要大）、腳（腳步要勤）。背好這六個字，分數全拿！" },
-            { cat: "問答大題攻堅 (金卷版)", title: "📝 馬斯洛需求理論與邏輯", img: "maslow_pyramid.png", labels: ["肚子➔神仙"], text: "理論背景：馬斯洛 5 層世界。層級：生理、安全、社會、自尊、自我實現。邏輯：低層滿足後追求高層。老師說：這叫從滿足『肚子世界』晉升到『神仙世界』的過程。" },
-            { cat: "問答大題攻堅 (金卷版)", title: "📝 壓力管理五大策略", img: "ch3_stress_mgmt_5_strategies.png", labels: ["治本策略"], text: "五大金卷策略：一、消除壓力源（治本最有效）。二、發現幽默。三、社會支持。四、調整認知（轉念）。五、放鬆技巧（如腹式呼吸）。條列清晰就是高分關鍵。" },
-            { cat: "問答大題攻堅 (金卷版)", title: "📝 影響人際知覺三要素", img: "ch4_factors_interpersonal_perception.png", labels: ["被/知/情"], text: "三大金卷要素：一、被知覺者（外觀、聲音、行為）。二、知覺者（受人性哲學觀與動機影響）。三、交往情境（人事時地物環境線索）。寫全這三類即可獲取高分。" },
-            { cat: "問答大題攻堅 (金卷版)", title: "📝 海德 POX 平衡理論", img: "ch5_attraction_factors.png", labels: ["乘積得正"], text: "理論背景：海德 (Heider) 平衡理論。要素：P(知覺者)、O(他人)、X(事物)。判斷法：三人關係的正負乘積為『正』即為平衡，為『負』則產生心理不平衡。要懂得畫圖舉例！" },
-            { cat: "問答大題攻堅 (金卷版)", title: "📝 史登堡愛情三因論", img: "ch5_sternberg_love_triangle.png", labels: ["完美之愛"], text: "理論背景：Sternberg 的愛情三角。三要素：激情、親密、責任奉獻。三者兼具稱為『完美之愛』。問答題要強調：長期關係的維持在於責任奉獻。" },
-            { cat: "問答大題攻堅 (金卷版)", title: "📝 TA 溝通分析三型態", img: "ch6_ta_pac_model_berne.png", labels: ["平行/交錯/隱藏"], text: "型態解析：一、互補式（平行溝通，訊息順暢）。二、交錯式（交叉回應，導致衝突斷裂）。三、隱藏式（話中有話，玩心理遊戲）。目標是回歸『成人自我』溝通。" },
-            { cat: "問答大題攻堅 (金卷版)", title: "📝 非語言溝通特性與文化", img: "ch6_nonverbal_5_features.png", labels: ["93% 影響力"], text: "金卷特性：模糊、持續、多重管道、情感展現度高。老師強烈提醒：要寫出『文化差異性』！這會決定非語言解讀是否產生誤會。" },
-            { cat: "魔鬼數據最後掃描", title: "📊 SRRS 200-299 中度", img: "ch3_srrs_holmes_rahe_table.png", labels: ["數據死穴"], text: "最後掃描：SRRS 中度生活危機區間是 200 到 299 分。這個數字是老師強調的基礎得分點。一定要背熟！" },
-            { cat: "魔鬼數據最後掃描", title: "📊 親密距離與睡姿", img: "ch5_edward_hall_distance_zones.png", labels: ["1.5呎 / 右側臥"], text: "空間數據：親密距離在 1.5 英尺以內。保健數據：右側臥最佳。人際吸引力公式：精明強人 + 微小失誤 = 最高吸引力分值。" },
-            { cat: "魔鬼數據最後掃描", title: "📊 梅拉賓定律 93%", img: "ch6_nonverbal_types_emblem.png", labels: ["數據必殺"], text: "學術重砲數據：非語言溝通佔比高達 93%（梅拉賓定律）。眼光接觸應維持在 50% 到 70%。電話前 30 秒決定成敗。只要寫出 93% 這個數字，老師就會覺得你很專業！" },
-            { cat: "大終局", title: "🏆 金卷特訓完成：100 分拿乾淨", img: "final_blessing_gold_interpersonal.png", labels: ["凱旋而歸"], text: "恭喜您完成 V3.0 金卷特訓！所有的理論背景、定義與關鍵數據都已植入大腦。帶著『尊笑口心度腳』的心法與馬斯洛的神仙邏輯，祝您期中考大獲全勝！" }
+            { cat: "解釋名詞 (碾壓定義版)", title: "📝 艾里斯的不合理信念", img: "albert_ellis_rational_emotive_background_1775990617583.png", labels: ["碾壓定義"], text: "碾壓定義：指個體對生活持有「絕對化」或「災難化」的錯誤觀念，是產生情緒困擾與心理障礙的核心根源。不需要背理論背景，記住『絕對化與情緒困擾』這兩個重點！" },
+            { cat: "解釋名詞 (碾壓定義版)", title: "📝 周哈里窗 (Johari Window)", img: "johari_window.png", labels: ["四個區塊"], text: "碾壓定義：用以分析自我覺察與人際溝通的模型，將自我分為開放、盲目、隱藏與未知四個區塊。只要寫出這四個區塊名稱就滿分！" },
+            { cat: "解釋名詞 (碾壓定義版)", title: "📝 社會再適應量表 (SRRS)", img: "ch3_srrs_holmes_rahe_table.png", labels: ["200-299 中度"], text: "碾壓定義：量化個體因生活事件改變而承受之心理壓力負荷的工具。實戰死穴數據：200 到 299 分屬於中度生活危機。這個數字老師必考！" },
+            { cat: "解釋名詞 (碾壓定義版)", title: "📝 月暈效應 (Halo Effect)", img: "ch4_halo_effect_visual.png", labels: ["以偏概全"], text: "碾壓定義：認知偏誤的一種。指知覺者因對方的單一顯著優點，進而產生「以偏概全」的整體正面評價。就是俗稱的一白遮三醜。" },
+            { cat: "解釋名詞 (碾壓定義版)", title: "📝 戲劇理論 (Dramaturgy)", img: "ch4_goffman_dramaturgy_stage.png", labels: ["前台/後台"], text: "碾壓定義：將社會互動比喻為舞台表演。個體在「前台」進行形象整飾表演，在「後台」展現隱私的真實自我。重點在於『表演』這兩個字。" },
+            { cat: "解釋名詞 (碾壓定義版)", title: "📝 仰巴腳效應 (Pratfall Effect)", img: "ch5_pratfall_effect_jfk.png", labels: ["出醜加分"], text: "碾壓定義：又稱「出醜效應」。指能力極強的人若犯了平傭的小錯誤，反而會增加親和力與人際吸引力。這是反向吸引力法則！" },
+            { cat: "解釋名詞 (碾壓定義版)", title: "📝 溝通分析 (TA)", img: "ch6_ta_pac_model_berne.png", labels: ["P-A-C 分析"], text: "碾壓定義：透過分析人格中的父母 (P)、成人 (A)、兒童 (C) 三種自我狀態，來診斷並改善溝通品質的方法。目標是促成穩定的成人對成人溝通。" },
+            { cat: "解釋名詞 (碾壓定義版)", title: "📝 象徵 (Emblem)", img: "ch6_nonverbal_types_emblem.png", labels: ["文化定義"], text: "碾壓定義：具備特定文化定義，且能直接取代言語的肢體動作。例如：豎起大拇指表示讚賞、擊掌代表成交。" },
+            { cat: "解釋名詞 (碾壓定義版)", title: "📝 防衛機制 (Defense Mechanism)", img: "ch4_defense_mechanisms_12.png", labels: ["潛意識適應"], text: "碾壓定義：個體面臨焦慮或挫折時，為保護自我價值感而在潛意識中採取的適應反應。經典範例：合理化、投射、退化。這就是心理防彈衣。" },
+            { cat: "解釋名詞 (碾壓定義版)", title: "📝 歸因 (Attribution)", img: "ch4_attribution_principles.png", labels: ["內在/外在"], text: "碾壓定義：指個體推論他人行為背後原因的認知歷程。實戰要點：要區分為內在因素的個人特質，或者是外在環境因素歸因。" },
+            { cat: "問答題 (大標題記憶版)", title: "📝 圓融六要訣 (必考口訣)", img: "final_blessing_gold_interpersonal.png", labels: ["尊笑口心度腳"], text: "社長必備口訣：一、尊：尊重。二、笑：笑臉。三、口：口圓。四、心：心正。五、度：大度。六、腳：腳勤。標題寫對，內容隨你吹，這題保證滿分！" },
+            { cat: "問答題 (大標題記憶版)", title: "📝 馬斯洛需求層次理論", img: "maslow_pyramid.png", labels: ["肚子➔神仙"], text: "大標題分層：生理需求、安全需求、社會需求、自尊需求、自我實現。高分關鍵：強調低層的『肚子世界』滿足後，才會追求高層的『神仙世界』。" },
+            { cat: "問答題 (大標題記憶版)", title: "📝 壓力管理五大策略", img: "ch3_stress_mgmt_5_strategies.png", labels: ["五大金卷標題"], text: "大標題收割：一、消除壓力源。二、發現幽默。三、社會支持。四、調整認知。五、放鬆技巧。只要在大標加幾個關鍵字解釋，15 分就到手了。" },
+            { cat: "問答題 (大標題記憶版)", title: "📝 影響人際知覺的三要素", img: "ch4_factors_interpersonal_perception.png", labels: ["被/知/情"], text: "速記標題：一、被知覺者（外觀、聲音）。二、知覺者（人性觀、動機）。三、交往情境（人事時地物環境）。標題精確，分數就拿下一大半。" },
+            { cat: "問答題 (大標題記憶版)", title: "📝 海德 POX 平衡理論", img: "ch5_attraction_factors.png", labels: ["乘積得正"], text: "核心規則：POX 代表知覺者、他人與事物。只要背下這個規則：三人關係的正負乘積為『正』，即為平衡狀態。例如兩個人剛好都喜歡同一個周杰倫。" },
+            { cat: "問答題 (大標題記憶版)", title: "📝 史登堡愛情三因論", img: "ch5_sternberg_love_triangle.png", labels: ["激情/親密/責任"], text: "三大標題：激情、親密、責任奉獻。三者兼備就是完美之愛。責任奉獻是讓火花轉變為長久關係的穩定劑。" },
+            { cat: "問答題 (大標題記憶版)", title: "📝 TA 溝通分析三型態", img: "ch6_ta_pac_model_berne.png", labels: ["互/交/隱"], text: "實戰型型：一、互補式（順暢、平行）。二、交錯式（衝突、斷裂）。三、隱藏式（話中有話）。目標是盡量使用互補式溝通來維持理性。" },
+            { cat: "問答題 (大標題記憶版)", title: "📝 非語言溝通的特性", img: "ch6_nonverbal_5_features.png", labels: ["模糊/文化差別"], text: "快速標題列表：模糊性、持續性、多重管道、情感展現度高。最重要且必考的標題：文化差異性。這決定了肢體語言的最終解讀。" },
+            { cat: "魔鬼數據最後掃描", title: "📊 SRRS 200-299 中度", img: "ch3_srrs_holmes_rahe_table.png", labels: ["200-299"], text: "實戰數據複習：SRRS 中度危機區間是 200 到 299 分。這是最喜歡考的級距，請社長務必秒記！" },
+            { cat: "魔鬼數據最後掃描", title: "📊 非語言佔比 93%", img: "ch6_nonverbal_types_emblem.png", labels: ["梅拉賓定律"], text: "數據收割：非語言訊息在溝通中佔了 93%。這叫梅拉賓定律。寫出這個百分比，老師就知道你是社長級別的專業考生。" },
+            { cat: "魔鬼數據最後掃描", title: "📊 人際親密距離 1.5呎", img: "ch5_edward_hall_distance_zones.png", labels: ["1.5呎"], text: "距離數據：親密距離為 1.5 英尺（約 0.46 公尺）以內。在這個距離內說悄悄話，就是最高層級的自我袒露。" },
+            { cat: "大終局", title: "🏆 V3.1 特訓完成：橫掃考場", img: "final_blessing_gold_interpersonal.png", labels: ["社長凱旋"], text: "恭喜您完成 V3.1 實戰精簡版特訓！我們刪除了贅字，保留了碾壓級定義與大標題。帶著這套收割機邏輯，祝社長期中考大獲全勝，100 分直接入袋！" }
         ];
         let cuI = -1; let timer = null; const synth = window.speechSynthesis;
         function toggleSidebar() { document.getElementById('sidebar').classList.toggle('open'); }
