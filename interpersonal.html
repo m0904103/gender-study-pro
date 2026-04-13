@@ -6,12 +6,12 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="theme-color" content="#020617">
-    <title>空大輔考研究社 | 人際關係與協商 V23.0</title>
+    <title>空大輔考研究社 | 人際關係與協商 V24.0</title>
     <style>
         :root { 
             --primary: #fbbf24; --danger: #ef4444; --bg: #020617; --text: #f8fafc; 
             --safe-top: env(safe-area-inset-top, 50px);
-            --safe-bottom: env(safe-area-inset-bottom, 34px);
+            --safe-bottom: env(safe-area-inset-bottom, 15px);
         }
         * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; outline: none; }
         body, html { 
@@ -58,14 +58,14 @@
     <div id="splash" onclick="goStudy()">
         <div style="width: 85%">
             <p style="color:var(--primary); font-weight:1000; letter-spacing:4px; margin-bottom:10px; font-size:0.8rem;">空大輔考研究社 | 正考特訓</p>
-            <h1 style="font-size:2.4rem; line-height:1.2; margin:10px 0; background:linear-gradient(135deg, #fff, var(--primary)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; font-weight:1000;">人際關係與協商<br><span style="font-size:1.8rem; color:var(--primary);">水精清晰優化版</span></h1>
-            <div style="background:var(--danger); color:white; padding:8px 25px; border-radius:10px; font-size:1.1rem; font-weight:900; display:inline-block; margin:5px 0;">V23.0 | 聽覺最佳化 | 知識堡壘</div>
+            <h1 style="font-size:2.4rem; line-height:1.2; margin:10px 0; background:linear-gradient(135deg, #fff, var(--primary)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; font-weight:1000;">人際關係與協商<br><span style="font-size:1.8rem; color:var(--primary);">金榜題名滿分策略版</span></h1>
+            <div style="background:var(--danger); color:white; padding:8px 25px; border-radius:10px; font-size:1.1rem; font-weight:900; display:inline-block; margin:5px 0;">V24.0 | 答題邏輯優化 | 舉例說明</div>
             <br><button class="btn-gold" style="margin-top:40px;">🏆 點擊開始</button>
         </div>
     </div>
     <header class="header">
-        <button onclick="toggleSidebar()" style="background:var(--primary); border:none; padding:12px 25px; border-radius:15px; font-weight:1000; font-size:0.9rem;">☰ 特訓索引(31)</button>
-        <div class="header-info" style="color:var(--primary); font-weight:1000; font-size:0.95rem; text-align:center; flex:1; padding:0 10px;">空大輔考研究社 V23.0：白話面授語氣，更易背誦。</div>
+        <button onclick="toggleSidebar()" style="background:var(--primary); border:none; padding:12px 25px; border-radius:15px; font-weight:1000; font-size:0.9rem;">☰ 特訓索引(22)</button>
+        <div class="header-info" style="color:var(--primary); font-weight:1000; font-size:0.95rem; text-align:center; flex:1; padding:0 10px;">空大輔考研究社 V24.0：定義 ➔ 機制 ➔ 例證。</div>
         <div style="background:rgba(0,0,0,0.6); padding:8px 15px; border-radius:50px; border:2px solid var(--primary); display:flex; align-items:center; gap:8px;"><input type="range" id="rate" min="0.5" max="2.0" value="1.2" step="0.1" style="width:50px; accent-color:var(--primary)"></div>
     </header>
     <div class="wrapper">
@@ -73,7 +73,7 @@
         <main class="viewport">
             <div class="screen"><div id="slide-view"></div><div id="overlay-layer" style="position:absolute; inset:0; pointer-events:none; display:flex; justify-content:center; align-items:center;"></div></div>
             <div class="console">
-                <div style="display:flex; justify-content:space-between; align-items:center"><span style="color:var(--primary); font-weight:1000; font-size:0.9rem;" id="cat-title">-</span><span id="page-num" style="background:#1e40af; padding:6px 16px; border-radius:12px; font-size:0.8rem; font-weight:1000;">1 / 31</span></div>
+                <div style="display:flex; justify-content:space-between; align-items:center"><span style="color:var(--primary); font-weight:1000; font-size:0.9rem;" id="cat-title">-</span><span id="page-num" style="background:#1e40af; padding:6px 16px; border-radius:12px; font-size:0.8rem; font-weight:1000;">1 / 22</span></div>
                 <div id="lecture-content" class="text-body">。</div>
                 <div class="nav-btns">
                     <button class="control-btn" onclick="prev()">⬅ 上一頁</button>
@@ -84,37 +84,28 @@
     </div>
     <script>
         const studyPlan = [
-            { cat: "【名詞解釋】", title: "1. 考試規則與配分", img: "exam_success_golden_trophy_100_1776041250115.png", ls: ["閉卷考試"], txt: "1-6 章閉卷考試。配分：解釋名詞 5 題(25分)，問答題 5 題(75分)。大標對了就及格！" },
-            { cat: "【名詞解釋】", title: "2. 周哈里窗", img: "johari_window_modern_diagram_1776040990674.png", ls: ["四個我"], txt: "了解自我之模型。分四區：開放我、盲目我、隱藏我、未知我。多「自我分享」可縮小隱藏，多「看聽建議」可縮小盲目。" },
-            { cat: "【名詞解釋】", title: "3. 內控與外控性格", img: "defense_mechanism_crystal_shield_1776041117465.png", ls: ["命運掌控"], txt: "內控者相信命運掌握在「努力」手裡；外控者相信「天命」或第三方。中國人普遍偏向外控。" },
-            { cat: "【名詞解釋】", title: "4. 馬斯洛理論", img: "maslow_pyramid_stomach_to_god_1776041006784.png", ls: ["飽暖思淫慾"], txt: "需求分五層：生、安、社、尊、自。先滿足肚子（生理、安全），才能追求精神世界（社會、自尊、自我實現）。" },
-            { cat: "【名詞解釋】", title: "5. 圓融六要訣", img: "roundness_secrets_enso_circle_1776041217719.png", ls: ["做人圓通"], txt: "口訣：頭軟（尊重）、面帶笑（感恩）、口圓（讚美）、心正（誠意）、肚大（寬容）、腳蹲（姿態低）。" },
-            { cat: "【名詞解釋】", title: "6. 知覺三歷程", img: "nonverbal_mircro_expressions_eye_1776041233563.png", ls: ["感覺組織評價"], txt: "大腦看世界的順序。先「感覺」物理刺激，再「組織」套入經驗，最後「評價」形成整體印象。" },
-            { cat: "【名詞解釋】", title: "7. 影響知覺的要素", img: "nonverbal_mircro_expressions_eye_1776041233563.png", ls: ["三要素"], txt: "包含「主角/被知覺者」、看的人「你自己」、以及「環境情況」。偏見與心情會決定你怎麼看人。" },
-            { cat: "【名詞解釋】", title: "8. 知覺組織原則", img: "gestalt_connectedness_dumbbell_principle_1776043234567_1776051269067.png", ls: ["格式塔"], txt: "接近性（近是一組）、相似性（像是一組）、連續性、閉合性，以及啞鈴圖的「連接性」。" },
-            { cat: "【名詞解釋】", title: "9. 月暈效應", img: "halo_effect_glowing_aura_bias_1776041171942.png", ls: ["一白遮三醜"], txt: "認知偏誤。因對方一項優點（如帥）而自動想像他整個人都很完美。反之則為角效應。" },
-            { cat: "【名詞解釋】", title: "10. 歸因模式", img: "attribution_theory_cause_effect_links_1776041098952.png", ls: ["內外歸因"], txt: "找原因的方法。分「內在歸因」（個人素質）與「外在歸因」（環境、產品或運氣不佳）。" },
-            { cat: "【名詞解釋】", title: "11. 仰巴腳效應", img: "pratfall_effect_clumsy_elite_1776041082459.png", ls: ["出醜效應"], txt: "能力強的人偶爾出點小紕漏，反而更討人喜歡。就像大明星摔跤，讓人覺得親民、沒距離感。" },
-            { cat: "【名詞解釋】", title: "12. 得寸進尺 vs 漫天要價", img: "heider_pox_balance_triad_1776041038324.png", ls: ["社交戰術"], txt: "得寸進尺是「先小後大」讓人慢慢上鉤；漫天要價是「先大後小」利用補償心理達成折衷。" },
-            { cat: "【名詞解釋】", title: "13. 防衛機制", img: "defense_mechanism_crystal_shield_1776041117465.png", ls: ["自我保護"], txt: "壓力大時的保護。包含：合理化（借口）、投射（怪人）、退化（地上耍賴）、幻想（白日夢）。" },
-            { cat: "【名詞解釋】", title: "14. 面子與人情", img: "roundness_secrets_enso_circle_1776041217719.png", ls: ["華人核心"], txt: "三碗麵最難吃：人面、場面、情面。處事邏輯：情 ➔ 理 ➔ 法，強調關係和諧與情意。" },
-            { cat: "【問答大題】", title: "15. 自我概念的來源", img: "nonverbal_mircro_expressions_eye_1776041233563.png", ls: ["面鏡自我"], txt: "來自「特定他人」與「一般他人」。特定他人指家人評價；一般他人指社會規範與大眾價值。" },
-            { cat: "【問答大題】", title: "16. 人際吸引三大因素", img: "heider_pox_balance_triad_1776041038324.png", ls: ["為何吸引"], txt: "情境因素（近水樓台）、個人因素（長相能力）、適配因素（個性合得來或補貼）。大標背起來！" },
-            { cat: "【問答大題】", title: "17. POX 平衡理論", img: "heider_pox_balance_triad_1776041038324.png", ls: ["關係平衡"], txt: "我、他、事物。三方關係「連乘積為正」就是平衡、舒服。如：我愛我的朋友也愛的電影。" },
-            { cat: "【問答大題】", title: "18. 人際距離", img: "nonverbal_emblems_hand_gestures_1776041154779.png", ls: ["四個圓圈"], txt: "近到遠：親密區（1.5呎內）、私交區、社交區（握手距離）、公眾區。記住：1.5 呎即 45 公分。" },
-            { cat: "【問答大題】", title: "19. 愛與喜歡的差異", img: "sternberg_love_triangle_diagram_1776041022011.png", ls: ["獨占性"], txt: "愛與喜歡最大的差在於「獨占性與排他性」，愛包含了生理激情與絕對的承諾。" },
-            { cat: "【問答大題】", title: "20. 完美之愛三元素", img: "sternberg_love_triangle_diagram_1776041022011.png", ls: ["史登堡"], txt: "三元素：親密（心靈）、激情（生理）、責任與奉獻。三者兼備才是真正的完美之愛。" },
-            { cat: "【問答大題】", title: "21. 溝通歷程與干擾", img: "nonverbal_emblems_hand_gestures_1776041154779.png", ls: ["S-R 模型"], txt: "包含發信者、接收者、訊息、管道。過程中最怕「噪音」干擾，會導致理解失誤。" },
-            { cat: "【問答大題】", title: "22. 溝通三大障礙", img: "nonverbal_mircro_expressions_eye_1776041233563.png", ls: ["障礙源"], txt: "來源（學者見士兵心態）、訊息（語意不清/過濾）、目的（各說各話/動機不當）。" },
-            { cat: "【問答大題】", title: "23. 非語言溝通特質", img: "nonverbal_emblems_hand_gestures_1776041154779.png", ls: ["沈默語言"], txt: "不說話也在講話。特性：模糊、持續、多管道、表露更多情感，且有文化差異。" },
-            { cat: "【問答大題】", title: "24. 梅拉賓定律 (93%)", img: "nonverbal_mircro_expressions_eye_1776041233563.png", ls: ["非語言佔比"], txt: "情感傳遞中，文字僅佔 7%，非語言高達 93%（表情 55% + 語調 38%）。眼神表情勝過千言萬語。" },
-            { cat: "【問答大題】", title: "25. 溝通三狀態 (TA)", img: "ta_pac_model_diagram_circles_1776041140078.png", ls: ["PAC モデル"], txt: "內心三狀態：父母態（威權）、成人態（理智）、兒童態（衝動）。追求 A 到 A 的理性交流。" },
-            { cat: "【問答大題】", title: "26. TA 溝通型態", img: "ta_pac_model_diagram_circles_1776041140078.png", ls: ["三種型態"], txt: "互補式（順暢）、交錯式（容易吵架斷裂）、隱藏式（心理遊戲、話中有話）。" },
-            { cat: "【問答大題】", title: "27. 提升溝通能力方法", img: "exam_success_golden_trophy_100_1776041250115.png", ls: ["四個方法"], txt: "1.審視環境、2.肯定自我訓練、3.勇於面對人群、4.抱持持續交流的正面信念。" },
-            { cat: "【問答大題】", title: "28. 壓力管理五大策略", img: "stress_measurement_gauge_srrs_1776041191104.png", ls: ["消幽社調放"], txt: "消除壓力源、發現幽默、尋求社會支持、調整負面認知、練習放鬆（如肌肉鬆弛法）。" },
-            { cat: "【問答大題】", title: "29. 獲得健康的策略", img: "stress_measurement_gauge_srrs_1776041191104.png", ls: ["運動與睡眠"], txt: "重視適度運動（333 原則）與充足睡眠（8 小時及右側臥）對身體修復的重要性。" },
-            { cat: "【實戰導航】", title: "30. 終極正考戰術", img: "exam_success_golden_trophy_100_1776041250115.png", ls: ["標題背誦"], txt: "閉卷不難，標題至上。解釋名詞 20 字搞定。絕不留白，有寫老師就會找關鍵字加分！" },
-            { cat: "【特別祝福】", title: "31. 空大輔考研究社祝福", img: "exam_success_golden_trophy_100_1776041250115.png", ls: ["金榜題名"], txt: "預祝各位考試順利通過！心想事成！(感謝社長志剛彙整，大家一起旗開得勝！)" }
+            { cat: "【戰術策略】", title: "1. 滿分答題公式", img: "exam_success_golden_trophy_100_1776041250115.png", ls: ["答題模板"], txt: "1-6 章閉卷測驗。高分公式：1.定義(是什麼) ➔ 2.機制(怎麼發生) ➔ 3.例證(例如...)。大標佔比 80%，邏輯與例子補滿最後積分。" },
+            { cat: "【核心概念】", title: "2. 周哈里窗", img: "johari_window_modern_diagram_1776040990674.png", ls: ["四個我"], txt: "目標：極大化「開放我」。透過「自我分享」縮小隱藏，多「聽取反饋」縮小盲目。例如：新人主動介紹興趣，能快速建立團隊默契。" },
+            { cat: "【核心概念】", title: "3. 內控與外控性格", img: "defense_mechanism_crystal_shield_1776041117465.png", ls: ["歸因偏好"], txt: "內控者相信努力（自己）；外控者相信命運（天意）。例如：外控者認為考不好是運氣差，這會降低改善動力。" },
+            { cat: "【核心概念】", title: "4. SRRS 壓力數據", img: "stress_measurement_gauge_srrs_1776041191104.png", ls: ["好事也壓力"], txt: "量化工具(200-299中度風險)。注意：不只懷事，好事（如結婚、過年、升遷）亦會變動生活節奏產生壓力。" },
+            { cat: "【核心概念】", title: "5. 月暈效應", img: "halo_effect_glowing_aura_bias_1776041171942.png", ls: ["以點帶面"], txt: "偏誤認知。因一個優點（如俊男美女）而自動腦補他整個人都很完美。這是大腦為了節省能量的簡化現象。" },
+            { cat: "【核心概念】", title: "6. 仰巴腳效應", img: "pratfall_effect_clumsy_elite_1776041082459.png", ls: ["去神格化"], txt: "高分點：強者犯點小錯更迷人，因為「去神格化」產生親近感。例如：優質主管偶爾說句笑話摔一下，更得人心。" },
+            { cat: "【核心概念】", title: "7. 得寸進尺 vs 漫天要價", img: "heider_pox_balance_triad_1776041038324.png", ls: ["心理博弈"], txt: "得寸進尺利用「承諾一致性」；漫天要價利用「讓步與罪惡感」。兩者皆是透過操縱初始預期來達成目標。" },
+            { cat: "【核心概念】", title: "8. POX 平衡理論", img: "heider_pox_balance_triad_1776041038324.png", ls: ["連乘為正"], txt: "我(P)、他(O)、事(X)。三方乘積必須為「正（+）」大腦才舒服。例如：我喜歡的朋友也喜歡我支持的校隊。" },
+            { cat: "【核心概念】", title: "9. 防衛機制", img: "defense_mechanism_crystal_shield_1776041117465.png", ls: ["自尊維護"], txt: "目的：維護「自我價值感」。合理化是「酸葡萄」；投射是「怪人」；退化是「地上耍賴」；幻想是「做白日夢」。" },
+            { cat: "【核心概念】", title: "10. 面子與人情", img: "roundness_secrets_enso_circle_1776041217719.png", ls: ["社會價值債務"], txt: "面子是「社會評價」；人情是「社會債務」。華人處事：情 ➔ 理 ➔ 法。先處理好心情與交情，再談事情。" },
+            { cat: "【問答大題】", title: "11. 影響知覺的要素", img: "nonverbal_mircro_expressions_eye_1776041233563.png", ls: ["感知三維"], txt: "包含：主角（被知覺者）、偵測器（你自己）、背景（情況）。心情好壞與偏見會過濾真實的影像。" },
+            { cat: "【問答大題】", title: "12. 人際吸引三大因素", img: "heider_pox_balance_triad_1776041038324.png", ls: ["為何愛一個人"], txt: "1.情境(近水樓台/熟悉)、2.個人(長相/能力/仰巴腳)、3.適配(相似/互補)。大標背熟是滿分第一步。" },
+            { cat: "【問答大題】", title: "13. 馬斯洛需求層次", img: "maslow_pyramid_stomach_to_god_1776041006784.png", ls: ["階梯演進"], txt: "具有不可跳躍的階梯性。必須先解決肚子（生理/安全），才能追求上帝（尊嚴/自我實現）。" },
+            { cat: "【問答大題】", title: "14. 愛與喜歡的獨占性", img: "sternberg_love_triangle_diagram_1776041022011.png", ls: ["排他性"], txt: "差別在於「獨占性與排他性」。愛除了親密與汗水，還有一份排他的責任承諾。完美之愛=親密+激情+承諾。" },
+            { cat: "【問答大題】", title: "15. 梅拉賓定律 (93%)", img: "nonverbal_mircro_expressions_eye_1776041233563.png", ls: ["口語衝突"], txt: "高分點：當說的話與表情衝突時，人們 93% 相信非語言。眼神與聲調比「內容」更真實地傳遞情感。" },
+            { cat: "【問答大題】", title: "16. TA 溝通 PAC 模型", img: "ta_pac_model_diagram_circles_1776041140078.png", ls: ["理性交流"], txt: "狀態：父母態(P)、成人態(A)、兒童態(C)。追求「互補式」的 A 對 A 交流。避免權力壓制的交錯式溝通。" },
+            { cat: "【問答大題】", title: "17. 知覺組織五原則", img: "gestalt_connectedness_dumbbell_principle_1776043234567_1776051269067.png", ls: ["格式塔連結"], txt: "接近、相似、閉合、連續、連接性。啞鈴圖連結獨立物件，大腦自動視為單元。這能幫助預測他人行為。" },
+            { cat: "【問答大題】", title: "18. 通障的三大來源", img: "nonverbal_mircro_expressions_eye_1776041233563.png", ls: ["溝通牆壁"], txt: "1.來源狀況(心情/偏見/學者見士兵)、2.傳送問題(雜訊/過濾)、3.目標設定(動機不純/目的模糊)。" },
+            { cat: "【問答大題】", title: "19. 提升溝通的方法", img: "exam_success_golden_trophy_100_1776041250115.png", ls: ["溝通韌性"], txt: "審視環境、肯定自我訓練、勇於主動出擊(面對人群)、維持「只要溝通就有希望」的正面信念。" },
+            { cat: "【輔助工具】", title: "20. 壓力管理與健康策略", img: "stress_measurement_gauge_srrs_1776041191104.png", ls: ["消幽社調放"], txt: "策略：消、幽、社、調、放。搭配健康 333 運動與充足睡眠(8小時)，由內而外對抗壓力源。" },
+            { cat: "【終極叮嚀】", title: "21. 絕對不可留白", img: "exam_success_golden_trophy_100_1776041250115.png", ls: ["及格心法"], txt: "標題先行。內容即使忘了也要用常理推導補滿。只要有文字，閱卷老師才有「理由」給你加分！" },
+            { cat: "【特別祝福】", title: "22. 空大輔考研究社祝福", img: "exam_success_golden_trophy_100_1776041250115.png", ls: ["金榜題名"], txt: "預祝大家考試順利通過！心想事成！(感謝社長志剛彙整，大家一起旗開得勝！)" }
         ];
         let cuI = -1; let timer = null; const synth = window.speechSynthesis;
         function toggleSidebar() { document.getElementById('sidebar').classList.toggle('open'); }
