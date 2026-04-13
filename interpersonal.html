@@ -6,7 +6,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="theme-color" content="#020617">
-    <title>人際關係與協商 | 極簡反射堡壘版 V15.1</title>
+    <title>空大輔考研究社 | 人際關係與協商 V20.1</title>
     <style>
         :root { 
             --primary: #fbbf24; --danger: #ef4444; --bg: #020617; --text: #f8fafc; 
@@ -42,14 +42,14 @@
             position: fixed; bottom: calc(20px + var(--safe-bottom)); left: 50%; transform: translateX(-50%); width: 92%; background: rgba(15, 23, 42, 0.98); padding: 25px; 
             border-radius: 36px; border-left: 14px solid var(--primary); backdrop-filter: blur(40px); -webkit-backdrop-filter: blur(40px); z-index: 3500; 
         }
-        .text-body { font-size: 1.25rem; line-height: 1.5; height: 135px; overflow-y: auto; color: #fff; font-weight: 400; margin: 10px 0; }
+        .text-body { font-size: 1.25rem; line-height: 1.4; height: 135px; overflow-y: auto; color: #fff; font-weight: 400; margin: 10px 0; }
         .nav-btns { display: flex; justify-content: space-between; align-items: center; gap: 15px; }
         .control-btn { 
             background: rgba(255,255,255,0.08); color: var(--text); border: 1.5px solid rgba(255,255,255,0.1); 
             padding: 10px 20px; border-radius: 12px; font-size: 0.9rem; font-weight: 950; cursor: pointer; transition: 0.2s; 
         }
         .control-btn:active { transform: scale(0.92); background: var(--primary); color: #000; }
-        .btn-gold { background: var(--primary); color: #000; border: none; padding: 25px 90px; font-size: 2rem; font-weight: 1000; border-radius: 100px; cursor: pointer; box-shadow: 0 15px 40px rgba(251, 191, 36, 0.6); }
+        .btn-gold { background: var(--primary); color: #000; border: none; padding: 15px 50px; font-size: 1.8rem; font-weight: 1000; border-radius: 100px; cursor: pointer; box-shadow: 0 15px 40px rgba(251, 191, 36, 0.6); }
         #splash { position: fixed; inset: 0; background: #020617; z-index: 5000; display: flex; justify-content: center; align-items: center; text-align: center; }
         @media (max-width: 400px) { .header-info { font-size: 0.8rem !important; } .label-unit { font-size: 1.15rem; } }
     </style>
@@ -57,15 +57,15 @@
 <body>
     <div id="splash" onclick="goStudy()">
         <div style="width: 85%">
-            <p style="color:var(--primary); font-weight:1000; letter-spacing:8px; margin-bottom:15px; font-size:0.9rem;">1142 | V15.1 ELITE REFLEX EDITION</p>
-            <h1 style="font-size:2.8rem; line-height:1.2; margin:15px 0; background:linear-gradient(135deg, #fff, var(--primary)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; font-weight:1000;">人際關係與協商<br><span style="font-size:2.2rem; color:var(--primary); text-shadow:0 0 20px rgba(251,191,36,0.3);">極簡知識反射堡壘版</span></h1>
-            <div style="background:var(--danger); color:white; padding:10px 35px; border-radius:12px; font-size:1.2rem; font-weight:900; display:inline-block; margin-top:10px;">純淨知識流 | 零噪音反射 | 正考必勝</div>
-            <br><button class="btn-gold" style="margin-top:50px;">🏆 進入特訓</button>
+            <p style="color:var(--primary); font-weight:1000; letter-spacing:4px; margin-bottom:10px; font-size:0.8rem;">空大輔考研究社 | 正考特訓 V20.1</p>
+            <h1 style="font-size:2.4rem; line-height:1.2; margin:10px 0; background:linear-gradient(135deg, #fff, var(--primary)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; font-weight:1000;">人際關係與協商<br><span style="font-size:1.8rem; color:var(--primary);">期中考最終決戰版</span></h1>
+            <div style="background:var(--danger); color:white; padding:8px 25px; border-radius:10px; font-size:1.1rem; font-weight:900; display:inline-block; margin:5px 0;">面授重點全整合 | 杜月笙三碗麵 | 零噪音</div>
+            <br><button class="btn-gold" style="margin-top:40px;">🏆 點擊開始</button>
         </div>
     </div>
     <header class="header">
-        <button onclick="toggleSidebar()" style="background:var(--primary); border:none; padding:12px 25px; border-radius:15px; font-weight:1000; font-size:0.9rem;">☰ 反射索引(24)</button>
-        <div class="header-info" style="color:var(--primary); font-weight:1000; font-size:1rem; text-align:center; flex:1; padding:0 10px;">過度學習：移除冗餘字眼，讓「題名」直接觸發「核心答案」。</div>
+        <button onclick="toggleSidebar()" style="background:var(--primary); border:none; padding:12px 25px; border-radius:15px; font-weight:1000; font-size:0.9rem;">☰ 特訓索引(22)</button>
+        <div class="header-info" style="color:var(--primary); font-weight:1000; font-size:0.95rem; text-align:center; flex:1; padding:0 10px;">空大輔考研究社：標題直接觸發答案，確保全面拿分。</div>
         <div style="background:rgba(0,0,0,0.6); padding:8px 15px; border-radius:50px; border:2px solid var(--primary); display:flex; align-items:center; gap:8px;"><input type="range" id="rate" min="0.5" max="2.0" value="1.2" step="0.1" style="width:50px; accent-color:var(--primary)"></div>
     </header>
     <div class="wrapper">
@@ -73,7 +73,7 @@
         <main class="viewport">
             <div class="screen"><div id="slide-view"></div><div id="overlay-layer" style="position:absolute; inset:0; pointer-events:none; display:flex; justify-content:center; align-items:center;"></div></div>
             <div class="console">
-                <div style="display:flex; justify-content:space-between; align-items:center"><span style="color:var(--primary); font-weight:1000; font-size:1rem;" id="cat-title">-</span><span id="page-num" style="background:#1e40af; padding:6px 16px; border-radius:12px; font-size:0.9rem; font-weight:1000;">1 / 24</span></div>
+                <div style="display:flex; justify-content:space-between; align-items:center"><span style="color:var(--primary); font-weight:1000; font-size:0.9rem;" id="cat-title">-</span><span id="page-num" style="background:#1e40af; padding:6px 16px; border-radius:12px; font-size:0.8rem; font-weight:1000;">1 / 22</span></div>
                 <div id="lecture-content" class="text-body">。</div>
                 <div class="nav-btns">
                     <button class="control-btn" onclick="prev()">⬅ 上一頁</button>
@@ -84,30 +84,28 @@
     </div>
     <script>
         const studyPlan = [
-            { cat: "【名詞：過度學習】", title: "1. 周哈里窗 (Johari Window)", img: "johari_window_modern_diagram_1776040990674.png", ls: ["周哈里窗"], txt: "分析自我覺察與溝通之模型。四大區域為：開放區（己知他知）、盲目區（己不知他知）、隱藏區（己知他不知）、未知區（己不知他不知）。操作核心：透過自我袒露縮小隱藏區，透過他人回饋縮小盲目區。" },
-            { cat: "【名詞：過度學習】", title: "2. 內控與外控性格", img: "defense_mechanism_crystal_shield_1776041117465.png", ls: ["內/外控性格"], txt: "指個體對行為成敗原因的歸納傾向。內控者相信一切操作在我，可透過努力控制命運。外控者視成敗受第三者（命運、天、神）控制。中國人多信天命，屬典型外控歸論。核心邏輯在於命運掌握權之所在。" },
-            { cat: "【名詞：過度學習】", title: "3. 仰巴腳效應 (Pratfall Effect)", img: "pratfall_effect_clumsy_elite_1776041082459.png", ls: ["仰巴腳效應"], txt: "指能力卓越者若偶爾犯下平庸小錯誤，反而能增加人性化親和力與吸引力。此效應僅對能力強者有效，平庸者犯錯只會降低吸引力。其心理機制在於完善形象與瑕疵產生的對比美感。 " },
-            { cat: "【名詞：過度學習】", title: "4. 月暈效應 (Halo Effect)", img: "halo_effect_glowing_aura_bias_1776041171942.png", ls: ["月暈效應"], txt: "認知偏誤之一。指知覺者根據對方的單一顯著優點（如外貌佳），而盲目推論其餘人格特質（如誠實、聰明）亦同樣優秀，產生以點帶面的正面評價。反向評價偏誤則稱為角效應。" },
-            { cat: "【名詞：過度學習】", title: "5. 印象整飾與戲劇理論", img: "goffman_dramaturgy_theater_stage_1776041066626.png", ls: ["印象整飾"], txt: "個體意圖控制他人對自己知覺之歷程。高夫曼視社會為舞台，互動為表演。前台指在他人面前展現符合期待之形象；後台指展現私密且真實之自我。旨在維修個人尊嚴與公共形象之穩定一致。" },
-            { cat: "【名詞：過度學習】", title: "6. 歸因原則 (加大法則與折扣法則)", img: "attribution_theory_cause_effect_links_1776041098952.png", ls: ["歸因原則"], txt: "加大法則指行為在阻力、限制下仍發生，會加強對該核心因素之歸因。折扣法則指行為原因若被其他更具說服力之外部因素（如強迫、誘因）取代，則原始動機之歸因會被削弱或扣分。" },
-            { cat: "【名詞：過度學習】", title: "7. 社會再適應量表 (SRRS)", img: "stress_measurement_gauge_srrs_1776041191104.png", ls: ["SRRS 量表"], txt: "量化壓力對身心健康影響之工具。數據定錨：200至299分屬中度生活危機，300分以上為高度危機。功能：透過生活事件變動分數，預測未來兩年內引發重大身心疾病與危機之風險機率。 " },
-            { cat: "【名詞：過度學習】", title: "8. 艾里斯不合理信念 (ABC)", img: "albert_ellis_rational_emotive_background_1775990617583.png", ls: ["不合理信念"], txt: "理情行為療法核心。指個體對事件抱持絕對化要求（如我必須、一定要）或災難化思考。修正邏輯：將絕對語句轉化為相對要求的期許（如我希望），能顯著減少焦慮並提升行為適應性。 " },
-            { cat: "【名詞：過度學習】", title: "9. 防衛機制 (Defense Mechanism)", img: "defense_mechanism_crystal_shield_1776041117465.png", ls: ["防衛機制"], txt: "個體面臨焦慮時潛意識採取之自我保護手段。包含：合理化（酸葡萄心理找藉口）、投射（將缺點推給他人）、退化（幼稚化撒嬌）、幻想（白日夢補償價值感）。旨在維持暫時的心理平衡與自尊感。" },
-            { cat: "【名詞：過度學習】", title: "10. 核心特質與印象形成", img: "nonverbal_mircro_expressions_eye_1776041233563.png", ls: ["核心特質"], txt: "指在知覺過程中比重最高、足以影響整體組織印象之訊息。實驗證明「熱忱與冷漠」為核心特質，「粗魯與禮貌」則為次要特質。核心特質的改變會直接翻轉整體知覺評價之結論。" },
-            { cat: "【問答：強迫連結】", title: "11. 馬斯洛需求層次理論", img: "maslow_pyramid_stomach_to_god_1776041006784.png", ls: ["馬斯洛五層次"], txt: "1.生理(生存)。2.安全(保障)。3.社會(愛與歸屬)。4.自尊(成就)。5.自我實現(潛能)。邏輯：具階梯與層級屬性。滿足肚子世界之匱乏需求後，始有驅動力追求神仙世界之成長需求。" },
-            { cat: "【問答：強迫連結】", title: "12. 獲得健康的兩大策略", img: "stress_measurement_gauge_srrs_1776041191104.png", ls: ["獲得健康策略"], txt: "策略一生理修復：運動(333原則)、睡眠(8小時/建議右側臥有利排毒)、均衡飲食。策略二心理回彈：發展複元力(Resilience)、提升問題解決能力、建立社會支持網絡進行壓力緩釋管理。" },
-            { cat: "【問答：強迫連結】", title: "13. 圓融人際六要訣", img: "roundness_secrets_enso_circle_1776041217719.png", ls: ["圓融六要訣"], txt: "尊(頭軟/尊重)、笑(面笑/感恩)、口(口圓/讚美)、心(心正/菩薩心)、度(肚大/包容)、腳(腳勤/積極好觀眾)。此為管理個人利益導向與情緒系統，達成人際圓潤之綜合智慧心法標題。" },
-            { cat: "【問答：強迫連結】", title: "14. 人際知覺產生的過程", img: "nonverbal_mircro_expressions_eye_1776041233563.png", ls: ["知覺產生過程"], txt: "過程分為三階段：感覺(五官接收刺激) ➔ 組織(分類整理與結構化) ➔ 評價(賦予意義並形成整體印象)。知覺結論受被知覺者外觀、知覺者動機偏見與互動情境之交互影響而主觀產生。" },
-            { cat: "【問答：強迫連結】", title: "15. 知覺組織五原則 (格式塔)", img: "gestalt_connectedness_dumbbell_principle_1776043234567_1776051269067.png", ls: ["知覺組織五原則"], txt: "接近性(距離近視為同一組)、相似性(特徵像視為同一組)、連續性、閉合性(自動補全殘邊)。以及連接性，即「啞鈴圖效應」，指獨立物件若被線條連結，會被知覺鎖定為單一的功能單元。" },
-            { cat: "【問答：強迫連結】", title: "16. 壓力管理與肌肉鬆弛技巧", img: "stress_measurement_gauge_srrs_1776041191104.png", ls: ["壓力管理策略"], txt: "管理法：消(除源)、幽(默)、社(支持)、調(認知)、放(鬆)。肌肉逐步鬆弛法：鎖緊全身肌肉（指節、手部、全身）至極限高度緊張狀態後，突然一下子完全鬆開。透過此物理切換達成生理放鬆之效果。" },
-            { cat: "【問答：強迫連結】", title: "17. 被知覺者的對比性原則", img: "heider_pox_balance_triad_1776041038324.png", ls: ["知覺對比性"], txt: "知覺受背景參照影響。190公分者站在矮人群體中顯得極高(鶴立雞群)；但站於NBA球員群體中則顯得矮小。此原理證明知覺非絕對數值，而是與背景條件交互產生之相對評價結果。" },
-            { cat: "【問答：強迫連結】", title: "18. TA 溝通分析：PAC 三狀態與型態", img: "ta_pac_model_diagram_circles_1776041140078.png", ls: ["TA 溝通分析"], txt: "三狀態為父母態 P(權威)、成人態 A(理性)、兒童態 C(衝動)。溝通型態：互補式(順暢平順)、交錯式(狀態背離致衝突斷裂)、隱藏式(心理遊戲與多層次隱意)。目標為建立 A-A 理性對位溝通。" },
-            { cat: "【問答：強迫連結】", title: "19. 華人文化的人情與面子深度解析", img: "roundness_secrets_enso_circle_1776041217719.png", ls: ["華人人情面子"], txt: "三碗麵最難吃：人面、場面、情面。人情具備情緒、資源與社會規範三元內涵。處事原則遵循：情 ➔ 理 ➔ 法 之次序，強調關係和諧與情意連結，與西方法法治契約文化產生明顯區隔。 " },
-            { cat: "【問答：強迫連結】", title: "20. 影響人際吸引的標準因素", img: "heider_pox_balance_triad_1776041038324.png", ls: ["人際吸引要素"], txt: "要素一：情境要素（空間接近與高熟悉度/近水樓臺）。要素二：個人要素（外貌魅力、個性、能力出眾程度）。要素三：適配要素（態度、價值觀之相似性或互補性）。核心追求報償與滿足感之平衡。" },
-            { cat: "【問答：強迫連結】", title: "21. 凱利三維歸因模型數據指針", img: "attribution_theory_cause_effect_links_1776041098952.png", ls: ["凱利歸因模型"], txt: "區別性（針對不同對象）、一致性（不同時間點）、普遍性（他人之反應）。若三者皆高則傾向歸因為外部情境；若僅一致性高而其餘低，則強烈傾向歸因為當事人內部穩定人格特質。" },
-            { cat: "【正考定錨：生理反射】", title: "22. SRRS 數據指標與風險預測", img: "stress_measurement_gauge_srrs_1776041191104.png", ls: ["SRRS 定錨"], txt: "中度生活危機區間 200 至 299 分。預測未來兩年內引發重大身心危機。150分病發率30%，300分病發率高達80%。這是閉卷答題時區分專業與平庸的關鍵量化標題數據。" },
-            { cat: "【正考定錨：生理反射】", title: "23. 親密空間與梅拉賓非語言定律", img: "nonverbal_emblems_hand_gestures_1776041154779.png", ls: ["人距與非言比例"], txt: "親密距離為 1.5 英尺 (約 45 公分) 以內。梅拉賓定律：情感訊息 93% 源於非語言管道（表情 55% + 語調 38%），僅 7% 源於文字內容。數據證明非語言為真實情感傳遞之絕對核心。" },
-            { cat: "【正考定錨：生理反射】", title: "24. 應考戰術：大標對位與不留空白", img: "exam_success_golden_trophy_100_1776041250115.png", ls: ["終極正考戰術"], txt: "大標正確即給分核心。不論題目變體，大腦必須先反射出生理層次的術語大標。內容用囉唆且邏輯一致的教科書答案填滿。絕對不可留白，維持 100% 卷面覆蓋率以確保全面 point collection。" }
+            { cat: "【名詞解釋】", title: "1. 周哈里窗 (Johari Window)", img: "johari_window_modern_diagram_1776040990674.png", ls: ["周哈里窗"], txt: "分析自我覺察之模型。分四區：開放區（己知他知）、盲目區（己不知他知）、隱藏區（己知他不知）、未知區（己不知他不知）。操作核心：透過自我袒露縮小隱藏區，透過他人回饋縮小盲目區。" },
+            { cat: "【名詞解釋】", title: "2. 內控與外控性格", img: "defense_mechanism_crystal_shield_1776041117465.png", ls: ["內/外控性格"], txt: "個體歸因傾向。內控者相信命運操之在我，可透過努力控制命運。外控者視成敗受強而有力的第三者（命運、天、神）控制。中國人多信天命，屬典型外控歸論。核心在於命運掌握權之所在。" },
+            { cat: "【名詞解釋】", title: "3. 仰巴腳效應 (Pratfall Effect)", img: "pratfall_effect_clumsy_elite_1776041082459.png", ls: ["仰巴腳效應"], txt: "又稱出醜效應。指能力卓越者若偶爾犯下平庸小錯誤，反而能增加人性化親和力與吸引力。此效應僅對能力強者有效，平庸者犯錯則降低吸引力。旨在完善形象與瑕疵產生之對比美感。" },
+            { cat: "【名詞解釋】", title: "4. 月暈效應 (Halo Effect)", img: "halo_effect_glowing_aura_bias_1776041171942.png", ls: ["月暈效應"], txt: "認知偏誤。指知覺者根據對方單一顯著優點（如外貌佳），而盲目推論其餘人格特質亦同樣優秀，產生以點帶面的正面評價。反向評價偏誤則稱為角效應。" },
+            { cat: "【名詞解釋】", title: "5. 印象整飾與戲劇理論", img: "goffman_dramaturgy_theater_stage_1776041066626.png", ls: ["印象整飾"], txt: "個體意圖控制他人對自己知覺之歷程。前台指在他人面前展現符合期待之形象；後台指展現私密真實之自我。旨在維護個人尊嚴與公共形象之穩定一致。" },
+            { cat: "【名詞解釋】", title: "6. 歸因原則 (加大與折扣)", img: "attribution_theory_cause_effect_links_1776041098952.png", ls: ["歸因原則"], txt: "加大法則指行為在阻力下仍發生，會加強對核心因素之歸因（如下課幫老師做事）。折扣法則指行為原因若被其他更具說服力之外部因素取影（如辯論賽被迫立場），則動機歸因會被削弱。" },
+            { cat: "【名詞解釋】", title: "7. 社會再適應量表 (SRRS)", img: "stress_measurement_gauge_srrs_1776041191104.png", ls: ["SRRS 量表"], txt: "量化壓力之工具。數據定錨：200至299分屬中度生活危機。功能：透過生活事件變動分數，預測未來兩年內引發重大身心疾病與健康危機之風險機率。" },
+            { cat: "【名詞解釋】", title: "8. 艾里斯不合理信念 (ABC)", img: "albert_ellis_rational_emotive_background_1775990617583.png", ls: ["不合理信念"], txt: "理情療法核心。指個體對事件抱持絕對化要求（如我必須、一定要）。修正邏輯：將絕對語句轉化為相對要求的期許（如我希望），能顯著減少焦慮情緒。" },
+            { cat: "【名詞解釋】", title: "9. 防衛機制 (Defense Mechanism)", img: "defense_mechanism_crystal_shield_1776041117465.png", ls: ["防衛機制"], txt: "焦慮時潛意識採取之保護手段。包含：合理化（酸葡萄心理）、投射（缺點怪罪他人）、退化（幼稚化行為）、幻想（白日夢補償）。旨在維持暫時的心理平衡。" },
+            { cat: "【問答大題】", title: "10. 自我概念的來源", img: "nonverbal_mircro_expressions_eye_1776041233563.png", ls: ["自我概念來源"], txt: "主要來自「特定他人」與「一般他人」。特定他人指重要人物（如家長、恩師）對自己的反映與評價；一般他人指社會規範、法律與大眾價值觀的內化整合成型。" },
+            { cat: "【問答大題】", title: "11. 馬斯洛需求層次理論", img: "maslow_pyramid_stomach_to_god_1776041006784.png", ls: ["馬斯洛五層次"], txt: "1.生理。2.安全。3.社會(愛與歸屬)。4.自尊。5.自我實現。具有階梯屬性。滿足低層「肚子世界」之匱乏需求後，始有驅動力追求高層「神仙世界」之成長需求。" },
+            { cat: "【問答大題】", title: "12. 獲得健康的兩大策略", img: "stress_measurement_gauge_srrs_1776041191104.png", ls: ["獲得健康策略"], txt: "生理修復：運動(333原則)、睡眠(8小時/建議右側臥有利排毒)、均衡飲食。心理回彈：發展複元力(Resilience)、提升問題解決能力、建立社會支持網絡進行壓力管理。" },
+            { cat: "【問答大題】", title: "13. 圓融人際六要訣", img: "roundness_secrets_enso_circle_1776041217719.png", ls: ["圓融六要訣"], txt: "口訣：尊(頭軟)、笑(面笑)、口(口圓)、心(心正)、度(肚大)、腳(腳勤)。此為管理個人利益導向與情緒系統，達成人際圓潤之綜合智慧心法標題。" },
+            { cat: "【問答大題】", title: "14. 知覺組織五原則 (格式塔)", img: "gestalt_connectedness_dumbbell_principle_1776043234567_1776051269067.png", ls: ["知覺組織五原則"], txt: "接近性(距離近看為一組)、相似性(外貌像看為一組)、連續性、閉合性(自動補全)。以及連接性，即「啞鈴圖效應」，指獨立物件若被線條連結，會被知覺鎖定為單元。" },
+            { cat: "// [L105] 補強：華人文化的人情與面子", title: "15. 華人的人情與面子 (三碗麵)", img: "roundness_secrets_enso_circle_1776041217719.png", ls: ["人情與面子"], txt: "人情包含情緒、資材與規範。杜月笙名言：人生三碗麵最難吃（人面、場面、情面）。處事原則遵循：情 ➔ 理 ➔ 法 之次序，與西方法治契約文化產生明顯區隔。" },
+            { cat: "【問答大題】", title: "16. 凱利三維歸因模型數據指針", img: "attribution_theory_cause_effect_links_1776041098952.png", ls: ["凱利歸因模型"], txt: "區別性（針對不同對象）、一致性（不同時間點）、普遍性（他人反應）。若三者皆高傾向歸因為外部情境；若僅一致性高其餘低，則強烈傾向歸因為當事人內部的人格特質。" },
+            { cat: "【問答大題】", title: "17. TA 溝通分析：PAC 三狀態與型態", img: "ta_pac_model_diagram_circles_1776041140078.png", ls: ["TA 溝通分析"], txt: "三狀態為父母態 P、成人態 A、兒童態 C。溝通型態：互補式(順暢)、交錯式(衝突斷裂)、隱藏式(心理遊戲)。目標為建立 A-A 理性對位溝通，達成有效訊息傳遞。" },
+            { cat: "【問答大題】", title: "18. 史登堡 (Sternberg) 愛情三因論", img: "sternberg_love_triangle_diagram_1776041022011.png", ls: ["愛情三因論"], txt: "由親密、激情、責任決心三元素組成。隨時間推移，激情通常遞減，但親密與責任感應隨著對關係的承諾增加而提升。是解釋人際吸引與長期關係維持之核心理論。" },
+            { cat: "【問答大題】", title: "19. 壓力管理與非語言溝通", img: "nonverbal_emblems_hand_gestures_1776041154779.png", ls: ["壓力管理/非語言"], txt: "管理五法：消、幽、社、調、放。梅拉賓定律：情感訊息 93% 源於非語言（表情 55% + 語調 38%），僅 7% 源於文字內容。數據證明非語言為真實情感傳遞之絕對核心。" },
+            { cat: "【正考定錨】", title: "20. 正考魔鬼數據定錨 (生理反射)", img: "stress_measurement_gauge_srrs_1776041191104.png", ls: ["重要數據"], txt: "SRRS 中度生活危機：200至299分。親密距離：1.5 英尺 (約 45 公分) 以內。非語言情感訊息佔比：93%。這是閉卷答題時區分專業深度與平庸內容的關鍵量化標題數據。" },
+            { cat: "【正考定錨】", title: "21. 終極正考戰術：標題對位", img: "exam_success_golden_trophy_100_1776041250115.png", ls: ["終極正考戰術"], txt: "大標正確即給分核心。不論題目變體，大腦必須先反射出生理層次的術語標題。內容用邏輯一致的教科書語言填滿。絕對不可留白，維持 100% 卷面覆蓋率以確保全面獲取分數。" },
+            { cat: "【正考定錨】", title: "22. 空大輔考研究社特別祝福", img: "exam_success_golden_trophy_100_1776041250115.png", ls: ["點擊畫面結束"], txt: "空大輔考研究社預祝各位：考試順利通過！金榜題名！心想事成！(請繼續保持自信，運用標題戰術戰勝期中考。)" }
         ];
         let cuI = -1; let timer = null; const synth = window.speechSynthesis;
         function toggleSidebar() { document.getElementById('sidebar').classList.toggle('open'); }
