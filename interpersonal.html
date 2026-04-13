@@ -6,7 +6,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="theme-color" content="#020617">
-    <title>人際關係與協商 | 圖文一致對位版 V11.1</title>
+    <title>人際關係與協商 | 終極囉唆絕對防禦版 V12.0</title>
     <style>
         :root { 
             --primary: #fbbf24; --danger: #ef4444; --bg: #020617; --text: #f8fafc; 
@@ -32,41 +32,41 @@
         .sidebar.open { left: 0; box-shadow: 40px 0 100px rgba(0,0,0,1); }
         .course-nav { height: 100%; overflow-y: auto; padding: 25px; }
         .nav-cat { font-size: 0.75rem; color: var(--primary); margin: 30px 0 15px 5px; font-weight: 950; border-left: 5px solid var(--primary); padding-left: 12px; }
-        .nav-item { padding: 18px 24px; margin-bottom: 8px; border-radius: 20px; cursor: pointer; transition: 0.2s; font-size: 0.95rem; background: rgba(255,255,255,0.06); }
+        .nav-item { padding: 18px 24px; margin-bottom: 8px; border-radius: 20px; cursor: pointer; transition: 0.2s; font-size: 0.92rem; background: rgba(255,255,255,0.06); }
         .nav-item.active { background: var(--primary); color: #000; font-weight: 1000; }
-        .viewport { flex: 1; position: relative; background: #000; display: flex; flex-direction: column; overflow: hidden; padding-bottom: calc(230px + var(--safe-bottom)); }
+        .viewport { flex: 1; position: relative; background: #000; display: flex; flex-direction: column; overflow: hidden; padding-bottom: calc(240px + var(--safe-bottom)); }
         .screen { flex: 1; position: relative; display: flex; justify-content: center; align-items: center; }
         #slide-view { width: 100%; height: 100%; background-size: cover; background-position: center; background-repeat: no-repeat; transition: 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
-        .label-unit { position: absolute; background: rgba(0,0,0,0.7); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); color: var(--primary); padding: 15px 35px; border-radius: 20px; font-weight: 1000; font-size: 1.65rem; border: 3px solid var(--primary); box-shadow: 0 30px 80px rgba(0,0,0,0.8); z-index: 1001; text-align: center; max-width: 85%; }
+        .label-unit { position: absolute; background: rgba(0,0,0,0.7); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); color: var(--primary); padding: 15px 35px; border-radius: 20px; font-weight: 1000; font-size: 1.5rem; border: 3px solid var(--primary); box-shadow: 0 30px 80px rgba(0,0,0,0.8); z-index: 1001; text-align: center; max-width: 85%; }
         .console { 
-            position: fixed; bottom: calc(20px + var(--safe-bottom)); left: 50%; transform: translateX(-50%); width: 92%; background: rgba(15, 23, 42, 0.98); padding: 28px; 
+            position: fixed; bottom: calc(20px + var(--safe-bottom)); left: 50%; transform: translateX(-50%); width: 92%; background: rgba(15, 23, 42, 0.98); padding: 22px; 
             border-radius: 36px; border-left: 14px solid var(--primary); backdrop-filter: blur(40px); -webkit-backdrop-filter: blur(40px); z-index: 3500; 
         }
-        .text-body { font-size: 1.3rem; line-height: 1.6; height: 110px; overflow-y: auto; color: #fff; font-weight: 500; margin: 15px 0; }
-        .nav-btns { display: flex; justify-content: space-between; align-items: center; gap: 15px; }
+        .text-body { font-size: 1.15rem; line-height: 1.5; height: 145px; overflow-y: auto; color: #fff; font-weight: 400; margin: 10px 0; }
+        .nav-btns { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
         .control-btn { 
             background: rgba(255,255,255,0.08); color: var(--text); border: 1.5px solid rgba(255,255,255,0.1); 
-            padding: 12px 25px; border-radius: 12px; font-size: 0.95rem; font-weight: 950; cursor: pointer; transition: 0.2s; 
+            padding: 10px 20px; border-radius: 12px; font-size: 0.9rem; font-weight: 950; cursor: pointer; transition: 0.2s; 
         }
         .control-btn:active { transform: scale(0.92); background: var(--primary); color: #000; }
         .btn-gold { background: var(--primary); color: #000; border: none; padding: 25px 90px; font-size: 2rem; font-weight: 1000; border-radius: 100px; cursor: pointer; box-shadow: 0 15px 40px rgba(251, 191, 36, 0.6); }
         #splash { position: fixed; inset: 0; background: #020617; z-index: 5000; display: flex; justify-content: center; align-items: center; text-align: center; }
-        @media (max-width: 400px) { .header-info { font-size: 0.85rem !important; } .label-unit { font-size: 1.3rem; } }
+        @media (max-width: 400px) { .header-info { font-size: 0.8rem !important; } .label-unit { font-size: 1.1rem; } .text-body { font-size: 1rem; } }
     </style>
 </head>
 <body>
     <div id="splash" onclick="goStudy()">
         <div style="width: 85%">
-            <p style="color:var(--primary); font-weight:1000; letter-spacing:8px; margin-bottom:15px; font-size:0.9rem;">1142 | V11.1 IMAGE-SYNC BATTLE EDITION</p>
-            <h1 style="font-size:3rem; line-height:1.2; margin:15px 0; background:linear-gradient(135deg, #fff, var(--primary)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; font-weight:1000;">人際關係與協商<br><span style="font-size:2.2rem; color:var(--primary); text-shadow:0 0 20px rgba(251,191,36,0.3);">圖文一致對位版</span></h1>
-            <div style="background:var(--danger); color:white; padding:10px 35px; border-radius:12px; font-size:1.3rem; font-weight:900; display:inline-block; margin-top:10px;">最後視覺校對 | 聯想記憶極大化</div>
-            <br><button class="btn-gold" style="margin-top:50px;">🏆 凱旋開始</button>
+            <p style="color:var(--primary); font-weight:1000; letter-spacing:8px; margin-bottom:15px; font-size:0.9rem;">1142 | V12.0 THE ABSOLUTE DEFENSE EDITION</p>
+            <h1 style="font-size:2.8rem; line-height:1.2; margin:15px 0; background:linear-gradient(135deg, #fff, var(--primary)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; font-weight:1000;">人際關係與協商<br><span style="font-size:2.2rem; color:var(--primary); text-shadow:0 0 20px rgba(251,191,36,0.3);">終極囉唆透視版</span></h1>
+            <div style="background:var(--danger); color:white; padding:10px 35px; border-radius:12px; font-size:1.2rem; font-weight:900; display:inline-block; margin-top:10px;">數據穿透 | 封頂肉量 | 絕對不掛</div>
+            <br><button class="btn-gold" style="margin-top:50px;">🏆 封神凱旋</button>
         </div>
     </div>
     <header class="header">
-        <button onclick="toggleSidebar()" style="background:var(--primary); border:none; padding:12px 25px; border-radius:15px; font-weight:1000; font-size:0.9rem;">☰ 戰鬥索引(24)</button>
-        <div class="header-info" style="color:var(--primary); font-weight:1000; font-size:1rem; text-align:center; flex:1; padding:0 10px;">核對：知覺、歸因、溝通、壓力、心法圖片已完美同步</div>
-        <div style="background:rgba(0,0,0,0.6); padding:8px 15px; border-radius:50px; border:2px solid var(--primary); display:flex; align-items:center; gap:8px;"><input type="range" id="rate" min="0.5" max="2.0" value="1.3" step="0.1" style="width:50px; accent-color:var(--primary)"></div>
+        <button onclick="toggleSidebar()" style="background:var(--primary); border:none; padding:12px 25px; border-radius:15px; font-weight:1000; font-size:0.9rem;">☰ 全量對位(24)</button>
+        <div class="header-info" style="color:var(--primary); font-weight:1000; font-size:1rem; text-align:center; flex:1; padding:0 10px;">三方數據穿透：作業、考古、面授全量整合</div>
+        <div style="background:rgba(0,0,0,0.6); padding:8px 15px; border-radius:50px; border:2px solid var(--primary); display:flex; align-items:center; gap:8px;"><input type="range" id="rate" min="0.5" max="2.0" value="1.2" step="0.1" style="width:40px; accent-color:var(--primary)"></div>
     </header>
     <div class="wrapper">
         <aside id="sidebar" class="sidebar"><div class="course-nav" id="nav"></div></aside>
@@ -84,30 +84,30 @@
     </div>
     <script>
         const studyPlan = [
-            { cat: "【解釋名詞】(25%)", title: "1. 周哈里窗 (Johari Window)", img: "johari_window_modern_diagram_1776040990674.png", ls: ["袒露縮隱藏 / 回饋縮盲目"], txt: "分析自我覺察之模型。開放區（己知、他知）、盲目區（己不知、他知）、隱藏區（己知、他不知）、未知區（己不知、他不知）。心法：袒露縮小隱藏，回饋縮小盲目。" },
-            { cat: "【解釋名詞】(25%)", title: "2. 月暈效應 (Halo Effect)", img: "halo_effect_glowing_aura_bias_1776041171942.png", ls: ["以偏概全的評價迷思"], txt: "認知偏誤。指因對方單一顯著優點（如外貌）而產生的整體正面評價，導致「以點帶面」的以偏概全。反面則為角效應。" },
-            { cat: "【解釋名詞】(25%)", title: "3. 仰巴腳效應 (Pratfall Effect)", img: "pratfall_effect_clumsy_elite_1776041082459.png", ls: ["優秀者的瑕疵美"], txt: "能力卓越者若偶爾犯下小錯誤，反而能消弭隔閡感，增加親和力與吸引力。但若能力平庸者犯錯，則會降低吸引力。" },
-            { cat: "【解釋名詞】(25%)", title: "4. 社會再適應量表 (SRRS)", img: "stress_measurement_gauge_srrs_1776041191104.png", ls: ["數據：200-299 = 中度危機"], txt: "量化壓力的工具。關鍵數據是 200 到 299 分屬於中度生活危機。主要用於預測「未來兩年內」引發身心疾病的風險。" },
-            { cat: "【解釋名詞】(25%)", title: "5. 印象整飾 (Impression Mgt)", img: "goffman_dramaturgy_theater_stage_1776041066626.png", ls: ["高夫曼 | 前台控制"], txt: "個體意圖控制他人對自己知覺的心理與溝通歷程。包含戈夫曼提到的「前台」形象整飾與「後台」真實自我表現。" },
-            { cat: "【解釋名詞】(25%)", title: "6. 自我概念 (Self-Concept)", img: "defense_mechanism_crystal_shield_1776041117465.png", ls: ["特定他人與一般他人"], txt: "個人對自己概括性的看法。來源包括「特定他人」（家、重要他人）的反映，以及「一般他人」（社會規則）的內化。" },
-            { cat: "【解釋名詞】(25%)", title: "7. 歸因 (Attribution)", img: "attribution_theory_cause_effect_links_1776041098952.png", ls: ["內在特質 vs. 外在情境"], txt: "推論行為原因的心理歷程。分為內在性格歸因（如能力、性格）與外在環境歸因（如任務難度、社會壓力、運氣）。" },
-            { cat: "【解釋名詞】(25%)", title: "8. 不合理信念 (ABC)", img: "albert_ellis_rational_emotive_background_1775990617583.png", ls: ["絕對化語詞的修正"], txt: "艾里斯（Ellis）提出。核心在於認知中的「絕對化」（如：我必須、一定要）。修正方式是將其轉化為相對要求的「我希望」。" },
-            { cat: "【解釋名詞】(25%)", title: "9. 防衛機制 (Defense Mechanism)", img: "defense_mechanism_crystal_shield_1776041117465.png", ls: ["合理/投射/退化機制"], txt: "面臨焦慮時採取的潛意識保護手段。常見包含：合理化（為失敗找藉口）、投射（責怪他人）、退化（表現幼稚行为）。" },
-            { cat: "【解釋名詞】(25%)", title: "10. 自我袒露 (Self-Disclosure)", img: "johari_window_modern_diagram_1776040990674.png", ls: ["相互性原則支配"], txt: "分享內心真實感受與訊息的溝通過程。受「相互性原則」支配。功能包含情緒發洩、自我澄清與深化人際關係的滲透深度。" },
-            { cat: "【問答大題】(75%)", title: "11. 馬斯洛需求層次 (必考題)", img: "maslow_pyramid_stomach_to_god_1776041006784.png", ls: ["肚子世界 ➔ 神仙世界"], txt: "內容：生理、安全、社會、自尊、自我實現。邏輯：需求具備基礎階梯屬性，滿足低層「肚子世界」後，始追求高層「神仙世界」。" },
-            { cat: "【問答大題】(75%)", title: "12. 獲得健康的兩大策略", img: "stress_measurement_gauge_srrs_1776041191104.png", ls: ["生理修復 + 心理回彈"], txt: "生理修復：適度運動(333)、理想睡眠 8 小時(右側臥)、均衡飲食。心理回彈：發展複元力（修復力與容忍力）、發展能力、壓力管理。" },
-            { cat: "【問答大題】(75%)", title: "13. 圓融人際六要訣 (送分題)", img: "roundness_secrets_enso_circle_1776041217719.png", ls: ["尊、笑、口、心、度、腳"], txt: "口訣：尊、笑、口、心、度、腳。詳解：頭軟(尊重)、面笑(笑臉)、口圓(讚美)、心正(真心)、肚大(寬容)、腳勤(主動)。" },
-            { cat: "【問答大題】(75%)", title: "14. 影響人際知覺的三要素", img: "nonverbal_mircro_expressions_eye_1776041233563.png", ls: ["被知覺/知覺者/互動情境"], txt: "一、被知覺者（外觀、非語言表情）。二、知覺者（動機、情緒狀態、偏見）。三、情境（當下的場合背景）。三方形成主觀知覺。" },
-            { cat: "【問答大題】(75%)", title: "15. 知覺組織的五大原則", img: "gestalt_connectedness_dumbbell_principle_1776043234567_1776051269067.png", ls: ["連接性/啞鈴效應"], txt: "內容：接近性（距離近）、相似性（特徵像）、連續性、閉合性（自動補全）、以及連接性（啞鈴圖案，獨立物件被連線鎖定為單元）。" },
-            { cat: "【問答大題】(75%)", title: "16. 壓力管理的五大策略", img: "stress_measurement_gauge_srrs_1776041191104.png", ls: ["消除壓力源與認知調整"], txt: "一、消除壓力源（治本）。二、發現幽默。三、尋求社會支持網絡。四、調整認知（改變看法與評價）。五、練習生理放鬆技巧。" },
-            { cat: "【問答大題】(75%)", title: "17. 非語言溝通特質與數據", img: "nonverbal_emblems_hand_gestures_1776041154779.png", ls: ["梅拉賓定律數據 93%"], txt: "數據：梅拉賓定律。情感訊息 = 7%文字 + 38%語音 + 55%表情組成。特性：模糊、持續、多重管道、展現深層情感、跨文化差異。" },
-            { cat: "【問答大題】(75%)", title: "18. 溝通分析 (TA) 與 PAC", img: "ta_pac_model_diagram_circles_1776041140078.png", ls: ["致力 A-A 成人交流"], txt: "型態：互補式（平行順暢）、交錯式（引發衝突）、隱藏式（心理遊戲）。PAC：父母(P)、成人(A/理性、處理事實)、兒童(C/衝動、依賴)。" },
-            { cat: "【問答大題】(75%)", title: "19. 華人文化個人情與面子", img: "roundness_secrets_enso_circle_1776041217719.png", ls: ["杜月笙之三碗麵"], txt: "三碗麵：人面（地位身分）、場面（正式尊嚴）、情面（情感聯繫）。處理邏輯：兼顧情、理、法平衡。強調關係維護重於純粹契約。" },
-            { cat: "【問答大題】(75%)", title: "20. 影響人際吸引的因素", img: "heider_pox_balance_triad_1776041038324.png", ls: ["接近/外表/相似互補"], txt: "一、情境因素（空間接近、熟悉感）。二、個人因素（外貌吸引力、能力仰巴腳效應）。三、適配因素（態度價值觀相似性、需求互補性）。" },
-            { cat: "【數據與心法】", title: "21. SRRS 數據指標", img: "stress_measurement_gauge_srrs_1776041191104.png", ls: ["200 - 299 中度危機"], txt: "專業反射：中度生活危機區間為 200 到 299 分。是用於預測未來兩年內引發身心健康問題風險的關鍵閾值。" },
-            { cat: "【數據與心法】", title: "22. 親密距離數據", img: "nonverbal_emblems_hand_gestures_1776041154779.png", ls: ["1.5 英尺 (45 公分)"], txt: "專業反射：人際溝通中，最親近之界線為 1.5 英尺（約 45 公分）以內。超越此界則進入人際溝通之防衛與安全緩衝帶。" },
-            { cat: "【數據與心法】", title: "23. 情感佔比 93% 定律", img: "nonverbal_emblems_hand_gestures_1776041154779.png", ls: ["表情與聲調之力量"], txt: "專業反射：在人際情感互動中，非語言訊息（表情與聲調）的綜合影響力高達 93% 。僅有 7% 來自於純粹的文字內容。" },
-            { cat: "【數據與心法】", title: "24. 應考戰術：不空白底線", img: "exam_success_golden_trophy_100_1776041250115.png", ls: ["大標優先 | 結構至上"], txt: "戰術守則：解釋名詞注重定義關鍵字（抓名詞、記定義）。問答大題注重標題結構（寫大標、填內肉）。絕對不可留白，維持 100% 答題率。" }
+            { cat: "【名詞深度定義】", title: "1. 周哈里窗 (Johari Window)", img: "johari_window_modern_diagram_1776040990674.png", ls: ["坦露縮小隱藏 / 回饋縮小盲目"], txt: "分析自我覺察之模型。開放區（己知、他知）、盲目區（己不知、他知）、隱藏區（己知、他不知）、未知區（己不知、他不知）。封神關鍵：提升關係的邏輯是透過「自我袒露」來縮小隱藏區，透過「他人回饋」來縮小盲目區。" },
+            { cat: "【名詞深度定義】", title: "2. 社會再適應量表 (SRRS)", img: "stress_measurement_gauge_srrs_1776041191104.png", ls: ["數據：200-299 中度危機"], txt: "由荷姆斯（Holmes）提出，量化個體因生活事件改變承受之壓力。預測未來兩年內引發重大身心疾病的風險。死穴數據：200 到 299 分屬中度生活危機；300 分以上為高度危機。" },
+            { cat: "【名詞深度定義】", title: "3. 仰巴腳效應 (Pratfall Effect)", img: "pratfall_effect_clumsy_elite_1776041082459.png", ls: ["能力強者犯錯 = 增加吸引力"], txt: "又稱出醜效應。指能力卓越、形象完美的人，若偶爾犯下平庸小錯誤（如打翻水），反而會增加其人性化的親和力，提升吸引力。注意：此項僅對「能力強者」有效，平庸者犯錯則視為無能。" },
+            { cat: "【名詞深度定義】", title: "4. 月暈效應 (Halo Effect)", img: "halo_effect_glowing_aura_bias_1776041171942.png", ls: ["以點帶面的正面評價偏誤"], txt: "常見知覺偏誤。指知覺者傾向根據對方的單一顯著優點（如外貌），而盲目推論其餘人格特質（如誠實、善良）也同樣優秀，產生以偏概全的正面評價。反之為角效應。" },
+            { cat: "【名詞深度定義】", title: "5. 戲劇理論 (Dramaturgy)", img: "goffman_dramaturgy_theater_stage_1776041066626.png", ls: ["高夫曼 | 前台 vs 後台"], txt: "戈夫曼提出，將社會互動比喻為舞台表演。個體在互動中進行印象整飾，區分為：前台（在他人面前表現符合規格角色期望的行為）與後台（展現私密、真實且不需表演的自我）。" },
+            { cat: "【名詞深度定義】", title: "6. 歸因 (Attribution)", img: "attribution_theory_cause_effect_links_1776041098952.png", ls: ["內在性格 vs 外在環境"], txt: "個體在觀察自己或他人行為後，推論其原因的認知歷程。可分為：內在歸因（如性格、能力、情緒）與外在環境歸因（如任務難度、運氣、社會壓力）。正確歸因有助於預測未來行為。" },
+            { cat: "【名詞深度定義】", title: "7. 艾里斯不合理信念 (ABC)", img: "albert_ellis_rational_emotive_background_1775990617583.png", ls: ["修正「絕對化要求」語句"], txt: "理情行為療法核心。指個體對生活事件持有絕對化要求（如我必須、一定要）或災難化的觀念。會導致嚴重的心理失護與情緒失能。需轉向為相對要求的願望語法。" },
+            { cat: "【名詞深度定義】", title: "8. 防衛機制 (Defense Mechanism)", img: "defense_mechanism_crystal_shield_1776041117465.png", ls: ["潛意識保護自我價值感"], txt: "個體面臨挫折或焦慮時，潛意識為了保護自我價值感而採取的調節反應。常見：合理化（為失敗找藉口）、投射（將缺點推給他人）、退化（表現幼稚行為）。機制能暫時減壓但無法解決根源。" },
+            { cat: "【名詞深度定義】", title: "9. PAC 狀態與 TA 分析", img: "ta_pac_model_diagram_circles_1776041140078.png", ls: ["父母態 / 成人態 / 兒童態"], txt: "由伯恩提出。人格包含：父母態 P（威嚴教導）、成人態 A（理性處理事實數據）、兒童態 C（情感、衝動、依賴）。理想溝通應致力於成人對成人的理智對位 A-A。" },
+            { cat: "【名詞深度定義】", title: "10. 自我概念 (Self-Concept)", img: "defense_mechanism_crystal_shield_1776041117465.png", ls: ["多維、動態、來源多樣"], txt: "個人對自己持有的概括性看板與看法。包含特質、能力、價值觀認知。來源受「重要他人」（特定關係）反映評價，以及「一般他人」（社會規則）內化影響。是人際交流的內核。" },
+            { cat: "【問答全量解析】", title: "11. 馬斯洛需求層級理論", img: "maslow_pyramid_stomach_to_god_1776041006784.png", ls: ["滿足肚子始追求神仙"], txt: "五層次：生理 ➔ 安全 ➔ 社會 ➔ 自尊 ➔ 自我實現。邏輯深度：需求具備階梯性。滿足了低層次肚子世界後，始產生高層次神仙世界的發動機驅動力。基本生存未滿足前，高層不具吸引力。" },
+            { cat: "【問答全量解析】", title: "12. 獲得健康的兩大策略", img: "stress_measurement_gauge_srrs_1776041191104.png", ls: ["生理修復 + 心理回彈"], txt: "一：生理修復。含適度運動(333原則)、理想睡眠 8 小時(建議右側臥利於排毒)、均衡飲食。二：心理回彈。含發展複元力（恢復力與容忍度）、發展解決能力、建立社會支持網絡管理。" },
+            { cat: "【問答全量解析】", title: "13. 圓融人際六要訣 (面授題)", img: "roundness_secrets_enso_circle_1776041217719.png", ls: ["尊孝口心度腳 | 囉唆版口訣"], txt: "尊(頭軟)：尊重傾聽。笑(面笑)：感恩與笑臉。口(口圓)：語帶溫潤多讚美。心(心正)：真心誠意。度(肚大)：包容接納不評判。腳(腳勤)：主動關懷好觀眾（腳要蹲）。這是老師暗示加分重點。" },
+            { cat: "【問答全量解析】", title: "14. 知覺產生步驟與組織原則", img: "nonverbal_mircro_expressions_eye_1776041233563.png", ls: ["感覺➔組織➔評價 | 啞鈴效應"], txt: "步驟：感覺接收 ➔ 組織整理 ➔ 評價賦義。組織五原則：接近、相似、連續、閉合。面授補充：連接性原則，指獨立物件被線條連結會視為單元，即老師口中解釋知覺組織最鮮活的「啞鈴圖效應」。" },
+            { cat: "【問答全量解析】", title: "15. 壓力管理的五大策略", img: "stress_measurement_gauge_srrs_1776041191104.png", ls: ["消除源 / 幽默 / 支持 / 認知"], txt: "一、消除壓力源（治本法）。二、發現幽默轉換情緒。三、尋求社會支持網絡協助。四、調整認知評價（核心：改變對事件看法）。五、練習生理放鬆技巧如腹式呼吸。目標是預防系統崩解。" },
+            { cat: "【問答全量解析】", title: "16. 非語言溝通特質與數據", img: "nonverbal_emblems_hand_gestures_1776041154779.png", ls: ["情感訊息 93% 定律"], txt: "數據：梅拉賓定律。情感訊息佔比：7% 文字 + 38% 語音語調 + 55% 表情肢體。結論：非語言管道在高情境溝通中佔比高達 93%。具備模糊、持續、文化差異明顯等特質。" },
+            { cat: "【問答全量解析】", title: "17. TA 溝通分析三種型態", img: "ta_pac_model_diagram_circles_1776041140078.png", ls: ["平行 / 交錯 / 隱藏"], txt: "一：互補式，平行順暢持久。二：交錯式，狀態錯位（如我想講事實 A，你跟我鬧情緒 C），致引發衝突或溝通斷裂。三：隱藏式，話中有話帶心理遊戲，包含多層次隱含社會背景。理想是 A-A 交流。" },
+            { cat: "【問答全量解析】", title: "18. 華人文化的人情與面子", img: "roundness_secrets_enso_circle_1776041217719.png", ls: ["人情面子 | 杜月笙三碗麵"], txt: "人情：社會資源與規範感。面子：聲望地位指標。面授引用名言：人生難吃三碗麵：人面、場面、情面。處事原則是兼顧情、理、法。強調關係維護重於純粹法規範意識，展現社交智慧層次。" },
+            { cat: "【問答全量解析】", title: "19. 影響人際吸引的因素", img: "heider_pox_balance_triad_1776041038324.png", ls: ["接近 / 外表 / 相似互補"], txt: "一情境因素：空間接近、高熟悉感（曝光效應）。二個人因素：外貌魁力、能力仰巴腳（優秀者的小誤區）。三適配因素：態度與價值觀相似性、需求互補性。核心追求獎賞平衡滿足。" },
+            { cat: "【數據定錨清單】", title: "20. SRRS 數據指標", img: "stress_measurement_gauge_srrs_1776041191104.png", ls: ["200-299 中度危機閾值"], txt: "中度生活危機區間 200 到 299 分。預測未來兩年內引發身心疾病風險。300 分以上為高度風險，需立即進行壓力管理干預以預防重病。" },
+            { cat: "【數據定錨清單】", title: "21. 親密距離與數據", img: "nonverbal_emblems_hand_gestures_1776041154779.png", ls: ["1.5 英尺 (45 公分)"], txt: "霍爾空間區域學資料。親密距離為 0 至 45 公分以內。非語言溝通中，侵入此帶易引發防禦不安感。是界定關係親疏之具體空間標籤。 " },
+            { cat: "【數據定錨清單】", title: "22. 梅拉賓 93% 情感佔比", img: "nonverbal_emblems_hand_gestures_1776041154779.png", ls: ["表情與聲調的力量"], txt: "重要反射數據：情感互動中表情佔 55%、聲調佔 38%、文字僅佔 7%。以此證明「非語言管道」佔總體情感傳遞影響力之 93%。" },
+            { cat: "【最後保命心法】", title: "23. 應考戰術：大標優先", img: "exam_success_golden_trophy_100_1776041250115.png", ls: ["大標題對了就給分"], txt: "答題戰術：問答大題守住結構大標（如圓融六要訣的六個字）。內容用實務經驗囉唆充實。解釋名詞注重定義關鍵字（如兩年內、中度危機）。" },
+            { cat: "【最後保命心法】", title: "24. 應考戰術：絕對不空白", img: "exam_success_golden_trophy_100_1776041250115.png", ls: ["100% 答題率絕對防線"], txt: "最後叮嚀：絕對不留白。若忘記精確標題，請用意譯（如獵物吃飽例子說明馬斯洛）。只要有邏輯理說且填滿卷面，基本分數即到手。" }
         ];
         let cuI = -1; let timer = null; const synth = window.speechSynthesis;
         function toggleSidebar() { document.getElementById('sidebar').classList.toggle('open'); }
